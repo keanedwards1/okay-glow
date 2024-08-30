@@ -1,0 +1,48 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "index.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "js/**/*.js",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "pages/**/*.html",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "public/images/**/*",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "styles/**/*.css",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/",
+        "dest": "/index.html"
+      },
+      {
+        "src": "/quiz",
+        "dest": "/pages/quiz.html"
+      },
+      {
+        "src": "/js/(.*)",
+        "dest": "/js/$1"
+      },
+      {
+        "src": "/public/images/(.*)",
+        "dest": "/public/images/$1"
+      },
+      {
+        "src": "/styles/(.*)",
+        "dest": "/styles/$1"
+      }
+    ]
+  }
+  

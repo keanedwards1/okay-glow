@@ -1,18 +1,25 @@
 .
 ├── README.md
+├── c.sh
+├── index.html
 ├── js
 │   ├── dropdown.js
 │   ├── main.js
 │   └── quiz.js
 ├── pages
-│   ├── index.html
 │   └── quiz.html
 ├── public
 │   └── images
+│       ├── bottle.jpg
+│       ├── cream-p.png
+│       ├── cream.png
+│       ├── drop.jpeg
+│       ├── otter.jpeg
+│       ├── skin-facial.jpg
+│       └── tincture.jpg
 ├── styles
 │   └── styles.css
 ├── tree.txt
-├── utils
-└── vercel.json
+└── utils
 
-7 directories, 9 files
+7 directories, 16 files
