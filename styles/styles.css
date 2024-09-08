@@ -12,7 +12,10 @@ body {
   
   .header {
     background-color: #f1e2d2; /* light cream */
-    padding: 16px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem;
   }
   
   .navbar {
@@ -24,35 +27,102 @@ body {
   .menu-button {
     background: none;
     border: none;
-    font-size: 16px;
     cursor: pointer;
     font-family: Quicksand, sans-serif;
     font-weight: 200;
     font-size: 1.1rem;
-    line-height: 1.75rem;
+    font-size: 1.125rem;
     color: rgb(64, 61, 59);
+    padding-block: 0;
+    padding-inline: 0;
   }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: Quicksand, sans-serif;
+  font-weight: 200;
+  font-size: 1.1rem;
+  font-size: 1.125rem;
+  color: rgb(64, 61, 59);
+  padding-block: 0;
+  padding-inline: 0;
+}
+.menu-svg {
+  margin-left: -1px;
+  height: 1.25rem;
+  width: 1rem;
+  transition: transform 0.2s ease;
+  margin-bottom: -4px;
+}
+.menu-svg.rotate {
+  transform: rotate(180deg);
+}
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  margin-top: 12px;
+  width: 160px;
+  background-color: #ecd5bd;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.dropdown-menu.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dropdown-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: #333;
+  font-family: Quicksand, sans-serif;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  transition: background-color 0.2s;
+}
+.dropdown-menu a:hover {
+  text-decoration: underline;
+}
   
   .brand {
     display: flex;
     align-items: center;
   }
   
+  .brand-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+  }
+  
   .brand-title {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 300;
     margin-right: 8px;
-    text-decoration: none;
   }
   
   .logo {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
   
   .get-started-button {
     background-color: #edd3b9; /* peach */
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 24px;
     text-decoration: none;
     font-size: 16px;
@@ -79,7 +149,7 @@ body {
   .hero-section {
     display: flex;
     flex-wrap: wrap;
-    background-color: #f1e2d2;
+    background-color: rgb(241,226,210);
     padding: 16px;
     border-radius: 8px;
     margin-top: 20px;
@@ -141,4 +211,3 @@ body {
   .cta-button:hover .cta-arrow {
     transform: translateX(4px);
   }
-  
