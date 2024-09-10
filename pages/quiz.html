@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okay Glow Skincare Quiz</title>
+  <link rel="stylesheet" href="/styles/styles.css">
+  <link rel="stylesheet" href="/styles/quiz.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+    
+          <div class="dropdown">
+            <button class="menu-button">
+                Menu
+                <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </button>
+            
+            <div class="dropdown-menu">
+                <a href="/">Home</a>
+                <a href="/pages/quiz.html">Quiz</a>
+            </div>
+          </div>
+    
+          <div class="brand">
+            <a href="/" class="brand-link">
+              <span class="brand-title">Okay Glow</span>
+              <img src="/public/images/cream-p.png" alt="okay glow logo" class="logo">
+            </a>
+          </div>
+          <a href="/" class="get-started-button">Back</a>
+        </nav>
+      </header>
+
+  <main>
+      <div class="quiz-container">
+        <div class="title">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+              </div>
+          <h1>Okay Glow Skincare Quiz</h1>
+
+          <p class="question-counter" id="questionCounter">Question 1 of 10</p>
+        </div>
+        <div class="quiz-content" id="quizContent">
+          <!-- Questions will be injected here by JavaScript -->
+        </div>
+        <div class="navigation">
+          <button id="prevBtn" class="btn prev-btn">Previous</button>
+          <button id="nextBtn" class="btn next-btn">Next</button>
+        </div>
+      </div>
+    </main>
+
+  <script src="/js/quiz.js"></script>
+  <script src="/js/dropdown.js"></script>
+</body>
+</html>
