@@ -295,14 +295,15 @@ const questions = [
   const prevBtn = document.getElementById("prevBtn");
   
   // Function to render the current question
+  // <img src="${option.image}" alt="${option.text}">
+
   function renderQuestion() {
     const question = questions[currentQuestionIndex];
     quizContent.innerHTML = `<h2>${question.text}</h2>`;
     
     question.options.forEach((option) => {
       const optionHtml = `
-        <div class="option">
-          <img src="${option.image}" alt="${option.text}">
+        <div class="option">         
           <label>
             <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.text}">
             ${option.text}
