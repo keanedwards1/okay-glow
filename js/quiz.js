@@ -283,58 +283,139 @@ const questions = [
       },
   ];
   
-  // Variables to store the current question index and answers
-  let currentQuestionIndex = 0;
-  let answers = {};
-  
-  // DOM elements
-  const quizContent = document.getElementById("quizContent");
-  const questionCounter = document.getElementById("questionCounter");
-  const progressBar = document.getElementById("progress");
-  const nextBtn = document.getElementById("nextBtn");
-  const prevBtn = document.getElementById("prevBtn");
-  
-  // Function to render the current question
-  // <img src="${option.image}" alt="${option.text}">
+// Variables to store the current question index and answers
+let currentQuestionIndex = 0;
+let answers = {};
 
-  function renderQuestion() {
+// DOM elements
+const introContainer = document.getElementById('introContainer');
+const startBtn = document.getElementById('startBtn');
+const quizContainer = document.getElementById('quizContainer');
+
+const quizContent = document.getElementById("quizContent");
+const questionCounter = document.getElementById("questionCounter");
+const progressBar = document.getElementById("progress");
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+// Start button event listener
+startBtn.addEventListener('click', () => {
+  introContainer.style.display = 'none';
+  quizContainer.style.display = 'flex';
+  document.body.classList.remove('intro-active'); // Remove overflow hidden
+  renderQuestion();
+  updateProgress(); // Initialize the progress bar
+});
+
+// Function to render the current question
+function renderQuestion() {
+  // Fade out the content
+  quizContent.classList.add('fade-out');
+
+  quizContent.addEventListener('transitionend', function handler() {
+    // Remove the event listener to prevent stacking
+    quizContent.removeEventListener('transitionend', handler);
+
+    // Update the content after fade-out
     const question = questions[currentQuestionIndex];
     quizContent.innerHTML = `<h2>${question.text}</h2>`;
-    
+
     question.options.forEach((option) => {
       const optionHtml = `
-        <div class="option">         
-          <label>
-            <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.text}">
-            ${option.text}
-          </label>
-        </div>`;
+        <label class="option">
+          <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.text}">
+          <span class="option-text">${option.text}</span>
+        </label>`;
       quizContent.innerHTML += optionHtml;
     });
-    
-    updateProgress();
-  }
-  
-  function updateProgress() {
-    const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
-    progressBar.style.width = `${progress}%`;
-    questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-  }
-  
-  nextBtn.addEventListener("click", () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      currentQuestionIndex++;
-      renderQuestion();
-    }
-  });
-  
-  prevBtn.addEventListener("click", () => {
-    if (currentQuestionIndex > 0) {
-      currentQuestionIndex--;
-      renderQuestion();
-    }
-  });
 
-  // Initial rendering of the first question
-  renderQuestion();
-  
+    // Disable or enable the "Previous" button
+    if (currentQuestionIndex === 0) {
+      prevBtn.disabled = true;
+      prevBtn.classList.add('disabled');
+    } else {
+      prevBtn.disabled = false;
+      prevBtn.classList.remove('disabled');
+    }
+
+    // Change "Next" button to "Finish" on the last question
+    if (currentQuestionIndex === questions.length - 1) {
+      nextBtn.textContent = 'Finish';
+    } else {
+      nextBtn.textContent = 'Next';
+    }
+
+    // Force reflow to restart the animation
+    void quizContent.offsetWidth;
+
+    // Fade in the content
+    quizContent.classList.remove('fade-out');
+  });
+}
+
+// Function to update progress bar and question counter
+function updateProgress() {
+  const progress = (currentQuestionIndex / questions.length) * 100;
+  progressBar.style.width = `${progress}%`;
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+}
+
+// Next button event listener
+nextBtn.addEventListener("click", () => {
+  // Save the user's answers for the current question
+  saveAnswer();
+
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+    updateProgress(); // Update progress here
+    renderQuestion();
+  } else {
+    // Finish the quiz
+    submitQuiz();
+  }
+});
+
+// Previous button event listener
+prevBtn.addEventListener("click", () => {
+  if (currentQuestionIndex > 0) {
+    currentQuestionIndex--;
+    updateProgress(); // Update progress here
+    renderQuestion();
+  }
+});
+
+// Function to save the user's answers
+function saveAnswer() {
+  const question = questions[currentQuestionIndex];
+  const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+  if (question.type === 'multiple') {
+    const selectedOptions = [];
+    inputs.forEach((input) => {
+      if (input.checked) {
+        selectedOptions.push(input.value);
+      }
+    });
+    answers[question.id] = selectedOptions;
+  } else {
+    inputs.forEach((input) => {
+      if (input.checked) {
+        answers[question.id] = input.value;
+      }
+    });
+  }
+}
+
+// Function to submit the quiz
+function submitQuiz() {
+  // Collect the answers
+  saveAnswer();
+
+  // For now, just alert that the quiz is finished
+  alert('Thank you for completing the quiz!');
+
+  // You can process the answers or redirect to a results page
+  // For example:
+  // console.log(answers);
+  // window.location.href = '/results.html';
+}
