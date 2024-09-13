@@ -256,6 +256,7 @@ label {
   flex: 0 0 auto;
   padding: 20px;
   display: flex;
+  justify-content: space-between;
 }
 
 .navigation .btn {

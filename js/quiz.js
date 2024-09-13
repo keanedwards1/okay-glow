@@ -1,3 +1,5 @@
+// /js/quiz.js
+
 // List of questions
 const questions = [
     {
