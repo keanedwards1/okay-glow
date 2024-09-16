@@ -284,9 +284,6 @@
     },
   ];
   
-  
-
-    
 // Variables to store the current question index and answers
 let currentQuestionIndex = 0;
 let answers = {};
@@ -299,7 +296,7 @@ const quizContainer = document.getElementById('quizContainer');
 const quizContent = document.getElementById("quizContent");
 const questionCounter = document.getElementById("questionCounter");
 const progressBar = document.getElementById("progress");
-const nextBtn = document.getElementById("nextBtn");
+let nextBtn = document.getElementById("nextBtn");  // Changed to 'let' for reassignment
 const prevBtn = document.getElementById("prevBtn");
 
 // Start button event listener
@@ -311,11 +308,54 @@ startBtn.addEventListener('click', () => {
     updateProgress(); // Initialize the progress bar
 });
 
+// Define the handleEnterKey function outside renderQuestion
+function handleEnterKey(event) {
+    if (event.key === 'Enter' && !nextBtn.disabled) {
+        event.preventDefault(); // Prevent default form submission behavior
+        nextBtn.click();
+    }
+}
+
+// Handle Next button click
+function handleNextButtonClick() {
+    // Save the user's answers for the current question
+    saveAnswer();
+
+    if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        updateProgress();
+        renderQuestion();
+    } else {
+        // Finish the quiz
+        submitQuiz();
+    }
+}
+
+// Attach the click event listener to the Next button
+nextBtn.addEventListener('click', handleNextButtonClick);
+
+// Previous button event listener
+prevBtn.addEventListener('click', () => {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        updateProgress();
+        renderQuestion();
+    } else {
+        // Show the intro view and hide the quiz
+        quizContainer.style.display = 'none';
+        introContainer.style.display = 'flex';
+        document.body.classList.add('intro-active'); // Add back the intro-active class
+    }
+});
+
 // Function to render the current question
 function renderQuestion() {
     // Disable both buttons during the transition
     nextBtn.disabled = true;
     prevBtn.disabled = true;
+
+    // Remove existing event listeners to prevent stacking
+    document.removeEventListener('keydown', handleEnterKey);
 
     // Fade out the content
     quizContent.classList.add('fade-out');
@@ -326,16 +366,20 @@ function renderQuestion() {
 
         // Update the content after fade-out
         const question = questions[currentQuestionIndex];
-        quizContent.innerHTML = `<h2>${question.text}</h2>`;
+
+        // Build the new content
+        let quizHtml = `<h2>${question.text}</h2>`;
 
         question.options.forEach((option) => {
-          const optionHtml = `
-            <label class="option">
-              <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.value}">
-              <span class="option-text">${option.text}</span>
-            </label>`;
-          quizContent.innerHTML += optionHtml;
+            quizHtml += `
+                <label class="option">
+                    <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.value}">
+                    <span class="option-text">${option.text}</span>
+                </label>`;
         });
+
+        // Update the quiz content
+        quizContent.innerHTML = quizHtml;
 
         // Disable or enable the "Previous" button
         if (currentQuestionIndex === 0) {
@@ -347,32 +391,70 @@ function renderQuestion() {
         }
 
         // Change "Next" button to "Finish" on the last question
-        if (currentQuestionIndex === questions.length - 1) {
-            nextBtn.textContent = 'Finish';
-        } else {
-            nextBtn.textContent = 'Next';
-        }
+        nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next';
+
+        // Ensure that the Next button is disabled initially
+        nextBtn.disabled = true;
+
+        // Add tooltip to the Next button
+        addTooltipToNextButton();
+
+        // Reassign nextBtn after DOM manipulation
+        nextBtn = document.getElementById('nextBtn');
+
+        // Reattach the click event listener to the Next button
+        nextBtn.removeEventListener('click', handleNextButtonClick); // Remove any existing listener
+        nextBtn.addEventListener('click', handleNextButtonClick);
+
+        // Add event listeners to inputs
+        const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                // Check if at least one option is selected
+                if (question.type === 'multiple') {
+                    const anyChecked = Array.from(inputs).some(i => i.checked);
+                    nextBtn.disabled = !anyChecked;
+                } else {
+                    nextBtn.disabled = false;
+                }
+
+                // Focus on the Next button when an option is selected
+                nextBtn.focus();
+            });
+        });
+
+        // Add event listener to detect Enter key
+        document.addEventListener('keydown', handleEnterKey);
+
+        // Re-enable the Previous button
+        prevBtn.disabled = false;
 
         // Force reflow to restart the animation
         void quizContent.offsetWidth;
 
         // Fade in the content
         quizContent.classList.remove('fade-out');
-
-        // Initially disable the Next button
-        nextBtn.disabled = true;
-
-        // Add event listeners to inputs to enable the Next button when an option is selected
-        const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
-        inputs.forEach(input => {
-            input.addEventListener('change', () => {
-                nextBtn.disabled = false;
-            });
-        });
-
-        // Re-enable the Previous button
-        prevBtn.disabled = false;
     });
+}
+
+// Function to add tooltip to the Next button
+function addTooltipToNextButton() {
+    // Wrap the Next button in a tooltip container if not already done
+    if (!nextBtn.parentElement.classList.contains('tooltip-container')) {
+        // Create the tooltip container
+        const tooltipContainer = document.createElement('div');
+        tooltipContainer.classList.add('tooltip-container');
+
+        // Create the tooltip text element
+        const tooltipText = document.createElement('div');
+        tooltipText.classList.add('tooltip-text');
+        tooltipText.textContent = 'Press Enter to continue';
+
+        // Replace the Next button with the tooltip container
+        nextBtn.parentElement.replaceChild(tooltipContainer, nextBtn);
+        tooltipContainer.appendChild(nextBtn);
+        tooltipContainer.appendChild(tooltipText);
+    }
 }
 
 // Function to update progress bar and question counter
@@ -381,35 +463,6 @@ function updateProgress() {
     progressBar.style.width = `${progress}%`;
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
 }
-
-// Next button event listener
-nextBtn.addEventListener("click", () => {
-    // Save the user's answers for the current question
-    saveAnswer();
-
-    if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        updateProgress(); // Update progress here
-        renderQuestion();
-    } else {
-        // Finish the quiz
-        submitQuiz();
-    }
-});
-
-// Previous button event listener
-prevBtn.addEventListener("click", () => {
-    if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        updateProgress(); // Update progress here
-        renderQuestion();
-    } else {
-        // Show the intro view and hide the quiz
-        quizContainer.style.display = 'none';
-        introContainer.style.display = 'flex';
-        document.body.classList.add('intro-active'); // Add back the intro-active class
-    }
-});
 
 // Function to save the user's answers
 function saveAnswer() {
@@ -797,7 +850,6 @@ const products = [
   // Continue adding products as needed, ensuring values match those in questions
 ];
 
-
 // Function to filter products based on user's answers
 function getRecommendedProducts(userAnswers) {
   const scoredProducts = products.map((product) => {
@@ -862,7 +914,6 @@ function getRecommendedProducts(userAnswers) {
   return sortedProducts.slice(0, 5);
 }
 
-
 // Function to display recommended products
 function displayRecommendedProducts(recommendedProducts) {
   let resultHtml = '<h2>Your Recommended Products</h2>';
@@ -879,6 +930,9 @@ function displayRecommendedProducts(recommendedProducts) {
       `;
   });
 
+  // Add Start Over button
+  resultHtml += '<button class="start-over-btn" id="startOverBtn">Start Over</button>';
+
   // Replace the quiz content with the results
   quizContent.innerHTML = resultHtml;
 
@@ -889,9 +943,32 @@ function displayRecommendedProducts(recommendedProducts) {
   // Update the question counter and progress bar to indicate completion
   questionCounter.textContent = 'Quiz Completed';
   progressBar.style.width = '100%';
+
+  // Add event listener for start over button
+  const startOverBtn = document.getElementById('startOverBtn');
+  startOverBtn.addEventListener('click', startOver);
 }
 
-// Modify the submitQuiz function to show recommended products
+function startOver() {
+  // Reset quiz data
+  currentQuestionIndex = 0;
+  answers = {};
+
+  // Hide the product recommendations and show the intro again
+  quizContainer.style.display = 'none';
+  introContainer.style.display = 'flex';
+  document.body.classList.add('intro-active'); // Add back the intro-active class
+
+  // Reset progress bar and buttons
+  progressBar.style.width = '0%';
+  questionCounter.textContent = '';
+
+  // Show navigation buttons again
+  nextBtn.style.display = 'inline-block';
+  prevBtn.style.display = 'inline-block';
+}
+
+// Function to submit the quiz
 function submitQuiz() {
   saveAnswer(); // Collect the final answers
 
@@ -922,7 +999,6 @@ function submitQuiz() {
   };
 
   console.log("User Answers:", userAnswers);
-
 
   // Handle cases where no sensitivities are selected or "No known sensitivities" is selected
   if (!userAnswers.sensitivities || userAnswers.sensitivities.includes("No known sensitivities")) {
