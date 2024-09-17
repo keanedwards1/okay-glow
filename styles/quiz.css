@@ -38,12 +38,18 @@ label {
   font-size: 2.5em;
   font-weight: 200;
   width: 80%;
+  background-color: #edd3b9c0;
+  border-radius: 6px;
+  padding: 10px;
 }
 
 .intro-container p {
-  font-size: 1.2em;
-  margin: 10px 0 32px 0;
+  font-size: 1.6em;
+  margin: 0px 0 32px 0;
   width: 40%;
+  background-color: #edd3b9c0;
+  border-radius: 6px;
+  padding: 10px;
 }
 
 @media (max-width: 600px) {
@@ -163,7 +169,7 @@ label {
 }
 
 .parallax-image-1{
-  background-image: url("/public/images/tropical-water.webp"); /* Replace with your actual image path */
+  background-image: url("/public/images/hawaii.jpg"); /* Replace with your actual image path */
 
 }
 
@@ -341,7 +347,7 @@ label {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #9f714f transparent transparent transparent; /* Updated to match tooltip */
+  border-color: #9f704fd0 transparent transparent transparent; /* Updated to match tooltip */
 }
 
 /* Show the tooltip on hover with animation */
@@ -479,23 +485,31 @@ label {
 /* CSS for the toast popup */
 .toast {
   position: fixed;
-  bottom: 20px;
+  bottom: 60px; /* Reduced distance from bottom */
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #9f704fd0;
+  transform: translateX(-50%) translateY(20px); /* Start slightly below */
+  background-color: rgba(159, 112, 79, 0.85); /* Adjusted for better opacity */
   color: #fff;
   padding: 12px 24px;
   border-radius: 6px;
   font-size: 16px;
   z-index: 1000;
-  opacity: 1;
-  transition: opacity .7s ease-out, bottom .7s ease-out;
+  opacity: 0; /* Start invisible */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Smoother transitions */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+}
+
+.toast.show {
+  opacity: 1; /* Fully visible */
+  transform: translateX(-50%) translateY(0); /* Move to original position */
 }
 
 .toast.fade-out {
-  opacity: 0;
-  bottom: 0px;
+  opacity: 0; /* Fade out */
+  transform: translateX(-50%) translateY(20px); /* Move slightly down */
 }
+
+
 
 
 
