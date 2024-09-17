@@ -284,6 +284,7 @@
     },
   ];
   
+
 // Variables to store the current question index and answers
 let currentQuestionIndex = 0;
 let answers = {};
@@ -310,14 +311,23 @@ startBtn.addEventListener('click', () => {
 
 // Define the handleEnterKey function outside renderQuestion
 function handleEnterKey(event) {
-    if (event.key === 'Enter' && !nextBtn.disabled) {
+    if (event.key === 'Enter') {
         event.preventDefault(); // Prevent default form submission behavior
+        if (!isOptionSelected()) {
+            showToast('Please select an option');
+            return;
+        }
         nextBtn.click();
     }
 }
 
 // Handle Next button click
 function handleNextButtonClick() {
+    if (!isOptionSelected()) {
+        showToast('Please select an option');
+        return;
+    }
+
     // Save the user's answers for the current question
     saveAnswer();
 
@@ -350,10 +360,6 @@ prevBtn.addEventListener('click', () => {
 
 // Function to render the current question
 function renderQuestion() {
-    // Disable both buttons during the transition
-    nextBtn.disabled = true;
-    prevBtn.disabled = true;
-
     // Remove existing event listeners to prevent stacking
     document.removeEventListener('keydown', handleEnterKey);
 
@@ -391,10 +397,7 @@ function renderQuestion() {
         }
 
         // Change "Next" button to "Finish" on the last question
-        nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next';
-
-        // Ensure that the Next button is disabled initially
-        nextBtn.disabled = true;
+        nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
 
         // Add tooltip to the Next button
         addTooltipToNextButton();
@@ -410,24 +413,12 @@ function renderQuestion() {
         const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
         inputs.forEach(input => {
             input.addEventListener('change', () => {
-                // Check if at least one option is selected
-                if (question.type === 'multiple') {
-                    const anyChecked = Array.from(inputs).some(i => i.checked);
-                    nextBtn.disabled = !anyChecked;
-                } else {
-                    nextBtn.disabled = false;
-                }
-
-                // Focus on the Next button when an option is selected
-                nextBtn.focus();
+                // Visually indicate selection if needed
             });
         });
 
         // Add event listener to detect Enter key
         document.addEventListener('keydown', handleEnterKey);
-
-        // Re-enable the Previous button
-        prevBtn.disabled = false;
 
         // Force reflow to restart the animation
         void quizContent.offsetWidth;
@@ -437,31 +428,63 @@ function renderQuestion() {
     });
 }
 
-// Function to add tooltip to the Next button
 function addTooltipToNextButton() {
-    // Wrap the Next button in a tooltip container if not already done
-    if (!nextBtn.parentElement.classList.contains('tooltip-container')) {
-        // Create the tooltip container
-        const tooltipContainer = document.createElement('div');
-        tooltipContainer.classList.add('tooltip-container');
+  // Retrieve the tooltip display count from sessionStorage, defaulting to 0 if not set
+  let tooltipDisplayCount = parseInt(sessionStorage.getItem('tooltipDisplayCount')) || 0;
 
-        // Create the tooltip text element
-        const tooltipText = document.createElement('div');
-        tooltipText.classList.add('tooltip-text');
-        tooltipText.textContent = 'Press Enter to continue';
+  if (tooltipDisplayCount < 2) {
+      // Wrap the Next button in a tooltip container if not already done
+      if (!nextBtn.parentElement.classList.contains('tooltip-container')) {
+          // Create the tooltip container
+          const tooltipContainer = document.createElement('div');
+          tooltipContainer.classList.add('tooltip-container');
 
-        // Replace the Next button with the tooltip container
-        nextBtn.parentElement.replaceChild(tooltipContainer, nextBtn);
-        tooltipContainer.appendChild(nextBtn);
-        tooltipContainer.appendChild(tooltipText);
-    }
+          // Create the tooltip text element
+          const tooltipText = document.createElement('div');
+          tooltipText.classList.add('tooltip-text');
+          tooltipText.textContent = 'Or press enter';
+
+          // Replace the Next button with the tooltip container
+          nextBtn.parentElement.replaceChild(tooltipContainer, nextBtn);
+          tooltipContainer.appendChild(nextBtn);
+          tooltipContainer.appendChild(tooltipText);
+      }
+
+      // Increment and store the tooltip display count
+      tooltipDisplayCount++;
+      sessionStorage.setItem('tooltipDisplayCount', tooltipDisplayCount);
+  } else {
+      // Remove the tooltip if it exists
+      if (nextBtn.parentElement.classList.contains('tooltip-container')) {
+          // Remove the tooltip-container and replace it with nextBtn
+          const tooltipContainer = nextBtn.parentElement;
+          const parent = tooltipContainer.parentElement;
+          parent.replaceChild(nextBtn, tooltipContainer);
+      }
+  }
+
+  // After DOM manipulation, reassign nextBtn
+  nextBtn = document.getElementById('nextBtn');
 }
+
 
 // Function to update progress bar and question counter
 function updateProgress() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     progressBar.style.width = `${progress}%`;
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
+}
+
+// Function to check if at least one option is selected
+function isOptionSelected() {
+    const question = questions[currentQuestionIndex];
+    const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+
+    if (question.type === 'multiple') {
+        return Array.from(inputs).some(i => i.checked);
+    } else {
+        return Array.from(inputs).some(i => i.checked);
+    }
 }
 
 // Function to save the user's answers
@@ -485,6 +508,26 @@ function saveAnswer() {
         });
     }
 }
+
+// Function to show a toast message
+function showToast(message) {
+    // Create the toast element
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+
+    // Append the toast to the body
+    document.body.appendChild(toast);
+
+    // Automatically remove the toast after 3 seconds
+    setTimeout(() => {
+        toast.classList.add('fade-out');
+        toast.addEventListener('transitionend', () => {
+            toast.remove();
+        });
+    }, 1000);
+}
+
 
 const products = [
   {
