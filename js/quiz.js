@@ -211,6 +211,7 @@
         { value: "Oral contraceptives", text: "Oral contraceptives", image: "/oral_contraceptives.jpg" },
         { value: "Hormone treatments", text: "Hormone treatments", image: "/hormone_treatments.jpg" },
         { value: "None", text: "None of the above", image: "/none.jpg" },
+        { value: "I'm not sure", text: "I'm not sure", image: "/im_not_sure.jpg" },
       ],
     },
     {
@@ -314,7 +315,7 @@ function handleEnterKey(event) {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent default form submission behavior
         if (!isOptionSelected()) {
-            showToast('*Select an answer first.');
+            showToast('*You gotta select an answer first.');
             return;
         }
         nextBtn.click();
@@ -324,7 +325,7 @@ function handleEnterKey(event) {
 // Handle Next button click
 function handleNextButtonClick() {
     if (!isOptionSelected()) {
-        showToast('*Select an answer first.');
+        showToast('*You gotta select an answer first.');
         return;
     }
 
