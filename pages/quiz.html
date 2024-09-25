@@ -44,10 +44,20 @@
 
   <!-- Intro Container -->
   <div class="intro-container" id="introContainer">
-    <h1>Welcome to the Okay Glow Skincare Quiz</h1>
-    <p>A quick quiz to find you a formala and personalized skincare recommendations</p>
-    <button id="startBtn" class="btn">Take the quiz!</button>
+    <div class="image-container">
+      <img src="/public/images/fantasy.jpg" alt="hands using korean skin care" class="intro-image">
+    </div>
+    <div class="text-container">
+      <h1>Welcome to the Okay Glow skincare quiz</h1>
+      <p>We'll ask you a series of questions, and based off of your answers, we'll create a personalized skincare routine made just for you, and give you several skincare recommendations if you want those too.</p>
+      <div class="quiz-button-wrapper">
+        <a href="/"><button id="backBtn" class="btn backBtn"><span class="cta-arrow">←</span> No thanks, I'm good</button></a>
+        <button id="startBtn" class="btn">Sure, let's do it! <span class="cta-arrow">→</span></button>
+      </div>
+    </div>
   </div>
+  
+
 
   <!-- Quiz Container -->
   <div class="quiz-container" id="quizContainer">
@@ -55,7 +65,7 @@
       <div class="progress-bar">
         <div class="progress" id="progress"></div>
       </div>
-      <h1>Okay Glow Skincare Quiz</h1>
+      <!--<h1>Okay Glow Skincare Quiz</h1>-->
       <p class="question-counter" id="questionCounter">Question 1 of 23</p>
     </div>
     <div class="quiz-content-container">

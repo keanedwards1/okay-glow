@@ -211,6 +211,7 @@
         { value: "Oral contraceptives", text: "Oral contraceptives", image: "/oral_contraceptives.jpg" },
         { value: "Hormone treatments", text: "Hormone treatments", image: "/hormone_treatments.jpg" },
         { value: "None", text: "None of the above", image: "/none.jpg" },
+        { value: "I'm not sure", text: "I'm not sure", image: "/im_not_sure.jpg" },
       ],
     },
     {
@@ -314,7 +315,7 @@ function handleEnterKey(event) {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent default form submission behavior
         if (!isOptionSelected()) {
-            showToast('Please select an option');
+            showToast('*You gotta select an answer first.');
             return;
         }
         nextBtn.click();
@@ -324,7 +325,7 @@ function handleEnterKey(event) {
 // Handle Next button click
 function handleNextButtonClick() {
     if (!isOptionSelected()) {
-        showToast('Please select an option');
+        showToast('*You gotta select an answer first.');
         return;
     }
 
@@ -375,6 +376,7 @@ function renderQuestion() {
 
         // Build the new content
         let quizHtml = `<h2>${question.text}</h2>`;
+        quizHtml += `<div class="options-container">`;
 
         question.options.forEach((option) => {
             quizHtml += `
@@ -384,17 +386,14 @@ function renderQuestion() {
                 </label>`;
         });
 
+        quizHtml += `</div>`;
+
         // Update the quiz content
         quizContent.innerHTML = quizHtml;
 
-        // Disable or enable the "Previous" button
-        if (currentQuestionIndex === 0) {
-            prevBtn.disabled = true;
-            prevBtn.classList.add('disabled');
-        } else {
-            prevBtn.disabled = false;
-            prevBtn.classList.remove('disabled');
-        }
+        // Always enable the "Previous" button
+        prevBtn.disabled = false;
+        prevBtn.classList.remove('disabled');
 
         // Change "Next" button to "Finish" on the last question
         nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
@@ -442,7 +441,7 @@ function addTooltipToNextButton() {
           // Create the tooltip text element
           const tooltipText = document.createElement('div');
           tooltipText.classList.add('tooltip-text');
-          tooltipText.textContent = 'Or press enter';
+          tooltipText.textContent = 'Or press ⮐';
 
           // Replace the Next button with the tooltip container
           nextBtn.parentElement.replaceChild(tooltipContainer, nextBtn);
@@ -509,24 +508,34 @@ function saveAnswer() {
     }
 }
 
-// Function to show a toast message
+// Function to show the toast
 function showToast(message) {
-    // Create the toast element
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = message;
+  // Create the toast element
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
 
-    // Append the toast to the body
-    document.body.appendChild(toast);
+  // Append the toast to the body
+  document.body.appendChild(toast);
 
-    // Automatically remove the toast after 3 seconds
-    setTimeout(() => {
-        toast.classList.add('fade-out');
-        toast.addEventListener('transitionend', () => {
-            toast.remove();
-        });
-    }, 1000);
+  // Trigger a reflow to ensure the browser registers the initial state
+  void toast.offsetWidth; // This forces the browser to recognize the initial styles
+
+  // Add the 'show' class to trigger the fade-in effect
+  toast.classList.add('show');
+
+  // Automatically remove the toast after 3 seconds
+  setTimeout(() => {
+      // Add the 'fade-out' class to trigger the fade-out effect
+      toast.classList.add('fade-out');
+
+      // Listen for the end of the transition to remove the element
+      toast.addEventListener('transitionend', () => {
+          toast.remove();
+      });
+  }, 1500); // Display duration in milliseconds
 }
+
 
 
 const products = [
