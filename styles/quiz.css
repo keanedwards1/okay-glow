@@ -54,7 +54,7 @@ label {
 }
 
 .text-container {
-  --back: #d8d5c9;
+  --back: #edd3b971;
   flex: 1 1 67%; /* Take up 2/3 of the container */
   display: flex;
   flex-direction: column;
@@ -118,9 +118,9 @@ label {
     border-radius: 1em; /* Adjust border radius */
   }
 
-  #startBtn {
-    margin-top: 20px; /* Add spacing to make sure it's visible */
-  }
+/*   #startBtn {
+    margin-top: 20px;
+  } */
 
   .intro-container h1, .intro-container p {
     width: 90%; /* Adjust text width */
@@ -181,7 +181,10 @@ label {
 #startBtn {
   transition: all 0.6s ease;
   background-color: var(--back);
+}
 
+#startBtn:hover, #backBtn:hover {
+  background-color: #f5e1cb5a;
 }
 
 /*#startBtn:hover {
