@@ -322,7 +322,6 @@ function handleEnterKey(event) {
     }
 }
 
-
 // Function to move to the next question or submit the quiz
 function moveToNextQuestion() {
   // Save the user's answers for the current question
@@ -430,7 +429,9 @@ function renderQuestion() {
               // Visually indicate selection if needed
               if (question.type === 'single') {
                   // Automatically move to the next question
-                  moveToNextQuestion();
+                  setTimeout(() => {
+                    moveToNextQuestion();
+                  }, 70);
               }
           });
       });
