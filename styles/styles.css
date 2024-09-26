@@ -164,7 +164,7 @@ body {
   
   /* Parallax effect for the image 
   .parallax-image-1 {
-    background-image: url("/public/images/ripple.jpg"); /* Replace with your actual image path 
+    background-image: url("/public/images/ripple.webp"); /* Replace with your actual image path 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

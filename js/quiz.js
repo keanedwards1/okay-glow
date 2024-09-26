@@ -6,11 +6,11 @@
       text: "How would you describe your skin type?",
       type: "single",
       options: [
-        { value: "Oily", text: "Oily: Shiny all over, prone to breakouts", image: "/oily.jpg" },
-        { value: "Dry", text: "Dry: Tight, flaky, sometimes rough", image: "/dry.jpg" },
-        { value: "Combination", text: "Combination: Oily T-zone, normal or dry cheeks", image: "/combination.jpg" },
-        { value: "Sensitive", text: "Sensitive: Easily irritated, prone to redness", image: "/sensitive.jpg" },
-        { value: "Normal", text: "Normal: Neither too oily nor too dry", image: "/normal.jpg" },
+        { value: "Oily", text: "Oily: Shiny all over, prone to breakouts", image: "/oily.webp" },
+        { value: "Dry", text: "Dry: Tight, flaky, sometimes rough", image: "/dry.webp" },
+        { value: "Combination", text: "Combination: Oily T-zone, normal or dry cheeks", image: "/combination.webp" },
+        { value: "Sensitive", text: "Sensitive: Easily irritated, prone to redness", image: "/sensitive.webp" },
+        { value: "Normal", text: "Normal: Neither too oily nor too dry", image: "/normal.webp" },
       ],
     },
     {
@@ -18,11 +18,11 @@
       text: "What climate are you in?",
       type: "single",
       options: [
-        { value: "Humid", text: "Humid", image: "/humid.jpg" },
-        { value: "Dry", text: "Dry", image: "/dry.jpg" },
-        { value: "Temperate", text: "Temperate", image: "/temperate.jpg" },
-        { value: "Cold", text: "Cold", image: "/cold.jpg" },
-        { value: "Tropical", text: "Tropical", image: "/tropical.jpg" },
+        { value: "Humid", text: "Humid", image: "/humid.webp" },
+        { value: "Dry", text: "Dry", image: "/dry.webp" },
+        { value: "Temperate", text: "Temperate", image: "/temperate.webp" },
+        { value: "Cold", text: "Cold", image: "/cold.webp" },
+        { value: "Tropical", text: "Tropical", image: "/tropical.webp" },
       ],
     },
     {
@@ -30,12 +30,12 @@
       text: "How old are you?",
       type: "single",
       options: [
-        { value: "Under 18", text: "Under 18", image: "/under18.jpg" },
-        { value: "18-24", text: "18-24", image: "/18-24.jpg" },
-        { value: "25-34", text: "25-34", image: "/25-34.jpg" },
-        { value: "35-44", text: "35-44", image: "/35-44.jpg" },
-        { value: "45-54", text: "45-54", image: "/45-54.jpg" },
-        { value: "55+", text: "55+", image: "/55plus.jpg" },
+        { value: "Under 18", text: "Under 18", image: "/under18.webp" },
+        { value: "18-24", text: "18-24", image: "/18-24.webp" },
+        { value: "25-34", text: "25-34", image: "/25-34.webp" },
+        { value: "35-44", text: "35-44", image: "/35-44.webp" },
+        { value: "45-54", text: "45-54", image: "/45-54.webp" },
+        { value: "55+", text: "55+", image: "/55plus.webp" },
       ],
     },
     {
@@ -43,14 +43,14 @@
       text: "What's your main skin concern right now?",
       type: "multiple",
       options: [
-        { value: "Acne", text: "Acne or breakouts", image: "/acne.jpg" },
-        { value: "Fine Lines", text: "Fine lines or wrinkles", image: "/wrinkles.jpg" },
-        { value: "Uneven Skin Tone", text: "Uneven skin tone or dark spots", image: "/uneven.jpg" },
-        { value: "Dryness", text: "Dryness or flakiness", image: "/dryness.jpg" },
-        { value: "Excess Oil", text: "Excess oil or shine", image: "/oil.jpg" },
-        { value: "Pores", text: "Large pores", image: "/pores.jpg" },
-        { value: "Redness", text: "Redness or irritation", image: "/redness.jpg" },
-        { value: "Dullness", text: "Dullness or lack of glow", image: "/dullness.jpg" },
+        { value: "Acne", text: "Acne or breakouts", image: "/acne.webp" },
+        { value: "Fine Lines", text: "Fine lines or wrinkles", image: "/wrinkles.webp" },
+        { value: "Uneven Skin Tone", text: "Uneven skin tone or dark spots", image: "/uneven.webp" },
+        { value: "Dryness", text: "Dryness or flakiness", image: "/dryness.webp" },
+        { value: "Excess Oil", text: "Excess oil or shine", image: "/oil.webp" },
+        { value: "Pores", text: "Large pores", image: "/pores.webp" },
+        { value: "Redness", text: "Redness or irritation", image: "/redness.webp" },
+        { value: "Dullness", text: "Dullness or lack of glow", image: "/dullness.webp" },
       ],
     },
     {
@@ -58,10 +58,10 @@
       text: "How much sun exposure does your skin typically get?",
       type: "single",
       options: [
-        { value: "Minimal", text: "Minimal: Mostly indoors", image: "/indoors.jpg" },
-        { value: "Low", text: "Low: Short periods outside", image: "/low.jpg" },
-        { value: "Moderate", text: "Moderate: Regular outdoor activities", image: "/moderate.jpg" },
-        { value: "High", text: "High: Outdoor job or hobby", image: "/high.jpg" },
+        { value: "Minimal", text: "Minimal: Mostly indoors", image: "/indoors.webp" },
+        { value: "Low", text: "Low: Short periods outside", image: "/low.webp" },
+        { value: "Moderate", text: "Moderate: Regular outdoor activities", image: "/moderate.webp" },
+        { value: "High", text: "High: Outdoor job or hobby", image: "/high.webp" },
       ],
     },
     {
@@ -69,15 +69,15 @@
       text: "What products do you use right now?",
       type: "multiple",
       options: [
-        { value: "Cleanser", text: "Cleanser", image: "/cleanser.jpg" },
-        { value: "Toner", text: "Toner", image: "/toner.jpg" },
-        { value: "Serum", text: "Serum", image: "/serum.jpg" },
-        { value: "Moisturizer", text: "Moisturizer", image: "/moisturizer.jpg" },
-        { value: "Sunscreen", text: "Sunscreen", image: "/sunscreen.jpg" },
-        { value: "Acne Treatment", text: "Acne treatment", image: "/acne_treatment.jpg" },
-        { value: "Retinoid", text: "Retinoid", image: "/retinoid.jpg" },
-        { value: "Exfoliant", text: "Exfoliant", image: "/exfoliant.jpg" },
-        { value: "Other", text: "Other (please specify)", image: "/other.jpg" },
+        { value: "Cleanser", text: "Cleanser", image: "/cleanser.webp" },
+        { value: "Toner", text: "Toner", image: "/toner.webp" },
+        { value: "Serum", text: "Serum", image: "/serum.webp" },
+        { value: "Moisturizer", text: "Moisturizer", image: "/moisturizer.webp" },
+        { value: "Sunscreen", text: "Sunscreen", image: "/sunscreen.webp" },
+        { value: "Acne Treatment", text: "Acne treatment", image: "/acne_treatment.webp" },
+        { value: "Retinoid", text: "Retinoid", image: "/retinoid.webp" },
+        { value: "Exfoliant", text: "Exfoliant", image: "/exfoliant.webp" },
+        { value: "Other", text: "Other (please specify)", image: "/other.webp" },
       ],
     },
     {
@@ -85,10 +85,10 @@
       text: "How often are you stressed out?",
       type: "single",
       options: [
-        { value: "Rarely", text: "Rarely", image: "/rarely.jpg" },
-        { value: "Sometimes", text: "Sometimes", image: "/sometimes.jpg" },
-        { value: "Often", text: "Often", image: "/often.jpg" },
-        { value: "Always", text: "Always", image: "/always.jpg" },
+        { value: "Rarely", text: "Rarely", image: "/rarely.webp" },
+        { value: "Sometimes", text: "Sometimes", image: "/sometimes.webp" },
+        { value: "Often", text: "Often", image: "/often.webp" },
+        { value: "Always", text: "Always", image: "/always.webp" },
       ],
     },
     {
@@ -96,10 +96,10 @@
       text: "How many hours of sleep do you get a night?",
       type: "single",
       options: [
-        { value: "Less than 4 hours", text: "Less than 4 hours", image: "/less4.jpg" },
-        { value: "4-6 hours", text: "4-6 hours", image: "/4-6.jpg" },
-        { value: "6-8 hours", text: "6-8 hours", image: "/6-8.jpg" },
-        { value: "More than 8 hours", text: "More than 8 hours", image: "/8plus.jpg" },
+        { value: "Less than 4 hours", text: "Less than 4 hours", image: "/less4.webp" },
+        { value: "4-6 hours", text: "4-6 hours", image: "/4-6.webp" },
+        { value: "6-8 hours", text: "6-8 hours", image: "/6-8.webp" },
+        { value: "More than 8 hours", text: "More than 8 hours", image: "/8plus.webp" },
       ],
     },
     {
@@ -107,12 +107,12 @@
       text: "Are you currently:",
       type: "multiple",
       options: [
-        { value: "Pregnant", text: "Pregnant", image: "/pregnant.jpg" },
-        { value: "Trying to get pregnant", text: "Trying to get pregnant", image: "/trying.jpg" },
-        { value: "Recent birth", text: "Gave birth within the last 12 months", image: "/recent_birth.jpg" },
-        { value: "Menopause", text: "Experiencing menopause, perimenopause, or andropause", image: "/menopause.jpg" },
-        { value: "Diabetic", text: "Diabetic or hypoglycemic", image: "/diabetic.jpg" },
-        { value: "None", text: "None of the above", image: "/none.jpg" },
+        { value: "Pregnant", text: "Pregnant", image: "/pregnant.webp" },
+        { value: "Trying to get pregnant", text: "Trying to get pregnant", image: "/trying.webp" },
+        { value: "Recent birth", text: "Gave birth within the last 12 months", image: "/recent_birth.webp" },
+        { value: "Menopause", text: "Experiencing menopause, perimenopause, or andropause", image: "/menopause.webp" },
+        { value: "Diabetic", text: "Diabetic or hypoglycemic", image: "/diabetic.webp" },
+        { value: "None", text: "None of the above", image: "/none.webp" },
       ],
     },
     {
@@ -120,11 +120,11 @@
       text: "How does your skin feel in the morning before washing your face?",
       type: "single",
       options: [
-        { value: "Oily", text: "Oily", image: "/oily.jpg" },
-        { value: "Dry", text: "Dry", image: "/dry.jpg" },
-        { value: "Normal", text: "Normal", image: "/normal.jpg" },
-        { value: "Sensitive", text: "Sensitive", image: "/sensitive.jpg" },
-        { value: "Combination", text: "Combination", image: "/combination.jpg" },
+        { value: "Oily", text: "Oily", image: "/oily.webp" },
+        { value: "Dry", text: "Dry", image: "/dry.webp" },
+        { value: "Normal", text: "Normal", image: "/normal.webp" },
+        { value: "Sensitive", text: "Sensitive", image: "/sensitive.webp" },
+        { value: "Combination", text: "Combination", image: "/combination.webp" },
       ],
     },
     {
@@ -132,11 +132,11 @@
       text: "How does your face feel right after you wash it?",
       type: "single",
       options: [
-        { value: "Tight", text: "Tight", image: "/tight.jpg" },
-        { value: "Smooth", text: "Smooth", image: "/smooth.jpg" },
-        { value: "Dry", text: "Dry", image: "/dry.jpg" },
-        { value: "Normal", text: "Normal", image: "/normal.jpg" },
-        { value: "Oily", text: "Oily", image: "/oily.jpg" },
+        { value: "Tight", text: "Tight", image: "/tight.webp" },
+        { value: "Smooth", text: "Smooth", image: "/smooth.webp" },
+        { value: "Dry", text: "Dry", image: "/dry.webp" },
+        { value: "Normal", text: "Normal", image: "/normal.webp" },
+        { value: "Oily", text: "Oily", image: "/oily.webp" },
       ],
     },
     {
@@ -144,10 +144,10 @@
       text: "How much time can you dedicate to your skincare routine?",
       type: "single",
       options: [
-        { value: "1-2 minutes", text: "1-2 minutes: Quick and simple", image: "/quick.jpg" },
-        { value: "5-10 minutes", text: "5-10 minutes: A bit more thorough", image: "/thorough.jpg" },
-        { value: "15-20 minutes", text: "15-20 minutes: Enjoy a more extensive routine", image: "/extensive.jpg" },
-        { value: "30+ minutes", text: "30+ minutes: Love to indulge in skincare", image: "/indulge.jpg" },
+        { value: "1-2 minutes", text: "1-2 minutes: Quick and simple", image: "/quick.webp" },
+        { value: "5-10 minutes", text: "5-10 minutes: A bit more thorough", image: "/thorough.webp" },
+        { value: "15-20 minutes", text: "15-20 minutes: Enjoy a more extensive routine", image: "/extensive.webp" },
+        { value: "30+ minutes", text: "30+ minutes: Love to indulge in skincare", image: "/indulge.webp" },
       ],
     },
     {
@@ -155,14 +155,14 @@
       text: "Are there any ingredients your skin doesn't agree with?",
       type: "multiple",
       options: [
-        { value: "Fragrance", text: "Fragrance", image: "/fragrance.jpg" },
-        { value: "Essential Oils", text: "Essential oils", image: "/essential_oils.jpg" },
-        { value: "Alcohol", text: "Alcohol", image: "/alcohol.jpg" },
-        { value: "Silicones", text: "Silicones", image: "/silicones.jpg" },
-        { value: "Sulfates", text: "Sulfates", image: "/sulfates.jpg" },
-        { value: "Parabens", text: "Parabens", image: "/parabens.jpg" },
-        { value: "Other", text: "Other (please specify)", image: "/other.jpg" },
-        { value: "No known sensitivities", text: "No known sensitivities", image: "/no_sensitivities.jpg" },
+        { value: "Fragrance", text: "Fragrance", image: "/fragrance.webp" },
+        { value: "Essential Oils", text: "Essential oils", image: "/essential_oils.webp" },
+        { value: "Alcohol", text: "Alcohol", image: "/alcohol.webp" },
+        { value: "Silicones", text: "Silicones", image: "/silicones.webp" },
+        { value: "Sulfates", text: "Sulfates", image: "/sulfates.webp" },
+        { value: "Parabens", text: "Parabens", image: "/parabens.webp" },
+        { value: "Other", text: "Other (please specify)", image: "/other.webp" },
+        { value: "No known sensitivities", text: "No known sensitivities", image: "/no_sensitivities.webp" },
       ],
     },
     {
@@ -170,13 +170,13 @@
       text: "Have you used any of these active ingredients before?",
       type: "multiple",
       options: [
-        { value: "Retinol", text: "Retinol", image: "/retinol.jpg" },
-        { value: "Vitamin C", text: "Vitamin C", image: "/vitamin_c.jpg" },
-        { value: "AHAs", text: "AHAs (like glycolic acid)", image: "/ahas.jpg" },
-        { value: "BHAs", text: "BHAs (like salicylic acid)", image: "/bhas.jpg" },
-        { value: "Niacinamide", text: "Niacinamide", image: "/niacinamide.jpg" },
-        { value: "Hyaluronic acid", text: "Hyaluronic acid", image: "/hyaluronic_acid.jpg" },
-        { value: "None", text: "None of these", image: "/none.jpg" },
+        { value: "Retinol", text: "Retinol", image: "/retinol.webp" },
+        { value: "Vitamin C", text: "Vitamin C", image: "/vitamin_c.webp" },
+        { value: "AHAs", text: "AHAs (like glycolic acid)", image: "/ahas.webp" },
+        { value: "BHAs", text: "BHAs (like salicylic acid)", image: "/bhas.webp" },
+        { value: "Niacinamide", text: "Niacinamide", image: "/niacinamide.webp" },
+        { value: "Hyaluronic acid", text: "Hyaluronic acid", image: "/hyaluronic_acid.webp" },
+        { value: "None", text: "None of these", image: "/none.webp" },
       ],
     },
     {
@@ -184,10 +184,10 @@
       text: "What's your skincare budget range (for a complete routine)?",
       type: "single",
       options: [
-        { value: "Under $50", text: "Under $50", image: "/under50.jpg" },
-        { value: "$50-$100", text: "$50-$100", image: "/50-100.jpg" },
-        { value: "$100-$200", text: "$100-$200", image: "/100-200.jpg" },
-        { value: "$200+", text: "$200+", image: "/200plus.jpg" },
+        { value: "Under $50", text: "Under $50", image: "/under50.webp" },
+        { value: "$50-$100", text: "$50-$100", image: "/50-100.webp" },
+        { value: "$100-$200", text: "$100-$200", image: "/100-200.webp" },
+        { value: "$200+", text: "$200+", image: "/200plus.webp" },
       ],
     },
     {
@@ -195,10 +195,10 @@
       text: "Which best describes your typical day?",
       type: "single",
       options: [
-        { value: "Early riser", text: "Early riser, busy days", image: "/early_riser.jpg" },
-        { value: "Standard 9-5 schedule", text: "Standard 9-5 schedule", image: "/9-5.jpg" },
-        { value: "Night owl", text: "Night owl, late sleeper", image: "/night_owl.jpg" },
-        { value: "Irregular schedule", text: "Irregular schedule, shift work", image: "/shift_work.jpg" },
+        { value: "Early riser", text: "Early riser, busy days", image: "/early_riser.webp" },
+        { value: "Standard 9-5 schedule", text: "Standard 9-5 schedule", image: "/9-5.webp" },
+        { value: "Night owl", text: "Night owl, late sleeper", image: "/night_owl.webp" },
+        { value: "Irregular schedule", text: "Irregular schedule, shift work", image: "/shift_work.webp" },
       ],
     },
     {
@@ -206,12 +206,12 @@
       text: "Are you currently using any of the following?",
       type: "multiple",
       options: [
-        { value: "Acne medications", text: "Acne medications", image: "/acne_medications.jpg" },
-        { value: "Prescription retinoids", text: "Prescription retinoids", image: "/prescription_retinoids.jpg" },
-        { value: "Oral contraceptives", text: "Oral contraceptives", image: "/oral_contraceptives.jpg" },
-        { value: "Hormone treatments", text: "Hormone treatments", image: "/hormone_treatments.jpg" },
-        { value: "None", text: "None of the above", image: "/none.jpg" },
-        { value: "I'm not sure", text: "I'm not sure", image: "/im_not_sure.jpg" },
+        { value: "Acne medications", text: "Acne medications", image: "/acne_medications.webp" },
+        { value: "Prescription retinoids", text: "Prescription retinoids", image: "/prescription_retinoids.webp" },
+        { value: "Oral contraceptives", text: "Oral contraceptives", image: "/oral_contraceptives.webp" },
+        { value: "Hormone treatments", text: "Hormone treatments", image: "/hormone_treatments.webp" },
+        { value: "None", text: "None of the above", image: "/none.webp" },
+        { value: "I'm not sure", text: "I'm not sure", image: "/im_not_sure.webp" },
       ],
     },
     {
@@ -219,12 +219,12 @@
       text: "What's your primary skincare goal?",
       type: "single",
       options: [
-        { value: "Achieve a natural, healthy glow", text: "Achieve a natural, healthy glow", image: "/healthy_glow.jpg" },
-        { value: "Reduce signs of aging", text: "Reduce signs of aging", image: "/reduce_aging.jpg" },
-        { value: "Clear up acne or breakouts", text: "Clear up acne or breakouts", image: "/clear_acne.jpg" },
-        { value: "Even out skin tone", text: "Even out skin tone", image: "/even_tone.jpg" },
-        { value: "Hydrate and nourish dry skin", text: "Hydrate and nourish dry skin", image: "/hydrate.jpg" },
-        { value: "Control oil and shine", text: "Control oil and shine", image: "/control_oil.jpg" },
+        { value: "Achieve a natural, healthy glow", text: "Achieve a natural, healthy glow", image: "/healthy_glow.webp" },
+        { value: "Reduce signs of aging", text: "Reduce signs of aging", image: "/reduce_aging.webp" },
+        { value: "Clear up acne or breakouts", text: "Clear up acne or breakouts", image: "/clear_acne.webp" },
+        { value: "Even out skin tone", text: "Even out skin tone", image: "/even_tone.webp" },
+        { value: "Hydrate and nourish dry skin", text: "Hydrate and nourish dry skin", image: "/hydrate.webp" },
+        { value: "Control oil and shine", text: "Control oil and shine", image: "/control_oil.webp" },
       ],
     },
     {
@@ -232,10 +232,10 @@
       text: "How do you feel about fragrances in your products?",
       type: "single",
       options: [
-        { value: "Prefer fragranced products", text: "Prefer fragranced products", image: "/prefer_fragrance.jpg" },
-        { value: "Enjoy light, natural scents", text: "Enjoy light, natural scents", image: "/light_scent.jpg" },
-        { value: "Prefer unscented products", text: "Prefer unscented products", image: "/unscented.jpg" },
-        { value: "No preference", text: "No preference", image: "/no_preference.jpg" },
+        { value: "Prefer fragranced products", text: "Prefer fragranced products", image: "/prefer_fragrance.webp" },
+        { value: "Enjoy light, natural scents", text: "Enjoy light, natural scents", image: "/light_scent.webp" },
+        { value: "Prefer unscented products", text: "Prefer unscented products", image: "/unscented.webp" },
+        { value: "No preference", text: "No preference", image: "/no_preference.webp" },
       ],
     },
     {
@@ -243,9 +243,9 @@
       text: "How important is using eco-friendly and sustainable products to you?",
       type: "single",
       options: [
-        { value: "Very important", text: "Very important, it's a top priority", image: "/very_important.jpg" },
-        { value: "Somewhat important", text: "Somewhat important, I consider it", image: "/somewhat_important.jpg" },
-        { value: "Not a deciding factor", text: "Not a deciding factor for me", image: "/not_deciding.jpg" },
+        { value: "Very important", text: "Very important, it's a top priority", image: "/very_important.webp" },
+        { value: "Somewhat important", text: "Somewhat important, I consider it", image: "/somewhat_important.webp" },
+        { value: "Not a deciding factor", text: "Not a deciding factor for me", image: "/not_deciding.webp" },
       ],
     },
     {
@@ -253,12 +253,12 @@
       text: "Are there any specific areas of your face that need extra attention?",
       type: "multiple",
       options: [
-        { value: "Forehead", text: "Forehead", image: "/forehead.jpg" },
-        { value: "Nose and surrounding area", text: "Nose and surrounding area", image: "/nose.jpg" },
-        { value: "Cheeks", text: "Cheeks", image: "/cheeks.jpg" },
-        { value: "Chin and jawline", text: "Chin and jawline", image: "/chin_jawline.jpg" },
-        { value: "Under-eye area", text: "Under-eye area", image: "/under_eye.jpg" },
-        { value: "No specific areas", text: "No specific areas", image: "/none.jpg" },
+        { value: "Forehead", text: "Forehead", image: "/forehead.webp" },
+        { value: "Nose and surrounding area", text: "Nose and surrounding area", image: "/nose.webp" },
+        { value: "Cheeks", text: "Cheeks", image: "/cheeks.webp" },
+        { value: "Chin and jawline", text: "Chin and jawline", image: "/chin_jawline.webp" },
+        { value: "Under-eye area", text: "Under-eye area", image: "/under_eye.webp" },
+        { value: "No specific areas", text: "No specific areas", image: "/none.webp" },
       ],
     },
     {
@@ -266,11 +266,11 @@
       text: "How does your skin react to changes in seasons or travel?",
       type: "multiple",
       options: [
-        { value: "Becomes drier", text: "Becomes drier", image: "/drier.jpg" },
-        { value: "Becomes oilier", text: "Becomes oilier", image: "/oilier.jpg" },
-        { value: "More prone to breakouts", text: "More prone to breakouts", image: "/breakouts.jpg" },
-        { value: "More sensitive or irritated", text: "More sensitive or irritated", image: "/sensitive_irritated.jpg" },
-        { value: "No significant changes", text: "No significant changes", image: "/no_changes.jpg" },
+        { value: "Becomes drier", text: "Becomes drier", image: "/drier.webp" },
+        { value: "Becomes oilier", text: "Becomes oilier", image: "/oilier.webp" },
+        { value: "More prone to breakouts", text: "More prone to breakouts", image: "/breakouts.webp" },
+        { value: "More sensitive or irritated", text: "More sensitive or irritated", image: "/sensitive_irritated.webp" },
+        { value: "No significant changes", text: "No significant changes", image: "/no_changes.webp" },
       ],
     },
     {
@@ -278,9 +278,9 @@
       text: "Are you interested in multi-use products that can simplify your routine?",
       type: "single",
       options: [
-        { value: "Very interested", text: "Very interested, I love multitasking products", image: "/very_interested.jpg" },
-        { value: "Somewhat interested", text: "Somewhat interested, depends on the product", image: "/somewhat_interested.jpg" },
-        { value: "Prefer separate products", text: "Prefer separate products for each step", image: "/separate_products.jpg" },
+        { value: "Very interested", text: "Very interested, I love multitasking products", image: "/very_interested.webp" },
+        { value: "Somewhat interested", text: "Somewhat interested, depends on the product", image: "/somewhat_interested.webp" },
+        { value: "Prefer separate products", text: "Prefer separate products for each step", image: "/separate_products.webp" },
       ],
     },
   ];
@@ -315,7 +315,7 @@ function handleEnterKey(event) {
     if (event.key === 'Enter') {
         event.preventDefault(); // Prevent default form submission behavior
         if (!isOptionSelected()) {
-            showToast('*You gotta select an answer first.');
+            showToast('*Select an answer.');
             return;
         }
         nextBtn.click();
@@ -360,7 +360,7 @@ prevBtn.addEventListener('click', moveToPreviousQuestion);
 // Handle Next button click
 function handleNextButtonClick() {
   if (!isOptionSelected()) {
-      showToast('*You gotta select an answer first.');
+      showToast('*Select an answer.');
       return;
   }
 
@@ -431,7 +431,7 @@ function renderQuestion() {
                   // Automatically move to the next question
                   setTimeout(() => {
                     moveToNextQuestion();
-                  }, 300);
+                  }, 360);
               }
           });
       });
