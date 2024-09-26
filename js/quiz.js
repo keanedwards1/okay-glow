@@ -431,7 +431,7 @@ function renderQuestion() {
                   // Automatically move to the next question
                   setTimeout(() => {
                     moveToNextQuestion();
-                  }, 70);
+                  }, 300);
               }
           });
       });
