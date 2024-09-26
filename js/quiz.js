@@ -322,109 +322,143 @@ function handleEnterKey(event) {
     }
 }
 
+
+// Function to move to the next question or submit the quiz
+function moveToNextQuestion() {
+  // Save the user's answers for the current question
+  saveAnswer();
+
+  if (currentQuestionIndex < questions.length - 1) {
+      currentQuestionIndex++;
+      updateProgress();
+      renderQuestion();
+  } else {
+      // Finish the quiz
+      submitQuiz();
+  }
+}
+
+// Function to move to the previous question
+function moveToPreviousQuestion() {
+  // Save the user's answers for the current question
+  saveAnswer();
+
+  if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      updateProgress();
+      renderQuestion();
+  } else {
+      // Show the intro view and hide the quiz
+      quizContainer.style.display = 'none';
+      introContainer.style.display = 'flex';
+      document.body.classList.add('intro-active'); // Add back the intro-active class
+  }
+}
+
+// Previous button event listener
+prevBtn.addEventListener('click', moveToPreviousQuestion);
+
 // Handle Next button click
 function handleNextButtonClick() {
-    if (!isOptionSelected()) {
-        showToast('*You gotta select an answer first.');
-        return;
-    }
+  if (!isOptionSelected()) {
+      showToast('*You gotta select an answer first.');
+      return;
+  }
 
-    // Save the user's answers for the current question
-    saveAnswer();
-
-    if (currentQuestionIndex < questions.length - 1) {
-        currentQuestionIndex++;
-        updateProgress();
-        renderQuestion();
-    } else {
-        // Finish the quiz
-        submitQuiz();
-    }
+  // Proceed to the next question
+  moveToNextQuestion();
 }
 
 // Attach the click event listener to the Next button
 nextBtn.addEventListener('click', handleNextButtonClick);
 
-// Previous button event listener
-prevBtn.addEventListener('click', () => {
-    if (currentQuestionIndex > 0) {
-        currentQuestionIndex--;
-        updateProgress();
-        renderQuestion();
-    } else {
-        // Show the intro view and hide the quiz
-        quizContainer.style.display = 'none';
-        introContainer.style.display = 'flex';
-        document.body.classList.add('intro-active'); // Add back the intro-active class
-    }
-});
-
 // Function to render the current question
 function renderQuestion() {
-    // Remove existing event listeners to prevent stacking
-    document.removeEventListener('keydown', handleEnterKey);
+  // Remove existing event listeners to prevent stacking
+  document.removeEventListener('keydown', handleEnterKey);
 
-    // Fade out the content
-    quizContent.classList.add('fade-out');
+  // Fade out the content
+  quizContent.classList.add('fade-out');
 
-    quizContent.addEventListener('transitionend', function handler() {
-        // Remove the event listener to prevent stacking
-        quizContent.removeEventListener('transitionend', handler);
+  quizContent.addEventListener('transitionend', function handler() {
+      // Remove the event listener to prevent stacking
+      quizContent.removeEventListener('transitionend', handler);
 
-        // Update the content after fade-out
-        const question = questions[currentQuestionIndex];
+      // Update the content after fade-out
+      const question = questions[currentQuestionIndex];
 
-        // Build the new content
-        let quizHtml = `<h2>${question.text}</h2>`;
-        quizHtml += `<div class="options-container">`;
+      // Build the new content
+      let quizHtml = `<h2>${question.text}</h2>`;
+      quizHtml += `<div class="options-container">`;
 
-        question.options.forEach((option) => {
-            quizHtml += `
-                <label class="option">
-                    <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.value}">
-                    <span class="option-text">${option.text}</span>
-                </label>`;
-        });
+      question.options.forEach((option) => {
+          // Check if the option should be pre-selected
+          const isChecked = checkIfOptionIsSelected(question, option);
+          quizHtml += `
+              <label class="option">
+                  <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.value}" ${isChecked ? 'checked' : ''}>
+                  <span class="option-text">${option.text}</span>
+              </label>`;
+      });
 
-        quizHtml += `</div>`;
+      quizHtml += `</div>`;
 
-        // Update the quiz content
-        quizContent.innerHTML = quizHtml;
+      // Update the quiz content
+      quizContent.innerHTML = quizHtml;
 
-        // Always enable the "Previous" button
-        prevBtn.disabled = false;
-        prevBtn.classList.remove('disabled');
+      // Always enable the "Previous" button
+      prevBtn.disabled = false;
+      prevBtn.classList.remove('disabled');
 
-        // Change "Next" button to "Finish" on the last question
-        nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
+      // Change "Next" button to "Finish" on the last question
+      nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
 
-        // Add tooltip to the Next button
-        addTooltipToNextButton();
+      // Add tooltip to the Next button
+      addTooltipToNextButton();
 
-        // Reassign nextBtn after DOM manipulation
-        nextBtn = document.getElementById('nextBtn');
+      // Reassign nextBtn after DOM manipulation
+      nextBtn = document.getElementById('nextBtn');
 
-        // Reattach the click event listener to the Next button
-        nextBtn.removeEventListener('click', handleNextButtonClick); // Remove any existing listener
-        nextBtn.addEventListener('click', handleNextButtonClick);
+      // Reattach the click event listener to the Next button
+      nextBtn.removeEventListener('click', handleNextButtonClick); // Remove any existing listener
+      nextBtn.addEventListener('click', handleNextButtonClick);
 
-        // Add event listeners to inputs
-        const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
-        inputs.forEach(input => {
-            input.addEventListener('change', () => {
-                // Visually indicate selection if needed
-            });
-        });
+      // Add event listeners to inputs
+      const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+      inputs.forEach(input => {
+          input.addEventListener('change', () => {
+              // Visually indicate selection if needed
+              if (question.type === 'single') {
+                  // Automatically move to the next question
+                  moveToNextQuestion();
+              }
+          });
+      });
 
-        // Add event listener to detect Enter key
-        document.addEventListener('keydown', handleEnterKey);
+      // Add event listener to detect Enter key
+      document.addEventListener('keydown', handleEnterKey);
 
-        // Force reflow to restart the animation
-        void quizContent.offsetWidth;
+      // Force reflow to restart the animation
+      void quizContent.offsetWidth;
 
-        // Fade in the content
-        quizContent.classList.remove('fade-out');
-    });
+      // Fade in the content
+      quizContent.classList.remove('fade-out');
+  });
+}
+
+// Function to check if an option should be pre-selected
+function checkIfOptionIsSelected(question, option) {
+  const savedAnswer = answers[question.id];
+
+  if (!savedAnswer) {
+      return false;
+  }
+
+  if (question.type === 'multiple') {
+      return savedAnswer.includes(option.value);
+  } else {
+      return savedAnswer === option.value;
+  }
 }
 
 function addTooltipToNextButton() {

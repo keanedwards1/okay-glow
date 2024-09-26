@@ -303,13 +303,19 @@ label {
 /* Sticky header (question text) */
 .quiz-content h2 {
   font-weight: 200;
-  font-size: 1.9em;
+  font-size: 1.5em;
   position: sticky;
   top: 0;
-
   padding: 15px 0;
   z-index: 10;
+  margin: 20px 40px;
   font-family: Quicksand, serif;
+     /* Glass effect */
+     background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+     backdrop-filter: blur(10px); /* Blurring effect */
+     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01); /* Soft shadow */
+     border-radius: 8px; /* Rounded corners for a smoother glass look */
 }
 
 .options-container {
