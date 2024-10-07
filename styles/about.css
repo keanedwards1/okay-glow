@@ -1,0 +1,309 @@
+/* /styles/about.css */
+
+/* Hero Section */
+.about-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.7s ease;
+  background: linear-gradient(
+      to right,
+      rgba(248, 244, 239, 0.95),
+      rgba(241, 226, 210, 0.7)
+    ),
+    url('/public/images/beach.jpg') center center / cover;
+}
+
+.about-hero-text {
+  flex: 1;
+  max-width: 600px;
+  z-index: 2;
+  animation: fadeInTop 1s ease forwards;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7); /* Slight background for text contrast */
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(63, 61, 59, 0.2);
+}
+
+.about-hero-text h1 {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #3f3d3b;
+  text-align: center;
+}
+
+.about-hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: #3f3d3b;
+}
+
+/* Parallax Effect */
+.about-hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/public/images/beach.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: 1;
+  opacity: 0.8; /* Blend with background */
+  filter: brightness(0.9);
+  clip-path: ellipse(150% 85% at 50% 15%);
+  transition: transform 0.2s ease;
+}
+
+.about-hero:hover .about-hero-image img {
+  transform: scale(1.00);
+}
+
+/* Our Mission Section */
+.our-mission {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f1e2d2;
+}
+
+.our-mission h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.our-mission p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* Team Section */
+.team-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-section h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.team-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.team-card p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Values Section */
+.values-section {
+  padding: 60px 20px;
+  background-color: #f1e2d2;
+}
+
+.values-section h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.values-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+/* Main Card Styling */
+.value-card {
+  position: relative;
+  width: 250px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background-color: #fffaf4;
+  box-shadow: 0 6px 18px rgba(63, 61, 59, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Decorative Layers for Timeless Appeal */
+.value-card::before,
+.value-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at center, rgba(236, 216, 197, 0.3), transparent 70%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: all 0.6s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Add subtle animations on hover */
+.value-card:hover::before {
+  transform: translate(-50%, -50%) rotate(10deg) scale(1.1);
+}
+.value-card:hover::after {
+  transform: translate(-50%, -50%) rotate(-10deg) scale(1.2);
+}
+
+/* Card Content */
+.value-card img {
+  width: 50px;
+  margin-bottom: 16px;
+  opacity: 0.85;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.value-card h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+}
+
+.value-card p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #3f3d3b;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Hover Effects */
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(63, 61, 59, 0.2);
+}
+
+.value-card:hover img {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-hero-text,
+  .about-hero-image {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  .team-cards,
+  .values-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-card,
+  .value-card {
+    width: 80%;
+  }
+}
+
+.team-card,
+.value-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.team-card.animate,
+.value-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
+}

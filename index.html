@@ -15,26 +15,24 @@
 <body>
   <header class="header">
     <nav class="navbar">
-
-      <div class="dropdown">
-        <button class="menu-button">
-            Menu
-            <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-        </button>
-        
-        <div class="dropdown-menu">
-            <a href="/">Home</a>
-            <a href="/pages/quiz.html">Quiz</a>
-        </div>
-      </div>
-
       <div class="brand">
         <a href="/" class="brand-link">
           <span class="brand-title">Okay Glow</span>
-          <img src="/public/images/cream-p.webp" alt="okay glow logo" class="logo">
+          <img src="/public/images/cream-p.webp" alt="Okay Glow logo" class="logo">
         </a>
+      </div>
+      <div class="dropdown">
+        <button class="menu-button">Menu
+          <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu">
+          <a href="/">Home</a>
+          <a href="/pages/quiz.html">Quiz</a>
+          <a href="/pages/about.html">About Us</a>
+          <a href="/pages/contact.html">Contact</a>
+        </div>
       </div>
       <a href="/pages/quiz.html" class="get-started-button">Get Started</a>
     </nav>
