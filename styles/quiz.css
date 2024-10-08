@@ -28,7 +28,7 @@ label {
   align-items: center;
   justify-content: flex-start;
   text-align: center;
-  max-height: 70vh;
+  max-height: 78vh;
   font-weight: 300;
   margin-top: 7vh;
   margin-bottom: 70vh;
@@ -43,8 +43,8 @@ label {
 .image-container {
   flex: 1 1 33%; /* Take up 1/3 of the container */
   width: 100%; /* Define a width or make sure it inherits from its parent */
-  max-height: 70vh; /* Set a height or inherit */
-  height: 60vh;
+  max-height: 78vh; /* Set a height or inherit */
+  height: 78vh;
   position: relative; /* Ensures child absolutely fills this area */
   overflow: hidden; /* Clips any overflow from the child image */
 }
@@ -444,10 +444,11 @@ label {
 
 /* Option text */
 .option .option-text {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 300;
   text-align: left;
   word-wrap: break-word;
+  font-family:'Times New Roman', Times, serif;
 }
 
 /* Additional styles */
