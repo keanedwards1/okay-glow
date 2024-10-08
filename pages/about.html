@@ -48,8 +48,15 @@
         <p>Discover how we blend timeless Korean skincare traditions with personalized routines just for you.</p>
       </div>
       <div class="about-hero-image">
-        <img src="/public/images/beach.jpg" alt="Our journey">
+        <picture>
+          <!-- Load different images based on viewport width -->
+          <source srcset="/public/images/beach-2.jpg" media="(min-width: 1190px)"> <!-- For large screens -->
+          <source srcset="/public/images/beach-3.jpg" media="(min-width: 845px)">  <!-- For tablets and medium screens -->
+          <source srcset="/public/images/beach-1.jpg" media="(max-width: 744px)">   <!-- For small screens -->
+          <img src="/public/images/beach-1.jpg" alt="Our journey"> <!-- Fallback image -->
+        </picture>
       </div>
+      
     </section>
 
     <section class="our-mission">
@@ -62,23 +69,23 @@
     </section>
 
     <section class="team-section">
-      <h2>Meet the Team</h2>
+      <h2>Our Team</h2>
       <div class="team-cards">
         <!-- Team Member 1 -->
         <div class="team-card">
-          <img src="/public/images/team-member-1.jpg" alt="Team Member 1">
-          <h3>Emily Park</h3>
-          <p>Founder & Skincare Expert</p>
+          <img src="/public/images/kean.jpeg" alt="Team Member 1">
+          <h3>Kean Edwards</h3>
+          <p>Co-Founder & Programmer</p>
         </div>
         <!-- Team Member 2 -->
         <div class="team-card">
-          <img src="/public/images/team-member-2.jpg" alt="Team Member 2">
-          <h3>Daniel Kim</h3>
-          <p>Product Specialist</p>
+          <img src="/public/images/emily.jpeg" alt="Team Member 2">
+          <h3>Emily Murotake</h3>
+          <p>Co-Founder & Skincare Expert</p>
         </div>
         <!-- Team Member 3 -->
         <div class="team-card">
-          <img src="/public/images/team-member-3.jpg" alt="Team Member 3">
+          <img src="/public/images/emily-1.jpeg" alt="Team Member 3">
           <h3>Sophia Lee</h3>
           <p>Community Manager</p>
         </div>
@@ -90,19 +97,19 @@
       <div class="values-cards">
         <!-- Value 1 -->
         <div class="value-card">
-          <img src="/public/images/value-1.png" alt="Personalization">
+          <img src="/public/images/rat.png" alt="Personalization">
           <h3>Personalization</h3>
           <p>We tailor skincare routines to meet your individual needs.</p>
         </div>
         <!-- Value 2 -->
         <div class="value-card">
-          <img src="/public/images/value-2.png" alt="Tradition">
+          <img src="/public/images/cow.png" alt="Tradition">
           <h3>Tradition</h3>
           <p>We embrace the timeless techniques of Korean skincare.</p>
         </div>
         <!-- Value 3 -->
         <div class="value-card">
-          <img src="/public/images/value-3.png" alt="Transparency">
+          <img src="/public/images/seahorse.png" alt="Transparency">
           <h3>Transparency</h3>
           <p>We believe in honest communication and trustworthy products.</p>
         </div>
