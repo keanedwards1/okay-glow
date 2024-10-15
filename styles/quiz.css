@@ -57,6 +57,7 @@ label {
   position: absolute; /* Ensures it fills the parent container fully */
   top: 0;
   left: 0;
+  transform: scaleX(-1);
 }
 
 .text-container {
