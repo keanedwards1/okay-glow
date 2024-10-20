@@ -73,25 +73,21 @@ label {
 
 .intro-container h1 {
   font-size: 2.5em;
-  font-weight: 200;
+  font-weight: 300; /* Balanced weight for elegance */
   width: 80%; /* Adjust width for responsiveness */
   border-radius: 6px;
   padding: 10px;
-/*  background-color: #edd3b9c0;
-  background-color: var(--back); */
-  font-family: Quicksand, serif;
+  font-family: 'Merriweather', serif; /* Timeless serif font */
 }
 
 .intro-container p {
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin: 0px 0 32px 0;
   width: 60%; /* Adjust width for responsiveness */
-  /*background-color: #edd3b9c0;
-  background-color: var(--back);*/
   border-radius: 6px;
   padding: 10px;
-  font-family: serif;
-  font-weight: 100;
+  font-family: 'Merriweather', sans-serif; /* Modern and elegant sans-serif */
+  font-weight: 100; /* Light weight for a refined appearance */
 }
 
 @media (max-width: 900px) {
@@ -308,9 +304,9 @@ label {
   padding: 15px;
   z-index: 10;
   margin: 20px 40px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Merriweather', serif;
      /* Glass effect */
-     background: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+     background: #fffaf4c5; /* Semi-transparent white background */
      backdrop-filter: blur(10px); /* Blurring effect */
      border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01); /* Soft shadow */
@@ -445,11 +441,11 @@ label {
 
 /* Option text */
 .option .option-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   text-align: left;
   word-wrap: break-word;
-  font-family:'Times New Roman', Times, serif;
+  font-family:'Merriweather', sans-serif;
 }
 
 /* Additional styles */

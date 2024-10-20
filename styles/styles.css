@@ -650,7 +650,7 @@ body {
 .marquee p {
   display: inline-block;
   padding-left: 0;
-  animation: marquee 52s linear infinite;
+  animation: marquee 42s linear infinite;
   font-size: 1.2rem;
   font-family: 'Quicksand', sans-serif;
   color: #403d3b;
@@ -706,7 +706,7 @@ body {
 .image-marquee-content {
   display: flex;
   width: 4620px; /* Updated total width for two sets of images (2 * 2310px) */
-  animation: scrollMarquee 42s linear infinite; /* Adjust duration as needed */
+  animation: scrollMarquee 82s linear infinite; /* Adjust duration as needed */
 }
 
 .image-set {
