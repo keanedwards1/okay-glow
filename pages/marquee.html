@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Infinite Scrolling Marquee</title>
+  <style>
+    body {
+        margin: 10px;
+    }
+    .image-marquee {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .image-marquee img {
+    height: 200px;
+    display: inline-block;
+    margin: 0 5px; /* Add space between each image */
+     padding: 0;
+}
+
+
+    .image-marquee-content {
+      display: flex;
+      will-change: transform;
+      animation: image-marquee 20s linear infinite;
+    }
+
+    @keyframes image-marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="image-marquee">
+    <div class="image-marquee-content">
+      <img src="/public/images/otter.webp" alt="Logo 1" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 2" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 3" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 4" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 5" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 6" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 7" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 8" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 9" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 10" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 11" class="logo-image">
+      <!-- Duplicate images for continuous effect -->
+      <img src="/public/images/otter.webp" alt="Logo 1" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 2" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 3" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 4" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 5" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 6" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 7" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 8" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 9" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 10" class="logo-image">
+      <img src="/public/images/otter.webp" alt="Logo 11" class="logo-image">
+    </div>
+  </div>
+</body>
+</html>
