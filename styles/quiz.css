@@ -263,7 +263,7 @@ label {
   width: 100%;
   border-top-right-radius: 12px;
   border-top-left-radius: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 6px;
   margin-top: .2px;
 }
 
@@ -290,6 +290,7 @@ label {
   background-position: left center;
   background-size: auto 100%; /* Adjust the size of the image as needed */
   transition: opacity 0.2s ease; /* Smooth fade-out effect */
+  background-image: none !important;
 }
 
 .quiz-content.fade-out {
@@ -304,14 +305,28 @@ label {
   top: 0;
   padding: 15px;
   z-index: 10;
-  margin: 20px 40px;
+  margin: 20px 40px 0px 40px;
   font-family: 'Merriweather', serif;
      /* Glass effect */
      background: #fffaf4c5; /* Semi-transparent white background */
      backdrop-filter: blur(10px); /* Blurring effect */
      border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01); /* Soft shadow */
-     border-radius: 8px; /* Rounded corners for a smoother glass look */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.question-subtext {
+  padding: 20px 40px;
+  margin: 10px 40px 20px 40px;
+  background: #fffaf4c5; /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-family: 'Merriweather', serif;
+  font-weight: 200;
+
 }
 
 /* Update the styles for quiz-question-container */

@@ -4,6 +4,7 @@
     {
       id: 1,
       text: "How would you describe your skin type?",
+      subtext: "Identifying your skin type helps us tailor recommendations to your specific needs.",
       type: "single",
       options: [
         { value: "Oily", text: "Oily: Shiny all over, prone to breakouts", image: "/oily.webp" },
@@ -16,6 +17,7 @@
     {
       id: 2,
       text: "What climate are you in?",
+      subtext: "Your environment affects your skin; knowing your climate helps us suggest suitable products.",
       type: "single",
       options: [
         { value: "Humid", text: "Humid", image: "/humid.webp" },
@@ -28,6 +30,7 @@
     {
       id: 3,
       text: "How old are you?",
+      subtext: "Different age groups have varying skin concerns and needs.",
       type: "single",
       options: [
         { value: "Under 18", text: "Under 18", image: "/under18.webp" },
@@ -41,6 +44,7 @@
     {
       id: 4,
       text: "What's your main skin concern right now?",
+      subtext: "Focusing on your primary concern allows us to address what's most important to you.",
       type: "multiple",
       options: [
         { value: "Acne", text: "Acne or breakouts", image: "/acne.webp" },
@@ -56,6 +60,7 @@
     {
       id: 5,
       text: "How much sun exposure does your skin typically get?",
+      subtext: "Sun exposure impacts skin health; understanding your exposure helps in recommending protection.",
       type: "single",
       options: [
         { value: "Minimal", text: "Minimal: Mostly indoors", image: "/indoors.webp" },
@@ -67,6 +72,7 @@
     {
       id: 6,
       text: "What products do you use right now?",
+      subtext: "Knowing what you currently use helps us avoid product overlaps and contradictions.",
       type: "multiple",
       options: [
         { value: "Cleanser", text: "Cleanser", image: "/cleanser.webp" },
@@ -83,6 +89,7 @@
     {
       id: 7,
       text: "How often are you stressed out?",
+      subtext: "Stress can affect your skin; managing it can improve skin condition.",
       type: "single",
       options: [
         { value: "Rarely", text: "Rarely", image: "/rarely.webp" },
@@ -94,6 +101,7 @@
     {
       id: 8,
       text: "How many hours of sleep do you get a night?",
+      subtext: "Sleep is crucial for skin regeneration; your sleep pattern influences skin health.",
       type: "single",
       options: [
         { value: "Less than 4 hours", text: "Less than 4 hours", image: "/less4.webp" },
@@ -105,6 +113,7 @@
     {
       id: 9,
       text: "Are you currently:",
+      subtext: "Hormonal changes during these stages can affect your skin.",
       type: "multiple",
       options: [
         { value: "Pregnant", text: "Pregnant", image: "/pregnant.webp" },
@@ -118,6 +127,7 @@
     {
       id: 10,
       text: "How does your skin feel in the morning before washing your face?",
+      subtext: "How your skin feels in the morning indicates its overnight behavior.",
       type: "single",
       options: [
         { value: "Oily", text: "Oily", image: "/oily.webp" },
@@ -130,6 +140,7 @@
     {
       id: 11,
       text: "How does your face feel right after you wash it?",
+      subtext: "Immediate post-wash feel helps identify skin's natural tendencies.",
       type: "single",
       options: [
         { value: "Tight", text: "Tight", image: "/tight.webp" },
@@ -142,6 +153,7 @@
     {
       id: 12,
       text: "How much time can you dedicate to your skincare routine?",
+      subtext: "Understanding your time commitment helps us suggest a suitable routine.",
       type: "single",
       options: [
         { value: "1-2 minutes", text: "1-2 minutes: Quick and simple", image: "/quick.webp" },
@@ -153,6 +165,7 @@
     {
       id: 13,
       text: "Are there any ingredients your skin doesn't agree with?",
+      subtext: "Avoiding ingredients your skin dislikes prevents adverse reactions.",
       type: "multiple",
       options: [
         { value: "Fragrance", text: "Fragrance", image: "/fragrance.webp" },
@@ -168,6 +181,7 @@
     {
       id: 14,
       text: "Have you used any of these active ingredients before?",
+      subtext: "Knowing past usage helps us gauge your skin's tolerance to actives.",
       type: "multiple",
       options: [
         { value: "Retinol", text: "Retinol", image: "/retinol.webp" },
@@ -182,6 +196,7 @@
     {
       id: 15,
       text: "What's your skincare budget range (for a complete routine)?",
+      subtext: "We aim to recommend products within your budget.",
       type: "single",
       options: [
         { value: "Under $50", text: "Under $50", image: "/under50.webp" },
@@ -193,6 +208,7 @@
     {
       id: 16,
       text: "Which best describes your typical day?",
+      subtext: "Your daily routine can influence your skin's condition.",
       type: "single",
       options: [
         { value: "Early riser", text: "Early riser, busy days", image: "/early_riser.webp" },
@@ -204,6 +220,7 @@
     {
       id: 17,
       text: "Are you currently using any of the following?",
+      subtext: "Some medications can affect skin; this helps in avoiding conflicts.",
       type: "multiple",
       options: [
         { value: "Acne medications", text: "Acne medications", image: "/acne_medications.webp" },
@@ -217,6 +234,7 @@
     {
       id: 18,
       text: "What's your primary skincare goal?",
+      subtext: "Your main goal guides us in prioritizing recommendations.",
       type: "single",
       options: [
         { value: "Achieve a natural, healthy glow", text: "Achieve a natural, healthy glow", image: "/healthy_glow.webp" },
@@ -230,6 +248,7 @@
     {
       id: 19,
       text: "How do you feel about fragrances in your products?",
+      subtext: "Preferences for fragrances help us select products you'll enjoy.",
       type: "single",
       options: [
         { value: "Prefer fragranced products", text: "Prefer fragranced products", image: "/prefer_fragrance.webp" },
@@ -241,6 +260,7 @@
     {
       id: 20,
       text: "How important is using eco-friendly and sustainable products to you?",
+      subtext: "We consider your values in sustainability when recommending products.",
       type: "single",
       options: [
         { value: "Very important", text: "Very important, it's a top priority", image: "/very_important.webp" },
@@ -251,6 +271,7 @@
     {
       id: 21,
       text: "Are there any specific areas of your face that need extra attention?",
+      subtext: "Targeting specific areas allows for more precise treatments.",
       type: "multiple",
       options: [
         { value: "Forehead", text: "Forehead", image: "/forehead.webp" },
@@ -264,6 +285,7 @@
     {
       id: 22,
       text: "How does your skin react to changes in seasons or travel?",
+      subtext: "Understanding skin reactions helps in preparing for fluctuations.",
       type: "multiple",
       options: [
         { value: "Becomes drier", text: "Becomes drier", image: "/drier.webp" },
@@ -276,6 +298,7 @@
     {
       id: 23,
       text: "Are you interested in multi-use products that can simplify your routine?",
+      subtext: "Simplifying your routine if preferred.",
       type: "single",
       options: [
         { value: "Very interested", text: "Very interested, I love multitasking products", image: "/very_interested.webp" },
@@ -284,6 +307,7 @@
       ],
     },
   ];
+  
   
 
 // Variables to store the current question index and answers
@@ -307,7 +331,7 @@ startBtn.addEventListener('click', () => {
     quizContainer.style.display = 'flex';
     document.body.classList.remove('intro-active'); // Remove overflow hidden
     renderQuestion();
-    updateProgress(); // Initialize the progress bar
+    /* updateProgress(); */ // Initialize the progress bar
 });
 
 // Define the handleEnterKey function outside renderQuestion
@@ -329,7 +353,7 @@ function moveToNextQuestion() {
 
   if (currentQuestionIndex < questions.length - 1) {
       currentQuestionIndex++;
-      updateProgress();
+      /* updateProgress(); */
       renderQuestion();
   } else {
       // Finish the quiz
@@ -344,7 +368,7 @@ function moveToPreviousQuestion() {
 
   if (currentQuestionIndex > 0) {
       currentQuestionIndex--;
-      updateProgress();
+      /* updateProgress(); */
       renderQuestion();
   } else {
       // Show the intro view and hide the quiz
@@ -390,8 +414,14 @@ function renderQuestion() {
       <div class="quiz-question-container">
         <div class="quiz-question-content">
           <h2>${question.text}</h2>
-          <div class="options-container">
     `;
+
+    // Include subtext if it exists
+    if (question.subtext) {
+      quizHtml += `<p class="question-subtext">${question.subtext}</p>`;
+    }
+
+    quizHtml += `<div class="options-container">`;
 
     question.options.forEach((option) => {
       // Check if the option should be pre-selected
@@ -538,11 +568,11 @@ function addTooltipToNextButton() {
 
 
 // Function to update progress bar and question counter
-function updateProgress() {
+/* function updateProgress() {
     const progress = ((currentQuestionIndex + 1) / questions.length) * 100;
     progressBar.style.width = `${progress}%`;
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length}`;
-}
+} */
 
 // Function to check if at least one option is selected
 function isOptionSelected() {
