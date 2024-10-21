@@ -285,10 +285,11 @@ label {
 }
 
 .quiz-content {
-  max-width: 700px;
-  margin: 20px auto; /* Center the quiz content */
-  opacity: 1;
-  transition: opacity 0.2s ease;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: auto 100%; /* Adjust the size of the image as needed */
+  transition: opacity 0.2s ease; /* Smooth fade-out effect */
 }
 
 .quiz-content.fade-out {
@@ -312,6 +313,26 @@ label {
      box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01); /* Soft shadow */
      border-radius: 8px; /* Rounded corners for a smoother glass look */
 }
+
+/* Update the styles for quiz-question-container */
+.quiz-question-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto; /* Center the container */
+  padding: 30px 20px;
+}
+
+/* Additional styling for responsiveness */
+@media (max-width: 800px) {
+  .quiz-question-container {
+    padding: 15px;
+  }
+
+  .quiz-content {
+    background-size: auto 60%; /* Adjust for smaller screens */
+  }
+}
+
 
 .options-container {
   display: grid;

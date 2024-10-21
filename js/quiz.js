@@ -371,7 +371,6 @@ function handleNextButtonClick() {
 // Attach the click event listener to the Next button
 nextBtn.addEventListener('click', handleNextButtonClick);
 
-// Function to render the current question
 function renderQuestion() {
   // Remove existing event listeners to prevent stacking
   document.removeEventListener('keydown', handleEnterKey);
@@ -380,72 +379,108 @@ function renderQuestion() {
   quizContent.classList.add('fade-out');
 
   quizContent.addEventListener('transitionend', function handler() {
-      // Remove the event listener to prevent stacking
-      quizContent.removeEventListener('transitionend', handler);
+    // Remove the event listener to prevent stacking
+    quizContent.removeEventListener('transitionend', handler);
 
-      // Update the content after fade-out
-      const question = questions[currentQuestionIndex];
+    // Update the content after fade-out
+    const question = questions[currentQuestionIndex];
 
-      // Build the new content
-      let quizHtml = `<h2>${question.text}</h2>`;
-      quizHtml += `<div class="options-container">`;
+    // Build the new content
+    let quizHtml = `
+      <div class="quiz-question-container">
+        <div class="quiz-question-content">
+          <h2>${question.text}</h2>
+          <div class="options-container">
+    `;
 
-      question.options.forEach((option) => {
-          // Check if the option should be pre-selected
-          const isChecked = checkIfOptionIsSelected(question, option);
-          quizHtml += `
-              <label class="option">
-                  <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}" name="question-${question.id}" value="${option.value}" ${isChecked ? 'checked' : ''}>
-                  <span class="option-text">${option.text}</span>
-              </label>`;
+    question.options.forEach((option) => {
+      // Check if the option should be pre-selected
+      const isChecked = checkIfOptionIsSelected(question, option);
+      quizHtml += `
+        <label class="option">
+          <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}"
+                 name="question-${question.id}"
+                 value="${option.value}"
+                 ${isChecked ? 'checked' : ''}>
+          <span class="option-text">${option.text}</span>
+        </label>
+      `;
+    });
+
+    quizHtml += `
+          </div> <!-- Close options-container -->
+        </div> <!-- Close quiz-question-content -->
+      </div> <!-- Close quiz-question-container -->
+    `;
+
+    // Update the quiz content
+    quizContent.innerHTML = quizHtml;
+
+    // Set the background image on the quizContent element
+    const questionImages = {
+      1: '/public/images/balloon.jpg',
+      2: '/public/images/blossom.jpg',
+      3: '/public/images/boat.webp',
+      4: '/public/images/branch.webp',
+      5: '/public/images/crane.webp',
+      6: '/public/images/delicate.jpg',
+      7: '/public/images/drip.webp',
+      8: '/public/images/fish.webp',
+      9: '/public/images/flower.webp',
+      10: '/public/images/hand.webp',
+      11: '/public/images/mountain.webp',
+      12: '/public/images/tree.webp',
+    };
+    const questionImage = questionImages[question.id] || '/public/images/balloon.jpg';
+
+    quizContent.style.backgroundImage = `url('${questionImage}')`;
+    quizContent.style.backgroundRepeat = 'no-repeat';
+    quizContent.style.backgroundPosition = 'left center';
+    quizContent.style.backgroundSize = 'auto 100%'; // Adjust as needed
+    quizContent.style.backgroundAttachment = 'local'; // Optional, adjust based on your needs
+
+    // Always enable the "Previous" button
+    prevBtn.disabled = false;
+    prevBtn.classList.remove('disabled');
+
+    // Change "Next" button to "Finish" on the last question
+    nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
+
+    // Add tooltip to the Next button
+    addTooltipToNextButton();
+
+    // Reassign nextBtn after DOM manipulation
+    nextBtn = document.getElementById('nextBtn');
+
+    // Reattach the click event listener to the Next button
+    nextBtn.removeEventListener('click', handleNextButtonClick); // Remove any existing listener
+    nextBtn.addEventListener('click', handleNextButtonClick);
+
+    // Add event listeners to inputs
+    const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+    inputs.forEach(input => {
+      input.addEventListener('change', () => {
+        // Visually indicate selection if needed
+        if (question.type === 'single') {
+          // Automatically move to the next question
+          setTimeout(() => {
+            moveToNextQuestion();
+          }, 80);
+        }
       });
+    });
 
-      quizHtml += `</div>`;
+    // Add event listener to detect Enter key
+    document.addEventListener('keydown', handleEnterKey);
 
-      // Update the quiz content
-      quizContent.innerHTML = quizHtml;
+    // Force reflow to restart the animation
+    void quizContent.offsetWidth;
 
-      // Always enable the "Previous" button
-      prevBtn.disabled = false;
-      prevBtn.classList.remove('disabled');
-
-      // Change "Next" button to "Finish" on the last question
-      nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
-
-      // Add tooltip to the Next button
-      addTooltipToNextButton();
-
-      // Reassign nextBtn after DOM manipulation
-      nextBtn = document.getElementById('nextBtn');
-
-      // Reattach the click event listener to the Next button
-      nextBtn.removeEventListener('click', handleNextButtonClick); // Remove any existing listener
-      nextBtn.addEventListener('click', handleNextButtonClick);
-
-      // Add event listeners to inputs
-      const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
-      inputs.forEach(input => {
-          input.addEventListener('change', () => {
-              // Visually indicate selection if needed
-              if (question.type === 'single') {
-                  // Automatically move to the next question
-                  setTimeout(() => {
-                    moveToNextQuestion();
-                  }, 80);
-              }
-          });
-      });
-
-      // Add event listener to detect Enter key
-      document.addEventListener('keydown', handleEnterKey);
-
-      // Force reflow to restart the animation
-      void quizContent.offsetWidth;
-
-      // Fade in the content
-      quizContent.classList.remove('fade-out');
+    // Fade in the content
+    quizContent.classList.remove('fade-out');
   });
 }
+
 
 // Function to check if an option should be pre-selected
 function checkIfOptionIsSelected(question, option) {
