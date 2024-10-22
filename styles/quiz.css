@@ -301,33 +301,55 @@ label {
 .quiz-content h2 {
   font-weight: 200;
   font-size: 1.5em;
-  position: sticky;
-  top: 0;
+  position: relative; /* Changed from 'sticky' */
   padding: 15px;
   z-index: 10;
   margin: 20px 40px 0px 40px;
   font-family: 'Merriweather', serif;
-     /* Glass effect */
-     background: #fffaf4c5; /* Semi-transparent white background */
-     backdrop-filter: blur(10px); /* Blurring effect */
-     border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
-     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01); /* Soft shadow */
+  background: #fffaf4c5;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.01);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.question-image {
+  width: 80px; /* Adjust the size as needed */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px; /* Space between image and question text */
+}
+
 
 .question-subtext {
   padding: 20px 40px;
   margin: 10px 40px 20px 40px;
-  background: #fffaf4c5; /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Blurring effect */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  background: #fffaf4c5;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   font-family: 'Merriweather', serif;
   font-weight: 200;
-
+  text-align: center; /* Center align the subtext */
 }
+
+@media (max-width: 600px) {
+  .question-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .quiz-content h2 {
+    font-size: 1.2em;
+  }
+}
+
 
 /* Update the styles for quiz-question-container */
 .quiz-question-container {
@@ -336,7 +358,6 @@ label {
   margin: 0 auto; /* Center the container */
   padding: 30px 20px;
 }
-
 /* Additional styling for responsiveness */
 @media (max-width: 800px) {
   .quiz-question-container {

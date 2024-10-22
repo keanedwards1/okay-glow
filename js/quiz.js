@@ -409,11 +409,43 @@ function renderQuestion() {
     // Update the content after fade-out
     const question = questions[currentQuestionIndex];
 
-    // Build the new content
+    // Set the background image for the current question
+    const questionImages = {
+      1: '/public/images/balloon.jpg',
+      2: '/public/images/blossom.jpg',
+      3: '/public/images/boat.webp',
+      4: '/public/images/branch.webp',
+      5: '/public/images/crane.webp',
+      6: '/public/images/delicate.jpg',
+      7: '/public/images/drip.webp',
+      8: '/public/images/fish.webp',
+      9: '/public/images/flower.webp',
+      10: '/public/images/hand.webp',
+      11: '/public/images/mountain.webp',
+      12: '/public/images/tree.webp',
+      13: '/public/images/image13.webp',
+      14: '/public/images/image14.webp',
+      15: '/public/images/image15.webp',
+      16: '/public/images/image16.webp',
+      17: '/public/images/image17.webp',
+      18: '/public/images/image18.webp',
+      19: '/public/images/image19.webp',
+      20: '/public/images/image20.webp',
+      21: '/public/images/image21.webp',
+      22: '/public/images/image22.webp',
+      23: '/public/images/image23.webp',
+    };
+
+    const questionImage = questionImages[question.id] || '/public/images/balloon.jpg';
+
+    // Build the new content with the image inside h2
     let quizHtml = `
       <div class="quiz-question-container">
         <div class="quiz-question-content">
-          <h2>${question.text}</h2>
+          <h2>
+            <img src="${questionImage}" alt="Question Image" class="question-image">
+            ${question.text}
+          </h2>
     `;
 
     // Include subtext if it exists
@@ -446,28 +478,8 @@ function renderQuestion() {
     // Update the quiz content
     quizContent.innerHTML = quizHtml;
 
-    // Set the background image on the quizContent element
-    const questionImages = {
-      1: '/public/images/balloon.jpg',
-      2: '/public/images/blossom.jpg',
-      3: '/public/images/boat.webp',
-      4: '/public/images/branch.webp',
-      5: '/public/images/crane.webp',
-      6: '/public/images/delicate.jpg',
-      7: '/public/images/drip.webp',
-      8: '/public/images/fish.webp',
-      9: '/public/images/flower.webp',
-      10: '/public/images/hand.webp',
-      11: '/public/images/mountain.webp',
-      12: '/public/images/tree.webp',
-    };
-    const questionImage = questionImages[question.id] || '/public/images/balloon.jpg';
-
-    quizContent.style.backgroundImage = `url('${questionImage}')`;
-    quizContent.style.backgroundRepeat = 'no-repeat';
-    quizContent.style.backgroundPosition = 'left center';
-    quizContent.style.backgroundSize = 'auto 100%'; // Adjust as needed
-    quizContent.style.backgroundAttachment = 'local'; // Optional, adjust based on your needs
+    // Remove background images from quizContent
+    quizContent.style.backgroundImage = 'none';
 
     // Always enable the "Previous" button
     prevBtn.disabled = false;
@@ -510,6 +522,7 @@ function renderQuestion() {
     quizContent.classList.remove('fade-out');
   });
 }
+
 
 
 // Function to check if an option should be pre-selected
