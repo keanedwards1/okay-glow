@@ -4,7 +4,7 @@
     {
       id: 1,
       text: "How would you describe your skin type?",
-      subtext: "Identifying your skin type helps us tailor recommendations to your specific needs.",
+      subtext: "Learning about your skin type helps us recommend products that work in gentle harmony with it.",
       type: "single",
       options: [
         { value: "Oily", text: "Oily: Shiny all over, prone to breakouts", image: "/oily.webp" },
@@ -17,7 +17,7 @@
     {
       id: 2,
       text: "What climate are you in?",
-      subtext: "Your environment affects your skin; knowing your climate helps us suggest suitable products.",
+      subtext: "Your environment plays a role in skin care, so knowing your climate helps us recommend the best products for you.",
       type: "single",
       options: [
         { value: "Humid", text: "Humid", image: "/humid.webp" },
@@ -71,7 +71,7 @@
     },
     {
       id: 6,
-      text: "What products do you use right now?",
+      text: "What, if any, products are you using right now?",
       subtext: "Knowing what you currently use helps us avoid product overlaps and contradictions.",
       type: "multiple",
       options: [
@@ -83,7 +83,6 @@
         { value: "Acne Treatment", text: "Acne treatment", image: "/acne_treatment.webp" },
         { value: "Retinoid", text: "Retinoid", image: "/retinoid.webp" },
         { value: "Exfoliant", text: "Exfoliant", image: "/exfoliant.webp" },
-        { value: "Other", text: "Other (please specify)", image: "/other.webp" },
       ],
     },
     {
@@ -409,20 +408,22 @@ function renderQuestion() {
     // Update the content after fade-out
     const question = questions[currentQuestionIndex];
 
-    // Set the background image for the current question
+
+    
+    // Set the background image for the current question banana
     const questionImages = {
-      1: '/public/images/balloon.jpg',
-      2: '/public/images/blossom.jpg',
-      3: '/public/images/boat.webp',
-      4: '/public/images/branch.webp',
-      5: '/public/images/crane.webp',
-      6: '/public/images/delicate.jpg',
-      7: '/public/images/drip.webp',
-      8: '/public/images/fish.webp',
-      9: '/public/images/flower.webp',
-      10: '/public/images/hand.webp',
-      11: '/public/images/mountain.webp',
-      12: '/public/images/tree.webp',
+      1: '/public/images/shine.webp',
+      2: '/public/images/climate.jpg',
+      3: '/public/images/dance.jpg',
+      4: '/public/images/eye.jpg',
+      5: '/public/images/blur.jpg',
+      6: '/public/images/product.jpg',
+      7: '/public/images/stress.jpg',
+      8: '/public/images/sleep.jpg',
+      9: '/public/images/mum.jpg',
+      10: '/public/images/morning.jpg',
+      11: '/public/images/lips.jpg',
+      12: '/public/images/beachy.jpg',
       13: '/public/images/image13.webp',
       14: '/public/images/image14.webp',
       15: '/public/images/image15.webp',
@@ -442,10 +443,11 @@ function renderQuestion() {
     let quizHtml = `
       <div class="quiz-question-container">
         <div class="quiz-question-content">
-          <h2>
-            <img src="${questionImage}" alt="Question Image" class="question-image">
-            ${question.text}
-          </h2>
+          <div class="question-header">
+            <h2>
+              <img src="${questionImage}" alt="Question Image" class="question-image">
+              ${question.text}
+            </h2>
     `;
 
     // Include subtext if it exists
@@ -453,7 +455,10 @@ function renderQuestion() {
       quizHtml += `<p class="question-subtext">${question.subtext}</p>`;
     }
 
+    quizHtml += `</div>`; // Close question-header
+
     quizHtml += `<div class="options-container">`;
+
 
     question.options.forEach((option) => {
       // Check if the option should be pre-selected

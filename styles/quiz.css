@@ -282,6 +282,7 @@ label {
   flex: 1 1 auto;
   overflow-y: auto;
   padding: 0 0;
+  height: 85vh;
 }
 
 .quiz-content {
@@ -297,11 +298,19 @@ label {
   opacity: 0;
 }
 
+.question-image {
+  width: 80px; /* Adjust the size as needed */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px; /* Space between image and question text */
+}
+
 /* Sticky header (question text) */
-.quiz-content h2 {
+/*.quiz-content h2 {
   font-weight: 200;
-  font-size: 1.5em;
-  position: relative; /* Changed from 'sticky' */
+   font-size: 1.5em;
+  position: relative; 
   padding: 15px;
   z-index: 10;
   margin: 20px 40px 0px 40px;
@@ -317,15 +326,6 @@ label {
   align-items: center;
 }
 
-.question-image {
-  width: 80px; /* Adjust the size as needed */
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px; /* Space between image and question text */
-}
-
-
 .question-subtext {
   padding: 20px 40px;
   margin: 10px 40px 20px 40px;
@@ -336,8 +336,51 @@ label {
   border-bottom-right-radius: 8px;
   font-family: 'Merriweather', serif;
   font-weight: 200;
-  text-align: center; /* Center align the subtext */
+  text-align: center;
+} */
+
+/* New styles for question-header */
+.question-header {
+  background: #fffaf4c5;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin: 20px 40px;
+  padding: 15px;
+  font-family: 'Merriweather', serif;
+  font-weight: 200;
+  text-align: center;
+  position: sticky;
 }
+
+.question-header .question-subtext {
+  margin-top: 10px;
+  font-weight: 200;
+  padding: 0 30px;
+}
+
+/* Remove individual backgrounds and margins from h2 and question-subtext */
+.quiz-content h2 {
+  font-weight: 200;
+  font-size: 1.5em;
+  position: relative;
+  z-index: 10;
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-subtext {
+  margin: 20px 0 0 0;
+  padding: 0 50px;
+  font-family: 'Merriweather', serif;
+  font-weight: 200;
+  text-align: center;
+  font-size: 14px;
+}
+
 
 @media (max-width: 600px) {
   .question-image {
