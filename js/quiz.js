@@ -703,6 +703,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/Sulwhasoo-Cleansing-Lightweight-texture-Waterproof/dp/B09NY7SY7C",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 2,
@@ -715,6 +717,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://us.innisfree.com/products/apple-seed-cleansing-oil",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 3,
@@ -727,6 +731,8 @@ const products = [
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/deal-beauty-of-joseon-glow-serum-propolis-niacinamide-30ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 4,
@@ -739,6 +745,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 5,
@@ -751,6 +759,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 6,
@@ -763,6 +773,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 7,
@@ -775,6 +787,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
     url: "https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 8,
@@ -787,6 +801,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 9,
@@ -799,6 +815,8 @@ const products = [
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["Fragrance"],
     url: "https://www.amazon.com/dp/B08Y4N16PC",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 10,
@@ -811,6 +829,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
     url: "https://www.amazon.com/dp/B08N335GXN",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 11,
@@ -823,6 +843,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
     url: "https://www.amazon.com/dp/B092Q3YB34",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 12,
@@ -835,6 +857,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Sulfates", "Parabens"],
     url: "https://www.amazon.com/SKIN-FOOD-Black-Sugar-Perfect/dp/B01828IP7G",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 13,
@@ -847,6 +871,8 @@ const products = [
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Alcohol"],
     url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 14,
@@ -859,6 +885,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
     url: "https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 15,
@@ -871,6 +899,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 16,
@@ -883,6 +913,8 @@ const products = [
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/deal-neogen-dermalogy-dermalogy-real-ferment-micro-essence-150ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 17,
@@ -895,6 +927,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
     url: "https://www.ulta.com/p/glass-skin-refining-serum-xlsImpprod18971035",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 18,
@@ -907,6 +941,8 @@ const products = [
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 19,
@@ -919,6 +955,8 @@ const products = [
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["None"],
     url: "https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 20,
@@ -931,6 +969,8 @@ const products = [
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 21,
@@ -943,6 +983,8 @@ const products = [
     ageGroup: ["25-34", "35-44", "45-54", "55+"],
     sensitivities: ["None"],
     url: "https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 22,
@@ -955,6 +997,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/MIZON-natural-treatment-hydrating-skincare/dp/B00AFLSE7U",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 23,
@@ -967,6 +1011,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 24,
@@ -979,6 +1025,8 @@ const products = [
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Fragrance"],
     url: "https://www.ulta.com/p/oil-free-ultra-moisturizing-lotion-with-birch-sap-pimprod2035883",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 25,
@@ -991,6 +1039,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 26,
@@ -1003,6 +1053,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/top-pick-beauty-of-joseon-relief-sun-rice-probiotic-spf50-pa-50ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 27,
@@ -1015,6 +1067,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://beautynetkorea.com/product/cosrx-aloe-soothing-sun-cream-spf50pa-50ml-weight-79g/8467",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 28,
@@ -1027,6 +1081,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 29,
@@ -1039,6 +1095,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 30,
@@ -1051,6 +1109,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html",
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp",
   },
   // Continue adding products as needed, ensuring values match those in questions
 ];
@@ -1122,36 +1182,55 @@ function getRecommendedProducts(userAnswers) {
 // Function to display recommended products
 function displayRecommendedProducts(recommendedProducts) {
   let resultHtml = '<h2>Your Recommended Products</h2>';
-  recommendedProducts.forEach(product => {
-      resultHtml += `
-        <div class="product">
-          <h3>${product.name}</h3>
-          <p>Category: ${product.category}</p>
-          <p>Suitable for: ${product.suitableFor.join(', ')}</p>
-          <p>Concerns Addressed: ${product.concerns.join(', ')}</p>
-          <p>Price Range: ${product.budgetRange}</p>
-          <a href="${product.url}" target="_blank">View Product</a>
+  resultHtml += '<div class="products-container">';
+
+  recommendedProducts.forEach((product) => {
+    resultHtml += `
+      <div class="product-card">
+        <div class="product-image">
+          <img src="${product.image}" alt="${product.name}">
+          <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
         </div>
-      `;
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
+          <p><strong>Concerns Addressed:</strong> ${product.concerns.join(', ')}</p>
+          <p><strong>Price Range:</strong> ${product.budgetRange}</p>
+          <a href="${product.url}" target="_blank" class="product-link">View Product</a>
+        </div>
+      </div>
+    `;
   });
 
-  // Add Start Over button
+  resultHtml += '</div>';
   resultHtml += '<button class="start-over-btn" id="startOverBtn">Start Over</button>';
 
-  // Replace the quiz content with the results
   quizContent.innerHTML = resultHtml;
 
-  // Hide the navigation buttons
   nextBtn.style.display = 'none';
   prevBtn.style.display = 'none';
-
-  // Update the question counter and progress bar to indicate completion
-  questionCounter.textContent = 'Quiz Completed';
-  progressBar.style.width = '100%';
 
   // Add event listener for start over button
   const startOverBtn = document.getElementById('startOverBtn');
   startOverBtn.addEventListener('click', startOver);
+
+  animateProductCards();
+}
+
+
+
+function animateProductCards() {
+  const productCards = document.querySelectorAll('.product-card');
+  productCards.forEach((card, index) => {
+    card.style.opacity = 0;
+    card.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      card.style.opacity = 1;
+      card.style.transform = 'translateY(0)';
+    }, index * 100); // Stagger the animation
+  });
 }
 
 // Function to submit the quiz

@@ -714,6 +714,133 @@ label {
   width: 100%;
 }
 
+/* Products Container */
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Product Card Styles */
+.product-card {
+  background-color: #fffaf4;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(55, 52, 49, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  flex: 1 1 calc(33% - 40px); /* Responsive grid */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(55, 52, 49, 0.15);
+}
+
+.product-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+}
+
+.product-image .hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.product-card:hover .product-image .hover-image {
+  opacity: 1;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+/* Update font-family for product info */
+.product-info {
+  padding: 16px;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  align-items: flex-start;
+}
+
+/* Update font-family for headings */
+.product-info h3 {
+  margin-top: 0;
+  font-size: 1.25em;
+  font-weight: 400;
+  color: #3f3d3b;
+  font-family: 'Merriweather', serif; /* Consistent with site headings */
+}
+
+/* Update font-family for paragraphs */
+.product-info p {
+  font-size: 0.9em;
+  color: #3f3d3b;
+  margin: 4px 0;
+  font-family: 'Quicksand', sans-serif;
+}
+
+
+.product-info .product-link {
+  margin-top: 16px; 
+  align-self: stretch;
+  text-align: center;
+  background-color: #9f714f;
+  color: #fffaf4;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.product-info .product-link:hover {
+  background-color: #845c3d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .product-card {
+    flex: 1 1 calc(50% - 40px);
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .start-over-btn {
   background-color: #edd3b9;
