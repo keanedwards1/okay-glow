@@ -321,16 +321,42 @@ const quizContainer = document.getElementById('quizContainer');
 const quizContent = document.getElementById("quizContent");
 const questionCounter = document.getElementById("questionCounter");
 const progressBar = document.getElementById("progress");
-let nextBtn = document.getElementById("nextBtn");  // Changed to 'let' for reassignment
+let nextBtn = document.getElementById("nextBtn"); 
 const prevBtn = document.getElementById("prevBtn");
+
+// Load saved data from localStorage
+if (localStorage.getItem('currentQuestionIndex') && localStorage.getItem('answers')) {
+  currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'), 10);
+  answers = JSON.parse(localStorage.getItem('answers'));
+
+  // Hide the introContainer and show the quizContainer
+  introContainer.style.display = 'none';
+  quizContainer.style.display = 'flex';
+  document.body.classList.remove('intro-active'); // Remove overflow hidden
+  renderQuestion();
+} else {
+  // Show the introContainer and hide the quizContainer
+  introContainer.style.display = 'flex';
+  quizContainer.style.display = 'none';
+  document.body.classList.add('intro-active'); // Add overflow hidden
+}
+
 
 // Start button event listener
 startBtn.addEventListener('click', () => {
-    introContainer.style.display = 'none';
-    quizContainer.style.display = 'flex';
-    document.body.classList.remove('intro-active'); // Remove overflow hidden
-    renderQuestion();
-    /* updateProgress(); */ // Initialize the progress bar
+  // Clear any saved data
+  localStorage.removeItem('currentQuestionIndex');
+  localStorage.removeItem('answers');
+
+  // Reset variables
+  currentQuestionIndex = 0;
+  answers = {};
+
+  introContainer.style.display = 'none';
+  quizContainer.style.display = 'flex';
+  document.body.classList.remove('intro-active'); // Remove overflow hidden
+  renderQuestion();
+  /* updateProgress(); */ // Initialize the progress bar
 });
 
 // Define the handleEnterKey function outside renderQuestion
@@ -352,6 +378,7 @@ function moveToNextQuestion() {
 
   if (currentQuestionIndex < questions.length - 1) {
       currentQuestionIndex++;
+      localStorage.setItem('currentQuestionIndex', currentQuestionIndex); // Save to localStorage
       /* updateProgress(); */
       renderQuestion();
   } else {
@@ -367,6 +394,7 @@ function moveToPreviousQuestion() {
 
   if (currentQuestionIndex > 0) {
       currentQuestionIndex--;
+      localStorage.setItem('currentQuestionIndex', currentQuestionIndex); // Save to localStorage
       /* updateProgress(); */
       renderQuestion();
   } else {
@@ -374,6 +402,10 @@ function moveToPreviousQuestion() {
       quizContainer.style.display = 'none';
       introContainer.style.display = 'flex';
       document.body.classList.add('intro-active'); // Add back the intro-active class
+
+      // Clear saved data
+      localStorage.removeItem('currentQuestionIndex');
+      localStorage.removeItem('answers');
   }
 }
 
@@ -606,24 +638,27 @@ function isOptionSelected() {
 
 // Function to save the user's answers
 function saveAnswer() {
-    const question = questions[currentQuestionIndex];
-    const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+  const question = questions[currentQuestionIndex];
+  const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
 
-    if (question.type === 'multiple') {
-        const selectedOptions = [];
-        inputs.forEach((input) => {
-            if (input.checked) {
-                selectedOptions.push(input.value);
-            }
-        });
-        answers[question.id] = selectedOptions;
-    } else {
-        inputs.forEach((input) => {
-            if (input.checked) {
-                answers[question.id] = input.value;
-            }
-        });
-    }
+  if (question.type === 'multiple') {
+      const selectedOptions = [];
+      inputs.forEach((input) => {
+          if (input.checked) {
+              selectedOptions.push(input.value);
+          }
+      });
+      answers[question.id] = selectedOptions;
+  } else {
+      inputs.forEach((input) => {
+          if (input.checked) {
+              answers[question.id] = input.value;
+          }
+      });
+  }
+
+  // Save answers to localStorage
+  localStorage.setItem('answers', JSON.stringify(answers));
 }
 
 // Function to show the toast
@@ -1119,25 +1154,6 @@ function displayRecommendedProducts(recommendedProducts) {
   startOverBtn.addEventListener('click', startOver);
 }
 
-function startOver() {
-  // Reset quiz data
-  currentQuestionIndex = 0;
-  answers = {};
-
-  // Hide the product recommendations and show the intro again
-  quizContainer.style.display = 'none';
-  introContainer.style.display = 'flex';
-  document.body.classList.add('intro-active'); // Add back the intro-active class
-
-  // Reset progress bar and buttons
-  progressBar.style.width = '0%';
-  questionCounter.textContent = '';
-
-  // Show navigation buttons again
-  nextBtn.style.display = 'inline-block';
-  prevBtn.style.display = 'inline-block';
-}
-
 // Function to submit the quiz
 function submitQuiz() {
   saveAnswer(); // Collect the final answers
@@ -1183,4 +1199,31 @@ function submitQuiz() {
       nextBtn.style.display = 'none';
       prevBtn.style.display = 'none';
   }
+
+  // Clear saved data from localStorage
+  localStorage.removeItem('currentQuestionIndex');
+  localStorage.removeItem('answers');
+}
+
+function startOver() {
+  // Reset quiz data
+  currentQuestionIndex = 0;
+  answers = {};
+
+  // Clear saved data from localStorage
+  localStorage.removeItem('currentQuestionIndex');
+  localStorage.removeItem('answers');
+
+  // Hide the product recommendations and show the intro again
+  quizContainer.style.display = 'none';
+  introContainer.style.display = 'flex';
+  document.body.classList.add('intro-active'); // Add back the intro-active class
+
+  // Reset progress bar and buttons
+  progressBar.style.width = '0%';
+  questionCounter.textContent = '';
+
+  // Show navigation buttons again
+  nextBtn.style.display = 'inline-block';
+  prevBtn.style.display = 'inline-block';
 }
