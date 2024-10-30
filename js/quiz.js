@@ -911,101 +911,108 @@
     function renderQuestion() {
       console.log('Rendering question:', currentQuestionIndex);
       const question = questions[currentQuestionIndex];
-      console.log('Current question:', question);
-    
-      const questionImages = {
-        1: '/public/images/shine.webp',
-        2: '/public/images/climate.jpg',
-        3: '/public/images/dance.jpg',
-        4: '/public/images/eye.jpg',
-        5: '/public/images/blur.jpg',
-        6: '/public/images/product.jpg',
-        7: '/public/images/stress.jpg',
-        8: '/public/images/sleep.jpg',
-        9: '/public/images/mum.jpg',
-        10: '/public/images/morning.jpg',
-        11: '/public/images/lips.jpg',
-        12: '/public/images/beachy.jpg',
-        13: '/public/images/skin.jpg',
-        14: '/public/images/sheet.jpg',
-        15: '/public/images/fire.jpg',
-        16: '/public/images/beach.jpg',
-        17: '/public/images/water.jpg',
-        18: '/public/images/hair.jpg',
-        19: '/public/images/smell.jpg',
-        20: '/public/images/fish.jpg',
-        21: '/public/images/glow.jpg',
-        22: '/public/images/car.jpg',
-        23: '/public/images/routine.jpg',
-      };
       
-      const questionImage = questionImages[question.id] || '/public/images/balloon.jpg';
-    
-      let quizHtml = `
-        <div class="quiz-question-container">
-          <div class="quiz-question-content">
-            <div class="question-header">
-              <h2>
-                <img src="${questionImage}" alt="Question Image" class="question-image">
-                ${question.text}
-              </h2>
-      `;
-    
-      if (question.subtext) {
-        quizHtml += `<p class="question-subtext">${question.subtext}</p>`;
-      }
-    
-      quizHtml += `</div><div class="options-container">`;
-    
-      question.options.forEach((option) => {
-        const isChecked = checkIfOptionIsSelected(question, option);
-        quizHtml += `
-          <label class="option">
-            <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}"
-                   name="question-${question.id}"
-                   value="${option.value}"
-                   ${isChecked ? 'checked' : ''}>
-            <span class="option-text">${option.text}</span>
-          </label>
+      // Start fade out
+      quizContent.classList.add('fade-out');
+      
+      // Wait for fade out to complete before updating content
+      setTimeout(() => {
+        const questionImages = {
+          1: '/public/images/shine.webp',
+          2: '/public/images/climate.jpg',
+          3: '/public/images/dance.jpg',
+          4: '/public/images/eye.jpg',
+          5: '/public/images/blur.jpg',
+          6: '/public/images/product.jpg',
+          7: '/public/images/stress.jpg',
+          8: '/public/images/sleep.jpg',
+          9: '/public/images/mum.jpg',
+          10: '/public/images/morning.jpg',
+          11: '/public/images/lips.jpg',
+          12: '/public/images/beachy.jpg',
+          13: '/public/images/skin.jpg',
+          14: '/public/images/sheet.jpg',
+          15: '/public/images/fire.jpg',
+          16: '/public/images/beach.jpg',
+          17: '/public/images/water.jpg',
+          18: '/public/images/hair.jpg',
+          19: '/public/images/smell.jpg',
+          20: '/public/images/fish.jpg',
+          21: '/public/images/glow.jpg',
+          22: '/public/images/car.jpg',
+          23: '/public/images/routine.jpg',
+        };
+     
+        const questionImage = questionImages[question.id] || '/public/images/balloon.jpg';
+        
+        let quizHtml = `
+          <div class="quiz-question-container">
+            <div class="quiz-question-content">
+              <div class="question-header">
+                <h2>
+                  <img src="${questionImage}" alt="Question Image" class="question-image">
+                  ${question.text}
+                </h2>
         `;
-      });
-    
-      quizHtml += `
+     
+        if (question.subtext) {
+          quizHtml += `<p class="question-subtext">${question.subtext}</p>`;
+        }
+     
+        quizHtml += `</div><div class="options-container">`;
+     
+        question.options.forEach((option) => {
+          const isChecked = checkIfOptionIsSelected(question, option);
+          quizHtml += `
+            <label class="option">
+              <input type="${question.type === 'multiple' ? 'checkbox' : 'radio'}"
+                     name="question-${question.id}"
+                     value="${option.value}"
+                     ${isChecked ? 'checked' : ''}>
+              <span class="option-text">${option.text}</span>
+            </label>
+          `;
+        });
+     
+        quizHtml += `
+              </div>
             </div>
           </div>
-        </div>
-      `;
-    
-      quizContent.innerHTML = quizHtml;
-      quizContent.style.backgroundImage = 'none';
-    
-      prevBtn.disabled = false;
-      prevBtn.classList.remove('disabled');
-      nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
-    
-      addTooltipToNextButton();
-    
-      // Update button event listeners
-      nextBtn = document.getElementById('nextBtn');
-      nextBtn.removeEventListener('click', handleNextButtonClick);
-      nextBtn.addEventListener('click', handleNextButtonClick);
-    
-      // Add input event listeners
-      const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
-      inputs.forEach(input => {
-        input.addEventListener('change', () => {
-          if (question.type === 'single') {
-            setTimeout(() => {
-              moveToNextQuestion();
-            }, 80);
-          }
+        `;
+     
+        quizContent.innerHTML = quizHtml;
+        quizContent.style.backgroundImage = 'none';
+     
+        prevBtn.disabled = false;
+        prevBtn.classList.remove('disabled');
+        nextBtn.textContent = currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Continue';
+     
+        addTooltipToNextButton();
+     
+        nextBtn = document.getElementById('nextBtn');
+        nextBtn.removeEventListener('click', handleNextButtonClick);
+        nextBtn.addEventListener('click', handleNextButtonClick);
+     
+        const inputs = document.querySelectorAll(`input[name="question-${question.id}"]`);
+        inputs.forEach(input => {
+          input.addEventListener('change', () => {
+            if (question.type === 'single') {
+              setTimeout(() => {
+                moveToNextQuestion();
+              }, 80);
+            }
+          });
         });
-      });
-    
-      // Add keyboard event listener
-      document.removeEventListener('keydown', handleEnterKey);
-      document.addEventListener('keydown', handleEnterKey);
-    }
+     
+        document.removeEventListener('keydown', handleEnterKey);
+        document.addEventListener('keydown', handleEnterKey);
+     
+        // Start fade in
+        requestAnimationFrame(() => {
+          quizContent.classList.remove('fade-out');
+        });
+      }, 200); // Match this to your CSS transition duration
+     }
   
     // Function to check if an option should be pre-selected
     function checkIfOptionIsSelected(question, option) {
@@ -1188,7 +1195,7 @@
         card.style.opacity = 0;
         card.style.transform = 'translateY(20px)';
         setTimeout(() => {
-          card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          card.style.transition = 'opacity 3s ease, transform 3s ease';
           card.style.opacity = 1;
           card.style.transform = 'translateY(0)';
         }, index * 100);
