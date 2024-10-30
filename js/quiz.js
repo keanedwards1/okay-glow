@@ -325,21 +325,28 @@ let nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
 // Load saved data from localStorage
-  if (localStorage.getItem('currentQuestionIndex') && localStorage.getItem('answers')) {
-    currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'), 10);
+if (localStorage.getItem('currentQuestionIndex') && localStorage.getItem('answers')) {
+  currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'), 10);
+  try {
     answers = JSON.parse(localStorage.getItem('answers'));
-
-    // Hide the introContainer and show the quizContainer
-    introContainer.style.display = 'none';
-    quizContainer.style.display = 'flex';
-    document.body.classList.remove('intro-active'); // Remove overflow hidden
-    renderQuestion();
-  } else {
-    // Show the introContainer and hide the quizContainer
-    introContainer.style.display = 'flex';
-    quizContainer.style.display = 'none';
-    document.body.classList.add('intro-active'); // Add overflow hidden
+  } catch (e) {
+    console.error('Error parsing answers from localStorage:', e);
+    answers = {};
+    localStorage.removeItem('answers'); // Remove corrupted data
   }
+
+  // Hide the introContainer and show the quizContainer
+  introContainer.style.display = 'none';
+  quizContainer.style.display = 'flex';
+  document.body.classList.remove('intro-active'); // Remove overflow hidden
+  renderQuestion();
+} else {
+  // Show the introContainer and hide the quizContainer
+  introContainer.style.display = 'flex';
+  quizContainer.style.display = 'none';
+  document.body.classList.add('intro-active'); // Add overflow hidden
+}
+
 
 
 // Start button event listener
@@ -356,8 +363,8 @@ startBtn.addEventListener('click', () => {
   quizContainer.style.display = 'flex';
   document.body.classList.remove('intro-active'); // Remove overflow hidden
   renderQuestion();
-  /* updateProgress(); */ // Initialize the progress bar
 });
+
 
 // Define the handleEnterKey function outside renderQuestion
 function handleEnterKey(event) {
@@ -427,6 +434,8 @@ function handleNextButtonClick() {
 nextBtn.addEventListener('click', handleNextButtonClick);
 
 function renderQuestion() {
+  console.log('Rendering question at index:', currentQuestionIndex);
+
   // Remove existing event listeners to prevent stacking
   document.removeEventListener('keydown', handleEnterKey);
 
