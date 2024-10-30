@@ -325,21 +325,21 @@ let nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
 
 // Load saved data from localStorage
-if (localStorage.getItem('currentQuestionIndex') && localStorage.getItem('answers')) {
-  currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'), 10);
-  answers = JSON.parse(localStorage.getItem('answers'));
+  if (localStorage.getItem('currentQuestionIndex') && localStorage.getItem('answers')) {
+    currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex'), 10);
+    answers = JSON.parse(localStorage.getItem('answers'));
 
-  // Hide the introContainer and show the quizContainer
-  introContainer.style.display = 'none';
-  quizContainer.style.display = 'flex';
-  document.body.classList.remove('intro-active'); // Remove overflow hidden
-  renderQuestion();
-} else {
-  // Show the introContainer and hide the quizContainer
-  introContainer.style.display = 'flex';
-  quizContainer.style.display = 'none';
-  document.body.classList.add('intro-active'); // Add overflow hidden
-}
+    // Hide the introContainer and show the quizContainer
+    introContainer.style.display = 'none';
+    quizContainer.style.display = 'flex';
+    document.body.classList.remove('intro-active'); // Remove overflow hidden
+    renderQuestion();
+  } else {
+    // Show the introContainer and hide the quizContainer
+    introContainer.style.display = 'flex';
+    quizContainer.style.display = 'none';
+    document.body.classList.add('intro-active'); // Add overflow hidden
+  }
 
 
 // Start button event listener
