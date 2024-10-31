@@ -5,13 +5,16 @@ body {
   margin: 0;
   font-family: Quicksand, sans-serif;
   background-color: #ECD8C5;
+  background-image: url("/public/images/tropical-water.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: #3f3d3b;
 }
 
 body.intro-active {
   overflow: hidden;
 }
-
 
 a {
   text-decoration: none;
@@ -37,7 +40,9 @@ label {
   margin-right: 2em;
   margin-left: 2em;
   background-color: #edd3b99b;
-  overflow: hidden; /* Ensure image and content do not overflow */
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .image-container {
@@ -447,8 +452,7 @@ label {
 }
 
 .parallax-image-1{
-  background-image: url("/public/images/tropical-water.webp"); /* Replace with your actual image path */
-
+  background-image: url("/public/images/tropical-water.webp");
 }
 
 /* Hide default appearance for inputs */

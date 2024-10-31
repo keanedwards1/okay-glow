@@ -787,8 +787,9 @@
   document.addEventListener('DOMContentLoaded', function() {
     try {
       console.log("DOM loaded"); // Check if event listener fires
-      console.log("Questions array length:", questions.length); // Check if questions are accessible
+      console.log("Questions array length:", questions.length);
       console.log("Products array length:", products.length);
+
     // Variables to store the current question index and answers
     let currentQuestionIndex = 0;
     let answers = {};
@@ -806,6 +807,11 @@
     // Load saved data from localStorage with proper error handling
     function loadSavedState() {
       try {
+        // Set default state first
+        document.body.classList.add('intro-active');
+        introContainer.style.display = 'flex';
+        quizContainer.style.display = 'none';
+    
         const savedIndex = localStorage.getItem('currentQuestionIndex');
         const savedAnswers = localStorage.getItem('answers');
         
@@ -813,42 +819,47 @@
           currentQuestionIndex = parseInt(savedIndex, 10);
           answers = JSON.parse(savedAnswers);
           
-          // Validate the loaded data
           if (isNaN(currentQuestionIndex) || currentQuestionIndex < 0 || currentQuestionIndex >= questions.length) {
             throw new Error('Invalid question index');
           }
           
-          // Hide the introContainer and show the quizContainer
+          // Only remove intro state if we have valid saved state
+          document.body.classList.remove('intro-active');
           introContainer.style.display = 'none';
           quizContainer.style.display = 'flex';
-          document.body.classList.remove('intro-active');
           renderQuestion();
-        } else {
-          // Show the intro view if no saved state
-          showIntroView();
         }
       } catch (error) {
         console.error('Error loading saved state:', error);
-        // Reset to initial state if there's an error
         resetQuizState();
         showIntroView();
       }
     }
-  
-    // Function to show the intro view
-    function showIntroView() {
-      introContainer.style.display = 'flex';
-      quizContainer.style.display = 'none';
-      document.body.classList.add('intro-active');
-    }
-  
-    // Function to reset the quiz state
+
     function resetQuizState() {
       currentQuestionIndex = 0;
       answers = {};
       localStorage.removeItem('currentQuestionIndex');
       localStorage.removeItem('answers');
+      
+      // Always reset to intro state
+      document.body.classList.add('intro-active');
+      quizContent.classList.remove('fade-out');
     }
+  
+    // Function to show the intro view
+    function showIntroView() {
+      // First hide quiz
+      quizContainer.style.display = 'none';
+      
+      // Then set up intro view
+      document.body.classList.add('intro-active');
+      introContainer.style.display = 'flex';
+      
+      // Ensure clean state
+      resetQuizState();
+    }
+
   
     // Start button event listener
     startBtn.addEventListener('click', () => {
@@ -1223,6 +1234,7 @@
 
     // Initialize
     loadSavedState();
+
   } catch (error) {
     console.error("Initialization error:", error);
   }
