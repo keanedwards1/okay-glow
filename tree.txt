@@ -10,11 +10,15 @@
 │   ├── dropdown.js
 │   ├── faq.js
 │   ├── interactive-section.js
+│   ├── journey.js
 │   ├── main.js
 │   ├── marquee.js
 │   ├── quiz-ripple-bg.js
 │   ├── quiz.js
-│   └── ripple-bg.js
+│   ├── ripple-bg.js
+│   ├── routineCustomizer.js
+│   ├── routineGenerator.js
+│   └── temp.txt
 ├── pages
 │   ├── about.html
 │   ├── contact.html
@@ -76,70 +80,81 @@
 │       │   ├── waves.jpg
 │       │   ├── whoop.jpg
 │       │   └── \374415.jpeg
-│       ├── balcony.jpg
-│       ├── balloon.jpg
 │       ├── beach-1.jpg
 │       ├── beach-2.jpg
 │       ├── beach-3.jpg
 │       ├── beach.jpg
-│       ├── blossom.jpg
-│       ├── boat.webp
+│       ├── beachy.jpg
+│       ├── blur.jpg
 │       ├── bottle.webp
-│       ├── branch.webp
+│       ├── car.jpg
 │       ├── chat.png
+│       ├── climate.jpg
 │       ├── conch.jpg
 │       ├── cow.png
-│       ├── crane.webp
 │       ├── cream-p.webp
 │       ├── cream.webp
-│       ├── delicate.jpg
+│       ├── dance.jpg
 │       ├── dew.webp
 │       ├── dive.webp
 │       ├── dolphin.webp
-│       ├── drip.webp
-│       ├── drop.jpg
 │       ├── drop.webp
 │       ├── email.png
 │       ├── emily-1.jpeg
 │       ├── emily.jpeg
+│       ├── eye.jpg
 │       ├── face.jpg
 │       ├── facebook.png
 │       ├── fantasy.webp
 │       ├── feet.webp
-│       ├── fish.webp
-│       ├── flower.jpg
+│       ├── fire.jpg
+│       ├── fish.jpg
 │       ├── fractal.webp
 │       ├── freckles.webp
+│       ├── girl.jpg
 │       ├── glass.webp
+│       ├── glow.jpg
+│       ├── hair.jpg
 │       ├── hand.png
-│       ├── hand.webp
 │       ├── hawaii.webp
 │       ├── instragram.png
 │       ├── island.webp
 │       ├── kean.jpeg
-│       ├── laugh.jpg
 │       ├── lily.jpg
+│       ├── lips.jpg
 │       ├── location.png
 │       ├── mermaid.webp
-│       ├── mountain.webp
+│       ├── morning.jpg
+│       ├── mum.jpg
 │       ├── phone.png
 │       ├── pinterest.png
 │       ├── pool.jpg
+│       ├── product.jpg
+│       ├── products
 │       ├── rat.png
 │       ├── ripple.webp
+│       ├── routine.jpg
 │       ├── seahorse.png
 │       ├── share.webp
+│       ├── sheet.jpg
 │       ├── shine.webp
 │       ├── shower.jpg
 │       ├── skin-facial.webp
+│       ├── skin.jpg
 │       ├── skin.webp
+│       ├── sleep.jpg
+│       ├── smell.jpg
+│       ├── smile.jpg
+│       ├── stress.jpg
+│       ├── sun.jpg
 │       ├── surf.webp
 │       ├── swimming.webp
 │       ├── tincture.webp
-│       ├── tree.webp
 │       ├── trip.webp
 │       ├── tropical-water.webp
 │       ├── underwater.jpg
+│       ├── wash.jpg
+│       ├── water.jpg
 │       ├── waves.webp
 │       ├── whoop.webp
 │       └── x.png
@@ -147,9 +162,10 @@
 │   ├── about.css
 │   ├── contact.css
 │   ├── quiz.css
+│   ├── routine.css
 │   └── styles.css
 ├── tree.txt
 ├── utils
 └── vercel.json
 
-9 directories, 144 files
+10 directories, 159 files

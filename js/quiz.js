@@ -1145,24 +1145,128 @@
           multiUseInterest: answers[23], // String (single choice)
       };
   
-        console.log("User Answers:", userAnswers);
+      console.log("User Answers:", userAnswers);
+
+      const recommendedProducts = getRecommendedProducts(userAnswers);
   
-        const recommendedProducts = getRecommendedProducts(userAnswers);
-        if (recommendedProducts.length > 0) {
-          displayRecommendedProducts(recommendedProducts);
-        } else {
-          quizContent.innerHTML = '<h2>No products found matching your criteria.</h2><p>Please try again with different answers.</p>';
-        }
-  
-        nextBtn.style.display = 'none';
-        prevBtn.style.display = 'none';
-  
-        resetQuizState();
-      } catch (error) {
-        console.error('Error submitting quiz:', error);
-        showToast('Error submitting quiz. Please try again.');
+      if (recommendedProducts.length > 0) {
+        const routine = generateRoutine(userAnswers, recommendedProducts);
+        const formattedRoutine = formatRoutineForDisplay(routine);
+        displayResults(recommendedProducts, formattedRoutine);
+      } else {
+        quizContent.innerHTML = '<h2>No products found matching your criteria.</h2><p>Please try again with different answers.</p>';
       }
+  
+      nextBtn.style.display = 'none';
+      prevBtn.style.display = 'none';
+  
+      resetQuizState();
+    } catch (error) {
+      console.error('Error submitting quiz:', error);
+      showToast('Error submitting quiz. Please try again.');
     }
+  }
+
+    // New function to display both products and routine
+    function displayResults(recommendedProducts, routine) {
+      let resultHtml = '<div class="results-container">';
+      
+      // Products section
+      resultHtml += '<section class="recommended-products">';
+      resultHtml += '<h2>Your Recommended Products</h2>';
+      resultHtml += '<div class="products-container">';
+      
+      // Add the product cards HTML
+      recommendedProducts.forEach((product) => {
+        resultHtml += `
+          <div class="product-card">
+            <div class="product-image">
+              <img src="${product.image}" alt="${product.name}">
+              <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
+            </div>
+            <div class="product-info">
+              <h3>${product.name}</h3>
+              <p><strong>Category:</strong> ${product.category}</p>
+              <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
+              <p><strong>Concerns Addressed:</strong> ${product.concerns.join(', ')}</p>
+              <p><strong>Price Range:</strong> ${product.budgetRange}</p>
+              <a href="${product.url}" target="_blank" class="product-link">View Product</a>
+            </div>
+          </div>
+        `;
+      });
+      
+      resultHtml += '</div></section>';
+      
+      // Routine section
+      resultHtml += '<section class="skincare-routine">';
+      resultHtml += '<h2>Your Personalized Routine</h2>';
+      
+      // Morning routine
+      resultHtml += '<div class="routine-time-block">';
+      resultHtml += '<h3>Morning Routine</h3>';
+      resultHtml += '<ol class="routine-steps">';
+      routine.morning.forEach(step => {
+        resultHtml += `
+          <li class="routine-step">
+            <h4>${step.step}</h4>
+            <p class="product-name">${step.product}</p>
+            <p class="instructions">${step.instructions}</p>
+          </li>
+        `;
+      });
+      resultHtml += '</ol></div>';
+      
+      // Evening routine
+      resultHtml += '<div class="routine-time-block">';
+      resultHtml += '<h3>Evening Routine</h3>';
+      resultHtml += '<ol class="routine-steps">';
+      routine.evening.forEach(step => {
+        resultHtml += `
+          <li class="routine-step">
+            <h4>${step.step}</h4>
+            <p class="product-name">${step.product}</p>
+            <p class="instructions">${step.instructions}</p>
+          </li>
+        `;
+      });
+      resultHtml += '</ol></div>';
+      
+      // Notes section
+      if (routine.notes.length > 0) {
+        resultHtml += '<div class="routine-notes">';
+        resultHtml += '<h3>Important Notes</h3>';
+        resultHtml += '<ul>';
+        routine.notes.forEach(note => {
+          resultHtml += `<li>${note}</li>`;
+        });
+        resultHtml += '</ul></div>';
+      }
+      
+      resultHtml += '</section></div>';
+      
+      resultHtml += '<button class="start-over-btn" id="startOverBtn">Start Over</button>';
+      
+      quizContent.innerHTML = resultHtml;
+      
+      const startOverBtn = document.getElementById('startOverBtn');
+      startOverBtn.addEventListener('click', startOver);
+      
+      animateResults();
+    }
+
+function animateResults() {
+  const sections = document.querySelectorAll('.results-container > section');
+  sections.forEach((section, index) => {
+    section.style.opacity = 0;
+    section.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      section.style.opacity = 1;
+      section.style.transform = 'translateY(0)';
+    }, index * 200);
+  });
+}
   
     // Function to display recommended products
     function displayRecommendedProducts(recommendedProducts) {
