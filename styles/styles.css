@@ -16,6 +16,10 @@ body {
     text-decoration: none; /* Remove underline from links */
     color: inherit;
   }
+
+  a:link {
+    text-decoration: none;
+  }
   
 /* Existing Styles */
 /* Existing Styles */
