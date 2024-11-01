@@ -397,6 +397,14 @@ label {
   .quiz-content h2 {
     font-size: 1.2em;
   }
+
+  .question-header {
+    margin: 20px 30px;
+  }
+
+  .quiz-container {
+    height: 75vh;
+  }
 }
 
 
