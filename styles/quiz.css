@@ -670,177 +670,120 @@ label {
   color: #9f714f;
 }
 
-/* Product Styles */
-
-.product {
-  border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  margin-right: 20px;
-  margin-left: 20px;
-  background-color: #f4ebe1; /* Consistent with .option background */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(55, 52, 49, 0.1);
-  transition: box-shadow 0.6s ease, transform 0.6s ease;
+/* Product Section */
+.recommended-products {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.product:hover {
-  box-shadow: 0 4px 12px rgba(55, 52, 49, 0.15);
-  transform: scale(1.001);
-}
-
-.product h3 {
-  margin-top: 0;
-  font-size: 1.5em;
-  font-weight: 400;
-  color: #3f3d3b; /* Matches body text color */
-}
-
-.product p {
-  font-size: 1em;
+.recommended-products h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Merriweather', serif;
   font-weight: 300;
-  color: #3f3d3b;
-  margin-bottom: 10px;
 }
 
-/* Existing styles for .product */
-
-.product a {
-  color: #9f714f; /* Consistent with interactive elements */
-  text-decoration: none;
-  font-weight: 500;
-  position: relative; /* Added for custom underline */
-}
-
-.product a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #9f714f;
-  transition: width 0.25s ease-in-out;
-}
-
-.product a:hover::after {
-  width: 100%;
-}
-
-/* Products Container */
 .products-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
 }
 
-/* Product Card Styles */
 .product-card {
-  background-color: #fffaf4;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(55, 52, 49, 0.1);
+  background: #f8f9fa;
+  border-radius: 0.5rem;
   overflow: hidden;
-  max-width: 300px;
-  flex: 1 1 calc(33% - 40px); /* Responsive grid */
+  transition: all 0.2s ease;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInUp 1s ease forwards;
+  opacity: 0;
 }
 
 .product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(55, 52, 49, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
 
 .product-image {
   position: relative;
   width: 100%;
+  padding-top: 66%; /* Adjusted for better proportions */
   overflow: hidden;
 }
 
 .product-image img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-
-}
-
-.product-image .hover-image {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.product-image .hover-image {
   opacity: 0;
 }
 
-.product-card:hover .product-image .hover-image {
+.product-card:hover .hover-image {
   opacity: 1;
 }
 
-/* .product-card:hover .product-image img {
-  transform: scale(1.05);
-} */
-
-/* Update font-family for product info */
 .product-info {
-  padding: 16px;
-  flex: 1 1 auto;
+  position: relative;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  font-family: 'Quicksand', sans-serif;
-  align-items: flex-start;
 }
 
-/* Update font-family for headings */
 .product-info h3 {
-  margin-top: 0;
-  font-size: 1.25em;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
   font-weight: 400;
-  color: #3f3d3b;
-  font-family: 'Merriweather', serif; /* Consistent with site headings */
+  font-family: 'Merriweather', serif;
 }
 
-/* Update font-family for paragraphs */
 .product-info p {
-  font-size: 0.9em;
-  color: #3f3d3b;
-  margin: 4px 0;
-  font-family: 'Quicksand', sans-serif;
+  color: #495057;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
 }
 
-
-.product-info .product-link {
-  margin-top: 16px; 
-  align-self: stretch;
+.product-link {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  background: #9f714f;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
   text-align: center;
-  background-color: #9f714f;
-  color: #fffaf4;
-  padding: 10px 16px;
-  border-radius: 6px;
   text-decoration: none;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  transition: all 0.2s ease;
 }
 
-.product-info .product-link:hover {
+.product-link:hover {
   background-color: #845c3d;
-}
-
-/* Responsive adjustments */
-@media (max-width: 900px) {
-  .product-card {
-    flex: 1 1 calc(50% - 40px);
-  }
-}
-
-@media (max-width: 600px) {
-  .product-card {
-    flex: 1 1 100%;
-  }
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeInUp {
@@ -851,6 +794,33 @@ label {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .products-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  
+  .recommended-products {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-info {
+    padding: 1rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media print {
+  .recommended-products {
+    display: none;
   }
 }
 
@@ -899,6 +869,202 @@ label {
 .toast.fade-out {
   opacity: 0; /* Fade out */
   transform: translateX(-50%) translateY(20px); /* Move slightly down */
+}
+
+/* Add these to your quiz.css, they'll match the recommended products styling */
+.skincare-routine {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.routine-preview-header {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  margin-bottom: -15px;
+}
+
+.routine-preview-header h2 {
+  color: #2c3e50;
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.routine-preview-badge {
+  display: inline-block;
+  background: #9f714f;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-family: 'Quicksand', sans-serif;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+
+.routine-time-block {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.routine-time-block h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.routine-step {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.routine-step h4 {
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.product-name {
+  color: #6c757d;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  padding: 0.25rem 0.5rem;
+  background: #f8f9fa;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+
+.instructions {
+  color: #495057;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+  line-height: 1.5;
+}
+
+.routine-unlock-prompt {
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.unlock-benefits {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.unlock-benefits h3 {
+  color: #2c3e50;
+  font-family: 'Merriweather', serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 2rem 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  text-align: left;
+}
+
+.benefit-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.benefit-item p {
+  color: #495057;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.unlock-cta {
+  display: flex;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.preview-email {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.unlock-routine-btn {
+  background: #9f714f;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.unlock-routine-btn:hover {
+  background: #845c3d;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.preview-note {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .skincare-routine {
+    padding: 1.5rem;
+  }
+  
+  .unlock-cta {
+    flex-direction: column;
+  }
+  
+  .unlock-routine-btn {
+    width: 100%;
+  }
+  
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .routine-time-block {
+    padding: 1rem;
+  }
+  
+  .routine-step {
+    padding: 0.75rem;
+  }
 }
 
 

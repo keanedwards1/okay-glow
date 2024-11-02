@@ -83,6 +83,7 @@
         { value: "Acne Treatment", text: "Acne treatment", image: "/acne_treatment.webp" },
         { value: "Retinoid", text: "Retinoid", image: "/retinoid.webp" },
         { value: "Exfoliant", text: "Exfoliant", image: "/exfoliant.webp" },
+        { value: "None", text: "None of these", image: "/public/images/1.png" },
       ],
     },
     {
@@ -173,8 +174,8 @@
         { value: "Silicones", text: "Silicones", image: "/silicones.webp" },
         { value: "Sulfates", text: "Sulfates", image: "/sulfates.webp" },
         { value: "Parabens", text: "Parabens", image: "/parabens.webp" },
-        { value: "Other", text: "Other (please specify)", image: "/other.webp" },
-        { value: "No known sensitivities", text: "No known sensitivities", image: "/no_sensitivities.webp" },
+/*         { value: "Other", text: "Other (please specify)", image: "/other.webp" },
+ */        { value: "No known sensitivities", text: "No known sensitivities", image: "/no_sensitivities.webp" },
       ],
     },
     {
@@ -917,6 +918,7 @@
       }
       moveToNextQuestion();
     }
+
   
     // Function to render the current question
     function renderQuestion() {
@@ -1168,92 +1170,126 @@
   }
 
     // New function to display both products and routine
-    function displayResults(recommendedProducts, routine) {
-      let resultHtml = '<div class="results-container">';
-      
-      // Products section
-      resultHtml += '<section class="recommended-products">';
-      resultHtml += '<h2>Your Recommended Products</h2>';
-      resultHtml += '<div class="products-container">';
-      
-      // Add the product cards HTML
-      recommendedProducts.forEach((product) => {
-        resultHtml += `
-          <div class="product-card">
-            <div class="product-image">
-              <img src="${product.image}" alt="${product.name}">
-              <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
-            </div>
-            <div class="product-info">
-              <h3>${product.name}</h3>
-              <p><strong>Category:</strong> ${product.category}</p>
-              <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
-              <p><strong>Concerns Addressed:</strong> ${product.concerns.join(', ')}</p>
-              <p><strong>Price Range:</strong> ${product.budgetRange}</p>
-              <a href="${product.url}" target="_blank" class="product-link">View Product</a>
-            </div>
+    // Replace the existing displayResults function in quiz.js
+function displayResults(recommendedProducts, routine) {
+  let resultHtml = '<div class="results-container">';
+  
+  // Full Products Section
+  resultHtml += '<section class="recommended-products">';
+  resultHtml += '<h2>Your Recommended Products</h2>';
+  resultHtml += '<div class="products-container">';
+  
+  // Show all products
+  recommendedProducts.forEach((product) => {
+    resultHtml += `
+      <div class="product-card">
+        <div class="product-image">
+          <img src="${product.image}" alt="${product.name}">
+          <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
+        </div>
+        <div class="product-info">
+          <h3>${product.name}</h3>
+          <p><strong>Category:</strong> ${product.category}</p>
+          <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
+          <p><strong>Concerns Addressed:</strong> ${product.concerns.join(', ')}</p>
+          <p><strong>Price Range:</strong> ${product.budgetRange}</p>
+          <a href="${product.url}" target="_blank" class="product-link">View Product</a>
+        </div>
+      </div>
+    `;
+  });
+  
+  resultHtml += '</div></section>';
+  
+  // Routine Preview Section with Upgrade Prompt
+  resultHtml += `
+  <section class="skincare-routine">
+    <div class="routine-preview-header">
+      <h2>Your Personalized Routine</h2>
+      <span class="routine-preview-badge">Preview</span>
+    </div>
+    
+    <div class="routine-time-block">
+      <h3>Morning Routine</h3>
+      <div class="routine-step">
+        <h4>${routine.morning[0].step}</h4>
+        <p class="product-name">${routine.morning[0].product}</p>
+        <p class="instructions">${routine.morning[0].instructions}</p>
+      </div>
+    </div>
+
+    <div class="routine-unlock-prompt">
+      <div class="unlock-benefits">
+        <h3>Get Your Full Personalized Routine</h3>
+        
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <span class="benefit-icon">🎯</span>
+            <p>Complete AM & PM routines with step-by-step instructions</p>
           </div>
-        `;
-      });
+          <div class="benefit-item">
+            <span class="benefit-icon">⚡️</span>
+            <p>Product order optimization to maximize effectiveness</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">⚠️</span>
+            <p>Ingredient conflict warnings and timing recommendations</p>
+          </div>
+          <div class="benefit-item">
+            <span class="benefit-icon">✨</span>
+            <p>Personalized usage tips based on your skin profile</p>
+          </div>
+        </div>
+
+        <div class="unlock-cta">
+          <input type="email" id="userEmail" placeholder="Enter your email" class="preview-email">
+          <button onclick="handleRoutineUnlock()" class="unlock-routine-btn">
+            Unlock Full Routine ($5)
+          </button>
+        </div>
+        
+        <p class="preview-note">Join 300+ others who've optimized their skincare routine</p>
+      </div>
+    </div>
+  </section>
+`;
+  
+  resultHtml += '<button class="start-over-btn" id="startOverBtn">Start Over</button>';
+  
+  quizContent.innerHTML = resultHtml;
+  
+  // Add event listeners
+  const startOverBtn = document.getElementById('startOverBtn');
+  startOverBtn.addEventListener('click', startOver);
+  
+  // Add this function to handle the unlock
+  window.handleRoutineUnlock = function() {
+    const email = document.getElementById('userEmail').value;
+    if (email) {
+      // Store the email and quiz results
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('quizResults', JSON.stringify({
+        recommendedProducts,
+        routine
+      }));
       
-      resultHtml += '</div></section>';
+      // Show success message
+      const promptDiv = document.querySelector('.routine-unlock-prompt');
+      promptDiv.innerHTML = `
+        <div class="unlock-success">
+          <h3>Thanks for your interest! 🎉</h3>
+          <p>We're launching soon and you'll be the first to know.</p>
+          <p>Current waitlist: ${Math.floor(Math.random() * 50) + 300} people</p>
+        </div>
+      `;
       
-      // Routine section
-      resultHtml += '<section class="skincare-routine">';
-      resultHtml += '<h2>Your Personalized Routine</h2>';
-      
-      // Morning routine
-      resultHtml += '<div class="routine-time-block">';
-      resultHtml += '<h3>Morning Routine</h3>';
-      resultHtml += '<ol class="routine-steps">';
-      routine.morning.forEach(step => {
-        resultHtml += `
-          <li class="routine-step">
-            <h4>${step.step}</h4>
-            <p class="product-name">${step.product}</p>
-            <p class="instructions">${step.instructions}</p>
-          </li>
-        `;
-      });
-      resultHtml += '</ol></div>';
-      
-      // Evening routine
-      resultHtml += '<div class="routine-time-block">';
-      resultHtml += '<h3>Evening Routine</h3>';
-      resultHtml += '<ol class="routine-steps">';
-      routine.evening.forEach(step => {
-        resultHtml += `
-          <li class="routine-step">
-            <h4>${step.step}</h4>
-            <p class="product-name">${step.product}</p>
-            <p class="instructions">${step.instructions}</p>
-          </li>
-        `;
-      });
-      resultHtml += '</ol></div>';
-      
-      // Notes section
-      if (routine.notes.length > 0) {
-        resultHtml += '<div class="routine-notes">';
-        resultHtml += '<h3>Important Notes</h3>';
-        resultHtml += '<ul>';
-        routine.notes.forEach(note => {
-          resultHtml += `<li>${note}</li>`;
-        });
-        resultHtml += '</ul></div>';
-      }
-      
-      resultHtml += '</section></div>';
-      
-      resultHtml += '<button class="start-over-btn" id="startOverBtn">Start Over</button>';
-      
-      quizContent.innerHTML = resultHtml;
-      
-      const startOverBtn = document.getElementById('startOverBtn');
-      startOverBtn.addEventListener('click', startOver);
-      
-      animateResults();
+      // Log interest for tracking
+      console.log('User interested in full routine:', email);
     }
+  };
+  
+  animateResults();
+}
 
 function animateResults() {
   const sections = document.querySelectorAll('.results-container > section');

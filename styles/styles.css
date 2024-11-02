@@ -590,7 +590,8 @@ body {
   text-align: center;
   padding: 60px 20px;
   background-color: #f8f4ef;
-}
+/*   background-color: #f1e2d2;
+ */}
 
 .testimonials-section h2 {
   font-size: 2.5rem;
@@ -1226,7 +1227,7 @@ body {
 
 /* Journey Section Styles */
 .journey-section {
-  padding: 80px 0;
+  padding: 80px 0 100px 0;
   background-color: #f8f4ef;
   overflow: hidden;
 }
@@ -1351,13 +1352,21 @@ body {
 
 .journey-cta {
   text-align: center;
-  margin-top: 48px;
+  margin-top: 128px;
   opacity: 0;
+  padding: 1px;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease 0.5s forwards;
 }
 
-.cta-button {
+.begin-btn {
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  border-radius: 40px;
+  padding: 15px 30px;
+}
+
+/* .cta-button-2 {
   display: inline-flex;
   align-items: center;
   background-color: #edd3b9;
@@ -1368,7 +1377,7 @@ body {
   font-weight: 300;
   color: #403d3b;
   transition: all 0.4s ease;
-}
+} */
 
 .cta-sparkle {
   margin-left: 8px;
@@ -1376,11 +1385,11 @@ body {
   transition: transform 0.4s ease;
 }
 
-.cta-button:hover {
+/* .cta-button:hover {
   background-color: #f0dac5;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
+} */
 
 .cta-button:hover .cta-sparkle {
   transform: rotate(15deg);
