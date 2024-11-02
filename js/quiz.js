@@ -1202,6 +1202,7 @@ function displayResults(recommendedProducts, routine) {
   resultHtml += '</div></section>';
   
   // Routine Preview Section with Upgrade Prompt
+
   resultHtml += `
   <section class="skincare-routine">
     <div class="routine-preview-header">
@@ -1244,7 +1245,7 @@ function displayResults(recommendedProducts, routine) {
         <div class="unlock-cta">
           <input type="email" id="userEmail" placeholder="Enter your email" class="preview-email">
           <button onclick="handleRoutineUnlock()" class="unlock-routine-btn">
-            Unlock Full Routine ($5)
+            See Full Routine
           </button>
         </div>
         
