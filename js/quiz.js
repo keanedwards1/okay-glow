@@ -1115,6 +1115,167 @@
         });
       }, 1500);
     }
+
+    // Function to generate a skincare routine based on user answers and recommended products
+function generateRoutine(userAnswers, recommendedProducts) {
+  const routine = {
+    morning: [],
+    evening: []
+  };
+
+  // Helper function to find product by category
+  const findProduct = (category) => {
+    return recommendedProducts.find(p => p.category.toLowerCase() === category.toLowerCase());
+  };
+
+  // Morning Routine Steps
+  const morningSteps = [
+    {
+      step: "Cleanse",
+      category: "Cleanser",
+      instructions: "Gently massage cleanser onto damp face in circular motions for 60 seconds, then rinse with lukewarm water."
+    },
+    {
+      step: "Tone",
+      category: "Toner",
+      instructions: "Apply toner with clean hands or cotton pad, gently patting into skin."
+    },
+    {
+      step: "Treatment",
+      category: "Serum",
+      instructions: "Apply 2-3 drops of serum, gently pressing into skin."
+    },
+    {
+      step: "Moisturize",
+      category: "Moisturizer",
+      instructions: "Apply a pea-sized amount of moisturizer using gentle upward strokes."
+    },
+    {
+      step: "Protect",
+      category: "Sunscreen",
+      instructions: "Apply a generous amount of sunscreen as your final step, reapply every 2 hours when outdoors."
+    }
+  ];
+
+  // Evening Routine Steps
+  const eveningSteps = [
+    {
+      step: "First Cleanse",
+      category: "Cleanser",
+      instructions: "Remove makeup and sunscreen with cleansing oil or balm."
+    },
+    {
+      step: "Second Cleanse",
+      category: "Cleanser",
+      instructions: "Follow with water-based cleanser for thorough cleansing."
+    },
+    {
+      step: "Tone",
+      category: "Toner",
+      instructions: "Balance skin pH with toner, applied with gentle patting motions."
+    },
+    {
+      step: "Treat",
+      category: "Serum",
+      instructions: "Apply treatments or serums, focusing on your specific skin concerns."
+    },
+    {
+      step: "Eye Care",
+      category: "Eye Cream",
+      instructions: "Gently pat eye cream around orbital bone using ring finger."
+    },
+    {
+      step: "Moisturize",
+      category: "Moisturizer",
+      instructions: "Lock in treatments with moisturizer, using gentle upward motions."
+    }
+  ];
+
+  // Add weekly treatments based on skin concerns
+  const weeklyTreatments = [];
+  if (userAnswers.concerns?.includes("Acne")) {
+    weeklyTreatments.push({
+      step: "Exfoliate",
+      category: "Exfoliator",
+      frequency: "2-3 times per week",
+      instructions: "Gently exfoliate with BHA product after cleansing, avoid other active ingredients on these nights."
+    });
+  }
+  if (userAnswers.concerns?.includes("Dullness")) {
+    weeklyTreatments.push({
+      step: "Mask",
+      category: "Mask",
+      frequency: "1-2 times per week",
+      instructions: "Apply mask to clean skin, leave on for recommended time, follow with regular routine."
+    });
+  }
+
+  // Populate morning routine
+  routine.morning = morningSteps.map(step => {
+    const product = findProduct(step.category);
+    return {
+      step: step.step,
+      product: product ? product.name : `Recommended ${step.category}`,
+      instructions: step.instructions
+    };
+  });
+
+  // Populate evening routine
+  routine.evening = eveningSteps.map(step => {
+    const product = findProduct(step.category);
+    return {
+      step: step.step,
+      product: product ? product.name : `Recommended ${step.category}`,
+      instructions: step.instructions
+    };
+  });
+
+  // Add weekly treatments
+  routine.weekly = weeklyTreatments;
+
+  return routine;
+}
+
+// Function to format the routine for display
+function formatRoutineForDisplay(routine) {
+  // Ensure routine has required properties
+  if (!routine.morning || !routine.evening) {
+    return {
+      morning: [{
+        step: "Cleanse",
+        product: "Basic Gentle Cleanser",
+        instructions: "Wash face with lukewarm water"
+      }],
+      evening: [{
+        step: "Cleanse",
+        product: "Basic Gentle Cleanser",
+        instructions: "Wash face with lukewarm water"
+      }],
+      weekly: []
+    };
+  }
+
+  // Add timing and duration estimates
+  routine.morning = routine.morning.map(step => ({
+    ...step,
+    duration: "2-3 minutes"
+  }));
+
+  routine.evening = routine.evening.map(step => ({
+    ...step,
+    duration: "2-3 minutes"
+  }));
+
+  // Add additional tips based on routine
+  routine.tips = [
+    "Wait 30 seconds between each step to allow products to absorb",
+    "Apply products from thinnest to thickest consistency",
+    "Use upward motions when applying products to prevent dragging skin down",
+    "Don't forget to extend products to neck and décolletage area"
+  ];
+
+  return routine;
+}
   
     // Handle finishing the quiz
     function submitQuiz() {
