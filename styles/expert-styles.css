@@ -1,0 +1,256 @@
+/* expert-styles.css */
+
+.expert-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.expert-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f1e2d2;
+    border-radius: 16px;
+    margin-bottom: 40px;
+}
+
+.expert-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #403d3b;
+    margin-bottom: 20px;
+}
+
+.expert-hero p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    color: #403d3b;
+    font-weight: 300;
+}
+
+/* Consultation Options */
+.consultation-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.option-card {
+    background-color: #f8f4ef;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.option-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #403d3b;
+    margin-bottom: 15px;
+}
+
+.option-card p {
+    font-family: 'Quicksand', sans-serif;
+    color: #403d3b;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+/* Expert Profiles */
+.expert-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.expert-profile {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.expert-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.expert-info {
+    flex-grow: 1;
+}
+
+.expert-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.specialty {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 0.9rem;
+}
+
+.rating span {
+    color: #666;
+    margin-left: 5px;
+}
+
+.book-button {
+    background-color: #edd3b9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-button:hover {
+    background-color: #f0dac5;
+}
+
+/* Forum Categories */
+.forum-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.forum-category {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+
+.forum-category:hover {
+    transform: translateY(-5px);
+}
+
+.forum-category i {
+    font-size: 2rem;
+    color: #9f714f;
+    margin-bottom: 15px;
+}
+
+.forum-category h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #403d3b;
+    margin-bottom: 10px;
+}
+
+.forum-category span {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Popular Discussions */
+.popular-discussions {
+    margin-top: 60px;
+}
+
+.popular-discussions h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #403d3b;
+    margin-bottom: 30px;
+}
+
+.discussion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.discussion-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.discussion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category-tag {
+    background-color: #f1e2d2;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.votes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #9f714f;
+}
+
+.discussion-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #403d3b;
+    margin-bottom: 10px;
+}
+
+.discussion-card p {
+    font-family: 'Quicksand', sans-serif;
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.discussion-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.comments i {
+    margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expert-hero {
+        padding: 40px 20px;
+    }
+
+    .expert-hero h1 {
+        font-size: 2rem;
+    }
+
+    .expert-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-button {
+        width: 100%;
+    }
+
+    .forum-categories {
+        grid-template-columns: 1fr;
+    }
+}

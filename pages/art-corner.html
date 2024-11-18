@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Express yourself in our creative art corner">
+    <title>Okay Glow | Art Corner</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/art-corner-styles.css">
+    <link rel="icon" type="image/webp" href="/public/images/cream-p.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header (same as main site) -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-title">Okay Glow</span>
+                    <img src="/public/images/cream-p.webp" alt="Okay Glow logo" class="logo">
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="menu-button">Menu
+                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="/">Home</a>
+                    <a href="/pages/quiz.html">Quiz</a>
+                    <a href="/pages/about.html">About Us</a>
+                    <a href="/pages/contact.html">Contact</a>
+                    <a href="/pages/blogs.html">Blogs</a>
+                    <a href="/pages/expert.html">Ask An Expert</a>
+                </div>
+            </div>
+            <a href="/pages/quiz.html" class="get-started-button">Get Started</a>
+        </nav>
+    </header>
+
+    <main class="art-corner-main">
+        <!-- Hero Section -->
+        <section class="art-hero">
+            <h1>Art Corner</h1>
+            <p>Express yourself, find peace, and connect through creativity</p>
+        </section>
+
+        <!-- Navigation Tabs -->
+        <div class="art-nav">
+            <button class="tab-button active" data-tab="canvas">Pixel Canvas</button>
+            <button class="tab-button" data-tab="journal">Gratitude Journal</button>
+            <button class="tab-button" data-tab="artbook">Art Book</button>
+            <button class="tab-button" data-tab="mindfulness">Mindfulness</button>
+        </div>
+
+        <!-- Pixel Canvas Section -->
+        <section class="art-section active" id="canvas-section">
+            <div class="canvas-container">
+                <div class="canvas-info">
+                    <h2>Community Pixel Canvas</h2>
+                    <p>Place one pixel at a time. Create together. 🎨</p>
+                </div>
+                <div class="canvas-controls">
+                    <div class="color-picker">
+                        <input type="color" id="pixel-color" value="#000000">
+                        <span>Choose Color</span>
+                    </div>
+                    <div class="online-users">
+                        <span class="user-count">0</span> artists online
+                    </div>
+                </div>
+                <canvas id="pixel-canvas" width="500" height="500"></canvas>
+                <div class="canvas-overlay">
+                    <div class="coordinates"></div>
+                    <div class="cooldown">Next pixel in: <span>0s</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal Section -->
+        <section class="art-section" id="journal-section">
+            <div class="journal-container">
+                <div class="journal-header">
+                    <h2>Gratitude Journal</h2>
+                    <p>Record your daily moments of joy and gratitude</p>
+                </div>
+                <div class="journal-content">
+                    <div class="entry-form">
+                        <label for="entry-date">Date</label>
+                        <input type="date" id="entry-date">
+                        <label for="entry-content">Today I'm grateful for...</label>
+                        <textarea id="entry-content" rows="5" placeholder="Write your thoughts..."></textarea>
+                        <div class="mood-selector">
+                            <span>Mood:</span>
+                            <button class="mood-btn">😊</button>
+                            <button class="mood-btn">😌</button>
+                            <button class="mood-btn">🥰</button>
+                            <button class="mood-btn">😴</button>
+                        </div>
+                        <button class="save-entry-btn">Save Entry</button>
+                    </div>
+                    <div class="journal-entries">
+                        <!-- Entries will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Art Book Section -->
+        <section class="art-section" id="artbook-section">
+            <div class="artbook-container">
+                <div class="artbook-header">
+                    <h2>Art Book</h2>
+                    <p>A collection of calming illustrations and patterns</p>
+                </div>
+                <div class="artbook-gallery">
+                    <!-- Art pieces will be displayed in a grid -->
+                    <div class="art-piece">
+                        <img src="/api/placeholder/300/300" alt="Peaceful pattern 1">
+                        <div class="art-piece-overlay">
+                            <h3>Ocean Waves</h3>
+                            <p>Download & Color</p>
+                        </div>
+                    </div>
+                    <!-- More art pieces... -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Mindfulness Section -->
+        <section class="art-section" id="mindfulness-section">
+            <div class="mindfulness-container">
+                <!-- Breathing Exercise -->
+                <div class="breathing-exercise">
+                    <h2>Breathing Guide</h2>
+                    <div class="breathing-circle">
+                        <div class="circle-text">Breathe</div>
+                    </div>
+                    <div class="breathing-controls">
+                        <button class="start-breathing">Start</button>
+                        <div class="breathing-timer">5:00</div>
+                    </div>
+                </div>
+
+                <!-- Daily Affirmations -->
+                <div class="affirmations">
+                    <h2>Daily Affirmations</h2>
+                    <div class="affirmation-card">
+                        <p class="affirmation-text">"I embrace my natural beauty"</p>
+                        <button class="new-affirmation">New Affirmation</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Tab Navigation
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and sections
+                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.art-section').forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                button.classList.add('active');
+                document.getElementById(`${button.dataset.tab}-section`).classList.add('active');
+            });
+        });
+
+        // Pixel Canvas WebSocket Setup
+        const canvas = document.getElementById('pixel-canvas');
+        const ctx = canvas.getContext('2d');
+        const ws = new WebSocket('ws://your-websocket-server');
+        const PIXEL_SIZE = 10;
+        let cooldown = false;
+
+        // Initialize canvas
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // WebSocket event handlers
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data.type === 'pixel') {
+                drawPixel(data.x, data.y, data.color);
+            } else if (data.type === 'users') {
+                updateUserCount(data.count);
+            }
+        };
+
+        // Canvas click handler
+        canvas.addEventListener('click', (e) => {
+            if (cooldown) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const x = Math.floor((e.clientX - rect.left) / PIXEL_SIZE) * PIXEL_SIZE;
+            const y = Math.floor((e.clientY - rect.top) / PIXEL_SIZE) * PIXEL_SIZE;
+            const color = document.getElementById('pixel-color').value;
+
+            ws.send(JSON.stringify({
+                type: 'pixel',
+                x: x,
+                y: y,
+                color: color
+            }));
+
+            // Start cooldown
+            cooldown = true;
+            startCooldown();
+        });
+
+        // Breathing Exercise
+        const breathingCircle = document.querySelector('.breathing-circle');
+        document.querySelector('.start-breathing').addEventListener('click', () => {
+            breathingCircle.classList.add('animate');
+            // Add breathing animation logic
+        });
+
+        // Affirmations
+        const affirmations = [
+            "I embrace my natural beauty",
+            "I am worthy of self-care",
+            "My skin is healing and healthy",
+            "I radiate confidence and joy"
+        ];
+
+        document.querySelector('.new-affirmation').addEventListener('click', () => {
+            const newAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+            document.querySelector('.affirmation-text').textContent = `"${newAffirmation}"`;
+        });
+    </script>
+</body>
+</html>

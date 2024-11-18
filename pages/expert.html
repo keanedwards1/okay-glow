@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Connect with skincare experts and join our community forums">
+    <title>Okay Glow | Ask An Expert</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/expert-styles.css">
+    <link rel="icon" type="image/webp" href="/public/images/cream-p.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header (same as main site) -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-title">Okay Glow</span>
+                    <img src="/public/images/cream-p.webp" alt="Okay Glow logo" class="logo">
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="menu-button">Menu
+                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="/">Home</a>
+                    <a href="/pages/quiz.html">Quiz</a>
+                    <a href="/pages/about.html">About Us</a>
+                    <a href="/pages/contact.html">Contact</a>
+                    <a href="/pages/blogs.html">Blogs</a>
+                    <a href="/pages/expert.html">Ask An Expert</a>
+                </div>
+            </div>
+            <a href="/pages/quiz.html" class="get-started-button">Get Started</a>
+        </nav>
+    </header>
+
+    <main class="expert-main">
+        <!-- Hero Section -->
+        <section class="expert-hero">
+            <h1>Connect with Skincare Experts</h1>
+            <p>Get personalized advice from accredited professionals and engage with our community</p>
+        </section>
+
+        <!-- Expert Consultation Options -->
+        <section class="consultation-options">
+            <div class="option-card">
+                <h2>1-on-1 Expert Consultation</h2>
+                <p>Book a private session with our certified experts</p>
+                <div class="expert-grid">
+                    <div class="expert-profile">
+                        <img src="/api/placeholder/100/100" alt="Dr. Sarah Kim" class="expert-avatar">
+                        <div class="expert-info">
+                            <h3>Dr. Sarah Kim</h3>
+                            <span class="specialty">Water & Skin Expert</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(127)</span>
+                            </div>
+                        </div>
+                        <button class="book-button">Book Session</button>
+                    </div>
+                    <!-- More expert profiles... -->
+                </div>
+            </div>
+
+            <div class="option-card">
+                <h2>Community Forums</h2>
+                <p>Join the discussion and share your experiences</p>
+                <div class="forum-categories">
+                    <a href="#" class="forum-category">
+                        <i class="fas fa-water"></i>
+                        <h3>Water & Skin</h3>
+                        <span>423 discussions</span>
+                    </a>
+                    <a href="#" class="forum-category">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Food & Skin</h3>
+                        <span>289 discussions</span>
+                    </a>
+                    <a href="#" class="forum-category">
+                        <i class="fas fa-running"></i>
+                        <h3>Exercise & Skin</h3>
+                        <span>156 discussions</span>
+                    </a>
+                    <a href="#" class="forum-category">
+                        <i class="fas fa-comments"></i>
+                        <h3>General Discussion</h3>
+                        <span>892 discussions</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Discussions -->
+        <section class="popular-discussions">
+            <h2>Trending Discussions</h2>
+            <div class="discussion-grid">
+                <div class="discussion-card">
+                    <div class="discussion-header">
+                        <span class="category-tag">Water & Skin</span>
+                        <div class="votes">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>142</span>
+                        </div>
+                    </div>
+                    <h3>How does hard water affect your skin barrier?</h3>
+                    <p>I recently moved to a new city and noticed changes in my skin...</p>
+                    <div class="discussion-footer">
+                        <span class="comments"><i class="fas fa-comment"></i> 47 replies</span>
+                        <span class="timestamp">2 hours ago</span>
+                    </div>
+                </div>
+                <!-- More discussion cards... -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as main site) -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>

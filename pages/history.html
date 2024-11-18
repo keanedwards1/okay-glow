@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the rich history of Korean skincare through the ages">
+    <title>Okay Glow | Korean Skincare History</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/history-styles.css">
+    <link rel="icon" type="image/webp" href="/public/images/cream-p.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header (same as main site) -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">
+                <a href="/" class="brand-link">
+                    <span class="brand-title">Okay Glow</span>
+                    <img src="/public/images/cream-p.webp" alt="Okay Glow logo" class="logo">
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="menu-button">Menu
+                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    </svg>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="/">Home</a>
+                    <a href="/pages/quiz.html">Quiz</a>
+                    <a href="/pages/about.html">About Us</a>
+                    <a href="/pages/contact.html">Contact</a>
+                    <a href="/pages/blogs.html">Blogs</a>
+                    <a href="/pages/expert.html">Ask An Expert</a>
+                </div>
+            </div>
+            <a href="/pages/quiz.html" class="get-started-button">Get Started</a>
+        </nav>
+    </header>
+
+    <main class="history-main">
+        <!-- Hero Section -->
+        <section class="history-hero">
+            <h1>The Journey of Korean Skincare</h1>
+            <p>A timeline of beauty traditions from ancient wisdom to modern innovation</p>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline-section">
+            <div class="timeline">
+                <!-- Goryeo Dynasty -->
+                <div class="timeline-item" data-year="918">
+                    <div class="timeline-content">
+                        <h2>Goryeo Dynasty</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Goryeo Dynasty skincare">
+                        </div>
+                        <p>During the Goryeo Dynasty, the noble class developed the first documented skincare rituals. Women used mung beans ground into powder to cleanse their faces, a practice that influenced modern cleansing products.</p>
+                    </div>
+                </div>
+
+                <!-- Joseon Dynasty Early -->
+                <div class="timeline-item" data-year="1392">
+                    <div class="timeline-content">
+                        <h2>Early Joseon Dynasty</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Joseon Dynasty beauty rituals">
+                        </div>
+                        <p>The Joseon Dynasty saw the creation of detailed beauty guidelines in texts like "Dongui Bogam." Camellia oil and rice water became essential skincare ingredients, laying the foundation for modern K-beauty philosophy.</p>
+                    </div>
+                </div>
+
+                <!-- Traditional Ingredients -->
+                <div class="timeline-item" data-year="1700">
+                    <div class="timeline-content">
+                        <h2>Traditional Ingredients Era</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Traditional Korean ingredients">
+                        </div>
+                        <p>Ginseng, green tea, and honey emerged as key ingredients in Korean skincare. These natural ingredients were prized for their healing and beautifying properties.</p>
+                    </div>
+                </div>
+
+                <!-- Modern Innovation Begins -->
+                <div class="timeline-item" data-year="1945">
+                    <div class="timeline-content">
+                        <h2>Modern Innovation Begins</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Early modern Korean cosmetics">
+                        </div>
+                        <p>Post-liberation Korea saw the emergence of the first modern cosmetic companies, blending traditional wisdom with scientific advancement.</p>
+                    </div>
+                </div>
+
+                <!-- K-Beauty Revolution -->
+                <div class="timeline-item" data-year="1990">
+                    <div class="timeline-content">
+                        <h2>K-Beauty Revolution</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Modern K-beauty products">
+                        </div>
+                        <p>The 1990s marked the beginning of the global K-beauty phenomenon, with innovations like sheet masks and BB creams gaining worldwide popularity.</p>
+                    </div>
+                </div>
+
+                <!-- Modern Era -->
+                <div class="timeline-item" data-year="2020">
+                    <div class="timeline-content">
+                        <h2>Modern Era</h2>
+                        <div class="timeline-image">
+                            <img src="/api/placeholder/400/300" alt="Contemporary K-beauty">
+                        </div>
+                        <p>Today's K-beauty industry leads global skincare innovation, combining centuries-old ingredients with cutting-edge technology and sustainable practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as main site) -->
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+
+    <script>
+        // Intersection Observer for smooth animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const options = {
+                threshold: 0.2,
+                rootMargin: "0px 0px -100px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
