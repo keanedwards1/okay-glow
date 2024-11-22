@@ -109,8 +109,8 @@ body {
   text-decoration: underline;
 }
 
-/* Media Query for Screen Widths >= 768px */
-@media screen and (min-width: 768px) {
+/* Media Query for Screen Widths >= 1250px */
+@media screen and (min-width: 1250px) {
   /* Hide the menu button */
   .menu-button {
     display: none;
