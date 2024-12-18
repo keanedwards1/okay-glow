@@ -23,6 +23,10 @@
 ├── pages
 │   ├── about.html
 │   ├── art-corner.html
+│   ├── blog
+│   │   ├── blog.html
+│   │   └── posts
+│   │       └── double-cleansing.html
 │   ├── contact.html
 │   ├── expert.html
 │   ├── history.html
@@ -165,6 +169,7 @@
 ├── styles
 │   ├── about.css
 │   ├── art-corner-styles.css
+│   ├── blog.css
 │   ├── contact.css
 │   ├── expert-styles.css
 │   ├── history-styles.css
@@ -175,4 +180,4 @@
 ├── utils
 └── vercel.json
 
-10 directories, 166 files
+12 directories, 169 files
