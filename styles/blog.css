@@ -1,7 +1,6 @@
 /* Blog Layout and Components */
 .blog-header {
-    background-color: #f1e2d2;
-    padding: 60px 20px;
+    padding: 60px 20px 20px 20px;
     text-align: center;
 }
 
@@ -24,7 +23,8 @@
 }
 
 .blog-featured-image {
-    max-width: 800px;
+    max-height: 200px;
+    max-width: 200px;
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
@@ -37,9 +37,11 @@
 }
 
 .blog-content-wrapper {
+    background-color: #f6f0ea;
     max-width: 800px;
-    margin: 60px auto;
-    padding: 0 20px;
+    margin: 20px auto 60px auto;
+    padding: 20px 40px;
+    border-radius: 16px;
 }
 
 .blog-content {
@@ -77,7 +79,7 @@
 }
 
 .blog-tag {
-    background-color: #f1e2d2;
+    background-color: #f5e5d4;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -100,13 +102,13 @@
 
 .blog-nav-item {
     padding: 20px;
-    background-color: #f1e2d2;
+    background-color: #f4e7d8;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .blog-nav-item:hover {
-    background-color: #edd3b9;
+    background-color: #f0ddca;
     transform: translateY(-2px);
 }
 
@@ -303,6 +305,133 @@
 .newsletter-button:hover {
     background-color: #e5c4a3;
 }
+
+/* Double Cleanse Steps */
+.double-cleanse-steps {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 40px 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.double-cleanse-steps h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #403d3b;
+    text-align: center;
+}
+
+.double-cleanse-steps p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: #403d3b;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.double-cleanse-steps ol {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.double-cleanse-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    background: #f8f4ef;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.double-cleanse-steps li:hover {
+    background-color: #f2ebe3;
+}
+
+.step-checkbox {
+    appearance: none;
+    background: #ffffff;
+    border: 2px solid #9f714f;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+    position: relative;
+    margin-top: 2px;
+}
+
+.step-checkbox:checked {
+    background-color: #9f714f;
+    border-color: #9f714f;
+}
+
+.step-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -60%) rotate(45deg);
+}
+
+/* Step text styling */
+.double-cleanse-steps li strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #403d3b;
+    font-family: 'Playfair Display', serif;
+}
+
+
+.back-button-container {
+    max-width: 800px;
+    margin: 20px auto 40px auto; /* Space from other elements */
+    text-align: left; /* Align the button to the left */
+    padding: 0 40px;
+}
+
+.back-button-container.bottom {
+    margin-top: 40px; /* More space at the bottom section */
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #f5e5d4;
+    color: #403d3b;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.95rem;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: 300;
+}
+
+.back-button:hover {
+    background-color: #edd3b9;
+    text-decoration: none;
+}
+
+.back-button:before {
+    content: "← ";
+    color: #9f714f;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
 
 @media (max-width: 500px) {
     .newsletter-form {
