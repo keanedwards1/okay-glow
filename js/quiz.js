@@ -1294,6 +1294,14 @@ document.addEventListener("DOMContentLoaded", function () {
           quizContent.classList.remove("fade-out");
         });
       }, 200); // Match this to your CSS transition duration
+      updateProgressBar();
+    }
+
+    function updateProgressBar() {
+      const totalQuestions = questions.length;
+      const currentQuestionNumber = currentQuestionIndex + 1; // since it's 0-based index
+      const progressPercent = (currentQuestionNumber / totalQuestions) * 100;
+      progressBar.style.width = progressPercent + "%";
     }
 
     // Function to check if an option should be pre-selected
