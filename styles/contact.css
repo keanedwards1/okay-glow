@@ -6,33 +6,33 @@
 }
 
 /* Page Load Animations */
-.contact-intro {
+/* .contact-intro {
   opacity: 0;
-  transform: translateX(-50px); /* Slide in from the left */
+  transform: translateX(-50px);
   animation: slideInLeft 1s forwards ease-out;
   animation-delay: 0.2s;
 }
 
 .contact-form-section {
   opacity: 0;
-  transform: translateX(50px); /* Slide in from the right */
+  transform: translateX(50px);
   animation: slideInRight 1s forwards ease-out;
   animation-delay: 0.4s;
 }
 
 .contact-info {
   opacity: 0;
-  transform: translateX(-50px); /* Slide in from the left */
+  transform: translateX(-50px);
   animation: slideInLeft 1s forwards ease-out;
   animation-delay: 0.6s;
 }
 
 .faq-section {
   opacity: 0;
-  transform: translateX(50px); /* Slide in from the right */
+  transform: translateX(50px);
   animation: slideInRight 1s forwards ease-out;
   animation-delay: 0.8s;
-}
+} */
 
 /* Keyframes for Slide-In Animations */
 @keyframes slideInLeft {
@@ -76,11 +76,12 @@
 /* Contact Intro Section */
 .contact-intro {
   position: relative;
+  background: linear-gradient(135deg, rgba(255,249,237,0.6) 0%, rgba(244,235,225,0.6) 100%), 
+              url('/public/images/insect.jpg') center/cover no-repeat; /* CHANGED */
   text-align: center;
   margin-bottom: 3rem;
-  background: linear-gradient(135deg, #fff9ed 0%, #f4ebe1 100%);
   padding: 5rem;
-  overflow: hidden; /* Ensure child elements don't overflow */
+  overflow: hidden;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -104,6 +105,7 @@
   font-family: 'Playfair Display', serif;
   position: relative;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .contact-intro h1::after {
@@ -116,11 +118,23 @@
   border-radius: 2px;
 }
 
+.contact-intro-image {
+  width: 40%;
+  min-width: 250px;
+  flex-shrink: 0;
+}
+
+.contact-intro-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .contact-intro p {
   font-size: 1.15rem;
   line-height: 1.6;
   font-weight: 300;
-  color: #6b6b6b;
+  color: #515151;
   font-family: Arial, sans-serif;
   max-width: 650px;
   margin: 0.5rem auto;
@@ -335,12 +349,20 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .contact-intro {
+    padding: 3rem;
+  }
+
   .contact-intro h1 {
     font-size: 2rem;
   }
 
   .contact-intro p {
     font-size: 1rem;
+  }
+
+  .contact-intro-image {
+    width: 80%; /* CHANGED: Make image more prominent on small screens */
   }
 
   .contact-wrapper {
