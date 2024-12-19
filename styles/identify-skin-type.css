@@ -1,0 +1,118 @@
+.skin-type-quiz {
+    background: #fff; /* Match the blog's clean, white card backgrounds */
+    border-radius: 12px;
+    padding: 20px;
+    margin: 40px 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.skin-type-quiz h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #403d3b;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.skin-type-quiz .quiz-question {
+    margin-bottom: 20px;
+}
+
+.skin-type-quiz .quiz-question h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #403d3b;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.skin-type-quiz label {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #403d3b;
+    margin: 5px 0;
+    font-weight: 300;
+}
+
+.skin-type-quiz .quiz-button {
+    background: #edd3b9;
+    color: #403d3b;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    font-weight: 400;
+}
+
+.skin-type-quiz .quiz-button:hover {
+    background-color: #e5c4a3;
+}
+
+/* Improve the appearance of radio buttons */
+.skin-type-quiz input[type="radio"] {
+    appearance: none;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #9f714f; /* Use the warm brownish accent color */
+    border-radius: 50%;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.skin-type-quiz input[type="radio"]:hover {
+    border-color: #6b6462; /* Subtle darkening on hover */
+}
+
+.skin-type-quiz input[type="radio"]:checked {
+    border-color: #9f714f;
+    background: #9f714f; /* Fill with accent color when checked */
+}
+
+.skin-type-quiz input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #fff; /* White inner dot */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.quiz-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f4ef;
+    border-radius: 12px;
+    border: 1px solid #ecd8c5;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.quiz-result-title {
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #403d3b;
+}
+
+.quiz-result-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #403d3b;
+    font-weight: 300;
+}

@@ -9,6 +9,7 @@
     <title>The History of Double Cleansing | Okay Glow Blog</title>
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/blog.css">
+    <link rel="stylesheet" href="/styles/identify-skin-type.css">
     <link rel="icon" type="image/webp" href="/public/images/cream-p.webp">
 </head>
 
@@ -98,56 +99,41 @@
                             products or environmental changes. Gentle, fragrance-free formulas are key.</li>
                     </ul>
 
-                    <h2>Check Your Daily Clues</h2>
-                    <p>
-                        Still unsure? A quick checklist can help confirm your skin type. Simply mark what applies to your usual 
-                        routine and how your skin behaves throughout the day.
-                    </p>
-
-                    <section class="double-cleanse-steps">
-                        <h2>Skin Type Checklist</h2>
-                        <p>
-                            Consider these common signs and see which ones match your experience:
-                        </p>
-                        <ol>
-                            <li>
-                                <input type="checkbox" class="step-checkbox">
-                                <div>
-                                    <strong>Your skin feels tight right after washing.</strong>
-                                    This often indicates dryness or sensitivity, suggesting you may need richer 
-                                    moisturizers or milder cleansers.
-                                </div>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="step-checkbox">
-                                <div>
-                                    <strong>Your T-zone gets shiny by midday.</strong>
-                                    This points to oily or combination skin. Look for lightweight, oil-balancing products 
-                                    to keep shine at bay.
-                                </div>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="step-checkbox">
-                                <div>
-                                    <strong>New products frequently cause redness or irritation.</strong>
-                                    This signals sensitive skin. Choose formulas with soothing botanicals and minimal 
-                                    fragrance.
-                                </div>
-                            </li>
-                            <li>
-                                <input type="checkbox" class="step-checkbox">
-                                <div>
-                                    <strong>Your skin stays balanced all day.</strong>
-                                    Congratulations—you likely have normal skin, making it easier to explore a variety of 
-                                    skincare products.
-                                </div>
-                            </li>
-                        </ol>
-                        <p>
-                            After checking these boxes, you’ll have a better sense of where your skin falls on the spectrum. Over 
-                            time, your skin may evolve due to weather, hormones, or lifestyle factors, so reassess every so often. 
-                            Staying in tune with these changes keeps your routine effective and flexible.
-                        </p>
+                    <section class="skin-type-quiz">
+                        <h2>Quick Skin Type Quiz</h2>
+                        <p style="text-align:center; color:#666;">Answer these quick questions to get a hint about your skin type. Your path to glowing skin starts here!</p>
+                        <div class="quiz-question">
+                            <h3>1. How does your skin feel after cleansing?</h3>
+                            <label><input type="radio" name="q1" value="dry"> Tight, sometimes flaky or rough</label>
+                            <label><input type="radio" name="q1" value="oily"> Fresh but quickly turns shiny</label>
+                            <label><input type="radio" name="q1" value="normal"> Balanced and comfortable</label>
+                            <label><input type="radio" name="q1" value="combination">Sometimes dry, sometimes oily</label>
+                            <label><input type="radio" name="q1" value="sensitive">Red or irritated easily</label>
+                        </div>
+                    
+                        <div class="quiz-question">
+                            <h3>2. How does your T-zone behave by midday?</h3>
+                            <label><input type="radio" name="q2" value="dry"> Still feels parched or tight</label>
+                            <label><input type="radio" name="q2" value="oily"> Noticeably shiny and oily</label>
+                            <label><input type="radio" name="q2" value="normal"> Stays calm and even</label>
+                            <label><input type="radio" name="q2" value="combination">Shiny on the T-zone, dry elsewhere</label>
+                            <label><input type="radio" name="q2" value="sensitive">May feel sensitive or react in spots</label>
+                        </div>
+                    
+                        <div class="quiz-question">
+                            <h3>3. How does your skin react to new products?</h3>
+                            <label><input type="radio" name="q3" value="dry"> Often craves richer, more hydrating formulas</label>
+                            <label><input type="radio" name="q3" value="oily"> Prefers lightweight products or it breaks out easily</label>
+                            <label><input type="radio" name="q3" value="normal"> Generally adapts well to most products</label>
+                            <label><input type="radio" name="q3" value="combination">Varies depending on the area of my face</label>
+                            <label><input type="radio" name="q3" value="sensitive">Easily gets red, itchy, or uncomfortable</label>
+                        </div>
+                    
+                        <button type="button" class="quiz-button">Get My Results</button>
+                        <div class="quiz-result" style="display: none;">
+                            <div class="quiz-result-title"></div>
+                            <div class="quiz-result-text"></div>
+                        </div>
                     </section>
 
                     <h2>Next Steps: Curate Your Routine</h2>
@@ -252,5 +238,6 @@
       </footer> -->
 </body>
 <script src="/js/dropdown.js"></script>
+<script src="/js/skin-type-quiz.js"></script>
 
 </html>
