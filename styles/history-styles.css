@@ -11,22 +11,24 @@
 .history-hero {
     text-align: center;
     padding: 60px 20px;
-    background-color: #f1e2d2;
     border-radius: 16px;
     margin-bottom: 40px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/public/images/k-history.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .history-hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    color: #403d3b;
+    color: #171717;
     margin-bottom: 20px;
 }
 
 .history-hero p {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
-    color: #403d3b;
+    color: #292827;
     font-weight: 300;
 }
 
@@ -84,7 +86,7 @@
 .timeline-item::before {
     content: attr(data-year);
     position: absolute;
-    width: 80px;
+    width: 90px;
     height: 30px;
     background: #edd3b9;
     top: 0;
@@ -97,11 +99,11 @@
 }
 
 .timeline-item:nth-child(odd)::before {
-    right: -120px;
+    right: -130px;
 }
 
 .timeline-item:nth-child(even)::before {
-    left: -120px;
+    left: -130px;
 }
 
 /* Timeline Dots */
