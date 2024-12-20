@@ -12,7 +12,7 @@
     text-align: center;
     padding: 60px 20px;
     border-radius: 16px;
-    margin-bottom: 40px;
+    margin-top: 20px;
     background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/public/images/k-history.jpg');
     background-size: cover;
     background-position: center;
@@ -35,7 +35,7 @@
 /* Timeline Section */
 .timeline-section {
     position: relative;
-    padding: 40px 0;
+    padding: 0 0 40px 0;
 }
 
 .timeline {
@@ -194,13 +194,14 @@ html {
 /* Responsive Design */
 @media (max-width: 768px) {
     .timeline::before {
-        left: 40px;
+        left: 20px;
     }
 
     .timeline-item {
-        width: 100%;
-        padding-left: 80px;
-        padding-right: 20px;
+        width: calc(100% - 40px);
+        padding: 20px;
+        margin: 10px 10px 40px;
+        transform: translateX(0);
     }
 
     .timeline-item:nth-child(even) {
@@ -208,24 +209,41 @@ html {
     }
 
     .timeline-item::before {
-        left: 0 !important;
-        top: -40px;
+        left: 40px;
+        top: -20px;
     }
 
     .timeline-item::after {
-        left: 32px !important;
+        left: 12px;
     }
 
     .timeline-content {
         padding: 20px;
+        margin: 0;
     }
 
     .timeline-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem;
     }
 
     .history-hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .timeline-item:nth-child(even)::before {
+        left: 40px;
+    }
+
+    .timeline-item::after {
+        left: 28px;
+        top: -16px;
+    }
+    .timeline-item:nth-child(even)::after {
+        left: 28px;
     }
 }
 
