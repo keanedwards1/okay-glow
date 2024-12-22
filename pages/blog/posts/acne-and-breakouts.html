@@ -55,7 +55,7 @@
                     <span>6 min read</span>
                 </div>
                 <div class="blog-featured-image">
-                    <img src="/public/images/acne-treatment.webp" alt="Skincare products and clear skin illustration">
+                    <img src="/public/images/acne.jpg" alt="Skincare products and clear skin illustration">
                 </div>
             </header>
 
@@ -102,38 +102,39 @@
                         <li><strong>Nose:</strong> Breakouts here can be associated with clogged pores or excess oil. Use gentle exfoliants and keep your skin clean.</li>
                     </ul>
 
-                    <section class="acne-checklist">
+                    <!-- Checkbox Wrapper Section -->
+                    <section class="checkbox-wrapper">
                         <h2>Acne Management Checklist</h2>
                         <p>
                             Use this checklist to ensure you’re on the right track:
                         </p>
                         <ol>
                             <li>
-                                <input type="checkbox" class="step-checkbox">
+                                <input type="checkbox" class="step-checkbox" id="acne1">
                                 <div>
                                     <strong>Daily Cleansing:</strong> Are you cleansing your face morning and night?
                                 </div>
                             </li>
                             <li>
-                                <input type="checkbox" class="step-checkbox">
+                                <input type="checkbox" class="step-checkbox" id="acne2">
                                 <div>
                                     <strong>Exfoliation:</strong> Are you using a chemical exfoliant 2-3 times a week?
                                 </div>
                             </li>
                             <li>
-                                <input type="checkbox" class="step-checkbox">
+                                <input type="checkbox" class="step-checkbox" id="acne3">
                                 <div>
                                     <strong>Hydration:</strong> Are you applying a non-comedogenic moisturizer daily?
                                 </div>
                             </li>
                             <li>
-                                <input type="checkbox" class="step-checkbox">
+                                <input type="checkbox" class="step-checkbox" id="acne4">
                                 <div>
                                     <strong>Sunscreen:</strong> Are you protecting your skin with SPF every day?
                                 </div>
                             </li>
                             <li>
-                                <input type="checkbox" class="step-checkbox">
+                                <input type="checkbox" class="step-checkbox" id="acne5">
                                 <div>
                                     <strong>Professional Help:</strong> Have you consulted a dermatologist for persistent or severe acne?
                                 </div>
@@ -143,6 +144,30 @@
                             Consistency is key when addressing acne. By following these steps and consulting with professionals when needed, you can achieve a healthier, clearer complexion.
                         </p>
                     </section>
+                    <!-- End of Checkbox Wrapper Section -->
+
+                    <!-- Blog Navigation Added -->
+                    <nav class="blog-navigation">
+                        <a href="/pages/blog/posts/how-to-layer-skincare-products.html" class="blog-nav-item">
+                            <div class="blog-nav-label">Previous Post</div>
+                            <div class="blog-nav-title">How to Layer Skincare Products</div>
+                        </a>
+                        <a href="/pages/blog/posts/essential-ingredients-radiant-skin.html" class="blog-nav-item" style="text-align: right;">
+                            <div class="blog-nav-label">Next Post</div>
+                            <div class="blog-nav-title">Essential Ingredients for Radiant Skin</div>
+                        </a>
+                    </nav>
+
+                    <!-- Blog Tags Added -->
+                    <div class="blog-tags">
+                        <a href="#" class="blog-tag">Acne</a>
+                        <a href="#" class="blog-tag">Breakouts</a>
+                        <a href="#" class="blog-tag">Skincare Tips</a>
+                        <a href="#" class="blog-tag">Healthy Skin</a>
+                        <a href="#" class="blog-tag">Skincare Routine</a>
+                        <a href="#" class="blog-tag">Treatment Options</a>
+                        <a href="#" class="blog-tag">Dermatologist</a>
+                    </div>
                 </div>
             </div>
             <div class="back-button-container bottom">
@@ -159,6 +184,58 @@
             </form>
         </section>
     </main>
+
+    <!-- Uncomment and customize the footer if needed -->
+    <!--
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="/" class="footer-brand">
+                    <img src="/public/images/cream-p.webp" alt="Okay Glow logo" class="footer-logo">
+                    <span class="footer-brand-name">Okay Glow</span>
+                </a>
+                <p class="footer-description">
+                    Find your Okay Glow 🍃
+                </p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pages/quiz.html">Quiz</a></li>
+                        <li><a href="/pages/about.html">About Us</a></li>
+                        <li><a href="/pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Find Us On</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">
+                            <img src="/public/images/facebook.png" alt="Facebook">
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <img src="/public/images/instragram.png" alt="Instagram">
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <img src="/public/images/x.png" alt="Twitter">
+                        </a>
+                        <a href="#" aria-label="Pinterest">
+                            <img src="/public/images/pinterest.png" alt="Pinterest">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Okay Glow. All rights reserved.</p>
+            <ul class="footer-bottom-links">
+                <li><a href="/pages/terms.html">Terms of Service</a></li>
+                <li><a href="/pages/privacy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+    -->
 </body>
 <script src="/js/dropdown.js"></script>
 
