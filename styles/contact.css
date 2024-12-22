@@ -1,3 +1,5 @@
+/* styles/contact.css */
+
 /* Global Box-Sizing Reset */
 *,
 *::before,
@@ -76,7 +78,7 @@
 /* Contact Intro Section */
 .contact-intro {
   position: relative;
-  background: linear-gradient(135deg, rgba(255,249,237,0.6) 0%, rgba(244,235,225,0.6) 100%), 
+  background: linear-gradient(135deg, rgba(255,249,237,0.4) 0%, rgba(244,235,225,0.6) 100%), 
               url('/public/images/insect.jpg') center/cover no-repeat; /* CHANGED */
   text-align: center;
   margin-bottom: 3rem;
@@ -176,7 +178,7 @@
   color: #9f714f;
   display: block;
   margin-bottom: 0.5rem;
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1rem;
 }
 
@@ -206,11 +208,12 @@
 .submit-btn {
   background-color: #9f714f;
   color: #fff;
-  padding: 0.75rem 1.5rem;
+  padding: 0.5rem 1.15rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
   font-weight: 600;
   transition: background-color 0.3s ease, transform 0.2s;
 }
@@ -306,7 +309,7 @@
   font-weight: 600;
   color: #9f714f;
   cursor: pointer;
-  font-family: Arial, sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
   position: relative;
   transition: color 0.3s;
