@@ -1,5 +1,8 @@
+<!-- /pages/art-corner.html -->
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +11,9 @@
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/art-corner-styles.css">
     <link rel="icon" type="image/webp" href="/public/images/cream-p.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -23,8 +28,9 @@
             </div>
             <div class="dropdown">
                 <button class="menu-button">Menu
-                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                    <svg class="menu-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                     </svg>
                 </button>
                 <div class="dropdown-menu">
@@ -36,7 +42,7 @@
                     <a href="/pages/expert.html">Ask An Expert</a>
                     <a href="/pages/history.html">Korean Skincare History</a>
                     <a href="/pages/art-corner.html">Art Corner</a>
-                  </div>
+                </div>
             </div>
             <a href="/pages/quiz.html" class="get-started-button">Get Started</a>
         </nav>
@@ -139,7 +145,7 @@
                     <h2>Breathing Guide</h2>
                     <div class="breathing-circle">
                         <div class="circle-text">Breathe</div>
-                    </div>
+                    </div>                    
                     <div class="breathing-controls">
                         <button class="start-breathing">Start</button>
                         <div class="breathing-timer">5:00</div>
@@ -158,81 +164,7 @@
         </section>
     </main>
 
-    <script>
-        // Tab Navigation
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and sections
-                document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-                document.querySelectorAll('.art-section').forEach(s => s.classList.remove('active'));
-                
-                // Add active class to clicked button and corresponding section
-                button.classList.add('active');
-                document.getElementById(`${button.dataset.tab}-section`).classList.add('active');
-            });
-        });
-
-        // Pixel Canvas WebSocket Setup
-        const canvas = document.getElementById('pixel-canvas');
-        const ctx = canvas.getContext('2d');
-        const ws = new WebSocket('ws://your-websocket-server');
-        const PIXEL_SIZE = 10;
-        let cooldown = false;
-
-        // Initialize canvas
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        // WebSocket event handlers
-        ws.onmessage = (event) => {
-            const data = JSON.parse(event.data);
-            if (data.type === 'pixel') {
-                drawPixel(data.x, data.y, data.color);
-            } else if (data.type === 'users') {
-                updateUserCount(data.count);
-            }
-        };
-
-        // Canvas click handler
-        canvas.addEventListener('click', (e) => {
-            if (cooldown) return;
-
-            const rect = canvas.getBoundingClientRect();
-            const x = Math.floor((e.clientX - rect.left) / PIXEL_SIZE) * PIXEL_SIZE;
-            const y = Math.floor((e.clientY - rect.top) / PIXEL_SIZE) * PIXEL_SIZE;
-            const color = document.getElementById('pixel-color').value;
-
-            ws.send(JSON.stringify({
-                type: 'pixel',
-                x: x,
-                y: y,
-                color: color
-            }));
-
-            // Start cooldown
-            cooldown = true;
-            startCooldown();
-        });
-
-        // Breathing Exercise
-        const breathingCircle = document.querySelector('.breathing-circle');
-        document.querySelector('.start-breathing').addEventListener('click', () => {
-            breathingCircle.classList.add('animate');
-            // Add breathing animation logic
-        });
-
-        // Affirmations
-        const affirmations = [
-            "I embrace my natural beauty",
-            "I am worthy of self-care",
-            "My skin is healing and healthy",
-            "I radiate confidence and joy"
-        ];
-
-        document.querySelector('.new-affirmation').addEventListener('click', () => {
-            const newAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
-            document.querySelector('.affirmation-text').textContent = `"${newAffirmation}"`;
-        });
-    </script>
+    <script src="/js/art-corner.js"></script>
 </body>
+
 </html>

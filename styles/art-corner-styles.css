@@ -1,4 +1,4 @@
-/* art-corner-styles.css */
+/* /styles/art-corner-styles.css */
 
 .art-corner-main {
     max-width: 1200px;
@@ -50,7 +50,7 @@
 }
 
 .tab-button.active {
-    background-color: #edd3b9;
+    background-color: #eacaaa;
 }
 
 /* Art Sections */
@@ -226,18 +226,21 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease; /* Smooth color change */
 }
 
 .breathing-circle.animate {
     animation: breathe 8s infinite ease-in-out;
 }
 
+.breathing-circle.reset {
+    animation: resetBreathe 0.5s ease-out;
+}
+
 .circle-text {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.5rem;
     color: #403d3b;
-    opacity: 0.8;
 }
 
 @keyframes breathe {
@@ -293,14 +296,22 @@
     border-radius: 12px;
     margin-top: 30px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
 
 .affirmation-text {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem;
     color: #403d3b;
-    margin-bottom: 20px;
     line-height: 1.4;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
 }
 
 .new-affirmation {
@@ -312,12 +323,14 @@
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s;
+    margin-top: auto;
 }
 
 .new-affirmation:hover {
     background-color: #f0dac5;
     transform: translateY(-2px);
 }
+
 
 /* Journal Entries Display */
 .journal-entries {
@@ -464,7 +477,6 @@
 .mood-btn:focus,
 .start-breathing:focus,
 .new-affirmation:focus {
-    outline: 2px solid #9f714f;
     outline-offset: 2px;
 }
 
