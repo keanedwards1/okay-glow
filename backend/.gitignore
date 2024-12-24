@@ -1,0 +1,51 @@
+# Target directory for compiled code
+/target/
+
+# Rust/Cargo specific files
+**/*.rs.bk
+Cargo.lock
+
+# Environment variables
+.env
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary files and folders
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.DS_Store
+*.Thumbs.db
+
+# MacOS specific files
+.DS_Store
+
+# Node-related (if ever used with frontend integration)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Docker-related
+*.env
+.env.docker
+*.env.local
+*.env.production
+.dockerignore
+docker-compose.yml
+docker-compose.override.yml
+
+# IDE and editor files
+.idea/
+.vscode/
+*.iml
+
+# PostgreSQL migration files
+migrations/*.sql.bk
+migrations/secrets/
+migrations/passwords.db

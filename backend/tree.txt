@@ -1,0 +1,26 @@
+.
+├── Cargo.toml
+├── Dockerfile
+├── migrations
+├── src
+│   ├── config.rs
+│   ├── db.rs
+│   ├── main.rs
+│   ├── models
+│   │   ├── journal.rs
+│   │   ├── mod.rs
+│   │   ├── subscriber.rs
+│   │   └── user.rs
+│   ├── routes
+│   │   ├── auth.rs
+│   │   ├── email.rs
+│   │   ├── journal.rs
+│   │   └── mod.rs
+│   └── services
+│       ├── auth_service.rs
+│       ├── email_service.rs
+│       ├── journal_service.rs
+│       └── mod.rs
+└── tree.txt
+
+6 directories, 18 files
