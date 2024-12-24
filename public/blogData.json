@@ -1,0 +1,38 @@
+[
+    {
+      "id": "1",
+      "title": "The History of Double Cleansing",
+      "url": "/pages/blog/posts/double-cleansing.html",
+      "date": "2024-11-21",
+      "tags": ["Traditions", "Routines", "Wellness"]
+    },
+    {
+      "id": "2",
+      "title": "How to Identify Your Skin Type",
+      "url": "/pages/blog/posts/identify-skin-types.html",
+      "date": "2024-12-18",
+      "tags": ["Skincare Tips", "Wellness", "Routines"]
+    },
+    {
+      "id": "3",
+      "title": "How to Choose the Right Skincare Products",
+      "url": "/pages/blog/posts/right-skincare-products.html",
+      "date": "2024-12-18",
+      "tags": ["Skincare Tips", "Routines", "Ingredients"]
+    },
+    {
+      "id": "4",
+      "title": "How to Layer Skincare Products",
+      "url": "/pages/blog/posts/layer-skincare-products.html",
+      "date": "2024-12-18",
+      "tags": ["Skincare Tips", "Routines", "Ingredients"]
+    },
+    {
+      "id": "5",
+      "title": "How to Address Acne and Breakouts",
+      "url": "/pages/blog/posts/acne-and-breakouts.html",
+      "date": "2024-12-18",
+      "tags": ["Skincare Tips", "Wellness", "Ingredients"]
+    }
+  ]
+  

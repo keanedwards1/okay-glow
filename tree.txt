@@ -6,7 +6,9 @@
 ├── index.html
 ├── js
 │   ├── about.js
+│   ├── art-corner.js
 │   ├── contact.js
+│   ├── display-blogs.js
 │   ├── dropdown.js
 │   ├── faq.js
 │   ├── interactive-section.js
@@ -19,6 +21,7 @@
 │   ├── ripple-bg.js
 │   ├── routineCustomizer.js
 │   ├── routineGenerator.js
+│   ├── skin-type-quiz.js
 │   └── temp.txt
 ├── pages
 │   ├── about.html
@@ -26,7 +29,11 @@
 │   ├── blog
 │   │   ├── blog.html
 │   │   └── posts
-│   │       └── double-cleansing.html
+│   │       ├── acne-and-breakouts.html
+│   │       ├── double-cleansing.html
+│   │       ├── identify-skin-types.html
+│   │       ├── layer-skincare-products.html
+│   │       └── right-skincare-products.html
 │   ├── contact.html
 │   ├── expert.html
 │   ├── history.html
@@ -60,6 +67,8 @@
 │       ├── 7.png
 │       ├── 8.png
 │       ├── 9.png
+│       ├── acne.jpg
+│       ├── ancient-period.jpg
 │       ├── archive
 │       │   ├── bottle.jpg
 │       │   ├── cream-p.png
@@ -107,6 +116,7 @@
 │       ├── dive.webp
 │       ├── dolphin.webp
 │       ├── drop.webp
+│       ├── early-josean.jpg
 │       ├── email.png
 │       ├── emily-1.jpeg
 │       ├── emily.jpeg
@@ -122,16 +132,26 @@
 │       ├── girl.jpg
 │       ├── glass.webp
 │       ├── glow.jpg
+│       ├── goryeo.jpg
 │       ├── hair.jpg
 │       ├── hand.png
 │       ├── hawaii.webp
+│       ├── insect.jpg
 │       ├── instragram.png
 │       ├── island.webp
+│       ├── k-history.jpg
+│       ├── k-revolution.jpg
 │       ├── kean.jpeg
+│       ├── korea-colonial.jpg
+│       ├── korean-war.jpg
+│       ├── late-joseon.jpg
+│       ├── layering.jpg
 │       ├── lily.jpg
 │       ├── lips.jpg
 │       ├── location.png
 │       ├── mermaid.webp
+│       ├── modern-innovation.jpg
+│       ├── modern.jpg
 │       ├── morning.jpg
 │       ├── mum.jpg
 │       ├── phone.png
@@ -148,8 +168,10 @@
 │       ├── shine.webp
 │       ├── shower.jpg
 │       ├── skin-facial.webp
+│       ├── skin-type.jpg
 │       ├── skin.jpg
 │       ├── skin.webp
+│       ├── skincare-product.jpg
 │       ├── sleep.jpg
 │       ├── smell.jpg
 │       ├── smile.jpg
@@ -157,10 +179,12 @@
 │       ├── sun.jpg
 │       ├── surf.webp
 │       ├── swimming.webp
+│       ├── three-kingdoms.jpg
 │       ├── tincture.webp
 │       ├── trip.webp
 │       ├── tropical-water.webp
 │       ├── underwater.jpg
+│       ├── unified-silla.jpg
 │       ├── wash.jpg
 │       ├── water.jpg
 │       ├── waves.webp
@@ -173,6 +197,7 @@
 │   ├── contact.css
 │   ├── expert-styles.css
 │   ├── history-styles.css
+│   ├── identify-skin-type.css
 │   ├── quiz.css
 │   ├── routine.css
 │   └── styles.css
@@ -180,4 +205,4 @@
 ├── utils
 └── vercel.json
 
-12 directories, 169 files
+12 directories, 194 files
