@@ -2,25 +2,26 @@
 ├── Cargo.toml
 ├── Dockerfile
 ├── migrations
+│   └── 001_create_subscribers_table.sql // this
 ├── src
 │   ├── config.rs
-│   ├── db.rs
-│   ├── main.rs
+│   ├── db.rs // this
+│   ├── main.rs // this
 │   ├── models
 │   │   ├── journal.rs
 │   │   ├── mod.rs
-│   │   ├── subscriber.rs
+│   │   ├── subscriber.rs // this
 │   │   └── user.rs
 │   ├── routes
 │   │   ├── auth.rs
-│   │   ├── email.rs
+│   │   ├── email.rs // this
 │   │   ├── journal.rs
-│   │   └── mod.rs
+│   │   └── mod.rs // this
 │   └── services
 │       ├── auth_service.rs
-│       ├── email_service.rs
+│       ├── email_service.rs // this
 │       ├── journal_service.rs
 │       └── mod.rs
 └── tree.txt
 
-6 directories, 18 files
+6 directories, 19 files
