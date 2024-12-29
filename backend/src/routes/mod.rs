@@ -1,6 +1,8 @@
 pub mod auth;
 pub mod email;
 pub mod journal;
+pub mod ws;
+pub mod canvas;
 
 use actix_web::web;
 

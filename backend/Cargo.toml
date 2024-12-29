@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 actix-web = "4.0"
+actix-web-actors = "4.0"
 dotenvy = "0.15"
 env_logger = "0.10"
 lettre = "0.10"
@@ -16,5 +17,3 @@ tokio = { version = "1.0", features = ["full"] }
 bcrypt = "0.10"
 jsonwebtoken = "8.1"
 chrono = { version = "0.4", features = ["serde"] }
-
-
