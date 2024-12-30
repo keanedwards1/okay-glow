@@ -1,3 +1,5 @@
+// backend/src/db.rs
+
 use sqlx::{postgres::PgPoolOptions, PgPool};
 
 pub async fn init_pool() -> Result<PgPool, sqlx::Error> {

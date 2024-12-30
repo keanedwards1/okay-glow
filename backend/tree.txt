@@ -18,14 +18,20 @@
 │   │   └── user.rs
 │   ├── routes
 │   │   ├── auth.rs
+│   │   ├── canvas.rs
 │   │   ├── email.rs
 │   │   ├── journal.rs
+│   │   ├── mod.rs
+│   │   └── ws.rs
+│   ├── services
+│   │   ├── auth_service.rs
+│   │   ├── email_service.rs
+│   │   ├── journal_service.rs
 │   │   └── mod.rs
-│   └── services
-│       ├── auth_service.rs
-│       ├── email_service.rs
-│       ├── journal_service.rs
-│       └── mod.rs
+│   └── websocket
+│       ├── canvas_actor.rs
+│       ├── mod.rs
+│       └── websocket_actor.rs
 └── tree.txt
 
-7 directories, 22 files
+8 directories, 27 files
