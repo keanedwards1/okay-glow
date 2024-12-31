@@ -4,7 +4,8 @@
 ├── Dockerfile
 ├── migrations
 │   ├── 001_create_subscribers_table.sql
-│   └── 002_create_users_and_journal_entries.sql
+│   ├── 002_create_users_and_journal_entries.sql
+│   └── 003_create_canvas_pixels_table.sql
 ├── src
 │   ├── config.rs
 │   ├── db.rs
@@ -28,10 +29,11 @@
 │   │   ├── email_service.rs
 │   │   ├── journal_service.rs
 │   │   └── mod.rs
+│   ├── types.rs
 │   └── websocket
 │       ├── canvas_actor.rs
 │       ├── mod.rs
 │       └── websocket_actor.rs
 └── tree.txt
 
-8 directories, 27 files
+8 directories, 29 files
