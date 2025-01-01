@@ -556,4 +556,26 @@
   .response-error {
     color: red;
   }
+
+  .auth-button {
+    background-color: #edd3b9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-left: 20px; /* Adjust spacing as needed */
+}
+
+.auth-button:hover {
+    background-color: #f0dac5;
+    transform: translateY(-2px);
+}
+
+.auth-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(237, 211, 185, 0.5);
+}
   

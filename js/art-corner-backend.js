@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
     const loginResponse = document.getElementById('login-response');
     const registerResponse = document.getElementById('register-response');
+    const authButton = document.getElementById('auth-button'); // Login/Logout button
+    const userEmailSpan = document.getElementById('user-email'); // User email display
+
+    // Select spinner elements
+    const loginSpinner = document.getElementById('login-spinner');
+    const registerSpinner = document.getElementById('register-spinner');
 
     // Open Register Modal from Login Modal
     openRegisterLink.addEventListener('click', () => {
@@ -76,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
+            loginSpinner.style.display = 'block'; // Show spinner
             const response = await fetch('https://api.okayglow.co/login', {
                 method: 'POST',
                 headers: {
@@ -86,17 +93,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
+            loginSpinner.style.display = 'none'; // Hide spinner
+
             if (response.ok) {
                 // Store JWT in localStorage
                 localStorage.setItem('jwt', data.token);
                 displayResponse(loginResponse, 'Login successful!', 'success');
                 loginForm.reset();
                 loginModal.style.display = 'none';
+                updateAuthButton(); // Update the Login/Logout button
                 loadJournalEntries(); // Fetch journal entries after login
             } else {
                 displayResponse(loginResponse, data.error || 'Login failed. Please try again.', 'error');
             }
         } catch (error) {
+            loginSpinner.style.display = 'none'; // Hide spinner
             console.error('Error during login:', error);
             displayResponse(loginResponse, 'An unexpected error occurred. Please try again later.', 'error');
         }
@@ -116,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
+            registerSpinner.style.display = 'block'; // Show spinner
             const response = await fetch('https://api.okayglow.co/register', {
                 method: 'POST',
                 headers: {
@@ -126,17 +138,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
+            registerSpinner.style.display = 'none'; // Hide spinner
+
             if (response.ok) {
                 // Store JWT in localStorage
                 localStorage.setItem('jwt', data.token);
                 displayResponse(registerResponse, 'Registration successful!', 'success');
                 registerForm.reset();
                 registerModal.style.display = 'none';
+                updateAuthButton(); // Update the Login/Logout button
                 loadJournalEntries(); // Fetch journal entries after registration
             } else {
                 displayResponse(registerResponse, data.error || 'Registration failed. Please try again.', 'error');
             }
         } catch (error) {
+            registerSpinner.style.display = 'none'; // Hide spinner
             console.error('Error during registration:', error);
             displayResponse(registerResponse, 'An unexpected error occurred. Please try again later.', 'error');
         }
@@ -463,4 +479,80 @@ document.addEventListener('DOMContentLoaded', () => {
         affirmationText.textContent = `"${newAffirmation}"`;
     });
 
+    /*** 7. Login/Logout Button Functionality ***/
+
+    /**
+     * Decodes a JWT token and returns the payload.
+     * @param {string} token - The JWT token.
+     * @returns {Object|null} - The decoded payload or null if invalid.
+     */
+    function decodeJWT(token) {
+        try {
+            const payload = token.split('.')[1];
+            const decoded = atob(payload);
+            return JSON.parse(decoded);
+        } catch (e) {
+            console.error('Failed to decode JWT:', e);
+            return null;
+        }
+    }
+
+    /**
+     * Updates the user email display based on the JWT token.
+     */
+    function updateUserEmail() {
+        const token = localStorage.getItem('jwt');
+        if (token) {
+            const decoded = decodeJWT(token);
+            if (decoded && decoded.sub) {
+                // Assuming 'sub' contains the user ID. Fetch user info from the backend if needed.
+                // For simplicity, display the email if stored in the token.
+                // Modify this based on your JWT payload structure.
+                userEmailSpan.textContent = 'User'; // Replace with actual user info if available
+                userEmailSpan.style.display = 'inline';
+            }
+        } else {
+            userEmailSpan.textContent = '';
+            userEmailSpan.style.display = 'none';
+        }
+    }
+
+    /**
+     * Updates the authentication button based on the user's login status.
+     */
+    function updateAuthButton() {
+        const token = localStorage.getItem('jwt');
+        if (token) {
+            authButton.textContent = 'Logout';
+            authButton.removeEventListener('click', showLoginModal);
+            authButton.addEventListener('click', logout);
+            userEmailSpan.style.display = 'inline';
+            updateUserEmail();
+        } else {
+            authButton.textContent = 'Login';
+            authButton.removeEventListener('click', logout);
+            authButton.addEventListener('click', showLoginModal);
+            userEmailSpan.style.display = 'none';
+        }
+    }
+
+    /**
+     * Shows the login modal.
+     */
+    function showLoginModal() {
+        loginModal.style.display = 'block';
+    }
+
+    /**
+     * Handles the logout process.
+     */
+    function logout() {
+        localStorage.removeItem('jwt');
+        displayResponse(loginResponse, 'You have been logged out.', 'success');
+        updateAuthButton();
+        journalEntries.innerHTML = ''; // Optionally clear journal entries
+    }
+
+    // Initial update of the auth button on page load
+    updateAuthButton();
 });
