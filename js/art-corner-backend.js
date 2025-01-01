@@ -112,11 +112,12 @@ document.addEventListener('DOMContentLoaded', () => {
             authButton.textContent = 'Logout';
             authButton.onclick = logout;
             userEmailSpan.style.display = 'inline';
-            userEmailSpan.textContent = 'User'; // Replace with actual user email if needed
+            updateUserEmail(); // Display user email/name
         } else {
             authButton.textContent = 'Login';
             authButton.onclick = () => showModal(loginModal);
             userEmailSpan.style.display = 'none';
+            userEmailSpan.textContent = '';
         }
     }
 
@@ -134,6 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
             registerResponse.className = '';
         }
         // Optionally, clear journal entries or other user-specific data
+        const journalEntries = document.querySelector('.journal-entries');
+        if (journalEntries) {
+            journalEntries.innerHTML = '';
+        }
     }
 
     // Handle authentication form submissions
@@ -218,6 +223,40 @@ document.addEventListener('DOMContentLoaded', () => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    // Decode JWT to get user information
+    function decodeJWT(token) {
+        try {
+            const payload = token.split('.')[1];
+            const decoded = atob(payload);
+            return JSON.parse(decoded);
+        } catch (e) {
+            console.error('Failed to decode JWT:', e);
+            return null;
+        }
+    }
+
+    /**
+     * Updates the user email display based on the JWT token.
+     */
+    function updateUserEmail() {
+        const token = localStorage.getItem('jwt');
+        if (token && userEmailSpan) {
+            const decoded = decodeJWT(token);
+            if (decoded && decoded.email) {
+                userEmailSpan.textContent = decoded.email; // Display user's email
+                userEmailSpan.style.display = 'inline';
+            } else if (decoded && decoded.name) {
+                userEmailSpan.textContent = decoded.name; // Alternatively, display user's name
+                userEmailSpan.style.display = 'inline';
+            }
+        } else {
+            if (userEmailSpan) {
+                userEmailSpan.textContent = '';
+                userEmailSpan.style.display = 'none';
+            }
+        }
+    }
+
     // Initial button update
     updateAuthButton();
 
@@ -232,29 +271,49 @@ document.addEventListener('DOMContentLoaded', () => {
     let cooldown = 0;
     let cooldownInterval;
 
-    const socket = new WebSocket('wss://api.okayglow.co/ws');
+    let socket; // Declare socket in a broader scope
 
-    socket.addEventListener('open', () => {
-        console.log('Connected to Pixel Canvas WebSocket');
-    });
+    function initializeWebSocket() {
+        socket = new WebSocket('wss://api.okayglow.co/ws');
 
-    socket.addEventListener('message', (event) => {
-        const message = JSON.parse(event.data);
-        if (message.type === 'pixel') {
-            drawPixel(message.x, message.y, message.color);
-        } else if (message.type === 'user_count') {
-            userCountDisplay.textContent = message.count;
-        }
-    });
+        socket.addEventListener('open', () => {
+            console.log('Connected to Pixel Canvas WebSocket');
+        });
 
-    socket.addEventListener('close', () => {
-        console.log('Disconnected from WebSocket');
-    });
+        socket.addEventListener('message', (event) => {
+            const message = JSON.parse(event.data);
+            if (message.type === 'pixel') {
+                drawPixel(message.x, message.y, message.color);
+            } else if (message.type === 'user_count') {
+                userCountDisplay.textContent = message.count;
+            }
+        });
+
+        socket.addEventListener('close', () => {
+            console.log('Disconnected from WebSocket. Attempting to reconnect in 5 seconds...');
+            setTimeout(() => {
+                initializeWebSocket();
+            }, 5000); // Reconnect after 5 seconds
+        });
+
+        socket.addEventListener('error', (error) => {
+            console.error('WebSocket error:', error);
+            socket.close();
+        });
+    }
+
+    // Initialize WebSocket connection
+    initializeWebSocket();
 
     // Handle Canvas Clicks
     canvas?.addEventListener('click', (e) => {
         if (cooldown > 0) {
             alert(`Please wait ${cooldown} seconds before placing another pixel.`);
+            return;
+        }
+
+        if (!socket || socket.readyState !== WebSocket.OPEN) {
+            alert('WebSocket is not connected. Please wait a moment and try again.');
             return;
         }
 
@@ -352,7 +411,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (response.ok) {
                 // Display the new entry
-                displayJournalEntry(data);
+                displayJournalEntry(data.entry); // Assuming backend returns the created entry
                 // Reset the form
                 entryDate.value = '';
                 entryContent.value = '';
@@ -376,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entryDiv.classList.add('journal-entry');
 
         entryDiv.innerHTML = `
-            <h3>${entry.date}</h3>
+            <h3>${new Date(entry.created_at).toLocaleDateString()}</h3>
             <p>${entry.content}</p>
             ${entry.mood ? `<span class="mood">${entry.mood}</span>` : ''}
         `;
@@ -403,16 +462,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Failed to load journal entries:', errorData.error || 'Unknown error');
+                return;
+            }
+
             const data = await response.json();
 
-            if (response.ok) {
-                if (Array.isArray(data.entries)) {
-                    data.entries.forEach(entry => displayJournalEntry(entry));
-                } else {
-                    console.error('Failed to load journal entries: entries is not an array');
-                }
+            if (Array.isArray(data.entries)) {
+                data.entries.forEach(entry => displayJournalEntry(entry));
             } else {
-                console.error('Failed to load journal entries:', data.error);
+                console.error('Failed to load journal entries: entries is not an array', data);
             }
         } catch (error) {
             console.error('Error fetching journal entries:', error);
@@ -537,42 +598,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /*** 7. Login/Logout Button Functionality ***/
-
-    /**
-     * Decodes a JWT token and returns the payload.
-     * @param {string} token - The JWT token.
-     * @returns {Object|null} - The decoded payload or null if invalid.
-     */
-    function decodeJWT(token) {
-        try {
-            const payload = token.split('.')[1];
-            const decoded = atob(payload);
-            return JSON.parse(decoded);
-        } catch (e) {
-            console.error('Failed to decode JWT:', e);
-            return null;
-        }
-    }
-
-    /**
-     * Updates the user email display based on the JWT token.
-     */
-    function updateUserEmail() {
-        const token = localStorage.getItem('jwt');
-        if (token && userEmailSpan) {
-            const decoded = decodeJWT(token);
-            if (decoded && decoded.sub) {
-                // Assuming 'sub' contains the user ID. Modify as needed.
-                userEmailSpan.textContent = 'User'; // Replace with actual user info if available
-                userEmailSpan.style.display = 'inline';
-            }
-        } else {
-            if (userEmailSpan) {
-                userEmailSpan.textContent = '';
-                userEmailSpan.style.display = 'none';
-            }
-        }
-    }
 
     // Initial update of the auth button on page load
     updateAuthButton();
