@@ -1,7 +1,26 @@
-// /js/art-corner-enhanced.js
+// /js/art-corner-backend.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    /*** User Authentication Handling ***/
+    /*** 1. Tab Navigation ***/
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const artSections = document.querySelectorAll('.art-section');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and sections
+            tabButtons.forEach(b => b.classList.remove('active'));
+            artSections.forEach(s => s.classList.remove('active'));
+
+            // Add active class to clicked button and corresponding section
+            button.classList.add('active');
+            const targetSection = document.getElementById(`${button.dataset.tab}-section`);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
+        });
+    });
+
+    /*** 2. User Authentication Handling ***/
     const loginModal = document.getElementById('login-modal');
     const registerModal = document.getElementById('register-modal');
     const openRegisterLink = document.getElementById('open-register');
@@ -134,13 +153,14 @@ document.addEventListener('DOMContentLoaded', () => {
         element.className = type === 'success' ? 'response-success' : 'response-error';
     }
 
-    /*** Pixel Canvas Integration ***/
+    /*** 3. Pixel Canvas Integration ***/
     const canvas = document.getElementById('pixel-canvas');
     const ctx = canvas.getContext('2d');
     const colorPicker = document.getElementById('pixel-color');
     const cooldownDisplay = document.querySelector('.cooldown span');
     const userCountDisplay = document.querySelector('.user-count');
 
+    const PIXEL_SIZE = 10; // Ensure consistency with backend
     let cooldown = 0;
     let cooldownInterval;
 
@@ -164,6 +184,10 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Disconnected from WebSocket');
     });
 
+    // Initialize canvas with existing pixels if necessary
+    // This requires the backend to send initial canvas state upon connection
+    // Implement as needed based on backend capabilities
+
     // Handle Canvas Clicks
     canvas.addEventListener('click', (e) => {
         if (cooldown > 0) {
@@ -172,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const rect = canvas.getBoundingClientRect();
-        const x = Math.floor((e.clientX - rect.left) / 10); // Assuming each pixel is 10x10
-        const y = Math.floor((e.clientY - rect.top) / 10);
+        const x = Math.floor((e.clientX - rect.left) / PIXEL_SIZE);
+        const y = Math.floor((e.clientY - rect.top) / PIXEL_SIZE);
         const color = colorPicker.value;
 
         // Send pixel data to the backend via WebSocket
@@ -211,10 +235,10 @@ document.addEventListener('DOMContentLoaded', () => {
      */
     function drawPixel(x, y, color) {
         ctx.fillStyle = color;
-        ctx.fillRect(x * 10, y * 10, 10, 10); // Assuming each pixel is 10x10
+        ctx.fillRect(x * PIXEL_SIZE, y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
     }
 
-    /*** Gratitude Journal Integration ***/
+    /*** 4. Gratitude Journal Integration ***/
     const saveEntryBtn = document.querySelector('.save-entry-btn');
     const entryDate = document.getElementById('entry-date');
     const entryContent = document.getElementById('entry-content');
@@ -243,7 +267,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const token = localStorage.getItem('jwt');
         if (!token) {
-            alert('Please log in to submit journal entries.');
+            // Prompt the login modal instead of alerting
+            loginModal.style.display = 'block';
             return;
         }
 
@@ -305,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadJournalEntries() {
         const token = localStorage.getItem('jwt');
         if (!token) {
-            // Optionally, you can display a prompt to log in
+            // Optionally, display a prompt or message to log in
             return;
         }
 
@@ -332,4 +357,110 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load journal entries on page load if user is authenticated
     loadJournalEntries();
+
+    /*** 5. Breathing Exercise ***/
+    const breathingCircle = document.querySelector('.breathing-circle');
+    const breathingButton = document.querySelector('.start-breathing');
+    
+    let isBreathing = false;
+    let animationFrame;
+    let currentScale = 1; // Keeps track of the current scale
+
+    const easeOutQuad = (t) => t * (2 - t); // Quadratic easing for smooth transitions
+
+    const resetBreathingCircle = () => {
+        const targetScale = 1; // Reset to the original size
+        const scaleDiff = currentScale - targetScale;
+
+        // Smooth transition back
+        const duration = 1400; // 1400ms for a smooth reset
+        const stepTime = 16; // Roughly matches 60 FPS
+        const steps = duration / stepTime;
+        let currentStep = 0;
+
+        const smoothStep = () => {
+            currentStep++;
+            const progress = easeOutQuad(currentStep / steps); // Apply easing function
+            currentScale = targetScale + scaleDiff * (1 - progress); // Calculate eased scale
+            breathingCircle.style.transform = `scale(${currentScale})`;
+
+            if (currentStep < steps) {
+                animationFrame = requestAnimationFrame(smoothStep);
+            } else {
+                breathingCircle.style.transform = `scale(${targetScale})`;
+                cancelAnimationFrame(animationFrame);
+            }
+        };
+
+        animationFrame = requestAnimationFrame(smoothStep);
+    };
+
+    breathingButton.addEventListener('click', () => {
+        if (!isBreathing) {
+            // Start the breathing animation
+            breathingCircle.style.animation = "breathe 8s infinite ease-in-out";
+            breathingButton.textContent = "Stop";
+        } else {
+            // Stop the animation and smoothly return to the default state
+            const computedStyle = window.getComputedStyle(breathingCircle);
+            const transformMatrix = computedStyle.transform;
+
+            // Extract current scale from the transform matrix
+            if (transformMatrix !== "none") {
+                const matrixValues = transformMatrix.match(/matrix.*\((.+)\)/)[1].split(", ");
+                currentScale = parseFloat(matrixValues[0]); // Scale is the first value
+            } else {
+                currentScale = 1; // Default scale
+            }
+
+            breathingCircle.style.animation = "none"; // Stop animation
+            resetBreathingCircle(); // Smoothly return to default state
+            breathingButton.textContent = "Start";
+        }
+
+        isBreathing = !isBreathing;
+    });
+
+    /*** 6. Affirmations ***/
+    const affirmations = [
+        "I am grateful for my unique journey",
+        "I radiate peace and positivity",
+        "My creativity flows freely and effortlessly",
+        "I am strong, capable, and confident",
+        "I attract only good things into my life",
+        "My inner light shines brightly",
+        "I deserve love, happiness, and abundance",
+        "I release all negativity and embrace joy",
+        "Every day, I am becoming the best version of myself",
+        "I choose to focus on the good in every situation",
+        "My heart is full of gratitude and peace",
+        "I trust the process of life and embrace change",
+        "I am proud of how far I have come",
+        "I have the power to create the life I want",
+        "I am calm, centered, and in control",
+        "I love and accept myself unconditionally",
+        "I see beauty and goodness in the world around me",
+        "I am resilient, and I overcome challenges with ease",
+        "My mind is filled with positive and nourishing thoughts",
+        "I am surrounded by love and support",
+        "I deserve to take care of myself and my needs",
+        "Happiness is my natural state",
+        "I am grateful for the simple joys in life",
+        "I am at peace with who I am",
+        "I choose to let go of what no longer serves me",
+        "I welcome opportunities for growth and learning",
+        "I am worthy of all the good that life has to offer",
+        "My dreams and goals are within reach",
+        "I approach life with curiosity and wonder",
+        "I am a beacon of light and positivity"
+    ];
+
+    const affirmationText = document.querySelector('.affirmation-text');
+    const newAffirmationBtn = document.querySelector('.new-affirmation');
+
+    newAffirmationBtn.addEventListener('click', () => {
+        const newAffirmation = affirmations[Math.floor(Math.random() * affirmations.length)];
+        affirmationText.textContent = `"${newAffirmation}"`;
+    });
+
 });

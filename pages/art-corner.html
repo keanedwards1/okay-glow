@@ -164,54 +164,53 @@
         </section>
 
         <!-- Login Modal -->
-<div id="login-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="close-login">&times;</span>
-      <h2>Login</h2>
-      <form id="login-form">
-        <div class="form-group">
-          <label for="login-email">Email<span>*</span></label>
-          <input type="email" id="login-email" name="email" required placeholder="Your Email Address">
+        <div id="login-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-login">&times;</span>
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email<span>*</span></label>
+                        <input type="email" id="login-email" name="email" required placeholder="Your Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password<span>*</span></label>
+                        <input type="password" id="login-password" name="password" required placeholder="Your Password">
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p>Don't have an account? <a href="#" id="open-register">Register here</a></p>
+                <p id="login-response"></p>
+            </div>
         </div>
-        <div class="form-group">
-          <label for="login-password">Password<span>*</span></label>
-          <input type="password" id="login-password" name="password" required placeholder="Your Password">
+        
+        <!-- Register Modal -->
+        <div id="register-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-register">&times;</span>
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Name<span>*</span></label>
+                        <input type="text" id="register-name" name="name" required placeholder="Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email<span>*</span></label>
+                        <input type="email" id="register-email" name="email" required placeholder="Your Email Address">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password<span>*</span></label>
+                        <input type="password" id="register-password" name="password" required placeholder="Your Password">
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+                <p>Already have an account? <a href="#" id="open-login">Login here</a></p>
+                <p id="register-response"></p>
+            </div>
         </div>
-        <button type="submit" class="btn">Login</button>
-      </form>
-      <p>Don't have an account? <a href="#" id="open-register">Register here</a></p>
-      <p id="login-response"></p>
-    </div>
-  </div>
-  
-  <!-- Register Modal -->
-  <div id="register-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" id="close-register">&times;</span>
-      <h2>Register</h2>
-      <form id="register-form">
-        <div class="form-group">
-          <label for="register-name">Name<span>*</span></label>
-          <input type="text" id="register-name" name="name" required placeholder="Your Full Name">
-        </div>
-        <div class="form-group">
-          <label for="register-email">Email<span>*</span></label>
-          <input type="email" id="register-email" name="email" required placeholder="Your Email Address">
-        </div>
-        <div class="form-group">
-          <label for="register-password">Password<span>*</span></label>
-          <input type="password" id="register-password" name="password" required placeholder="Your Password">
-        </div>
-        <button type="submit" class="btn">Register</button>
-      </form>
-      <p>Already have an account? <a href="#" id="open-login">Login here</a></p>
-      <p id="register-response"></p>
-    </div>
-  </div>
-  
     </main>
 
-    <script src="/js/art-corner.js"></script>
+    <!-- Scripts -->
     <script src="/js/art-corner-backend.js"></script>
 </body>
 
