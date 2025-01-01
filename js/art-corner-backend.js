@@ -1,10 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed"); // Debugging
+
     /*** 1. Tab Navigation ***/
     const tabButtons = document.querySelectorAll('.tab-button');
     const artSections = document.querySelectorAll('.art-section');
 
+    if (tabButtons.length === 0 || artSections.length === 0) {
+        console.error("Tab navigation elements are missing");
+    }
+
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Debugging
+            console.log(`Tab clicked: ${button.dataset.tab}`);
+
             // Handle active tab
             tabButtons.forEach(b => b.classList.remove('active'));
             artSections.forEach(s => s.classList.remove('active'));
@@ -25,26 +34,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
 
     function showModal(modal) {
-        if (modal) modal.style.display = 'block';
+        if (!modal) {
+            console.error("Modal element is missing");
+            return;
+        }
+        modal.style.display = 'block';
     }
 
     function hideModal(modal) {
-        if (modal) modal.style.display = 'none';
+        if (!modal) {
+            console.error("Modal element is missing");
+            return;
+        }
+        modal.style.display = 'none';
     }
 
     // Handle modal transitions
-    document.getElementById('open-register')?.addEventListener('click', () => {
-        hideModal(loginModal);
-        showModal(registerModal);
-    });
+    const openRegister = document.getElementById('open-register');
+    const openLogin = document.getElementById('open-login');
+    const closeLogin = document.getElementById('close-login');
+    const closeRegister = document.getElementById('close-register');
 
-    document.getElementById('open-login')?.addEventListener('click', () => {
-        hideModal(registerModal);
-        showModal(loginModal);
-    });
+    if (openRegister) {
+        openRegister.addEventListener('click', () => {
+            hideModal(loginModal);
+            showModal(registerModal);
+        });
+    } else {
+        console.error("Open Register button is missing");
+    }
 
-    document.getElementById('close-login')?.addEventListener('click', () => hideModal(loginModal));
-    document.getElementById('close-register')?.addEventListener('click', () => hideModal(registerModal));
+    if (openLogin) {
+        openLogin.addEventListener('click', () => {
+            hideModal(registerModal);
+            showModal(loginModal);
+        });
+    } else {
+        console.error("Open Login button is missing");
+    }
+
+    if (closeLogin) {
+        closeLogin.addEventListener('click', () => hideModal(loginModal));
+    } else {
+        console.error("Close Login button is missing");
+    }
+
+    if (closeRegister) {
+        closeRegister.addEventListener('click', () => hideModal(registerModal));
+    } else {
+        console.error("Close Register button is missing");
+    }
 
     window.addEventListener('click', (e) => {
         if (e.target === loginModal) hideModal(loginModal);
@@ -53,7 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update login/logout button
     function updateAuthButton() {
-        if (!authButton || !userEmailSpan) return; // Ensure elements exist
+        if (!authButton || !userEmailSpan) {
+            console.error("Auth button or user email span is missing");
+            return;
+        }
+
         const token = localStorage.getItem('jwt');
         if (token) {
             authButton.textContent = 'Logout';
@@ -69,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Logout functionality
     function logout() {
+        console.log("Logging out");
         localStorage.removeItem('jwt');
         updateAuthButton();
         const loginResponse = document.getElementById('login-response');
@@ -99,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
 
             if (response.ok) {
+                console.log(`${url} successful`);
                 localStorage.setItem('jwt', data.token);
                 updateAuthButton();
                 displayResponse(form.querySelector('.response-message'), `${url} successful!`, 'success');
@@ -108,93 +153,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 displayResponse(form.querySelector('.response-message'), data.error || 'Error occurred.', 'error');
             }
         } catch (error) {
+            console.error("Authentication error", error);
             displayResponse(form.querySelector('.response-message'), 'Unexpected error occurred.', 'error');
         }
     }
 
     // Add form listeners
-    loginForm?.addEventListener('submit', (e) => handleAuthForm(e, 'login', loginForm));
-    registerForm?.addEventListener('submit', (e) => handleAuthForm(e, 'register', registerForm));
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => handleAuthForm(e, 'login', loginForm));
+    } else {
+        console.error("Login form is missing");
+    }
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => handleAuthForm(e, 'register', registerForm));
+    } else {
+        console.error("Register form is missing");
+    }
 
     function displayResponse(element, message, type) {
-        if (!element) return;
+        if (!element) {
+            console.error("Response element is missing");
+            return;
+        }
         element.textContent = message;
         element.className = type === 'success' ? 'response-success' : 'response-error';
     }
 
     // Initial button update
     updateAuthButton();
-
-    /*** 3. Pixel Canvas ***/
-    const canvas = document.getElementById('pixel-canvas');
-    const ctx = canvas?.getContext('2d');
-    const colorPicker = document.getElementById('pixel-color');
-    const cooldownDisplay = document.querySelector('.cooldown span');
-    const userCountDisplay = document.querySelector('.user-count');
-
-    const PIXEL_SIZE = 10;
-    let cooldown = 0;
-    let cooldownInterval;
-
-    const socket = new WebSocket('wss://api.okayglow.co/ws');
-
-    socket.addEventListener('message', (event) => {
-        const message = JSON.parse(event.data);
-        if (message.type === 'pixel') drawPixel(message.x, message.y, message.color);
-        else if (message.type === 'user_count') userCountDisplay.textContent = message.count;
-    });
-
-    canvas?.addEventListener('click', (e) => {
-        if (cooldown > 0) return;
-
-        const rect = canvas.getBoundingClientRect();
-        const x = Math.floor((e.clientX - rect.left) / PIXEL_SIZE);
-        const y = Math.floor((e.clientY - rect.top) / PIXEL_SIZE);
-        const color = colorPicker.value;
-
-        socket.send(JSON.stringify({ type: 'pixel', x, y, color }));
-
-        cooldown = 5;
-        updateCooldownDisplay();
-        cooldownInterval = setInterval(() => {
-            cooldown--;
-            if (cooldown <= 0) clearInterval(cooldownInterval);
-            updateCooldownDisplay();
-        }, 1000);
-    });
-
-    function updateCooldownDisplay() {
-        if (cooldownDisplay) {
-            cooldownDisplay.textContent = cooldown > 0 ? `${cooldown}s` : '0s';
-        }
-    }
-
-    function drawPixel(x, y, color) {
-        if (ctx) {
-            ctx.fillStyle = color;
-            ctx.fillRect(x * PIXEL_SIZE, y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
-        }
-    }
-
-    /*** 4. Journal Integration ***/
-    async function loadJournalEntries() {
-        const token = localStorage.getItem('jwt');
-        if (!token) return;
-
-        try {
-            const response = await fetch('https://api.okayglow.co/journal', {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` }
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                // Render entries (add your logic here)
-            }
-        } catch (error) {
-            console.error('Error fetching journal entries:', error);
-        }
-    }
-
-    loadJournalEntries();
 });
