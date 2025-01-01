@@ -1,5 +1,3 @@
-// js/art-corner-backend.js
-
 document.addEventListener('DOMContentLoaded', () => {
     /*** 1. Tab Navigation ***/
     const tabButtons = document.querySelectorAll('.tab-button');
@@ -55,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update login/logout button
     function updateAuthButton() {
+        if (!authButton || !userEmailSpan) return; // Ensure elements exist
         const token = localStorage.getItem('jwt');
         if (token) {
             authButton.textContent = 'Logout';
@@ -72,8 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function logout() {
         localStorage.removeItem('jwt');
         updateAuthButton();
-        if (document.getElementById('login-response')) {
-            document.getElementById('login-response').textContent = 'You have been logged out.';
+        const loginResponse = document.getElementById('login-response');
+        if (loginResponse) {
+            loginResponse.textContent = 'You have been logged out.';
         }
     }
 
@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
     async function handleAuthForm(e, url, form) {
         e.preventDefault();
 
-        const email = form.querySelector('[name="email"]').value.trim();
-        const password = form.querySelector('[name="password"]').value.trim();
+        const email = form.querySelector('[name="email"]')?.value.trim();
+        const password = form.querySelector('[name="password"]')?.value.trim();
 
         if (!email || !password) {
             displayResponse(form.querySelector('.response-message'), 'Please fill in all fields.', 'error');
@@ -164,12 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function updateCooldownDisplay() {
-        cooldownDisplay.textContent = cooldown > 0 ? `${cooldown}s` : '0s';
+        if (cooldownDisplay) {
+            cooldownDisplay.textContent = cooldown > 0 ? `${cooldown}s` : '0s';
+        }
     }
 
     function drawPixel(x, y, color) {
-        ctx.fillStyle = color;
-        ctx.fillRect(x * PIXEL_SIZE, y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
+        if (ctx) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x * PIXEL_SIZE, y * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
+        }
     }
 
     /*** 4. Journal Integration ***/
