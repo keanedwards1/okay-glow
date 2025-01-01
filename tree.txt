@@ -1,5 +1,42 @@
 .
 ├── README.md
+├── backend
+│   ├── Cargo.lock
+│   ├── Cargo.toml
+│   ├── Dockerfile
+│   ├── migrations
+│   │   ├── 001_create_subscribers_table.sql
+│   │   ├── 002_create_users_and_journal_entries.sql
+│   │   └── 003_create_canvas_pixels_table.sql
+│   ├── src
+│   │   ├── config.rs
+│   │   ├── db.rs
+│   │   ├── main.rs
+│   │   ├── middleware
+│   │   │   └── auth.rs
+│   │   ├── models
+│   │   │   ├── journal.rs
+│   │   │   ├── mod.rs
+│   │   │   ├── subscriber.rs
+│   │   │   └── user.rs
+│   │   ├── routes
+│   │   │   ├── auth.rs
+│   │   │   ├── canvas.rs
+│   │   │   ├── email.rs
+│   │   │   ├── journal.rs
+│   │   │   ├── mod.rs
+│   │   │   └── ws.rs
+│   │   ├── services
+│   │   │   ├── auth_service.rs
+│   │   │   ├── email_service.rs
+│   │   │   ├── journal_service.rs
+│   │   │   └── mod.rs
+│   │   ├── types.rs
+│   │   └── websocket
+│   │       ├── canvas_actor.rs
+│   │       ├── mod.rs
+│   │       └── websocket_actor.rs
+│   └── tree.txt
 ├── c.ps1
 ├── c.sh
 ├── convert-r.py
@@ -7,6 +44,7 @@
 ├── js
 │   ├── about.js
 │   ├── art-corner.js
+│   ├── blog-navigation.js
 │   ├── contact.js
 │   ├── display-blogs.js
 │   ├── dropdown.js
@@ -22,6 +60,7 @@
 │   ├── routineCustomizer.js
 │   ├── routineGenerator.js
 │   ├── skin-type-quiz.js
+│   ├── subscribe-submit.js
 │   └── temp.txt
 ├── pages
 │   ├── about.html
@@ -42,6 +81,7 @@
 │   ├── quiz.html
 │   └── terms.html
 ├── public
+│   ├── blogData.json
 │   ├── icons
 │   │   ├── facebook-1.svg
 │   │   ├── instagram-1.svg
@@ -205,4 +245,4 @@
 ├── utils
 └── vercel.json
 
-12 directories, 194 files
+20 directories, 226 files

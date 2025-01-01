@@ -49,3 +49,7 @@ docker-compose.override.yml
 migrations/*.sql.bk
 migrations/secrets/
 migrations/passwords.db
+
+.venv/
+
+**/.env
