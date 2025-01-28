@@ -9,19 +9,32 @@
 
 /* Hero Section */
 .history-hero {
+    position: relative;
     text-align: center;
-    padding: 60px 20px;
+    padding: 20px 20px 20px 20px;
     border-radius: 16px;
     margin-top: 20px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('/public/images/k-history.jpg');
+    background-image: url('/public/images/k-history.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 90% 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.history-hero .text-container {
+    background: #f0e1d248; /* Semi-transparent background */
+    padding: 20px 30px;
+    border-radius: 12px;
+    max-width: 800px;
 }
 
 .history-hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    color: #171717;
+    color: #000000;
     margin-bottom: 20px;
 }
 
@@ -31,6 +44,8 @@
     color: #292827;
     font-weight: 300;
 }
+
+
 
 /* Timeline Section */
 .timeline-section {
@@ -49,7 +64,7 @@
     content: '';
     position: absolute;
     width: 2px;
-    background: #c5a056;
+    background: #a18f7d57;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -88,7 +103,7 @@
     position: absolute;
     width: 90px;
     height: 30px;
-    background: #edd3b9;
+    background: #e0cebda6;
     top: 0;
     border-radius: 20px;
     text-align: center;
@@ -130,6 +145,7 @@
 .timeline-content {
     padding: 30px;
     background: #f8f4ef;
+    background: #e1cebc;
     border-radius: 16px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
@@ -153,7 +169,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 1.2s ease;
 }
 
 .timeline-content:hover .timeline-image img {
@@ -193,6 +209,10 @@ html {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .history-hero {
+        margin-bottom: 60px;
+    }
+    
     .timeline::before {
         left: 20px;
     }
