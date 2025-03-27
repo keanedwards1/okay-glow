@@ -278,7 +278,7 @@
 .newsletter-form {
     display: flex;
     gap: 10px;
-    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -527,8 +527,10 @@
         flex-direction: column;
     }
     
-    .newsletter-input,
-    .newsletter-button {
+    .newsletter-input{
+        width: 90%;
+    }
+    newsletter-button {
         width: 100%;
     }
 }
