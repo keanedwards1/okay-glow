@@ -578,11 +578,29 @@ const products = [
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/Sulwhasoo-Cleansing-Lightweight-texture-Waterproof/dp/B09NY7SY7C",
+    url: "https://amzn.to/445YjHw", /* associate link: https://amzn.to/445YjHw */
     image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    hoverImage: "/public/images/bottle.webp", /*     image: "/public/images/Sulwhasoo.jpg",
+    hoverImage: "/public/images/sulwhasoo1.jpg", */
   },
   {
+    id: 2,
+    name: " Innisfree Green Tea Amino Acid Cleansing Oil",
+    category: "Cleanser",
+    suitableFor: ["Oily", "Combination"],
+    concerns: ["Excess Oil", "Pores"],
+    budgetRange: "Under $50",
+    climate: ["Humid", "Tropical"],
+    ageGroup: ["All"],
+    sensitivities: ["None"],
+    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil", /* associate link:https://amzn.to/4jXqAWG */
+    image: "/public/images/product.jpg",
+    hoverImage: "/public/images/bottle.webp", /*     image: "/public/images/innisfree.jpg",
+    hoverImage: "/public/images/innisfree1.jpg", */
+  },
+/* 
+Only really available internationally, but is a cult classic, going to just use the available green tea one for now.
+{
     id: 2,
     name: "Innisfree Apple Seed Cleansing Oil",
     category: "Cleanser",
@@ -592,10 +610,11 @@ const products = [
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil",
+    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil", /* associate link:https://amzn.to/4jXqAWG 
     image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
-  },
+    hoverImage: "/public/images/bottle.webp", /*     image: "/public/images/innisfree.jpg",
+    hoverImage: "/public/images/innisfree1.jpg", 
+  }, */
   {
     id: 3,
     name: "Beauty of Joseon Glow Serum",
@@ -606,7 +625,7 @@ const products = [
     climate: ["Dry", "Cold"],
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-beauty-of-joseon-glow-serum-propolis-niacinamide-30ml.html",
+    url: "https://amzn.to/3HOO02V", /* associate link:https://www.stylevana.com/en_US/deal-beauty-of-joseon-glow-serum-propolis-niacinamide-30ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -1183,119 +1202,137 @@ document.addEventListener("DOMContentLoaded", function () {
       moveToNextQuestion();
     }
 
-    // Function to render the current question
-    function renderQuestion() {
-      console.log("Rendering question:", currentQuestionIndex);
-      const question = questions[currentQuestionIndex];
+ /* ───────────────────────── renderQuestion() ─────────────────────────
+   Added mutual-exclusivity handling for “None / No… / I’m not sure”
+   check-boxes in multiple-choice questions.  New/changed lines →  🔸
+──────────────────────────────────────────────────────────────────── */
+function renderQuestion() {
+  console.log("Rendering question:", currentQuestionIndex);
+  const question = questions[currentQuestionIndex];
 
-      // Start fade out
-      quizContent.classList.add("fade-out");
+  // Start fade out
+  quizContent.classList.add("fade-out");
 
-      // Wait for fade out to complete before updating content
-      setTimeout(() => {
-        const questionImages = {
-          1: "/public/images/shine.webp",
-          2: "/public/images/climate.jpg",
-          3: "/public/images/dance.jpg",
-          4: "/public/images/eye.jpg",
-          5: "/public/images/blur.jpg",
-          6: "/public/images/product.jpg",
-          7: "/public/images/stress.jpg",
-          8: "/public/images/sleep.webp", /* sleep.jpg */
-          9: "/public/images/mum2.jpg",
-          10: "/public/images/morning1.jpg",
-          11: "/public/images/lips1.jpg",
-          12: "/public/images/slow.jpg",
-          13: "/public/images/skin1.jpg",
-          14: "/public/images/sheet1.jpg",
-          15: "/public/images/fire1.png",
-          16: "/public/images/beach.png",
-          17: "/public/images/water2.jpg",
-          18: "/public/images/hair.jpg",
-          19: "/public/images/smell.jpg",
-          20: "/public/images/fish.jpg",
-          21: "/public/images/glow.jpg",
-          22: "/public/images/car.jpg",
-          23: "/public/images/routine.jpg",
-        };
+  // Wait for fade out to complete before updating content
+  setTimeout(() => {
+    const questionImages = {
+      1: "/public/images/shine.webp",
+      2: "/public/images/climate.jpg",
+      3: "/public/images/dance.jpg",
+      4: "/public/images/eye.jpg",
+      5: "/public/images/blur.jpg",
+      6: "/public/images/product.jpg",
+      7: "/public/images/stress.jpg",
+      8: "/public/images/sleep.webp",
+      9: "/public/images/mum2.jpg",
+      10: "/public/images/morning1.jpg",
+      11: "/public/images/lips1.jpg",
+      12: "/public/images/slow.jpg",
+      13: "/public/images/skin1.jpg",
+      14: "/public/images/sheet1.jpg",
+      15: "/public/images/fire1.png",
+      16: "/public/images/beach.png",
+      17: "/public/images/water2.jpg",
+      18: "/public/images/hair.jpg",
+      19: "/public/images/smell.jpg",
+      20: "/public/images/fish.jpg",
+      21: "/public/images/glow.jpg",
+      22: "/public/images/car.jpg",
+      23: "/public/images/routine.jpg",
+    };
 
-        const questionImage =
-          questionImages[question.id] || "/public/images/balloon.jpg";
+    const questionImage =
+      questionImages[question.id] || "/public/images/balloon.jpg";
 
-        let quizHtml = `
-          <div class="quiz-question-container">
-            <div class="quiz-question-content">
-              <div class="question-header">
-                <h2>
-                  <img src="${questionImage}" alt="Question Image" class="question-image">
-                  ${question.text}
-                </h2>
-        `;
+    let quizHtml = `
+      <div class="quiz-question-container">
+        <div class="quiz-question-content">
+          <div class="question-header">
+            <h2>
+              <img src="${questionImage}" alt="Question Image" class="question-image">
+              ${question.text}
+            </h2>
+            ${
+              question.subtext
+                ? `<p class="question-subtext">${question.subtext}</p>`
+                : ""
+            }
+          </div>
+          <div class="options-container">
+    `;
 
-        if (question.subtext) {
-          quizHtml += `<p class="question-subtext">${question.subtext}</p>`;
+    question.options.forEach((option) => {
+      const isChecked = checkIfOptionIsSelected(question, option);
+      quizHtml += `
+        <label class="option">
+          <input type="${
+            question.type === "multiple" ? "checkbox" : "radio"
+          }"
+                 name="question-${question.id}"
+                 value="${option.value}"
+                 ${isChecked ? "checked" : ""}>
+          <span class="option-text">${option.text}</span>
+        </label>
+      `;
+    });
+
+    quizHtml += `
+          </div>
+        </div>
+      </div>
+    `;
+
+    quizContent.innerHTML = quizHtml;
+    quizContent.style.backgroundImage = "none";
+
+    prevBtn.disabled = false;
+    prevBtn.classList.remove("disabled");
+    nextBtn.textContent =
+      currentQuestionIndex === questions.length - 1 ? "Finish" : "Continue";
+
+    addTooltipToNextButton();
+
+    nextBtn = document.getElementById("nextBtn");
+    nextBtn.removeEventListener("click", handleNextButtonClick);
+    nextBtn.addEventListener("click", handleNextButtonClick);
+
+    const inputs = document.querySelectorAll(
+      `input[name="question-${question.id}"]`
+    );
+    inputs.forEach((input) => {
+      input.addEventListener("change", () => {
+        if (question.type === "single") {
+          setTimeout(moveToNextQuestion, 80);
+          return;
         }
 
-        quizHtml += `</div><div class="options-container">`;
+        /* ──────── NEW: enforce exclusivity for “None …” answers ──────── */
+        const isExclusive = (val) =>
+          /^(none|no\s|i\'?m\s*not\s*sure)/i.test(val); // 🔸
 
-        question.options.forEach((option) => {
-          const isChecked = checkIfOptionIsSelected(question, option);
-          quizHtml += `
-            <label class="option">
-              <input type="${
-                question.type === "multiple" ? "checkbox" : "radio"
-              }"
-                     name="question-${question.id}"
-                     value="${option.value}"
-                     ${isChecked ? "checked" : ""}>
-              <span class="option-text">${option.text}</span>
-            </label>
-          `;
-        });
+        if (isExclusive(input.value) && input.checked) {               // 🔸
+          inputs.forEach((i) => { if (i !== input) i.checked = false; }); // 🔸
+        } else if (!isExclusive(input.value) && input.checked) {        // 🔸
+          inputs.forEach((i) => {                                        // 🔸
+            if (isExclusive(i.value)) i.checked = false;                 // 🔸
+          });                                                            // 🔸
+        }                                                                // 🔸
+        /* ─────────────────────────────────────────────────────────────── */
+      });
+    });
 
-        quizHtml += `
-              </div>
-            </div>
-          </div>
-        `;
+    document.removeEventListener("keydown", handleEnterKey);
+    document.addEventListener("keydown", handleEnterKey);
 
-        quizContent.innerHTML = quizHtml;
-        quizContent.style.backgroundImage = "none";
+    // Start fade in
+    requestAnimationFrame(() => {
+      quizContent.classList.remove("fade-out");
+    });
+  }, 200); // Match this to your CSS transition duration
 
-        prevBtn.disabled = false;
-        prevBtn.classList.remove("disabled");
-        nextBtn.textContent =
-          currentQuestionIndex === questions.length - 1 ? "Finish" : "Continue";
+  updateProgressBar();
+}
 
-        addTooltipToNextButton();
-
-        nextBtn = document.getElementById("nextBtn");
-        nextBtn.removeEventListener("click", handleNextButtonClick);
-        nextBtn.addEventListener("click", handleNextButtonClick);
-
-        const inputs = document.querySelectorAll(
-          `input[name="question-${question.id}"]`
-        );
-        inputs.forEach((input) => {
-          input.addEventListener("change", () => {
-            if (question.type === "single") {
-              setTimeout(() => {
-                moveToNextQuestion();
-              }, 80);
-            }
-          });
-        });
-
-        document.removeEventListener("keydown", handleEnterKey);
-        document.addEventListener("keydown", handleEnterKey);
-
-        // Start fade in
-        requestAnimationFrame(() => {
-          quizContent.classList.remove("fade-out");
-        });
-      }, 200); // Match this to your CSS transition duration
-      updateProgressBar();
-    }
 
     function updateProgressBar() {
       const totalQuestions = questions.length;
