@@ -639,7 +639,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",
+    url: "https://amzn.to/3HI2mlT", /* https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",  */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -653,7 +653,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G",
+    url: "https://amzn.to/4ejLspJ", /* https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -667,7 +667,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6",
+    url: "https://amzn.to/3ZEMDdk", /* https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -681,7 +681,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
-    url: "https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM",
+    url: "https://amzn.to/3G20nIq", /* https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -695,7 +695,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ",
+    url: "https://amzn.to/4kMRul1", /* https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
