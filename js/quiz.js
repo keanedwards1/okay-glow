@@ -1,13 +1,13 @@
 // /js/quiz.js
 
 const weights = {
-  skinType:           2,
-  perConcern:         3,
-  budget:             1,
-  ageGroup:           1,
-  climate:            1,
+  skinType: 2,
+  perConcern: 3,
+  budget: 1,
+  ageGroup: 1,
+  climate: 1,
   sensitivityPenalty: 5,
-  sensitivityReward:  1,
+  sensitivityReward: 1,
 };
 
 const questions = [
@@ -588,23 +588,26 @@ const products = [
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
-    url: "https://amzn.to/445YjHw", /* associate link: https://amzn.to/445YjHw */
+    url: "https://amzn.to/445YjHw" /* associate link: https://amzn.to/445YjHw */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Isopropyl Palmitate", "Fragrance", "Herbal Oil Complex"], // ← new
     ecoFriendly: false, // ← new
-    notes: "Highly effective at melting waterproof makeup and sunscreen; emulsifies easily, leaving skin soft and hydrated. Contains fragrance and mildly comedogenic oil — patch test if acne‑prone. Some users noted slight eye irritation if it seeps into eyes.", // ← new
-    pros: [ // ← new
+    notes:
+      "Highly effective at melting waterproof makeup and sunscreen; emulsifies easily, leaving skin soft and hydrated. Contains fragrance and mildly comedogenic oil — patch test if acne‑prone. Some users noted slight eye irritation if it seeps into eyes.", // ← new
+    pros: [
+      // ← new
       "Easily removes waterproof makeup & sunscreen",
       "Emulsifies to a milky texture, rinses clean",
-      "Non‑drying, hydrating — suitable for sensitive/combination skin"
+      "Non‑drying, hydrating — suitable for sensitive/combination skin",
     ],
-    cons: [ // ← new
+    cons: [
+      // ← new
       "Contains fragrance and isopropyl palmitate (mildly comedogenic)",
       "May irritate eyes if product gets in them",
-      "Higher price point"
-    ]
-  }, 
+      "Higher price point",
+    ],
+  },
   {
     id: 2,
     name: "Innisfree Green Tea Amino Acid Cleansing Oil",
@@ -615,25 +618,34 @@ const products = [
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Alcohol"], // ← updated
-    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil", /* associate link:https://amzn.to/4jXqAWG */
+    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil" /* associate link:https://amzn.to/4jXqAWG */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Green Tea Extract", "Amino Acids", "Jojoba Oil", "Fragrance", "Alcohol"], // ← new
+    ingredients: [
+      "Green Tea Extract",
+      "Amino Acids",
+      "Jojoba Oil",
+      "Fragrance",
+      "Alcohol",
+    ], // ← new
     ecoFriendly: true, // ← new
-    notes: "Lightweight, well‑rated hydrating cleansing oil. Removes most makeup & sunscreen, leaving slight film—best for everyday wear, not heavy waterproof makeup. Contains fragrance & alcohol, so may irritate very sensitive skin.", // ← new
-    pros: [ // ← new
+    notes:
+      "Lightweight, well‑rated hydrating cleansing oil. Removes most makeup & sunscreen, leaving slight film—best for everyday wear, not heavy waterproof makeup. Contains fragrance & alcohol, so may irritate very sensitive skin.", // ← new
+    pros: [
+      // ← new
       "Gentle, non‑stripping; rinses relatively clean",
       "Effective for SPF and light makeup",
-      "Vegan‑certified, eco packaging"
+      "Vegan‑certified, eco packaging",
     ],
-    cons: [ // ← new
+    cons: [
+      // ← new
       "Contains fragrance & alcohol—can irritate sensitive skin",
       "Low percentage of green tea extract (~0.01%)",
-      "Not the best for waterproof mascara"
-    ]
+      "Not the best for waterproof mascara",
+    ],
   },
 
-/* 
+  /* 
 Only really available internationally, but is a cult classic, going to just use the available green tea one for now.
 {
     id: 2,
@@ -658,25 +670,34 @@ Only really available internationally, but is a cult classic, going to just use 
     concerns: ["Dullness", "Uneven Skin Tone", "Redness"],
     budgetRange: "$50-$100",
     climate: ["All"],
-    ageGroup: ["18-24","25-34","35-44","45-54"],
+    ageGroup: ["18-24", "25-34", "35-44", "45-54"],
     sensitivities: [], // ← updated
-    url: "https://amzn.to/3HOO02V", /* associate link:https://www.stylevana.com/en_US/deal-beauty-of-joseon-glow-serum-propolis-niacinamide-30ml.html", */
+    url: "https://amzn.to/3HOO02V" /* associate link:https://www.stylevana.com/en_US/deal-beauty-of-joseon-glow-serum-propolis-niacinamide-30ml.html", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Propolis Extract", "Niacinamide", "Turmeric", "Rice Bran Water", "Alpha Arbutin"], // ← new
+    ingredients: [
+      "Propolis Extract",
+      "Niacinamide",
+      "Turmeric",
+      "Rice Bran Water",
+      "Alpha Arbutin",
+    ], // ← new
     ecoFriendly: false, // ← new
-    notes: "Popular budget serum with propolis & niacinamide. Brightens and hydrates without stickiness. Many users love the glow; some oily‑skin users may find it too dewy. A few report breakouts or texture reactions.", // ← new
-    pros: [ // ← new
+    notes:
+      "Popular budget serum with propolis & niacinamide. Brightens and hydrates without stickiness. Many users love the glow; some oily‑skin users may find it too dewy. A few report breakouts or texture reactions.", // ← new
+    pros: [
+      // ← new
       "Brightens skin and helps even tone",
       "Hydrating, lightweight, absorbs well",
-      "Fragrance‑free and soothing"
+      "Fragrance‑free and soothing",
     ],
-    cons: [ // ← new
+    cons: [
+      // ← new
       "May feel too dewy/glowy for oily skin types",
       "Some users experienced breakouts or slight irritation",
-      "Ingredient strength may be mild for hyperpigmentation"
-    ]
-  }, 
+      "Ingredient strength may be mild for hyperpigmentation",
+    ],
+  },
 
   {
     id: 4,
@@ -690,18 +711,19 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["Fragrance"],
     ingredients: ["Rice Water", "Grapeseed Oil", "Fragrance"],
     ecoFriendly: false,
-    notes: "Popular for brightening rice water formula. Effectively removes makeup and gently exfoliates. Contains fragrance—skip if scent-sensitive. Texture is light and easy to emulsify.",
+    notes:
+      "Popular for brightening rice water formula. Effectively removes makeup and gently exfoliates. Contains fragrance—skip if scent-sensitive. Texture is light and easy to emulsify.",
     pros: [
       "Brightens skin and gently exfoliates",
       "Lightweight and easy to rinse",
-      "Affordable for daily cleansing"
+      "Affordable for daily cleansing",
     ],
     cons: [
       "Contains fragrance — not ideal for sensitive skin",
       "Might not fully remove heavy/waterproof makeup",
-      "Pump sometimes prone to clogging or leaking"
+      "Pump sometimes prone to clogging or leaking",
     ],
-    url: "https://amzn.to/3HI2mlT", /* https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",  */
+    url: "https://amzn.to/3HI2mlT" /* https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",  */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -717,18 +739,19 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["Fragrance"],
     ingredients: ["Grape Seed Oil", "Olive Oil", "Fragrance"],
     ecoFriendly: false,
-    notes: "Effective for dissolving heavy sunscreen and makeup, with a rich oil blend. Contains fragrance, which may irritate sensitive users. Can be heavy/clogging if not rinsed thoroughly.",
+    notes:
+      "Effective for dissolving heavy sunscreen and makeup, with a rich oil blend. Contains fragrance, which may irritate sensitive users. Can be heavy/clogging if not rinsed thoroughly.",
     pros: [
       "Rich texture removes thick makeup and sunscreen",
       "Affordable and accessible",
-      "Nourishing oils may soften skin over time"
+      "Nourishing oils may soften skin over time",
     ],
     cons: [
       "Can clog pores if not rinsed thoroughly",
       "Contains fragrance, which may irritate",
-      "May feel too heavy for oily or acne-prone skin"
+      "May feel too heavy for oily or acne-prone skin",
     ],
-    url: "https://amzn.to/4ejLspJ", /* https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G", */
+    url: "https://amzn.to/4ejLspJ" /* https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -744,22 +767,22 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["Fragrance"],
     ingredients: ["Mineral Oil", "Papaya Extract", "Fragrance"],
     ecoFriendly: false,
-    notes: "Balmy sherbet formula melts makeup easily—even waterproof. Mineral oil may occlude pores; fragrance present. Top pick for double cleanse at mid‑range price.",
+    notes:
+      "Balmy sherbet formula melts makeup easily—even waterproof. Mineral oil may occlude pores; fragrance present. Top pick for double cleanse at mid‑range price.",
     pros: [
       "Removes even waterproof makeup with ease",
       "Great texture for first cleanse in double cleansing routine",
-      "Leaves skin soft and not stripped"
+      "Leaves skin soft and not stripped",
     ],
     cons: [
       "Contains mineral oil and fragrance — may irritate or clog",
       "Jar packaging isn’t the most hygienic",
-      "Can leave light residue if not emulsified thoroughly"
+      "Can leave light residue if not emulsified thoroughly",
     ],
-    url: "https://amzn.to/3ZEMDdk", /* https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6", */
+    url: "https://amzn.to/3ZEMDdk" /* https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
-  
 
   {
     id: 7,
@@ -773,17 +796,18 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["Fragrance", "Essential Oils"],
     ingredients: ["Shea Butter", "Citrus Extracts", "Fragrance"],
     ecoFriendly: false,
-    notes: "Low‑heat balm that gently melts makeup. Non‑comedogenic ingredients but scented with citrus essential oil—avoid if very sensitive. Gentle enough for most users.",
+    notes:
+      "Low‑heat balm that gently melts makeup. Non‑comedogenic ingredients but scented with citrus essential oil—avoid if very sensitive. Gentle enough for most users.",
     pros: [
       "Melts makeup effectively with low-heat formula",
       "Gentle enough for sensitive skin (aside from scent)",
-      "Non-comedogenic ingredients"
+      "Non-comedogenic ingredients",
     ],
     cons: [
       "Contains fragrance and essential oils—potential irritants for some",
       "Jar packaging might be less hygienic",
     ],
-    url: "https://amzn.to/3G20nIq", /* https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM", */
+    url: "https://amzn.to/3G20nIq" /* https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -799,17 +823,18 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["None"],
     ingredients: ["Rice Bran Oil", "Ceramide", "Green Tea Extract"],
     ecoFriendly: true, // cruelty‑free, recyclable
-    notes: "Ceramide‑rich formula nourishes while cleansing. Fragrance‑free—great for sensitive skin. Light texture, excellent for brightening and moisturizing.",
+    notes:
+      "Ceramide‑rich formula nourishes while cleansing. Fragrance‑free—great for sensitive skin. Light texture, excellent for brightening and moisturizing.",
     pros: [
       "Fragrance‑free and suitable for sensitive skin",
       "Ceramides and nourishing oils leave skin soft",
-      "Cruelty‑free with recyclable packaging"
+      "Cruelty‑free with recyclable packaging",
     ],
     cons: [
       "Balm texture may feel heavy to some",
-      "Jar packaging may require fingertip use"
+      "Jar packaging may require fingertip use",
     ],
-    url: "https://amzn.to/4kMRul1", /* https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ", */
+    url: "https://amzn.to/4kMRul1" /* https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -825,17 +850,18 @@ Only really available internationally, but is a cult classic, going to just use 
     sensitivities: ["Fragrance"],
     ingredients: [], // if you want the actual list added, let me know
     ecoFriendly: false,
-    notes: "Gentle, low‑pH gel cleanser that's a favorite for morning use. Helps maintain skin's natural pH while providing light hydration. Contains minimal fragrance.",
+    notes:
+      "Gentle, low‑pH gel cleanser that's a favorite for morning use. Helps maintain skin's natural pH while providing light hydration. Contains minimal fragrance.",
     pros: [
       "Low‑pH formula supports healthy skin barrier",
       "Gentle cleanser suitable for sensitive and acne-prone skin",
-      "Lightweight gel texture washes off clean"
+      "Lightweight gel texture washes off clean",
     ],
     cons: [
       "Small amount of fragrance may bother very sensitive users",
-      "Not intended for heavy makeup removal—use as second cleanse"
+      "Not intended for heavy makeup removal—use as second cleanse",
     ],
-    url: "https://amzn.to/4edgSOl", /* 10% https://www.amazon.com/dp/B08Y4N16PC", */
+    url: "https://amzn.to/4edgSOl" /* 10% https://www.amazon.com/dp/B08Y4N16PC", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -849,22 +875,29 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Temperate"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/43TLnWn", /* 10% https://www.amazon.com/dp/B08N335GXN", */ 
+    url: "https://amzn.to/43TLnWn" /* 10% https://www.amazon.com/dp/B08N335GXN", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Matcha", "Hemp Seed Oil", "Sodium PCA", "Coco-Betaine", "Vitamin B5"],
+    ingredients: [
+      "Matcha",
+      "Hemp Seed Oil",
+      "Sodium PCA",
+      "Coco-Betaine",
+      "Vitamin B5",
+    ],
     ecoFriendly: true, // vegan, cruelty-free, minimal packaging
-    notes: "A low-pH, gentle jelly cleanser that nourishes and protects the skin barrier while cleansing. Beloved for its calming effect on sensitive skin.",
+    notes:
+      "A low-pH, gentle jelly cleanser that nourishes and protects the skin barrier while cleansing. Beloved for its calming effect on sensitive skin.",
     pros: [
       "Supports skin barrier with antioxidants and omega fatty acids",
       "Gentle and non-stripping even for daily use",
-      "Fragrance-free and suitable for sensitive skin"
+      "Fragrance-free and suitable for sensitive skin",
     ],
     cons: [
       "Doesn't lather heavily — may feel too mild for oily skin",
       "Can leave a hydrated 'film' feel that not everyone loves",
-      "Pricier than typical drugstore cleansers"
-    ]
+      "Pricier than typical drugstore cleansers",
+    ],
   },
   {
     id: 11,
@@ -876,22 +909,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
-    url: "https://amzn.to/4lfrmiH", /* https://www.amazon.com/dp/B092Q3YB34", */
+    url: "https://amzn.to/4lfrmiH" /* https://www.amazon.com/dp/B092Q3YB34", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Panthenol", "Madecassoside", "Green Tea Extract", "Glycerin"],
+    ingredients: [
+      "Panthenol",
+      "Madecassoside",
+      "Green Tea Extract",
+      "Glycerin",
+    ],
     ecoFriendly: false,
-    notes: "Whipped, low-pH cleanser ideal for compromised or reactive skin. Very mild and moisturizing; skips harsh surfactants but includes trace natural scents that may still bother ultra-sensitive users.",
+    notes:
+      "Whipped, low-pH cleanser ideal for compromised or reactive skin. Very mild and moisturizing; skips harsh surfactants but includes trace natural scents that may still bother ultra-sensitive users.",
     pros: [
       "Ultra-gentle formula with barrier-supporting ingredients",
       "Foamy texture feels soft and hydrating",
-      "Free from sulfates, parabens, and artificial color"
+      "Free from sulfates, parabens, and artificial color",
     ],
     cons: [
       "Includes essential oils that can irritate the most sensitive users",
       "May not remove heavier layers of makeup or sunscreen",
-      "Can feel too mild for oily skin types"
-    ]
+      "Can feel too mild for oily skin types",
+    ],
   },
   {
     id: 12,
@@ -903,22 +942,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Sulfates", "Parabens"],
-    url: "https://amzn.to/3TwWONp", /* https://www.amazon.com/SKIN-FOOD-Black-Sugar-Perfect/dp/B01828IP7G", */
+    url: "https://amzn.to/3TwWONp" /* https://www.amazon.com/SKIN-FOOD-Black-Sugar-Perfect/dp/B01828IP7G", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Black Sugar", "Macadamia Oil", "Lanolin", "Glycerin"],
     ecoFriendly: false,
-    notes: "A cult-favorite manual scrub with nourishing oils. Leaves skin polished and soft, but not ideal for acne-prone or sensitive skin due to physical exfoliation and heavier ingredients.",
+    notes:
+      "A cult-favorite manual scrub with nourishing oils. Leaves skin polished and soft, but not ideal for acne-prone or sensitive skin due to physical exfoliation and heavier ingredients.",
     pros: [
       "Leaves skin visibly brighter and smoother",
       "Moisturizing ingredients reduce post-exfoliation dryness",
-      "Doubles as a scrub and hydrating mask"
+      "Doubles as a scrub and hydrating mask",
     ],
     cons: [
       "Physical exfoliation can be too harsh for sensitive/acne-prone skin",
       "Contains lanolin and parabens",
-      "Scented and can be messy to rinse off"
-    ]
+      "Scented and can be messy to rinse off",
+    ],
   },
   {
     id: 13,
@@ -930,22 +970,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Alcohol"],
-    url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W", /* page link not found */
+    url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W" /* page link not found */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Willow Bark Water", "Glycolic Acid", "Betaine Salicylate", "Allantoin"],
+    ingredients: [
+      "Willow Bark Water",
+      "Glycolic Acid",
+      "Betaine Salicylate",
+      "Allantoin",
+    ],
     ecoFriendly: false,
-    notes: "Mild exfoliating toner great for refining pores and treating breakouts. Low irritation profile for an AHA/BHA combo, but includes alcohol — watch for dryness in sensitive users.",
+    notes:
+      "Mild exfoliating toner great for refining pores and treating breakouts. Low irritation profile for an AHA/BHA combo, but includes alcohol — watch for dryness in sensitive users.",
     pros: [
       "Helps prevent breakouts and unclog pores",
       "Gentle enough for daily use",
-      "Great for acne-prone and oily skin"
+      "Great for acne-prone and oily skin",
     ],
     cons: [
       "Contains alcohol — may dry out sensitive or dry skin types",
       "May not show fast results for severe acne",
-      "Can sting on broken or freshly exfoliated skin"
-    ]
+      "Can sting on broken or freshly exfoliated skin",
+    ],
   },
   {
     id: 14,
@@ -957,22 +1003,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
-    url: "https://amzn.to/40e4rfv", /* https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495", */
+    url: "https://amzn.to/40e4rfv" /* https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Astragalus Root Extract", "Butylene Glycol", "Glycerin"],
     ecoFriendly: true, // minimalist packaging, cruelty-free
-    notes: "Minimalist essence-toner hybrid that hydrates and soothes. Suitable for layering. Very low irritation risk—though a few trace botanical extracts may still affect super reactive users.",
+    notes:
+      "Minimalist essence-toner hybrid that hydrates and soothes. Suitable for layering. Very low irritation risk—though a few trace botanical extracts may still affect super reactive users.",
     pros: [
       "Extremely gentle and hydrating",
       "Absorbs quickly and layers well under other products",
-      "No artificial fragrance or harsh additives"
+      "No artificial fragrance or harsh additives",
     ],
     cons: [
       "Can feel too simple for users looking for active ingredients",
       "Texture is thicker than typical toners (some dislike that)",
-      "Botanical ingredients might cause rare allergic reaction"
-    ]
+      "Botanical ingredients might cause rare allergic reaction",
+    ],
   },
   {
     id: 15,
@@ -984,22 +1031,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html", /* not currently on amazon */
+    url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html" /* not currently on amazon */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["96% Snail Secretion Filtrate", "Betaine", "Panthenol", "Allantoin"],
+    ingredients: [
+      "96% Snail Secretion Filtrate",
+      "Betaine",
+      "Panthenol",
+      "Allantoin",
+    ],
     ecoFriendly: false,
-    notes: "Lightweight hydrating essence packed with snail mucin for repair and moisture retention. Helps smooth texture, supports healing, and layers beautifully under serums/moisturisers.",
+    notes:
+      "Lightweight hydrating essence packed with snail mucin for repair and moisture retention. Helps smooth texture, supports healing, and layers beautifully under serums/moisturisers.",
     pros: [
       "High concentration of snail mucin for hydration & repair",
       "Soothes irritated or post-acne skin",
-      "Light texture absorbs quickly without stickiness"
+      "Light texture absorbs quickly without stickiness",
     ],
     cons: [
       "Not vegan (animal-derived ingredient)",
       "Scent-sensitive users may dislike subtle fragrance",
-      "Slow to notice effects—needs consistent use"
-    ]
+      "Slow to notice effects—needs consistent use",
+    ],
   },
   {
     id: 16,
@@ -1011,22 +1064,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
-    url: "https://amzn.to/4k3K2AW", /*https://www.stylevana.com/en_US/deal-neogen-dermalogy-dermalogy-real-ferment-micro-essence-150ml.html", */
+    url: "https://amzn.to/4k3K2AW" /*https://www.stylevana.com/en_US/deal-neogen-dermalogy-dermalogy-real-ferment-micro-essence-150ml.html", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Fermented Rice Extract", "Galactomyces", "Niacinamide", "Peptides"],
+    ingredients: [
+      "Fermented Rice Extract",
+      "Galactomyces",
+      "Niacinamide",
+      "Peptides",
+    ],
     ecoFriendly: false,
-    notes: "Fermented-ingredient essence with brightening and nourishing properties. Helps with texture, radiance, and hydration. Slightly viscous texture that absorbs well.",
+    notes:
+      "Fermented-ingredient essence with brightening and nourishing properties. Helps with texture, radiance, and hydration. Slightly viscous texture that absorbs well.",
     pros: [
       "Boosts radiance and hydration via fermented actives",
       "Niacinamide and peptides help tone and support skin barrier",
-      "Great layering product under heavier treatments"
+      "Great layering product under heavier treatments",
     ],
     cons: [
       "Not eco-certified—plastic packaging",
       "May feel too sticky for oily skin types",
-      "Pricey relative to simpler essences"
-    ]
+      "Pricey relative to simpler essences",
+    ],
   },
   {
     id: 17,
@@ -1038,22 +1097,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
-    url: "https://amzn.to/463CWsQ", /* https://www.ulta.com/p/glass-skin-refining-serum-xlsImpprod18971035", */
+    url: "https://amzn.to/463CWsQ" /* https://www.ulta.com/p/glass-skin-refining-serum-xlsImpprod18971035", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Niacinamide", "Peach Extract", "Licorice Root", "Adenosine"],
     ecoFriendly: false,
-    notes: "Highlights ‘glass skin’ with brightening and hydrating niacinamide as well as clarifying peach/licorice extracts. Lightweight serum that improves radiance and texture.",
+    notes:
+      "Highlights ‘glass skin’ with brightening and hydrating niacinamide as well as clarifying peach/licorice extracts. Lightweight serum that improves radiance and texture.",
     pros: [
       "Creates dewy, luminous ‘glass skin’ finish",
       "Niacinamide helps even tone without heaviness",
-      "Lightweight, absorbs quickly, great for layering"
+      "Lightweight, absorbs quickly, great for layering",
     ],
     cons: [
       "Contains fragrance that may bother ultra-sensitive skin",
       "Not strong enough for severe hyperpigmentation",
-      "Pricey for ingredient level"
-    ]
+      "Pricey for ingredient level",
+    ],
   },
   {
     id: 18,
@@ -1065,22 +1125,27 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["None"],
-    url: "https://amzn.to/4kOVFNh", /* https://www.stylevana.com/en_US/some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml.html", */
+    url: "https://amzn.to/4kOVFNh" /* https://www.stylevana.com/en_US/some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml.html", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["AHA (Glycolic), BHA (Salicylic), PHA (Gluconolactone)", "Tea Tree Leaf Water", "Niacinamide"],
+    ingredients: [
+      "AHA (Glycolic), BHA (Salicylic), PHA (Gluconolactone)",
+      "Tea Tree Leaf Water",
+      "Niacinamide",
+    ],
     ecoFriendly: false,
-    notes: "Three-exfoliant toner that helps clear breakouts, fade acne marks, and smooth texture in ~30 days. Contains tea tree water for calming; well-loved for acne-prone users.",
+    notes:
+      "Three-exfoliant toner that helps clear breakouts, fade acne marks, and smooth texture in ~30 days. Contains tea tree water for calming; well-loved for acne-prone users.",
     pros: [
       "Powerful multi-acid blend exfoliates and clarifies",
       "Reduces breakouts and refines texture within weeks",
-      "Refreshing toner format—lots of product per bottle"
+      "Refreshing toner format—lots of product per bottle",
     ],
     cons: [
       "Can cause purging on first use",
       "Not suitable for sensitive or dry skin without patching",
-      "Has faint herbal scent"
-    ]
+      "Has faint herbal scent",
+    ],
   },
   {
     id: 19,
@@ -1092,24 +1157,29 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["None"],
-    url: "https://amzn.to/44cw0XI", /* https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini", */
+    url: "https://amzn.to/44cw0XI" /* https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["JAUM Activator™ (Ginseng, Peony, Astragalus)", "Peptides", "Licorice Root"],
+    ingredients: [
+      "JAUM Activator™ (Ginseng, Peony, Astragalus)",
+      "Peptides",
+      "Licorice Root",
+    ],
     ecoFriendly: false,
-    notes: "Luxury first-step serum using Korean JAUM botanical blend (ginseng-heavy) to prep skin, boost absorption and help balance tone. Loved for softening texture & giving glow.",
+    notes:
+      "Luxury first-step serum using Korean JAUM botanical blend (ginseng-heavy) to prep skin, boost absorption and help balance tone. Loved for softening texture & giving glow.",
     pros: [
       "Prestigious JAUM blend enhances routine efficacy",
       "Softens, balances, and improves overall radiance",
-      "Silky texture layers well under heavier treatments"
+      "Silky texture layers well under heavier treatments",
     ],
     cons: [
       "High price point for limited ingredient list",
       "Heavy scent—ginseng aroma can be polarizing",
-      "Glass bottle without refill option"
-    ]
+      "Glass bottle without refill option",
+    ],
   },
-  
+
   {
     id: 20,
     name: "Missha Time Revolution Night Repair Ampoule",
@@ -1120,22 +1190,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["35‑44", "45‑54", "55+"],
     sensitivities: ["None"],
-    url: "https://amzn.to/44qlGN4", /* https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ */
+    url: "https://amzn.to/44qlGN4" /* https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Niacinamide", "Adenosine", "Fermented Yeast Extract", "Peptides"],
+    ingredients: [
+      "Niacinamide",
+      "Adenosine",
+      "Fermented Yeast Extract",
+      "Peptides",
+    ],
     ecoFriendly: false,
-    notes: "Night-time ampoule that firms and brightens using fermented yeast and peptide blend. Lightweight texture absorbs quickly and layers well under night creams.",
+    notes:
+      "Night-time ampoule that firms and brightens using fermented yeast and peptide blend. Lightweight texture absorbs quickly and layers well under night creams.",
     pros: [
       "Improves elasticity and reduces fine lines overnight",
       "Contains niacinamide + peptides for tone & texture",
-      "Non-sticky, absorbs cleanly"
+      "Non-sticky, absorbs cleanly",
     ],
     cons: [
       "May be expensive for the ingredient list",
       "Some users find fragrance a bit strong",
-      "Glass bottle without pump may be messy"
-    ]
+      "Glass bottle without pump may be messy",
+    ],
   },
   {
     id: 21,
@@ -1147,22 +1223,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["25‑34", "35‑44", "45‑54", "55+"],
     sensitivities: ["None"],
-    url: "https://amzn.to/3G0UETk", /* https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml */
+    url: "https://amzn.to/3G0UETk" /* https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Jeju Orchid Extract", "Adenosine", "Glycerin"],
     ecoFriendly: false,
-    notes: "Hydrating and firming eye cream infused with orchid extract and adenosine. Lightweight but nourishing—suitable for both AM and PM use.",
+    notes:
+      "Hydrating and firming eye cream infused with orchid extract and adenosine. Lightweight but nourishing—suitable for both AM and PM use.",
     pros: [
       "Light, non-greasy texture perfect under makeup",
       "Brightens and improves fine lines over time",
-      "Affordable luxury feel"
+      "Affordable luxury feel",
     ],
     cons: [
       "Not fragrance-free",
       "Might not be rich enough for very dry under-eyes",
-      "Plastic tube with limited recyclability"
-    ]
+      "Plastic tube with limited recyclability",
+    ],
   },
   {
     id: 22,
@@ -1174,22 +1251,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/3FNcGZe", /* https://www.amazon.com/MIZON-natural-treatment-hydrating-skincare/dp/B00AFLSE7U */
+    url: "https://amzn.to/3FNcGZe" /* https://www.amazon.com/MIZON-natural-treatment-hydrating-skincare/dp/B00AFLSE7U */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Snail Secretion Filtrate", "Niacinamide", "Peptides", "Ceramides"],
+    ingredients: [
+      "Snail Secretion Filtrate",
+      "Niacinamide",
+      "Peptides",
+      "Ceramides",
+    ],
     ecoFriendly: false,
-    notes: "Repair-focused eye cream with snail mucin and ceramides. Helps hydrate, reduce puffiness, and support skin barrier—ideal for morning or evening use.",
+    notes:
+      "Repair-focused eye cream with snail mucin and ceramides. Helps hydrate, reduce puffiness, and support skin barrier—ideal for morning or evening use.",
     pros: [
       "Hydrating and plumping with snail mucin",
       "Helps reduce dark circles and puffiness",
-      "Lightweight and non-sticky"
+      "Lightweight and non-sticky",
     ],
     cons: [
       "Not vegan (animal-derived ingredient)",
       "May irritate snail-allergic users",
-      "Plastic packaging, not refillable"
-    ]
+      "Plastic packaging, not refillable",
+    ],
   },
   {
     id: 23,
@@ -1201,22 +1284,27 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/3HQdqxe", /* https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506 */
+    url: "https://amzn.to/3HQdqxe" /* https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506 */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Napiers Original Formula™, Chestnut Leaf Extract", "Shea Butter", "Glycerin"],
+    ingredients: [
+      "Napiers Original Formula™, Chestnut Leaf Extract",
+      "Shea Butter",
+      "Glycerin",
+    ],
     ecoFriendly: false,
-    notes: "Rich, whipped gel-cream that intensely hydrates without heaviness. Great for dry or cold conditions; absorbs into a breathable moisture barrier.",
+    notes:
+      "Rich, whipped gel-cream that intensely hydrates without heaviness. Great for dry or cold conditions; absorbs into a breathable moisture barrier.",
     pros: [
       "Deep hydration with luxurious texture",
       "Non-greasy finish suitable for layering",
-      "Derm-tested and suitable for sensitive skin"
+      "Derm-tested and suitable for sensitive skin",
     ],
     cons: [
       "Jar packaging (not the most hygienic)",
       "Heavy formulation may overwhelm oily types",
-      "Pricier for brand/jar packaging"
-    ]
+      "Pricier for brand/jar packaging",
+    ],
   },
   {
     id: 24,
@@ -1228,22 +1316,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18‑24"],
     sensitivities: ["Fragrance"],
-    url: "https://amzn.to/4n8ZxdL", /* https://www.ulta.com/p/oil-free-ultra-moisturizing-lotion-with-birch-sap-pimprod2035883 */
+    url: "https://amzn.to/4n8ZxdL" /* https://www.ulta.com/p/oil-free-ultra-moisturizing-lotion-with-birch-sap-pimprod2035883 */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Birch Sap", "Beta-Glucan", "Panthenol", "Adenosine"],
     ecoFriendly: false,
-    notes: "Lightweight lotion using birch sap to hydrate oily, acne-prone types. Absorbs quickly, leaves no residue, and helps soothe breakout-prone skin.",
+    notes:
+      "Lightweight lotion using birch sap to hydrate oily, acne-prone types. Absorbs quickly, leaves no residue, and helps soothe breakout-prone skin.",
     pros: [
       "Oil-free and non-comedogenic",
       "Calms redness and supports barrier",
-      "Great value in a large bottle"
+      "Great value in a large bottle",
     ],
     cons: [
       "Contains fragrance",
       "May be too mild for very dry skin",
-      "Plastic bottle isn’t eco-friendly"
-    ]
+      "Plastic bottle isn’t eco-friendly",
+    ],
   },
   {
     id: 25,
@@ -1255,22 +1344,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/3ZJu0F8", /* https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html */
+    url: "https://amzn.to/3ZJu0F8" /* https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Green Tea Extract", "Hyaluronic Acid", "Betaine", "Panthenol"],
+    ingredients: [
+      "Green Tea Extract",
+      "Hyaluronic Acid",
+      "Betaine",
+      "Panthenol",
+    ],
     ecoFriendly: true,
-    notes: "Lightweight moisturizer packed with green tea extract and multiple weight hyaluronic acids. Hydrates without heaviness—great for layering under makeup.",
+    notes:
+      "Lightweight moisturizer packed with green tea extract and multiple weight hyaluronic acids. Hydrates without heaviness—great for layering under makeup.",
     pros: [
       "Deep hydration from multi-weight hyaluronic acids",
       "Antioxidant-rich green tea benefits",
-      "Absorbs cleanly with no greasy residue"
+      "Absorbs cleanly with no greasy residue",
     ],
     cons: [
       "Contains fragrance",
       "May feel insufficient for very dry skin in winter",
-      "Plastic jar not refillable"
-    ]
+      "Plastic jar not refillable",
+    ],
   },
   {
     id: 26,
@@ -1282,22 +1377,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/4enyirW", /* https://www.stylevana.com/en_US/top-pick-beauty-of-joseon-relief-sun-rice-probiotic-spf50-pa-50ml.html */
+    url: "https://amzn.to/4enyirW" /* https://www.stylevana.com/en_US/top-pick-beauty-of-joseon-relief-sun-rice-probiotic-spf50-pa-50ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Rice Extract", "Probiotics", "Niacinamide", "Titanium Dioxide"],
+    ingredients: [
+      "Rice Extract",
+      "Probiotics",
+      "Niacinamide",
+      "Titanium Dioxide",
+    ],
     ecoFriendly: true,
-    notes: "Broad-spectrum SPF50+ sunscreen with rice extract and probiotics. Feels lightweight with minimal white cast—suitable as a daily base layer.",
+    notes:
+      "Broad-spectrum SPF50+ sunscreen with rice extract and probiotics. Feels lightweight with minimal white cast—suitable as a daily base layer.",
     pros: [
       "High SPF with skin-friendly brightening rice extract",
       "Lightweight, non-greasy finish",
-      "Reef-safe mineral filters"
+      "Reef-safe mineral filters",
     ],
     cons: [
       "Contains niacinamide—not ideal for very sensitive/reactive skin",
       "Pump mechanism may be finicky",
-      "Bottle material not widely recycled"
-    ]
+      "Bottle material not widely recycled",
+    ],
   },
   {
     id: 27,
@@ -1309,22 +1410,28 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.cosrx.com/products/aloe-soothing-sun-cream-spf50-pa?srsltid=AfmBOooZY76wbnFiHbYtlEz8L4q-zWZFUdj18z_20z6-7nyjCmAkLWuG", /* https://beautynetkorea.com/product/cosrx-aloe-soothing-sun-cream-spf50pa-50ml-weight-79g/8467 */
+    url: "https://www.cosrx.com/products/aloe-soothing-sun-cream-spf50-pa?srsltid=AfmBOooZY76wbnFiHbYtlEz8L4q-zWZFUdj18z_20z6-7nyjCmAkLWuG" /* https://beautynetkorea.com/product/cosrx-aloe-soothing-sun-cream-spf50pa-50ml-weight-79g/8467 */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Aloe Vera Extract", "Green Tea Extract", "Panthenol", "Mineral SPF"],
+    ingredients: [
+      "Aloe Vera Extract",
+      "Green Tea Extract",
+      "Panthenol",
+      "Mineral SPF",
+    ],
     ecoFriendly: false,
-    notes: "Gentle mineral sunscreen with soothing aloe and green tea. Offers a moisturizing, dewy finish—ideal for reactive or acne-prone skin types.",
+    notes:
+      "Gentle mineral sunscreen with soothing aloe and green tea. Offers a moisturizing, dewy finish—ideal for reactive or acne-prone skin types.",
     pros: [
       "Mineral UV protection with calming botanicals",
       "Soothing texture good for sensitive skin",
-      "Non-irritating and fragrance-free"
+      "Non-irritating and fragrance-free",
     ],
     cons: [
       "Can be slightly white cast initially",
       "Tube packaging may dispense too quickly",
-      "Not water-resistant—needs frequent reapplication"
-    ]
+      "Not water-resistant—needs frequent reapplication",
+    ],
   },
   {
     id: 28,
@@ -1336,22 +1443,27 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/43Y6Q0o", /* https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html */
+    url: "https://amzn.to/43Y6Q0o" /* https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Hydro Ionized Mineral Water", "Sleep-Tox™", "Evening Primrose Root Extract"],
+    ingredients: [
+      "Hydro Ionized Mineral Water",
+      "Sleep-Tox™",
+      "Evening Primrose Root Extract",
+    ],
     ecoFriendly: false,
-    notes: "Overnight gel-mask that hydrates and refreshes skin by morning. Lightweight and breathable—not sticky or too heavy overnight.",
+    notes:
+      "Overnight gel-mask that hydrates and refreshes skin by morning. Lightweight and breathable—not sticky or too heavy overnight.",
     pros: [
       "Refreshing hydration after a night’s sleep",
       "Soothing, mild scent promotes relaxation",
-      "Light gel texture that layers well"
+      "Light gel texture that layers well",
     ],
     cons: [
       "Contains fragrance",
       "Jar packaging isn’t ideal for hygiene",
-      "More expensive than simpler hydrating masks"
-    ]
+      "More expensive than simpler hydrating masks",
+    ],
   },
   {
     id: 29,
@@ -1363,22 +1475,23 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/44rDWps", /* https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F */
+    url: "https://amzn.to/44rDWps" /* https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Rice Extract", "Ceramide NP", "Beta-Glucan"],
     ecoFriendly: false,
-    notes: "Creamy overnight mask that nourishes and brightens—stays creamy without feeling heavy. Suitable for most skin types, with added ceramide barrier support.",
+    notes:
+      "Creamy overnight mask that nourishes and brightens—stays creamy without feeling heavy. Suitable for most skin types, with added ceramide barrier support.",
     pros: [
       "Softens and hydrates overnight effectively",
       "Improves possible dull, dry skin",
-      "Rich without greasiness"
+      "Rich without greasiness",
     ],
     cons: [
       "Contains alcohol denat. (may be drying for sensitive skin)",
       "Jar packaging raises hygiene concerns",
-      "Slight scent may not suit fragrance-sensitive users"
-    ]
+      "Slight scent may not suit fragrance-sensitive users",
+    ],
   },
   {
     id: 30,
@@ -1390,33 +1503,33 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://amzn.to/3ZK5UtP", /* https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html */
+    url: "https://amzn.to/3ZK5UtP" /* https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-  
+
     /* ✨ new fields ✨ */
     ingredients: [
       "Jeju Volcanic Cluster Sphere™",
       "Kaolin & Bentonite Clays",
       "Lactic Acid",
       "Walnut Shell Powder",
-      "Green Tea Extract"
+      "Green Tea Extract",
     ],
-    ecoFriendly: true,      // responsibly-sourced volcanic ash, FSC carton
+    ecoFriendly: true, // responsibly-sourced volcanic ash, FSC carton
     notes:
       "Cooling wash-off clay mask that uses Jeju volcanic clusters to adsorb excess sebum and fine dust while gently exfoliating with lactic acid and walnut micro-grains. Leaves skin matte and refreshed without over-drying when used 1–2× weekly.",
     pros: [
       "Deep-cleans pores and controls oil instantly",
       "Cooling sensation reduces inflammation",
-      "Quick 10-minute treatment—rinses off clean"
+      "Quick 10-minute treatment—rinses off clean",
     ],
     cons: [
       "Physical scrub particles can be harsh if over-massaged",
       "May feel tight on very dry/sensitive skin",
-      "Tub packaging requires spatula for hygiene"
-    ]
+      "Tub packaging requires spatula for hygiene",
+    ],
   },
-  
+
   {
     id: 36,
     name: "Purito From Green Deep Foaming Cleanser",
@@ -1425,23 +1538,24 @@ Only really available internationally, but is a cult classic, going to just use 
     concerns: ["Acne", "Oil Control", "Gentle Cleanse"],
     budgetRange: "Under $30",
     climate: ["Humid", "All"],
-    ageGroup: ["Under 18","18-24","25-34"],
+    ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
     url: "https://purito.com/product/from-green-deep-foaming-cleanser/",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Centella Asiatica Extract", "Green Tea", "Panthenol"],
     ecoFriendly: true, // recycled paper packaging, earth‑conscious labeling :contentReference[oaicite:1]{index=1}
-    notes: "Gentle yet effective cleanser that balances oil and soothes acne‑prone skin. Minimalist formula in recycled packaging.",
+    notes:
+      "Gentle yet effective cleanser that balances oil and soothes acne‑prone skin. Minimalist formula in recycled packaging.",
     pros: [
       "Earth‑conscious packaging (recycled paper, minimal plastic)",
       "Non‑irritating, fragrance‑free formula",
-      "Balances oil while calming inflammation"
+      "Balances oil while calming inflammation",
     ],
     cons: [
       "Low lather might not feel 'deep clean' for some",
-      "Only available via brand website"
-    ]
+      "Only available via brand website",
+    ],
   },
   {
     id: 37,
@@ -1456,18 +1570,23 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://haruharu-wonder.com/products/black-rice-toner",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Fermented Black Rice Extract", "Niacinamide", "Hyaluronic Acid"],
+    ingredients: [
+      "Fermented Black Rice Extract",
+      "Niacinamide",
+      "Hyaluronic Acid",
+    ],
     ecoFriendly: true, // sleek recyclable packaging, minimal plastic :contentReference[oaicite:2]{index=2}
-    notes: "Hydrating, antioxidant-rich toner with fermented rice and hyaluronic acid in recyclable packaging.",
+    notes:
+      "Hydrating, antioxidant-rich toner with fermented rice and hyaluronic acid in recyclable packaging.",
     pros: [
       "Boosts hydration and glow",
       "Eco-conscious packaging, no extra fillers",
-      "Free from artificial color/fragrance"
+      "Free from artificial color/fragrance",
     ],
     cons: [
       "Slightly pricier toner format",
-      "Availability limited in some regions"
-    ]
+      "Availability limited in some regions",
+    ],
   },
   {
     id: 38,
@@ -1484,16 +1603,17 @@ Only really available internationally, but is a cult classic, going to just use 
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Low Molecular Hyaluronic Acid", "Allantoin", "Glycerin"],
     ecoFriendly: true, // refill pouch available, vegan formulation :contentReference[oaicite:3]{index=3}
-    notes: "Deep hydrating toner with small-molecule hyaluronics, refillable eco pouch, vegan-friendly.",
+    notes:
+      "Deep hydrating toner with small-molecule hyaluronics, refillable eco pouch, vegan-friendly.",
     pros: [
       "Excellent hydration, light texture",
       "Refill pouch reduces packaging waste",
-      "Vegan and gentle formula"
+      "Vegan and gentle formula",
     ],
     cons: [
       "Limited retail presence",
-      "Refill pouch shipping and handling extra"
-    ]
+      "Refill pouch shipping and handling extra",
+    ],
   },
   {
     id: 39,
@@ -1503,23 +1623,25 @@ Only really available internationally, but is a cult classic, going to just use 
     concerns: ["Hydration", "Barrier Support"],
     budgetRange: "$25-$35",
     climate: ["All"],
-    ageGroup: ["Under 18","18-24"],
+    ageGroup: ["Under 18", "18-24"],
     sensitivities: ["None"],
     url: "https://sephora.com/otzi-wildflower-gel-moisturizer",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Hyaluronic Acid", "Ginseng Berry Extract", "Mulberry Extract"],
+    ingredients: [
+      "Hyaluronic Acid",
+      "Ginseng Berry Extract",
+      "Mulberry Extract",
+    ],
     ecoFriendly: true, // vegan, cruelty-free, minimal recycled pastel packaging :contentReference[oaicite:4]{index=4}
-    notes: "Lightweight gel moisturizer with hydrating HA and plant extracts, packaged in recycled materials.",
+    notes:
+      "Lightweight gel moisturizer with hydrating HA and plant extracts, packaged in recycled materials.",
     pros: [
       "Hydrates without heaviness",
       "Eco-conscious pastel recycled packaging",
-      "Formulated by and for Gen Z—vegan/cruelty-free"
+      "Formulated by and for Gen Z—vegan/cruelty-free",
     ],
-    cons: [
-      "New and not widely reviewed yet",
-      "Only available at Sephora"
-    ]
+    cons: ["New and not widely reviewed yet", "Only available at Sephora"],
   },
   {
     id: 40,
@@ -1536,16 +1658,17 @@ Only really available internationally, but is a cult classic, going to just use 
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Jeju Green Tea Extract", "Green Tea Seed Oil", "Panthenol"],
     ecoFriendly: true, // 52% less plastic, 100% recyclable paper packaging :contentReference[oaicite:5]{index=5}
-    notes: "Beloved green tea serum now in less‑plastic, fully recyclable paper edition—same formula, greener packaging.",
+    notes:
+      "Beloved green tea serum now in less‑plastic, fully recyclable paper edition—same formula, greener packaging.",
     pros: [
       "Highly hydrating and antioxidant-rich",
       "Major plastic reduction initiative",
-      "Well-loved brand with visible results"
+      "Well-loved brand with visible results",
     ],
     cons: [
       "Paper label over plastic bottle (some greenwashing controversy)",
-      "May still confuse recycling if label not removed"
-    ]
+      "May still confuse recycling if label not removed",
+    ],
   },
   {
     id: 41,
@@ -1560,19 +1683,25 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://us.laneige.com/products/lip-sleeping-mask",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Berry Fruit Complex™", "Murumuru Seed Butter", "Shea Butter", "Vitamin C"],
+    ingredients: [
+      "Berry Fruit Complex™",
+      "Murumuru Seed Butter",
+      "Shea Butter",
+      "Vitamin C",
+    ],
     ecoFriendly: false,
-    notes: "Cult-favorite overnight lip mask that delivers long-lasting moisture and antioxidant protection; sells a jar every few seconds globally and regularly tops ‘best lip mask’ lists.",
+    notes:
+      "Cult-favorite overnight lip mask that delivers long-lasting moisture and antioxidant protection; sells a jar every few seconds globally and regularly tops ‘best lip mask’ lists.",
     pros: [
       "Deeply hydrates & softens flakes overnight",
       "Antioxidant-rich berries protect against free radicals",
-      "A little goes a long way—jar lasts months"
+      "A little goes a long way—jar lasts months",
     ],
     cons: [
       "Comes in a jar (dip spatula required for hygiene)",
       "Synthetic berry scent isn’t for everyone",
-      "Not vegan (contains beeswax)"
-    ]
+      "Not vegan (contains beeswax)",
+    ],
   },
   {
     id: 42,
@@ -1587,71 +1716,83 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://www.drjart.com/products/cicapair-tiger-grass-color-correcting-treatment-spf-30",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Centella Asiatica Complex", "Niacinamide", "Mineral UV Filters", "Panthenol"],
+    ingredients: [
+      "Centella Asiatica Complex",
+      "Niacinamide",
+      "Mineral UV Filters",
+      "Panthenol",
+    ],
     ecoFriendly: false,
-    notes: "Iconic green-to-beige cream that instantly neutralizes redness while soothing with CICA; doubles as light base + SPF, beloved by makeup-minimalists and derms alike.",
+    notes:
+      "Iconic green-to-beige cream that instantly neutralizes redness while soothing with CICA; doubles as light base + SPF, beloved by makeup-minimalists and derms alike.",
     pros: [
       "Instant redness camo with tone-adjusting pigments",
       "Soothes & repairs with high Centella concentration",
-      "Built-in mineral SPF 30 for daytime protection"
+      "Built-in mineral SPF 30 for daytime protection",
     ],
     cons: [
       "Thick texture—works best in thin layer",
       "Herbal scent from essential oils",
-      "Glass jar adds weight & isn’t refillable"
-    ]
+      "Glass jar adds weight & isn’t refillable",
+    ],
   },
   {
     id: 43,
     name: "By Wishtrend Pure Vitamin C 21.5% Advanced Serum",
     category: "Serum",
-    suitableFor: ["Normal","Dry","Combination","Oily"],
-    concerns: ["Dullness","Hyperpigmentation","Antioxidant Care"],
+    suitableFor: ["Normal", "Dry", "Combination", "Oily"],
+    concerns: ["Dullness", "Hyperpigmentation", "Antioxidant Care"],
     budgetRange: "$25-$35",
     climate: ["All"],
-    ageGroup: ["18-24","25-34","35-44","45-54"],
+    ageGroup: ["18-24", "25-34", "35-44", "45-54"],
     sensitivities: ["Essential Oils"],
     url: "https://wishtrend.com/products/pure-vitamin-c-21-5-advanced-serum",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["21.5% Ascorbic Acid","Hippophae Rhamnoides Water","Panthenol"],
+    ingredients: [
+      "21.5% Ascorbic Acid",
+      "Hippophae Rhamnoides Water",
+      "Panthenol",
+    ],
     ecoFriendly: true, // minimal packaging, FSC box, carbon-offset shipping
-    notes: "High-potency yet water-like vitamin-C serum that delivers brightening and antioxidant protection within weeks. Ships in cold-chain pouch to preserve potency.",
+    notes:
+      "High-potency yet water-like vitamin-C serum that delivers brightening and antioxidant protection within weeks. Ships in cold-chain pouch to preserve potency.",
     pros: [
       "High concentration for fast glow-up",
       "Only 10 ingredients – low irritation risk",
-      "Eco-friendly shipping & packaging"
+      "Eco-friendly shipping & packaging",
     ],
     cons: [
       "Must be stored in fridge once opened",
-      "Can tingle on first applications"
-    ]
+      "Can tingle on first applications",
+    ],
   },
   {
     id: 44,
     name: "COSRX Acne Pimple Master Patch",
     category: "Spot Treatment",
     suitableFor: ["All Skin Types"],
-    concerns: ["Acne","Blemish Recovery"],
+    concerns: ["Acne", "Blemish Recovery"],
     budgetRange: "Under $15",
     climate: ["All"],
-    ageGroup: ["Under 18","18-24","25-34"],
+    ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
     url: "https://www.cosrx.com/products/acne-pimple-master-patch",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Hydrocolloid","Polyisobutene"],
+    ingredients: ["Hydrocolloid", "Polyisobutene"],
     ecoFriendly: false,
-    notes: "Iconic hydrocolloid patches that flatten whiteheads overnight and protect healing zits from picking.",
+    notes:
+      "Iconic hydrocolloid patches that flatten whiteheads overnight and protect healing zits from picking.",
     pros: [
       "Visible gunk-pulling overnight",
       "Great emergency spot fix",
-      "Multiple sizes in one sheet"
+      "Multiple sizes in one sheet",
     ],
     cons: [
       "Single-use plastic sleeve",
-      "Not effective on cystic, deep nodules"
-    ]
+      "Not effective on cystic, deep nodules",
+    ],
   },
   {
     id: 45,
@@ -1666,19 +1807,25 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://www.amazon.com/Neogen-Bio-Peel-Gauze-Peeling-Lemon/dp/B019RULW50",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Lactic Acid", "Glycolic Acid", "Lemon Fruit Extract", "Hyaluronic Acid"],
+    ingredients: [
+      "Lactic Acid",
+      "Glycolic Acid",
+      "Lemon Fruit Extract",
+      "Hyaluronic Acid",
+    ],
     ecoFriendly: false,
-    notes: "Dual-texture pads offer chemical (AHA) + gentle physical exfoliation for instant glow and smoother texture; dispose after one use—best 1-2× weekly.",
+    notes:
+      "Dual-texture pads offer chemical (AHA) + gentle physical exfoliation for instant glow and smoother texture; dispose after one use—best 1-2× weekly.",
     pros: [
       "Combines chemical & physical exfoliation in one step",
       "Brightens quickly with vitamin-C-rich lemon",
-      "Pads are pre-soaked—great for travel/ease"
+      "Pads are pre-soaked—great for travel/ease",
     ],
     cons: [
       "Single-use pads create waste",
       "Contains fragrance & alcohol—patch test if sensitive",
-      "Jar can dry out if not sealed tightly"
-    ]
+      "Jar can dry out if not sealed tightly",
+    ],
   },
   {
     id: 46,
@@ -1693,19 +1840,26 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://www.amazon.com/SOME-MI-Retinol-Intense-Serum/dp/B0BTHPH9FP",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Retinol 0.1%", "Retinal 0.1%", "Bakuchiol", "Peptides", "Panthenol"],
+    ingredients: [
+      "Retinol 0.1%",
+      "Retinal 0.1%",
+      "Bakuchiol",
+      "Peptides",
+      "Panthenol",
+    ],
     ecoFriendly: false,
-    notes: "Triple-retinoid formula (retinol + retinal + bakuchiol) tackles wrinkles & breakouts with minimal irritation thanks to soothing peptides and panthenol.",
+    notes:
+      "Triple-retinoid formula (retinol + retinal + bakuchiol) tackles wrinkles & breakouts with minimal irritation thanks to soothing peptides and panthenol.",
     pros: [
       "Potent yet low-irritation retinoid blend",
       "Visible skin-smoothing in ~4-6 weeks",
-      "Airless pump protects actives from oxidation"
+      "Airless pump protects actives from oxidation",
     ],
     cons: [
       "Start slow—may cause initial purging/dryness",
       "Opaque bottle means you can’t see remaining product",
-      "Not pregnancy-safe (vitamin A derivatives)"
-    ]
+      "Not pregnancy-safe (vitamin A derivatives)",
+    ],
   },
   {
     id: 47,
@@ -1722,17 +1876,18 @@ Only really available internationally, but is a cult classic, going to just use 
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Hyaluronic Acid", "Ceramide NP", "Allantoin", "Witch Hazel"],
     ecoFriendly: false,
-    notes: "Top-selling sheet mask drenches skin in N.M.F (natural moisturizing factors) for plump, glassy hydration in 15–20 minutes—perfect pre-event pick-me-up.",
+    notes:
+      "Top-selling sheet mask drenches skin in N.M.F (natural moisturizing factors) for plump, glassy hydration in 15–20 minutes—perfect pre-event pick-me-up.",
     pros: [
       "Instant moisture surge & plumping effect",
       "Ample leftover serum for neck/arms",
-      "Fits snugly without slipping"
+      "Fits snugly without slipping",
     ],
     cons: [
       "Single-use sheet—not eco-friendly",
       "Light fragrance may bother some",
-      "Temporary results—best used regularly"
-    ]
+      "Temporary results—best used regularly",
+    ],
   },
   {
     id: 48,
@@ -1747,19 +1902,25 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://abib.com/products/quick-sunstick-protection-bar",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Zinc Oxide", "Octinoxate", "Aloe Leaf Extract", "Ceramide NP"],
+    ingredients: [
+      "Zinc Oxide",
+      "Octinoxate",
+      "Aloe Leaf Extract",
+      "Ceramide NP",
+    ],
     ecoFriendly: true, // compact stick, minimal leakage risk
-    notes: "Pocket-friendly sunstick glides on clear with a velvet finish—ideal for midday touch-ups without mess; widely praised for zero white cast on deeper tones.",
+    notes:
+      "Pocket-friendly sunstick glides on clear with a velvet finish—ideal for midday touch-ups without mess; widely praised for zero white cast on deeper tones.",
     pros: [
       "High SPF in ultra-portable stick",
       "No white cast & velvet feel",
-      "Great over makeup for on-the-go protection"
+      "Great over makeup for on-the-go protection",
     ],
     cons: [
       "Small amount of product (18 g)",
       "May pill if layered over heavy creams",
-      "Needs multiple swipes for full coverage"
-    ]
+      "Needs multiple swipes for full coverage",
+    ],
   },
   {
     id: 49,
@@ -1774,49 +1935,44 @@ Only really available internationally, but is a cult classic, going to just use 
     url: "https://www.amazon.com/Petitfee-Gold-Snail-Hydrogel-Patch/dp/B00XQ86NX6",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
-    ingredients: ["Snail Secretion Filtrate", "Colloidal Gold", "Ginseng Extract", "Adenosine"],
+    ingredients: [
+      "Snail Secretion Filtrate",
+      "Colloidal Gold",
+      "Ginseng Extract",
+      "Adenosine",
+    ],
     ecoFriendly: false,
-    notes: "Cooling hydrogel patches de-puff and brighten tired under-eyes in 15 minutes—fan favorite for quick AM refresh before makeup.",
+    notes:
+      "Cooling hydrogel patches de-puff and brighten tired under-eyes in 15 minutes—fan favorite for quick AM refresh before makeup.",
     pros: [
       "Instant cooling & de-puffing effect",
       "Hydrogel clings without slipping",
-      "One jar contains 60 patches (30 pairs)"
+      "One jar contains 60 patches (30 pairs)",
     ],
     cons: [
       "Single-use patches generate waste",
       "Not vegan (snail filtrate)",
-      "Results are temporary—use consistently"
-    ]
-  }
-
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
+      "Results are temporary—use consistently",
+    ],
+  },
 ];
 
 // Define the getRecommendedProducts function OUTSIDE the event listener
 function getRecommendedProducts(userAnswers) {
-  const scoredProducts = products.map(product => {
+  const scoredProducts = products.map((product) => {
     let score = 0;
     const breakdown = {};
 
     // skin type
     const skinMatch =
-    product.suitableFor.includes(userAnswers.skinType) ||
-    product.suitableFor.includes("All") ||
-    product.suitableFor.includes("All Skin Types");
+      product.suitableFor.includes(userAnswers.skinType) ||
+      product.suitableFor.includes("All") ||
+      product.suitableFor.includes("All Skin Types");
     breakdown.skinType = skinMatch ? weights.skinType : 0;
     score += breakdown.skinType;
 
     // concerns
-    const concernMatches = product.concerns.filter(concern =>
+    const concernMatches = product.concerns.filter((concern) =>
       userAnswers.concerns?.includes(concern)
     ).length;
     breakdown.concerns = concernMatches * weights.perConcern;
@@ -1828,19 +1984,21 @@ function getRecommendedProducts(userAnswers) {
     score += breakdown.budget;
 
     // age group
-    const ageMatch = product.ageGroup.includes(userAnswers.ageGroup)
-                  || product.ageGroup.includes("All");
+    const ageMatch =
+      product.ageGroup.includes(userAnswers.ageGroup) ||
+      product.ageGroup.includes("All");
     breakdown.ageGroup = ageMatch ? weights.ageGroup : 0;
     score += breakdown.ageGroup;
 
     // climate
-    const climateMatch = product.climate.includes(userAnswers.climate)
-                      || product.climate.includes("All");
+    const climateMatch =
+      product.climate.includes(userAnswers.climate) ||
+      product.climate.includes("All");
     breakdown.climate = climateMatch ? weights.climate : 0;
     score += breakdown.climate;
 
     // sensitivities
-    const sensitivityMatches = product.sensitivities.filter(s =>
+    const sensitivityMatches = product.sensitivities.filter((s) =>
       userAnswers.sensitivities?.includes(s)
     ).length;
     if (sensitivityMatches > 0) {
@@ -1860,17 +2018,17 @@ function getRecommendedProducts(userAnswers) {
 
 function pickBestFor(category, allSortedProducts) {
   return allSortedProducts.find(
-    p => p.category.toLowerCase() === category.toLowerCase()
+    (p) => p.category.toLowerCase() === category.toLowerCase()
   );
 }
 
 function debugRecommendations(userAnswers) {
   const all = getRecommendedProducts(userAnswers);
   console.table(
-    all.slice(0, 10).map(p => ({
-      name:       p.name,
-      score:      p.score,
-      ...p.breakdown
+    all.slice(0, 10).map((p) => ({
+      name: p.name,
+      score: p.score,
+      ...p.breakdown,
     }))
   );
 }
@@ -1902,6 +2060,25 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.classList.add("intro-active");
         introContainer.style.display = "flex";
         quizContainer.style.display = "none";
+
+        const quizCompleted = localStorage.getItem("quizCompleted");
+        if (quizCompleted === "true") {
+          const storedProducts = JSON.parse(
+            localStorage.getItem("recommendedProducts") || "[]"
+          );
+          const storedRoutine = JSON.parse(
+            localStorage.getItem("routine") || "{}"
+          );
+
+          if (storedProducts.length && Object.keys(storedRoutine).length) {
+            // skip intro, show saved results
+            document.body.classList.remove("intro-active");
+            introContainer.style.display = "none";
+            quizContainer.style.display = "flex";
+            displayResults(storedProducts, storedRoutine);
+            return; // ⬅️ avoid the normal “resume-quiz” code path
+          }
+        }
 
         const savedIndex = localStorage.getItem("currentQuestionIndex");
         const savedAnswers = localStorage.getItem("answers");
@@ -1936,6 +2113,9 @@ document.addEventListener("DOMContentLoaded", function () {
       answers = {};
       localStorage.removeItem("currentQuestionIndex");
       localStorage.removeItem("answers");
+      localStorage.removeItem('quizCompleted');
+      localStorage.removeItem('recommendedProducts');
+      localStorage.removeItem('routine');
 
       // Always reset to intro state
       document.body.classList.add("intro-active");
@@ -2012,49 +2192,49 @@ document.addEventListener("DOMContentLoaded", function () {
       moveToNextQuestion();
     }
 
- /* ───────────────────────── renderQuestion() ─────────────────────────
+    /* ───────────────────────── renderQuestion() ─────────────────────────
    Added mutual-exclusivity handling for “None / No… / I’m not sure”
    check-boxes in multiple-choice questions.  New/changed lines →  🔸
 ──────────────────────────────────────────────────────────────────── */
-function renderQuestion() {
-  console.log("Rendering question:", currentQuestionIndex);
-  const question = questions[currentQuestionIndex];
+    function renderQuestion() {
+      console.log("Rendering question:", currentQuestionIndex);
+      const question = questions[currentQuestionIndex];
 
-  // Start fade out
-  quizContent.classList.add("fade-out");
+      // Start fade out
+      quizContent.classList.add("fade-out");
 
-  // Wait for fade out to complete before updating content
-  setTimeout(() => {
-    const questionImages = {
-      1: "/public/images/shine.webp",
-      2: "/public/images/climate.jpg",
-      3: "/public/images/dance.jpg",
-      4: "/public/images/eye.jpg",
-      5: "/public/images/blur.jpg",
-      6: "/public/images/product.jpg",
-      7: "/public/images/stress.jpg",
-      8: "/public/images/sleep.webp",
-      9: "/public/images/mum2.jpg",
-      10: "/public/images/morning1.jpg",
-      11: "/public/images/lips1.jpg",
-      12: "/public/images/slow.jpg",
-      13: "/public/images/skin1.jpg",
-      14: "/public/images/sheet1.jpg",
-      15: "/public/images/fire1.png",
-      16: "/public/images/beach.png",
-      17: "/public/images/water2.jpg",
-      18: "/public/images/hair.jpg",
-      19: "/public/images/smell.jpg",
-      20: "/public/images/fish.jpg",
-      21: "/public/images/glow.jpg",
-      22: "/public/images/car.jpg",
-      23: "/public/images/routine.jpg",
-    };
+      // Wait for fade out to complete before updating content
+      setTimeout(() => {
+        const questionImages = {
+          1: "/public/images/shine.webp",
+          2: "/public/images/climate.jpg",
+          3: "/public/images/dance.jpg",
+          4: "/public/images/eye.jpg",
+          5: "/public/images/blur.jpg",
+          6: "/public/images/product.jpg",
+          7: "/public/images/stress.jpg",
+          8: "/public/images/sleep.webp",
+          9: "/public/images/mum2.jpg",
+          10: "/public/images/morning1.jpg",
+          11: "/public/images/lips1.jpg",
+          12: "/public/images/slow.jpg",
+          13: "/public/images/skin1.jpg",
+          14: "/public/images/sheet1.jpg",
+          15: "/public/images/fire1.png",
+          16: "/public/images/beach.png",
+          17: "/public/images/water2.jpg",
+          18: "/public/images/hair.jpg",
+          19: "/public/images/smell.jpg",
+          20: "/public/images/fish.jpg",
+          21: "/public/images/glow.jpg",
+          22: "/public/images/car.jpg",
+          23: "/public/images/routine.jpg",
+        };
 
-    const questionImage =
-      questionImages[question.id] || "/public/images/balloon.jpg";
+        const questionImage =
+          questionImages[question.id] || "/public/images/balloon.jpg";
 
-    let quizHtml = `
+        let quizHtml = `
       <div class="quiz-question-container">
         <div class="quiz-question-content">
           <div class="question-header">
@@ -2071,78 +2251,80 @@ function renderQuestion() {
           <div class="options-container">
     `;
 
-    question.options.forEach((option) => {
-      const isChecked = checkIfOptionIsSelected(question, option);
-      quizHtml += `
+        question.options.forEach((option) => {
+          const isChecked = checkIfOptionIsSelected(question, option);
+          quizHtml += `
         <label class="option">
-          <input type="${
-            question.type === "multiple" ? "checkbox" : "radio"
-          }"
+          <input type="${question.type === "multiple" ? "checkbox" : "radio"}"
                  name="question-${question.id}"
                  value="${option.value}"
                  ${isChecked ? "checked" : ""}>
           <span class="option-text">${option.text}</span>
         </label>
       `;
-    });
+        });
 
-    quizHtml += `
+        quizHtml += `
           </div>
         </div>
       </div>
     `;
 
-    quizContent.innerHTML = quizHtml;
-    quizContent.style.backgroundImage = "none";
+        quizContent.innerHTML = quizHtml;
+        quizContent.style.backgroundImage = "none";
 
-    prevBtn.disabled = false;
-    prevBtn.classList.remove("disabled");
-    nextBtn.textContent =
-      currentQuestionIndex === questions.length - 1 ? "Finish" : "Continue";
+        prevBtn.disabled = false;
+        prevBtn.classList.remove("disabled");
+        nextBtn.textContent =
+          currentQuestionIndex === questions.length - 1 ? "Finish" : "Continue";
 
-    addTooltipToNextButton();
+        addTooltipToNextButton();
 
-    nextBtn = document.getElementById("nextBtn");
-    nextBtn.removeEventListener("click", handleNextButtonClick);
-    nextBtn.addEventListener("click", handleNextButtonClick);
+        nextBtn = document.getElementById("nextBtn");
+        nextBtn.removeEventListener("click", handleNextButtonClick);
+        nextBtn.addEventListener("click", handleNextButtonClick);
 
-    const inputs = document.querySelectorAll(
-      `input[name="question-${question.id}"]`
-    );
-    inputs.forEach((input) => {
-      input.addEventListener("change", () => {
-        if (question.type === "single") {
-          setTimeout(moveToNextQuestion, 80);
-          return;
-        }
+        const inputs = document.querySelectorAll(
+          `input[name="question-${question.id}"]`
+        );
+        inputs.forEach((input) => {
+          input.addEventListener("change", () => {
+            if (question.type === "single") {
+              setTimeout(moveToNextQuestion, 80);
+              return;
+            }
 
-        /* ──────── NEW: enforce exclusivity for “None …” answers ──────── */
-        const isExclusive = (val) =>
-          /^(none|no\s|i\'?m\s*not\s*sure)/i.test(val); // 🔸
+            /* ──────── NEW: enforce exclusivity for “None …” answers ──────── */
+            const isExclusive = (val) =>
+              /^(none|no\s|i\'?m\s*not\s*sure)/i.test(val); // 🔸
 
-        if (isExclusive(input.value) && input.checked) {               // 🔸
-          inputs.forEach((i) => { if (i !== input) i.checked = false; }); // 🔸
-        } else if (!isExclusive(input.value) && input.checked) {        // 🔸
-          inputs.forEach((i) => {                                        // 🔸
-            if (isExclusive(i.value)) i.checked = false;                 // 🔸
-          });                                                            // 🔸
-        }                                                                // 🔸
-        /* ─────────────────────────────────────────────────────────────── */
-      });
-    });
+            if (isExclusive(input.value) && input.checked) {
+              // 🔸
+              inputs.forEach((i) => {
+                if (i !== input) i.checked = false;
+              }); // 🔸
+            } else if (!isExclusive(input.value) && input.checked) {
+              // 🔸
+              inputs.forEach((i) => {
+                // 🔸
+                if (isExclusive(i.value)) i.checked = false; // 🔸
+              }); // 🔸
+            } // 🔸
+            /* ─────────────────────────────────────────────────────────────── */
+          });
+        });
 
-    document.removeEventListener("keydown", handleEnterKey);
-    document.addEventListener("keydown", handleEnterKey);
+        document.removeEventListener("keydown", handleEnterKey);
+        document.addEventListener("keydown", handleEnterKey);
 
-    // Start fade in
-    requestAnimationFrame(() => {
-      quizContent.classList.remove("fade-out");
-    });
-  }, 200); // Match this to your CSS transition duration
+        // Start fade in
+        requestAnimationFrame(() => {
+          quizContent.classList.remove("fade-out");
+        });
+      }, 200); // Match this to your CSS transition duration
 
-  updateProgressBar();
-}
-
+      updateProgressBar();
+    }
 
     function updateProgressBar() {
       const totalQuestions = questions.length;
@@ -2254,7 +2436,7 @@ function renderQuestion() {
       // Determine routine complexity based on time
       let morningSteps = [];
       let eveningSteps = [];
-    
+
       const timeChoice = userAnswers.routineTime;
       if (timeChoice === "1-2 minutes") {
         morningSteps = [
@@ -2315,7 +2497,7 @@ function renderQuestion() {
           { step: "Moisturize", category: "Moisturizer" },
         ];
       }
-    
+
       // Weekly treatments
       const weeklyTreatments = [];
       if (userAnswers.concerns?.includes("Acne")) {
@@ -2336,35 +2518,36 @@ function renderQuestion() {
             "Apply mask to clean skin, leave on for recommended time, then continue with the rest of your routine.",
         });
       }
-    
+
       // A helper to find the best product for a category from the entire sorted list
       function findBestProductForCategory(category) {
         return (
-          allSortedProducts
-            .filter((p) => p.category.toLowerCase() === category.toLowerCase())
-            [0] || null
+          allSortedProducts.filter(
+            (p) => p.category.toLowerCase() === category.toLowerCase()
+          )[0] || null
         );
       }
 
-    
-      const build = steps => steps.map(s => {
-        const prod = pickBestFor(s.category, allSortedProducts);
-        return {
-          step: s.step,
-          category: s.category,
-          product: prod?.name   || `No product for ${s.category}`,
-          productUrl: prod?.url  || null,
-          productImg: prod?.image|| null,
-          instructions: s.instructions
-            || (prod 
-                 ? `Use ${prod.name} as directed.` 
-                 : `Consider a suitable ${s.category}.`),
-        };
-      });
-    
+      const build = (steps) =>
+        steps.map((s) => {
+          const prod = pickBestFor(s.category, allSortedProducts);
+          return {
+            step: s.step,
+            category: s.category,
+            product: prod?.name || `No product for ${s.category}`,
+            productUrl: prod?.url || null,
+            productImg: prod?.image || null,
+            instructions:
+              s.instructions ||
+              (prod
+                ? `Use ${prod.name} as directed.`
+                : `Consider a suitable ${s.category}.`),
+          };
+        });
+
       const morning = build(morningSteps);
       const evening = build(eveningSteps);
-      const weekly  = weeklyTreatments.map(t => {
+      const weekly = weeklyTreatments.map((t) => {
         const prod = pickBestFor(t.category, allSortedProducts);
         return {
           step: t.step,
@@ -2376,7 +2559,7 @@ function renderQuestion() {
           productImg: prod?.image,
         };
       });
-    
+
       return { morning, evening, weekly };
     }
 
@@ -2431,47 +2614,44 @@ function renderQuestion() {
         saveAnswer();
     
         const userAnswers = {
-          skinType: answers[1],
-          climate: answers[2],
-          ageGroup: answers[3],
-          concerns: answers[4],
-          sunExposure: answers[5],
-          currentProducts: answers[6],
-          stressLevel: answers[7],
-          sleepHours: answers[8],
-          lifeStage: answers[9],
-          morningSkinFeel: answers[10],
-          afterWashFeel: answers[11],
-          routineTime: answers[12],
-          sensitivities: answers[13],
-          usedIngredients: answers[14],
-          budget: answers[15],
-          dailyRoutine: answers[16],
-          medications: answers[17],
-          skincareGoal: answers[18],
-          fragrancePreference: answers[19],
-          ecoPreference: answers[20],
-          focusAreas: answers[21],
-          skinReaction: answers[22],
-          multiUseInterest: answers[23],
+          skinType:           answers[1],
+          climate:            answers[2],
+          ageGroup:           answers[3],
+          concerns:           answers[4],
+          sunExposure:        answers[5],
+          currentProducts:    answers[6],
+          stressLevel:        answers[7],
+          sleepHours:         answers[8],
+          lifeStage:          answers[9],
+          morningSkinFeel:    answers[10],
+          afterWashFeel:      answers[11],
+          routineTime:        answers[12],
+          sensitivities:      answers[13],
+          usedIngredients:    answers[14],
+          budget:             answers[15],
+          dailyRoutine:       answers[16],
+          medications:        answers[17],
+          skincareGoal:       answers[18],
+          fragrancePreference:answers[19],
+          ecoPreference:      answers[20],
+          focusAreas:         answers[21],
+          skinReaction:       answers[22],
+          multiUseInterest:   answers[23],
         };
     
-        console.log("User Answers:", userAnswers);
-    
-        // 1) get full sorted list
+        // 1) rank products
         const allSortedProducts = getRecommendedProducts(userAnswers);
-    
-        if (allSortedProducts.length === 0) {
+        if (!allSortedProducts.length) {
           quizContent.innerHTML =
             "<h2>No products found matching your criteria.</h2><p>Please try again with different answers.</p>";
           return;
         }
     
-        // 2) generate your routine (needs allSortedProducts)
-        const routine = generateRoutine(userAnswers, allSortedProducts);
+        // 2) build routine
+        const routine          = generateRoutine(userAnswers, allSortedProducts);
         const formattedRoutine = formatRoutineForDisplay(routine);
     
-        // 3) build a Set of product names used in the routine
+        // 3) choose top 5 products not already in routine
         const routineNames = new Set();
         ["morning", "evening", "weekly"].forEach(period =>
           (routine[period] || []).forEach(step => {
@@ -2479,42 +2659,50 @@ function renderQuestion() {
           })
         );
     
-        // 4) filter out any routine products, then take up to 5
         let recommended = allSortedProducts
           .filter(p => !routineNames.has(p.name))
           .slice(0, 5);
     
-        // 5) if fewer than 5 remain, fill up from the top of allSortedProducts
         if (recommended.length < 5) {
-          const fill = allSortedProducts
+          const filler = allSortedProducts
             .filter(p => !recommended.includes(p))
             .slice(0, 5 - recommended.length);
-          recommended = recommended.concat(fill);
+          recommended = recommended.concat(filler);
         }
     
-        // 6) display
+        // 4) show results
         displayResults(recommended, formattedRoutine);
     
+        // 5) persist finished results
+        localStorage.setItem('quizCompleted',        'true');
+        localStorage.setItem('recommendedProducts', JSON.stringify(recommended));
+        localStorage.setItem('routine',             JSON.stringify(formattedRoutine));
+    
+        // 6) hide nav buttons
         nextBtn.style.display = "none";
         prevBtn.style.display = "none";
     
-        resetQuizState();
+        // 7) ★ CHANGED  ───────── clear ONLY in-progress data ─────────
+        currentQuestionIndex = 0;                 // ★ CHANGED
+        answers = {};                             // ★ CHANGED
+        localStorage.removeItem('currentQuestionIndex'); // ★ CHANGED
+        localStorage.removeItem('answers');              // ★ CHANGED
+        // (we no longer call resetQuizState() here)       // ★ CHANGED
     
       } catch (error) {
         console.error("Error submitting quiz:", error);
         showToast("Error submitting quiz. Please try again.");
       }
-    }
-    
+    }    
 
     // Function to display both products and routine
 
-/* ── UPDATED: displayResults() – routine first, products below ── */
-function displayResults(recommendedProducts, routine) {
-  let resultHtml = '<div class="results-container">';
+    /* ── UPDATED: displayResults() – routine first, products below ── */
+    function displayResults(recommendedProducts, routine) {
+      let resultHtml = '<div class="results-container">';
 
-  /* ───────────────  ⬆️  ROUTINE SECTION NOW FIRST  ⬆️  ─────────────── */
-  resultHtml += `
+      /* ───────────────  ⬆️  ROUTINE SECTION NOW FIRST  ⬆️  ─────────────── */
+      resultHtml += `
     <section class="skincare-routine">
       <h2>Your Personalized Skincare Routine</h2>
       <p class="routine-intro">
@@ -2532,7 +2720,9 @@ function displayResults(recommendedProducts, routine) {
                 ${
                   step.productImg
                     ? `<div class="routine-product">
-                        <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
+                        <img src="${step.productImg}" alt="${
+                        step.product
+                      }" class="routine-product-image"/>
                         <div class="routine-product-info">
                           <p class="product-name">${
                             step.productUrl
@@ -2547,7 +2737,7 @@ function displayResults(recommendedProducts, routine) {
                 }
               </div>`
           )
-          .join('')}
+          .join("")}
       </div>
 
       <!-- Evening Routine -->
@@ -2561,7 +2751,9 @@ function displayResults(recommendedProducts, routine) {
                 ${
                   step.productImg
                     ? `<div class="routine-product">
-                        <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
+                        <img src="${step.productImg}" alt="${
+                        step.product
+                      }" class="routine-product-image"/>
                         <div class="routine-product-info">
                           <p class="product-name">${
                             step.productUrl
@@ -2576,7 +2768,7 @@ function displayResults(recommendedProducts, routine) {
                 }
               </div>`
           )
-          .join('')}
+          .join("")}
       </div>
 
       ${
@@ -2593,15 +2785,21 @@ function displayResults(recommendedProducts, routine) {
                   ${
                     treatment.productImg
                       ? `<div class="routine-product">
-                          <img src="${treatment.productImg}" alt="${treatment.product}" class="routine-product-image"/>
+                          <img src="${treatment.productImg}" alt="${
+                          treatment.product
+                        }" class="routine-product-image"/>
                           <div class="routine-product-info">
                             <p class="product-name">${
                               treatment.productUrl
                                 ? `<a href="${treatment.productUrl}" target="_blank">${treatment.product}</a>`
                                 : treatment.product
                             }</p>
-                            <p class="instructions">${treatment.instructions}</p>
-                            <p class="frequency"><strong>Frequency:</strong> ${treatment.frequency}</p>
+                            <p class="instructions">${
+                              treatment.instructions
+                            }</p>
+                            <p class="frequency"><strong>Frequency:</strong> ${
+                              treatment.frequency
+                            }</p>
                           </div>
                         </div>`
                       : `<p class="product-name">${treatment.product}</p>
@@ -2610,9 +2808,9 @@ function displayResults(recommendedProducts, routine) {
                   }
                 </div>`
             )
-            .join('')}
+            .join("")}
         </div>`
-          : ''
+          : ""
       }
 
       <div class="routine-tips-block">
@@ -2627,8 +2825,8 @@ function displayResults(recommendedProducts, routine) {
     </section>
   `;
 
-  /* ───────────────  ⬇️  PRODUCTS SECTION NOW BELOW  ⬇️  ─────────────── */
-  resultHtml += `
+      /* ───────────────  ⬇️  PRODUCTS SECTION NOW BELOW  ⬇️  ─────────────── */
+      resultHtml += `
     <section class="recommended-products">
       <h2>Your Top 5 Recommended Products</h2>
       <div class="products-container">
@@ -2638,35 +2836,44 @@ function displayResults(recommendedProducts, routine) {
               <div class="product-card">
                 <div class="product-image">
                   <img src="${product.image}" alt="${product.name}">
-                  <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
+                  <img src="${product.hoverImage}" alt="${
+              product.name
+            } - Hover" class="hover-image">
                 </div>
                 <div class="product-info">
                   <h3>${product.name}</h3>
                   <p><strong>Category:</strong> ${product.category}</p>
-                  <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
-                  <p><strong>Concerns:</strong> ${product.concerns.join(', ')}</p>
+                  <p><strong>Suitable for:</strong> ${product.suitableFor.join(
+                    ", "
+                  )}</p>
+                  <p><strong>Concerns:</strong> ${product.concerns.join(
+                    ", "
+                  )}</p>
                   <p><strong>Price Range:</strong> ${product.budgetRange}</p>
-                  <a href="${product.url}" target="_blank" class="product-link">View Product</a>
+                  <a href="${
+                    product.url
+                  }" target="_blank" class="product-link">View Product</a>
                 </div>
               </div>`
           )
-          .join('')}
+          .join("")}
       </div>
     </section>
   `;
 
-  /* ──────────────────────────────────────────────────────────────── */
-  resultHtml += `
+      /* ──────────────────────────────────────────────────────────────── */
+      resultHtml += `
     <button class="start-over-btn" id="startOverBtn">Start Over</button>
   </div>
   `;
 
-  quizContent.innerHTML = resultHtml;
+      quizContent.innerHTML = resultHtml;
 
-  document.getElementById('startOverBtn').addEventListener('click', startOver);
-  animateResults();
-}
-
+      document
+        .getElementById("startOverBtn")
+        .addEventListener("click", startOver);
+      animateResults();
+    }
 
     function animateResults() {
       const sections = document.querySelectorAll(
@@ -2684,7 +2891,7 @@ function displayResults(recommendedProducts, routine) {
     }
 
     // Function to display recommended products
-/*     function displayRecommendedProducts(recommendedProducts) {
+    /*     function displayRecommendedProducts(recommendedProducts) {
       let resultHtml = "<h2>Your Recommended Products</h2>";
       resultHtml += '<div class="products-container">';
 
@@ -2750,7 +2957,7 @@ function displayResults(recommendedProducts, routine) {
     }
 
     // Event Listeners
-/*     startBtn.addEventListener("click", () => {
+    /*     startBtn.addEventListener("click", () => {
       resetQuizState();
       introContainer.style.display = "none";
       quizContainer.style.display = "flex";
