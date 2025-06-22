@@ -709,7 +709,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["Fragrance"],
-    url: "https://www.amazon.com/dp/B08Y4N16PC",
+    url: "https://amzn.to/4edgSOl", /* 10% https://www.amazon.com/dp/B08Y4N16PC", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -723,7 +723,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Temperate"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
-    url: "https://www.amazon.com/dp/B08N335GXN",
+    url: "https://amzn.to/43TLnWn", /* 10% https://www.amazon.com/dp/B08N335GXN", */ 
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -737,7 +737,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
-    url: "https://www.amazon.com/dp/B092Q3YB34",
+    url: "https://amzn.to/4lfrmiH", /* https://www.amazon.com/dp/B092Q3YB34", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -751,7 +751,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Sulfates", "Parabens"],
-    url: "https://www.amazon.com/SKIN-FOOD-Black-Sugar-Perfect/dp/B01828IP7G",
+    url: "https://amzn.to/3TwWONp", /* https://www.amazon.com/SKIN-FOOD-Black-Sugar-Perfect/dp/B01828IP7G", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -765,7 +765,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Alcohol"],
-    url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W",
+    url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W", /* page link not found */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -779,7 +779,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
-    url: "https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495",
+    url: "https://amzn.to/40e4rfv", /* https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -793,7 +793,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html",
+    url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html", /* not currently on amazon */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -807,7 +807,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-neogen-dermalogy-dermalogy-real-ferment-micro-essence-150ml.html",
+    url: "https://amzn.to/4k3K2AW", /*https://www.stylevana.com/en_US/deal-neogen-dermalogy-dermalogy-real-ferment-micro-essence-150ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
