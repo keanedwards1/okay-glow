@@ -1203,11 +1203,98 @@ label {
   }
 }
 
+/* .notes        { margin: .4em 0; font-style: italic; }
+.pros, .cons  { margin: .4em 0 .6em; padding-left: 1rem; }
+.pros li      { list-style: '✔ '; }
+.cons li      { list-style: '✖ '; }
+.ingredients  { margin: .4em 0; font-size: .9em; }
+.eco          { margin: .4em 0; font-weight: 600; } */
 
+/* === Extra-details dropdown (results page) ============================= */
+.extra-details {
+  background: #f6ede2;          /* sandy-cream */
+  border: 1px solid #eee9e4;    /* lighter peach bevel */
+  border-radius: 6px;
+  margin-top: 10px;
+  padding: 0;                   /* summary handles outer spacing */
+  overflow: hidden;             /* Enables max-height animation  */
+  transition: box-shadow .35s ease;
+}
 
+.extra-details summary {
+  list-style: none;             /* hide default arrow */
+  cursor: pointer;
+  padding: 12px 16px;
+  font-family: Quicksand, sans-serif;
+  font-size: 1rem;;
+  font-weight: 400;
+  color: #3f3d3b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+/* ► custom chevron */
+.extra-details summary::before {
+  content: "▸";
+  font-size: 1rem;
+  transition: transform .35s ease;
+}
 
+/* ▼ rotate on open */
+.extra-details[open] summary::before {
+  transform: rotate(90deg);
+}
 
+.extra-details[open] {
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+}
 
+/* --- smooth accordion “butter” ---------------------------------------- */
+.extra-details > *:not(summary) {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .6s cubic-bezier(.25,.8,.25,1),
+              opacity    .4s ease;
+}
 
+.extra-details[open] > *:not(summary) {
+  max-height: 1000px;  /* large enough for any content */
+  opacity: 1;
+}
 
+/* --- pros / cons lists ------------------------------------------------- */
+.extra-details div {
+  margin: 0 0 0 0;
+  padding: 0 18px;
+  font-size: .95rem;
+  line-height: 1.5;
+  font-family: Quicksand, sans-serif;
+}
+
+.pros, .cons {
+  margin-bottom: 12px !important;
+}
+
+.extra-details .pros  div::before,
+.extra-details .cons div::before {
+  content: "";
+  display: inline-block;
+  width: .4rem;
+  height: .4rem;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  top: -.05rem;
+  margin-bottom: 0;
+}
+
+.extra-details .pros  div::before { background: #4d8266; } /* sea-foam green  */
+.extra-details .cons div::before { background: #b85c4f; } /* terra-cotta     */
+
+.extra-details .pros div,
+.extra-details .cons div {
+  color: #3f3d3b;
+  font-weight: 300;
+}

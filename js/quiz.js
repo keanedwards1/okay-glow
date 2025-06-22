@@ -1957,6 +1957,30 @@ Only really available internationally, but is a cult classic, going to just use 
   },
 ];
 
+function parseRange(str) {
+  str = str.replace(/\s+/g, '');          // remove spaces
+  if (/^Under\$(\d+)/i.test(str)) {
+    const max = +RegExp.$1;
+    return { min: 0, max };
+  }
+  if (/^\$(\d+)\+/.test(str)) {
+    const min = +RegExp.$1;
+    return { min, max: Infinity };
+  }
+  if (/^\$(\d+)-\$(\d+)/.test(str)) {
+    const min = +RegExp.$1;
+    const max = +RegExp.$2;
+    return { min, max };
+  }
+  return { min: 0, max: Infinity };       // fallback
+}
+
+function budgetsOverlap(a, b) {
+  const r1 = parseRange(a);
+  const r2 = parseRange(b);
+  return r1.min <= r2.max && r2.min <= r1.max; // ranges intersect?
+}
+
 // Define the getRecommendedProducts function OUTSIDE the event listener
 function getRecommendedProducts(userAnswers) {
   const scoredProducts = products.map((product) => {
@@ -1979,7 +2003,7 @@ function getRecommendedProducts(userAnswers) {
     score += breakdown.concerns;
 
     // budget
-    const budgetMatch = product.budgetRange === userAnswers.budget;
+    const budgetMatch = budgetsOverlap(product.budgetRange, userAnswers.budget);
     breakdown.budget = budgetMatch ? weights.budget : 0;
     score += breakdown.budget;
 
@@ -2528,22 +2552,44 @@ document.addEventListener("DOMContentLoaded", function () {
         );
       }
 
-      const build = (steps) =>
-        steps.map((s) => {
-          const prod = pickBestFor(s.category, allSortedProducts);
-          return {
-            step: s.step,
-            category: s.category,
-            product: prod?.name || `No product for ${s.category}`,
-            productUrl: prod?.url || null,
-            productImg: prod?.image || null,
-            instructions:
-              s.instructions ||
-              (prod
+// ---------- NEW build() helper  ----------
+const build = (steps) =>
+  steps.map((s) => {
+    const prod = pickBestFor(s.category, allSortedProducts);
+
+    // fallback text if nothing is matched
+    const fallback = `Consider a suitable ${s.category}.`;
+
+    return {
+      step:       s.step,
+      category:   s.category,
+
+      // basic product identity
+      product:    prod?.name  || `No product for ${s.category}`,
+      productUrl: prod?.url   || null,
+      productImg: prod?.image || null,
+
+      // ★ NEW rich info for display
+      notes:       prod?.notes         || null,
+      pros:        prod?.pros          || [],
+      cons:        prod?.cons          || [],
+      ingredients: prod?.ingredients?.slice(0, 5) || [],
+      ecoFriendly: typeof prod?.ecoFriendly === "boolean"
+                     ? prod.ecoFriendly
+                     : null,
+
+      // instructions fall-back chain
+      instructions:
+        s.instructions
+          || (prod?.notes
+              ? prod.notes
+              : prod
                 ? `Use ${prod.name} as directed.`
-                : `Consider a suitable ${s.category}.`),
-          };
-        });
+                : fallback),
+    };
+  });
+// ---------- end build() ----------
+
 
       const morning = build(morningSteps);
       const evening = build(eveningSteps);
@@ -2729,7 +2775,20 @@ document.addEventListener("DOMContentLoaded", function () {
                               ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
                               : step.product
                           }</p>
-                          <p class="instructions">${step.instructions}</p>
+                          <p class="instructions hover-info">${step.instructions}</p>
+
+${(step.notes || step.pros.length || step.cons.length) ? `
+  <details class="extra-details">
+    <summary>More about this product</summary>
+    ${step.pros.length
+        ? `<div class="pros">${step.pros.map(p => `<div>${p}</div>`).join("")}</div>`
+        : ""}
+    ${step.cons.length
+        ? `<div class="cons">${step.cons.map(c => `<div>${c}</div>`).join("")}</div>`
+        : ""}
+  </details>
+` : ""}
+
                         </div>
                       </div>`
                     : `<p class="product-name">${step.product}</p>
@@ -2760,7 +2819,19 @@ document.addEventListener("DOMContentLoaded", function () {
                               ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
                               : step.product
                           }</p>
-                          <p class="instructions">${step.instructions}</p>
+                          <p class="instructions hover-info">${step.instructions}</p>
+
+${(step.notes || step.pros.length || step.cons.length) ? `
+  <details class="extra-details">
+    <summary>More about this product</summary>
+    ${step.pros.length
+        ? `<div class="pros">${step.pros.map(p => `<div>${p}</div>`).join("")}</div>`
+        : ""}
+    ${step.cons.length
+        ? `<div class="cons">${step.cons.map(c => `<div>${c}</div>`).join("")}</div>`
+        : ""}
+  </details>
+` : ""}
                         </div>
                       </div>`
                     : `<p class="product-name">${step.product}</p>
@@ -2822,6 +2893,9 @@ document.addEventListener("DOMContentLoaded", function () {
           <li>Don’t forget neck and décolletage!</li>
         </ul>
       </div>
+
+      <button class="start-over-btn" id="startOverBtn">Start Over</button>
+
     </section>
   `;
 
@@ -2863,7 +2937,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       /* ──────────────────────────────────────────────────────────────── */
       resultHtml += `
-    <button class="start-over-btn" id="startOverBtn">Start Over</button>
   </div>
   `;
 
