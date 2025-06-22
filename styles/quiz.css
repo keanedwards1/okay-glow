@@ -871,12 +871,13 @@ label {
   transform: translateX(-50%) translateY(20px); /* Move slightly down */
 }
 
-.skincare-routine {
+
+/* .skincare-routine {
   background: white;
   border-radius: 1rem;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+} */
 
 .routine-preview-header {
   position: relative;
@@ -1201,6 +1202,7 @@ label {
     padding: 0.75rem;
   }
 }
+
 
 
 

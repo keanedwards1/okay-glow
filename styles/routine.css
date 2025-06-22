@@ -1,13 +1,11 @@
 /* /styles/routine.css */
 
-.results-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
+.results-container{
+  display:flex;           /* flex instead of grid */
+  flex-direction:column;  /* vertical stack */
+  align-items:stretch;    /* each child spans full width */
+  gap:2rem;               /* space between sections */
+}
   
   @media (min-width: 1024px) {
     .results-container {
@@ -30,6 +28,7 @@
     color: #2c3e50;
     margin-bottom: 1rem;
     padding-bottom: 0.5rem;
+    margin-left: 0.5rem;
     border-bottom: 2px solid #e9ecef;
     display: flex;
     align-items: center;
@@ -243,3 +242,418 @@
     color: white;
     border-color: #4CAF50;
   }
+
+  /* ──────────────────────────────────────────────────────────────── */
+/*  RESULTS 2.0 – routine hero card + product grid                 */
+/*  paste below everything else, after you remove the old rules    */
+/* ──────────────────────────────────────────────────────────────── */
+
+/* master wrapper */
+.results-container{
+  display:flex;
+  flex-direction:column;
+  gap:3rem;
+  max-width:1100px;
+  width:100%;
+  margin:0 auto;
+  padding:2rem 1rem;
+}
+
+/* ─── 1. ROUTINE  ──────────────────────────────────────────────── */
+.skincare-routine{
+  background:#fffaf4;
+  border-radius:1rem;
+  padding:2.5rem 2rem;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
+
+/* section title */
+.skincare-routine h2{
+  font-size:2rem;
+  font-family:'Merriweather',serif;
+  font-weight:300;
+  color:#3f3d3b;
+  margin:0 0 1.5rem 0;
+  text-align:center;
+}
+
+/* intro sentence */
+.routine-intro{
+  font-size:1.05rem;
+  color:#555;
+  text-align:center;
+  max-width:650px;
+  margin:0 auto 2.2rem auto;
+  line-height:1.55;
+}
+
+/* day / night blocks arranged as responsive cards */
+.routine-time-block{
+  background:#f8f9fa;
+  border-radius:.75rem;
+  padding:1.75rem;
+  margin-bottom:2rem;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.05);
+}
+
+@media(min-width:620px){
+  .routine-time-blocks{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:2rem;
+  }
+}
+
+/* routine steps in a vertical timeline style */
+.routine-step{
+  position:relative;
+  background:white;
+  border-radius:.5rem;
+  padding:1rem 1rem 1rem 2.5rem;
+  margin:1rem 0;
+  border-left:4px solid #9f714f20;
+}
+
+.routine-step h4{
+  margin:0 0 .4rem 0;
+  font-size:1rem;
+  font-weight:500;
+  color:#2c3e50;
+}
+
+.product-name{
+  background:#e9ecef;
+  padding:.2rem .6rem;
+  border-radius:.4rem;
+  font-size:.9rem;
+  color:#3f3d3b;
+  display:inline-block;
+}
+
+/* ─── 2. PRODUCTS  ─────────────────────────────────────────────── */
+.recommended-products{
+  background:white;
+  border-radius:1rem;
+  padding:2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+}
+
+.recommended-products h2{
+  font-size:1.8rem;
+  font-family:'Merriweather',serif;
+  font-weight:300;
+  text-align:center;
+  color:#3f3d3b;
+  margin:0 0 1.8rem 0;
+}
+
+/* responsive masonry-ish grid */
+.products-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1.5rem;
+}
+
+.product-card{
+  background:#f8f9fa;
+  border-radius:.75rem;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.product-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 6px 12px rgba(0,0,0,.1);
+}
+
+.product-image{
+  position:relative;
+  width:100%;
+  padding-top:70%;          /* 7:10 cover ratio */
+}
+
+.product-image img{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:opacity .3s ease;
+}
+
+.product-image .hover-image{opacity:0;}
+.product-card:hover .hover-image{opacity:1;}
+
+.product-info{
+  padding:1rem 1rem 3.5rem 1rem;
+  flex-grow:1;
+}
+
+.product-info h3{
+  font-size:1.1rem;
+  font-weight:500;
+  margin:0 0 .6rem 0;
+  color:#2c3e50;
+}
+
+.product-info p{
+  font-size:.85rem;
+  color:#555;
+  line-height:1.45;
+  margin:.25rem 0;
+}
+
+.product-link{
+  position:absolute;
+  bottom:1rem;left:1rem;right:1rem;
+  background:#9f714f;
+  color:white;
+  text-align:center;
+  padding:.65rem 0;
+  border-radius:.45rem;
+  font-size:.9rem;
+  transition:background .2s ease,transform .2s ease;
+}
+
+.product-link:hover{
+  background:#845c3d;
+  transform:translateY(-1px);
+}
+
+/* ─── 3. MOBILE ENHANCEMENTS ──────────────────────────────────── */
+@media(max-width:600px){
+  .routine-step{
+    padding-left:1.75rem;
+  }
+  .routine-step::before{
+    left:8px;
+  }
+}
+
+/* ═════════  RESULTS LAYOUT PATCH  ═════════ */
+
+/* 1. master wrapper — full-width flex stack */
+.results-container{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;   /* make children fill width */
+  gap:2rem;
+  max-width:1100px;
+  width:100%;
+  margin:0 auto;
+  padding:2rem 1rem;
+  box-sizing:border-box;
+}
+
+/* 2. each section stretches automatically */
+.results-container > section{
+  width:100%;
+  display:block;
+  box-sizing:border-box;
+}
+
+/* 3. fresh, simple routine card */
+.skincare-routine{
+  background:#fffaf4;
+  border-radius:1rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.07);
+  padding:2rem 1.75rem;
+}
+
+.skincare-routine h2{
+  font:300 1.9rem/1.3 'Merriweather',serif;
+  color:#3f3d3b;
+  text-align:center;
+  margin:0 0 1.5rem 0;
+}
+
+.routine-intro{
+  max-width:650px;
+  margin:0 auto 2rem auto;
+  font:300 1.05rem/1.55 Quicksand,sans-serif;
+  color:#555;
+  text-align:center;
+}
+
+/* grid-friendly blocks for AM / PM (stack on mobile) */
+.routine-blocks{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:620px){
+  .routine-blocks{
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  }
+}
+
+.routine-time-block{
+  background:#f8f9fa;
+  border-radius:.75rem;
+  padding:1.5rem;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,.04);
+}
+
+.routine-time-block h3{
+  margin:1rem 5rem 1rem 5rem;
+  font:300 1.3rem/1.3 'Merriweather',serif;
+  color:#2c3e50;
+  text-align:center;
+  align-items: center;
+  border-bottom:2px solid #e9ecef;
+  padding-bottom:.4rem;
+}
+
+/* routine steps — neat list, no fancy timeline */
+.routine-step{
+  background:white;
+  border-radius:.5rem;
+  padding:1rem;
+  margin:.9rem 0;
+  box-shadow:0 1px 2px rgba(0,0,0,.05);
+}
+
+.routine-step h4{
+  margin:0 0 .4rem 0;
+  font:500 1rem/1.3 Quicksand,sans-serif;
+  color:#2c3e50;
+  text-transform:capitalize;
+}
+
+.product-name{
+  display:inline-block;
+  background:#e9ecef;
+  padding:.25rem .6rem;
+  border-radius:.4rem;
+  font-size:.88rem;
+  color:#3f3d3b;
+  margin-bottom:.3rem;
+}
+
+/* 4. leave your product-grid styles untouched — just make sure it’s 100 % wide */
+.recommended-products{
+  width:100%;
+  background:white;
+  border-radius:1rem;
+  padding:2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.06);
+  box-sizing:border-box;
+}
+
+
+
+/* ░░ ROUTINE TIMELINE (drop-in patch – add to the END of /styles/routine.css) ░░
+   Everything below **overrides** the last patch and turns each AM/PM/Weekly
+   list into a clean, numbered vertical timeline – no extra JS/html edits.  */
+
+/* 1. fresh, neutral backdrop for the whole card */
+.skincare-routine{
+  background:#ffffff!important;
+  border-radius:1rem;
+  padding:2.5rem 2rem!important;
+  box-shadow:0 6px 14px rgba(0,0,0,.07);
+}
+
+/* 2. two-column layout on tablets/desktop, single column on mobile */
+.routine-blocks{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:620px){
+  .routine-blocks{
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  }
+}
+
+/* 3. reset fancy backgrounds inside each block */
+.routine-time-block{
+  background:transparent!important;
+  padding:0!important;
+  box-shadow:none!important;
+}
+
+/* 4. timeline: set up counter + vertical guide */
+.routine-time-block{counter-reset:step;}
+.routine-step{
+  position:relative;
+  margin:0 0 2rem 0;
+  padding:.75rem 1rem .75rem 3.5rem!important;
+  background:#f9f9f9;
+  border-radius:.75rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.05);
+}
+.routine-step:last-child{margin-bottom:0;}          /* tidy ending */
+
+/* numbered circles */
+.routine-step::before{
+  counter-increment:step;
+  content:counter(step);
+  position:absolute;
+  left:-.5rem;               /* aligns the circle just outside card */
+  top:50%;
+  transform:translateY(-50%);
+  width:32px;height:32px;
+  background:#9f714f;
+  color:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font:600 .9rem/1 'Quicksand',sans-serif;
+  box-shadow:0 0 0 4px #fff; /* white ring to separate from bg */
+}
+
+/* connecting line */
+.routine-step::after{
+  content:'';
+  position:absolute;
+  left:15px;                 /* aligns with circle centre */
+  top:calc(100% + .25rem);
+  width:2px;
+  height:2rem;
+  background:#9f714f30;
+}
+.routine-step:last-child::after{display:none;}      /* remove tail */
+
+/* 5. tidy text hierarchy */
+.routine-step h4{
+  font:500 1rem 'Quicksand',sans-serif!important;
+  margin:0 0 .4rem 0;
+  color:#2c3e50;
+}
+.product-name{
+  background:#ece7e2!important;
+  color:#4a3a2a!important;
+  font-weight:600!important;
+  padding:.25rem .55rem!important;
+  border-radius:.4rem!important;
+  font-size:.85rem!important;
+  margin-bottom:.35rem!important;
+}
+.instructions{font-size:.85rem!important;line-height:1.45;color:#555;}
+.frequency{font-size:.8rem;color:#777;margin-top:.3rem;}
+
+/* ░░ TIMELINE WHITESPACE FIX ░░  (append at end of /styles/routine.css) */
+
+/* 1. let the grid itself centre its columns */
+.routine-blocks{
+  display:grid;
+  justify-content:center;                     /* ⬅ new */
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+@media(min-width:580px){                      /* fire two columns sooner   */
+  .routine-blocks{
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+  }
+}
+
+/* 2. cap step width + auto-centre inside its grid cell */
+.routine-step{
+  max-width:52ch;                             /* ≈50-character line length */
+  width:100%;
+  margin:0 auto 2rem auto;                    /* centred - left/right */
+  padding:1rem 1.25rem 1rem 3.5rem!important; /* keep circle offset */
+}

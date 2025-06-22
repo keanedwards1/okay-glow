@@ -1,5 +1,15 @@
 // /js/quiz.js
 
+const weights = {
+  skinType:           2,
+  perConcern:         3,
+  budget:             1,
+  ageGroup:           1,
+  climate:            1,
+  sensitivityPenalty: 5,
+  sensitivityReward:  1,
+};
+
 const questions = [
   {
     id: 1,
@@ -821,7 +831,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
-    url: "https://www.ulta.com/p/glass-skin-refining-serum-xlsImpprod18971035",
+    url: "https://amzn.to/463CWsQ", /* https://www.ulta.com/p/glass-skin-refining-serum-xlsImpprod18971035", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -835,7 +845,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml.html",
+    url: "https://amzn.to/4kOVFNh", /* https://www.stylevana.com/en_US/some-by-mi-aha-bha-pha-30-days-miracle-toner-150ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -849,7 +859,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["None"],
-    url: "https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini",
+    url: "https://amzn.to/44cw0XI", /* https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -863,7 +873,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ",
+    url: "https://amzn.to/44qlGN4", /* https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -877,7 +887,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["25-34", "35-44", "45-54", "55+"],
     sensitivities: ["None"],
-    url: "https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml",
+    url: "https://amzn.to/3G0UETk", /* https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -891,7 +901,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/MIZON-natural-treatment-hydrating-skincare/dp/B00AFLSE7U",
+    url: "https://amzn.to/3FNcGZe", /* https://www.amazon.com/MIZON-natural-treatment-hydrating-skincare/dp/B00AFLSE7U", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -905,7 +915,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506",
+    url: "https://amzn.to/3HQdqxe", /* https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -919,7 +929,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Fragrance"],
-    url: "https://www.ulta.com/p/oil-free-ultra-moisturizing-lotion-with-birch-sap-pimprod2035883",
+    url: "https://amzn.to/4n8ZxdL", /* https://www.ulta.com/p/oil-free-ultra-moisturizing-lotion-with-birch-sap-pimprod2035883", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -933,7 +943,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html",
+    url: "https://amzn.to/3ZJu0F8", /* https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -947,7 +957,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/top-pick-beauty-of-joseon-relief-sun-rice-probiotic-spf50-pa-50ml.html",
+    url: "https://amzn.to/4enyirW", /* https://www.stylevana.com/en_US/top-pick-beauty-of-joseon-relief-sun-rice-probiotic-spf50-pa-50ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -961,7 +971,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://beautynetkorea.com/product/cosrx-aloe-soothing-sun-cream-spf50pa-50ml-weight-79g/8467",
+    url: "https://www.cosrx.com/products/aloe-soothing-sun-cream-spf50-pa?srsltid=AfmBOooZY76wbnFiHbYtlEz8L4q-zWZFUdj18z_20z6-7nyjCmAkLWuG", /*https://beautynetkorea.com/product/cosrx-aloe-soothing-sun-cream-spf50pa-50ml-weight-79g/8467", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -975,7 +985,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html",
+    url: "https://amzn.to/43Y6Q0o", /* https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -989,13 +999,13 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F",
+    url: "https://amzn.to/44rDWps", /* https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
   {
     id: 30,
-    name: "Innisfree Jeju Volcanic Pore Clay Mask",
+    name: "Innisfree Super Volcanic Pore Clay Mask",
     category: "Mask",
     suitableFor: ["Oily", "Combination"],
     concerns: ["Pores", "Excess Oil"],
@@ -1003,7 +1013,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html",
+    url: "https://amzn.to/3ZK5UtP", /* https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
   },
@@ -1011,58 +1021,67 @@ Only really available internationally, but is a cult classic, going to just use 
 
 // Define the getRecommendedProducts function OUTSIDE the event listener
 function getRecommendedProducts(userAnswers) {
-  const scoredProducts = products.map((product) => {
+  const scoredProducts = products.map(product => {
     let score = 0;
+    const breakdown = {};
 
-    // Check skin type
-    if (product.suitableFor.includes(userAnswers.skinType)) {
-      score += 2;
-    }
+    // skin type
+    const skinMatch = product.suitableFor.includes(userAnswers.skinType);
+    breakdown.skinType = skinMatch ? weights.skinType : 0;
+    score += breakdown.skinType;
 
-    // Check concerns
-    const concernMatches = product.concerns.filter((concern) =>
+    // concerns
+    const concernMatches = product.concerns.filter(concern =>
       userAnswers.concerns?.includes(concern)
     ).length;
-    score += concernMatches * 3;
+    breakdown.concerns = concernMatches * weights.perConcern;
+    score += breakdown.concerns;
 
-    // Check budget
-    if (product.budgetRange === userAnswers.budget) {
-      score += 1;
-    }
+    // budget
+    const budgetMatch = product.budgetRange === userAnswers.budget;
+    breakdown.budget = budgetMatch ? weights.budget : 0;
+    score += breakdown.budget;
 
-    // Check age group
-    if (
-      product.ageGroup.includes(userAnswers.ageGroup) ||
-      product.ageGroup.includes("All")
-    ) {
-      score += 1;
-    }
+    // age group
+    const ageMatch = product.ageGroup.includes(userAnswers.ageGroup)
+                  || product.ageGroup.includes("All");
+    breakdown.ageGroup = ageMatch ? weights.ageGroup : 0;
+    score += breakdown.ageGroup;
 
-    // Check climate
-    if (
-      product.climate.includes(userAnswers.climate) ||
-      product.climate.includes("All")
-    ) {
-      score += 1;
-    }
+    // climate
+    const climateMatch = product.climate.includes(userAnswers.climate)
+                      || product.climate.includes("All");
+    breakdown.climate = climateMatch ? weights.climate : 0;
+    score += breakdown.climate;
 
-    // Check sensitivities
-    const sensitivityMatches = product.sensitivities.filter((sensitivity) =>
-      userAnswers.sensitivities?.includes(sensitivity)
+    // sensitivities
+    const sensitivityMatches = product.sensitivities.filter(s =>
+      userAnswers.sensitivities?.includes(s)
     ).length;
     if (sensitivityMatches > 0) {
-      score -= sensitivityMatches * 5;
+      breakdown.sensitivity = -sensitivityMatches * weights.sensitivityPenalty;
+      score += breakdown.sensitivity;
     } else {
-      score += 1;
+      breakdown.sensitivity = weights.sensitivityReward;
+      score += breakdown.sensitivity;
     }
 
-    return { ...product, score };
+    return { ...product, score, breakdown };
   });
 
-  // Sort all products by score
-  const allSortedProducts = scoredProducts.sort((a, b) => b.score - a.score);
+  // sort descending
+  return scoredProducts.sort((a, b) => b.score - a.score);
+}
 
-  return allSortedProducts; // Return full sorted list
+function debugRecommendations(userAnswers) {
+  const all = getRecommendedProducts(userAnswers);
+  console.table(
+    all.slice(0, 10).map(p => ({
+      name:       p.name,
+      score:      p.score,
+      ...p.breakdown
+    }))
+  );
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -1529,10 +1548,13 @@ function renderQuestion() {
     
       // A helper to find the best product for a category from the entire sorted list
       function findBestProductForCategory(category) {
-        return allSortedProducts.find(
-          (p) => p.category.toLowerCase() === category.toLowerCase()
+        return (
+          allSortedProducts
+            .filter((p) => p.category.toLowerCase() === category.toLowerCase())
+            [0] || null
         );
       }
+
     
       const morning = morningSteps.map((s) => {
         const product = findBestProductForCategory(s.category);
@@ -1689,168 +1711,164 @@ function renderQuestion() {
 
     // Function to display both products and routine
 
-    function displayResults(recommendedProducts, routine) {
-      let resultHtml = '<div class="results-container">';
-    
-      // Products Section
-      resultHtml += `
-        <section class="recommended-products">
-          <h2>Your Top Recommended Products</h2>
-          <div class="products-container">
-      `;
-      recommendedProducts.forEach((product) => {
-        resultHtml += `
-          <div class="product-card">
-            <div class="product-image">
-              <img src="${product.image}" alt="${product.name}">
-              <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
-            </div>
-            <div class="product-info">
-              <h3>${product.name}</h3>
-              <p><strong>Category:</strong> ${product.category}</p>
-              <p><strong>Suitable for:</strong> ${product.suitableFor.join(", ")}</p>
-              <p><strong>Concerns:</strong> ${product.concerns.join(", ")}</p>
-              <p><strong>Price Range:</strong> ${product.budgetRange}</p>
-              <a href="${product.url}" target="_blank" class="product-link">View Product</a>
-            </div>
-          </div>
-        `;
-      });
-      resultHtml += `
-          </div>
-        </section>
-      `;
-    
-      // Routine Section
-      resultHtml += `
-        <section class="skincare-routine">
-          <h2>Your Personalized Skincare Routine</h2>
-          <p class="routine-intro">
-            Based on your answers, we've crafted a routine suitable for your skin type, concerns, climate, and the time you have to dedicate.
-          </p>
-          
-          <!-- Morning Routine -->
-          <div class="routine-time-block">
-            <h3>Morning Routine</h3>
-            ${routine.morning
-              .map((step) => `
-                <div class="routine-step">
-                  <h4>${step.step}</h4>
-                  ${
-                    step.productImg
-                      ? `<div class="routine-product">
-                          <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
-                          <div class="routine-product-info">
-                            <p class="product-name">
-                              ${
-                                step.productUrl
-                                  ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
-                                  : step.product
-                              }
-                            </p>
-                            <p class="instructions">${step.instructions}</p>
-                          </div>
-                        </div>`
-                      : `<p class="product-name">${step.product}</p>
-                         <p class="instructions">${step.instructions}</p>`
-                  }
-                </div>
-              `)
-              .join("")}
-          </div>
-    
-          <!-- Evening Routine -->
-          <div class="routine-time-block">
-            <h3>Evening Routine</h3>
-            ${routine.evening
-              .map((step) => `
-                <div class="routine-step">
-                  <h4>${step.step}</h4>
-                  ${
-                    step.productImg
-                      ? `<div class="routine-product">
-                          <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
-                          <div class="routine-product-info">
-                            <p class="product-name">
-                              ${
-                                step.productUrl
-                                  ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
-                                  : step.product
-                              }
-                            </p>
-                            <p class="instructions">${step.instructions}</p>
-                          </div>
-                        </div>`
-                      : `<p class="product-name">${step.product}</p>
-                         <p class="instructions">${step.instructions}</p>`
-                  }
-                </div>
-              `)
-              .join("")}
-          </div>
-          
-          ${
-            routine.weekly.length > 0
-              ? `
-                <!-- Weekly Treatments -->
-                <div class="routine-time-block">
-                  <h3>Weekly Treatments</h3>
-                  ${routine.weekly
-                    .map((treatment) => `
-                      <div class="routine-step">
-                        <h4>${treatment.step}</h4>
-                        ${
-                          treatment.productImg
-                            ? `<div class="routine-product">
-                                <img src="${treatment.productImg}" alt="${treatment.product}" class="routine-product-image"/>
-                                <div class="routine-product-info">
-                                  <p class="product-name">
-                                    ${
-                                      treatment.productUrl
-                                        ? `<a href="${treatment.productUrl}" target="_blank">${treatment.product}</a>`
-                                        : treatment.product
-                                    }
-                                  </p>
-                                  <p class="instructions">${treatment.instructions}</p>
-                                  <p class="frequency"><strong>Frequency:</strong> ${treatment.frequency}</p>
-                                </div>
-                              </div>`
-                            : `<p class="product-name">${treatment.product}</p>
-                               <p class="instructions">${treatment.instructions}</p>
-                               <p class="frequency"><strong>Frequency:</strong> ${treatment.frequency}</p>`
-                        }
-                      </div>
-                    `)
-                    .join("")}
-                </div>
-              `
-              : ""
-          }
-    
-          <div class="routine-tips-block">
-            <h3>Additional Tips</h3>
-            <ul class="routine-tips">
-              <li>Apply products from thinnest to thickest consistency.</li>
-              <li>Wait about 30 seconds between steps to let products absorb.</li>
-              <li>Be consistent and give products time to show results.</li>
-              <li>Don’t forget neck and décolletage!</li>
-            </ul>
-          </div>
-        </section>
-      `;
-    
-      resultHtml += `
-        <button class="start-over-btn" id="startOverBtn">Start Over</button>
+/* ── UPDATED: displayResults() – routine first, products below ── */
+function displayResults(recommendedProducts, routine) {
+  let resultHtml = '<div class="results-container">';
+
+  /* ───────────────  ⬆️  ROUTINE SECTION NOW FIRST  ⬆️  ─────────────── */
+  resultHtml += `
+    <section class="skincare-routine">
+      <h2>Your Personalized Skincare Routine</h2>
+      <p class="routine-intro">
+        Based on your answers, we&apos;ve crafted a routine suitable for your skin type, concerns, climate, and the time you have to dedicate.
+      </p>
+
+      <!-- Morning Routine -->
+      <div class="routine-time-block">
+        <h3>Morning Routine</h3>
+        ${routine.morning
+          .map(
+            (step) => `
+              <div class="routine-step">
+                <h4>${step.step}</h4>
+                ${
+                  step.productImg
+                    ? `<div class="routine-product">
+                        <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
+                        <div class="routine-product-info">
+                          <p class="product-name">${
+                            step.productUrl
+                              ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
+                              : step.product
+                          }</p>
+                          <p class="instructions">${step.instructions}</p>
+                        </div>
+                      </div>`
+                    : `<p class="product-name">${step.product}</p>
+                       <p class="instructions">${step.instructions}</p>`
+                }
+              </div>`
+          )
+          .join('')}
       </div>
-      `;
-    
-      quizContent.innerHTML = resultHtml;
-    
-      const startOverBtn = document.getElementById("startOverBtn");
-      startOverBtn.addEventListener("click", startOver);
-    
-      animateResults();
-    }
+
+      <!-- Evening Routine -->
+      <div class="routine-time-block">
+        <h3>Evening Routine</h3>
+        ${routine.evening
+          .map(
+            (step) => `
+              <div class="routine-step">
+                <h4>${step.step}</h4>
+                ${
+                  step.productImg
+                    ? `<div class="routine-product">
+                        <img src="${step.productImg}" alt="${step.product}" class="routine-product-image"/>
+                        <div class="routine-product-info">
+                          <p class="product-name">${
+                            step.productUrl
+                              ? `<a href="${step.productUrl}" target="_blank">${step.product}</a>`
+                              : step.product
+                          }</p>
+                          <p class="instructions">${step.instructions}</p>
+                        </div>
+                      </div>`
+                    : `<p class="product-name">${step.product}</p>
+                       <p class="instructions">${step.instructions}</p>`
+                }
+              </div>`
+          )
+          .join('')}
+      </div>
+
+      ${
+        routine.weekly.length
+          ? `
+        <!-- Weekly Treatments -->
+        <div class="routine-time-block">
+          <h3>Weekly Treatments</h3>
+          ${routine.weekly
+            .map(
+              (treatment) => `
+                <div class="routine-step">
+                  <h4>${treatment.step}</h4>
+                  ${
+                    treatment.productImg
+                      ? `<div class="routine-product">
+                          <img src="${treatment.productImg}" alt="${treatment.product}" class="routine-product-image"/>
+                          <div class="routine-product-info">
+                            <p class="product-name">${
+                              treatment.productUrl
+                                ? `<a href="${treatment.productUrl}" target="_blank">${treatment.product}</a>`
+                                : treatment.product
+                            }</p>
+                            <p class="instructions">${treatment.instructions}</p>
+                            <p class="frequency"><strong>Frequency:</strong> ${treatment.frequency}</p>
+                          </div>
+                        </div>`
+                      : `<p class="product-name">${treatment.product}</p>
+                         <p class="instructions">${treatment.instructions}</p>
+                         <p class="frequency"><strong>Frequency:</strong> ${treatment.frequency}</p>`
+                  }
+                </div>`
+            )
+            .join('')}
+        </div>`
+          : ''
+      }
+
+      <div class="routine-tips-block">
+        <h3>Additional Tips</h3>
+        <ul class="routine-tips">
+          <li>Apply products from thinnest to thickest consistency.</li>
+          <li>Wait about 30 seconds between steps to let products absorb.</li>
+          <li>Be consistent and give products time to show results.</li>
+          <li>Don’t forget neck and décolletage!</li>
+        </ul>
+      </div>
+    </section>
+  `;
+
+  /* ───────────────  ⬇️  PRODUCTS SECTION NOW BELOW  ⬇️  ─────────────── */
+  resultHtml += `
+    <section class="recommended-products">
+      <h2>Your Top Recommended Products</h2>
+      <div class="products-container">
+        ${recommendedProducts
+          .map(
+            (product) => `
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="${product.image}" alt="${product.name}">
+                  <img src="${product.hoverImage}" alt="${product.name} - Hover" class="hover-image">
+                </div>
+                <div class="product-info">
+                  <h3>${product.name}</h3>
+                  <p><strong>Category:</strong> ${product.category}</p>
+                  <p><strong>Suitable for:</strong> ${product.suitableFor.join(', ')}</p>
+                  <p><strong>Concerns:</strong> ${product.concerns.join(', ')}</p>
+                  <p><strong>Price Range:</strong> ${product.budgetRange}</p>
+                  <a href="${product.url}" target="_blank" class="product-link">View Product</a>
+                </div>
+              </div>`
+          )
+          .join('')}
+      </div>
+    </section>
+  `;
+
+  /* ──────────────────────────────────────────────────────────────── */
+  resultHtml += `
+    <button class="start-over-btn" id="startOverBtn">Start Over</button>
+  </div>
+  `;
+
+  quizContent.innerHTML = resultHtml;
+
+  document.getElementById('startOverBtn').addEventListener('click', startOver);
+  animateResults();
+}
+
 
     function animateResults() {
       const sections = document.querySelectorAll(
