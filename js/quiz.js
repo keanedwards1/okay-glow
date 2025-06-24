@@ -618,7 +618,7 @@ const products = [
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Alcohol"], // ← updated
-    url: "https://us.innisfree.com/products/apple-seed-cleansing-oil" /* associate link:https://amzn.to/4jXqAWG */,
+    url: "https://amzn.to/4jXqAWG" /* associate link:https://us.innisfree.com/products/apple-seed-cleansing-oil" /* associate link: */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1540,7 +1540,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["Humid", "All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
-    url: "https://purito.com/product/from-green-deep-foaming-cleanser/",
+    url: "https://amzn.to/4emYDX8", /* https://purito.com/product/from-green-deep-foaming-cleanser/", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Centella Asiatica Extract", "Green Tea", "Panthenol"],
@@ -1563,11 +1563,11 @@ Only really available internationally, but is a cult classic, going to just use 
     category: "Toner",
     suitableFor: ["All Skin Types"],
     concerns: ["Hydration", "Brightening"],
-    budgetRange: "$30-$50",
+    budgetRange: "$10-$20",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://haruharu-wonder.com/products/black-rice-toner",
+    url: "https://amzn.to/44sJFex" /* https://haruharu-wonder.com/products/black-rice-toner */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1575,7 +1575,7 @@ Only really available internationally, but is a cult classic, going to just use 
       "Niacinamide",
       "Hyaluronic Acid",
     ],
-    ecoFriendly: true, // sleek recyclable packaging, minimal plastic :contentReference[oaicite:2]{index=2}
+    ecoFriendly: true, // sleek recyclable packaging, minimal plastic
     notes:
       "Hydrating, antioxidant-rich toner with fermented rice and hyaluronic acid in recyclable packaging.",
     pros: [
@@ -1598,11 +1598,11 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://torriden.com/products/dive-in-toner",
+    url: "https://amzn.to/3HT5QSo" /* https://torriden.com/products/dive-in-toner */, /* associate link:https://torriden.com/products/dive-in-toner", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Low Molecular Hyaluronic Acid", "Allantoin", "Glycerin"],
-    ecoFriendly: true, // refill pouch available, vegan formulation :contentReference[oaicite:3]{index=3}
+    ecoFriendly: true, // refill pouch available, vegan formulation
     notes:
       "Deep hydrating toner with small-molecule hyaluronics, refillable eco pouch, vegan-friendly.",
     pros: [
@@ -1615,7 +1615,7 @@ Only really available internationally, but is a cult classic, going to just use 
       "Refill pouch shipping and handling extra",
     ],
   },
-  {
+/*   {
     id: 39,
     name: "OTZI Wildflower Gel Moisturizer",
     category: "Moisturizer",
@@ -1633,7 +1633,7 @@ Only really available internationally, but is a cult classic, going to just use 
       "Ginseng Berry Extract",
       "Mulberry Extract",
     ],
-    ecoFriendly: true, // vegan, cruelty-free, minimal recycled pastel packaging :contentReference[oaicite:4]{index=4}
+    ecoFriendly: true, // vegan, cruelty-free, minimal recycled pastel packaging
     notes:
       "Lightweight gel moisturizer with hydrating HA and plant extracts, packaged in recycled materials.",
     pros: [
@@ -1642,8 +1642,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Formulated by and for Gen Z—vegan/cruelty-free",
     ],
     cons: ["New and not widely reviewed yet", "Only available at Sephora"],
-  },
-  {
+  }, */
+/*   {
     id: 40,
     name: "Innisfree Intensive Hydrating Serum (Paper Edition)",
     category: "Serum",
@@ -1669,7 +1669,7 @@ Only really available internationally, but is a cult classic, going to just use 
       "Paper label over plastic bottle (some greenwashing controversy)",
       "May still confuse recycling if label not removed",
     ],
-  },
+  }, */
   {
     id: 41,
     name: "Laneige Lip Sleeping Mask",
@@ -1680,7 +1680,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://us.laneige.com/products/lip-sleeping-mask",
+    url: "https://amzn.to/4eglmUB", /* https://us.laneige.com/products/lip-sleeping-mask" */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1713,7 +1713,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Essential Oils"],
-    url: "https://www.drjart.com/products/cicapair-tiger-grass-color-correcting-treatment-spf-30",
+    url: "https://amzn.to/4kT0DIO", /*https://www.drjart.com/products/cicapair-tiger-grass-color-correcting-treatment-spf-30", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1746,7 +1746,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["18-24", "25-34", "35-44", "45-54"],
     sensitivities: ["Essential Oils"],
-    url: "https://wishtrend.com/products/pure-vitamin-c-21-5-advanced-serum",
+    url: "https://amzn.to/3HWqfGg", /*https://wishtrend.com/products/pure-vitamin-c-21-5-advanced-serum", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1777,7 +1777,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
-    url: "https://www.cosrx.com/products/acne-pimple-master-patch",
+    url: "https://amzn.to/44edezn", /*https://www.cosrx.com/products/acne-pimple-master-patch",*/
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Hydrocolloid", "Polyisobutene"],
@@ -1804,7 +1804,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["18-24", "25-34", "35-44"],
     sensitivities: ["Fragrance", "Alcohol"],
-    url: "https://www.amazon.com/Neogen-Bio-Peel-Gauze-Peeling-Lemon/dp/B019RULW50",
+    url: "https://amzn.to/3FTVPE6", /*https://www.amazon.com/Neogen-Bio-Peel-Gauze-Peeling-Lemon/dp/B019RULW50",*/
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1837,7 +1837,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["25-34", "35-44", "45-54"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/SOME-MI-Retinol-Intense-Serum/dp/B0BTHPH9FP",
+    url: "https://amzn.to/44nt2A2", /*https://www.amazon.com/SOME-MI-Retinol-Intense-Serum/dp/B0BTHPH9FP", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1871,7 +1871,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
-    url: "https://www.amazon.com/Mediheal-N-M-F-Intense-Hydrating-Sheet/dp/B010CYY3Y2",
+    url: "https://amzn.to/4ehkzTb", /*https://www.amazon.com/Mediheal-N-M-F-Intense-Hydrating-Sheet/dp/B010CYY3Y2",*/
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: ["Hyaluronic Acid", "Ceramide NP", "Allantoin", "Witch Hazel"],
@@ -1899,7 +1899,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://abib.com/products/quick-sunstick-protection-bar",
+    url: "https://amzn.to/3Gg1Bjj", /*https://abib.com/products/quick-sunstick-protection-bar",*/
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1932,7 +1932,7 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.amazon.com/Petitfee-Gold-Snail-Hydrogel-Patch/dp/B00XQ86NX6",
+    url: "https://amzn.to/44jeUrj", /*https://www.amazon.com/Petitfee-Gold-Snail-Hydrogel-Patch/dp/B00XQ86NX6", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
