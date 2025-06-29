@@ -39,9 +39,9 @@
     content: '☀️';
   }
   
-  .routine-time-block:nth-child(2) h3::before {
-    content: '🌙';
-  }
+.routine-time-block:nth-of-type(2) h3::before {
+  content: '🌙' !important;
+}
   
   .routine-steps {
     list-style: none;

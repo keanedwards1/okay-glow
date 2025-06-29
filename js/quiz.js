@@ -2553,6 +2553,46 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
 // ---------- NEW build() helper  ----------
+
+const stepHowTo = {
+  // daily basics
+  Cleanse:
+    "Massage your cleanser over damp skin for about 60 seconds, then rinse with lukewarm water.",
+
+  "First Cleanse":
+    "On dry skin, work your oil or balm cleanser to dissolve makeup and sunscreen; add a little water to emulsify, then rinse thoroughly.",
+
+  "Second Cleanse":
+    "Follow with a gentle water-based cleanser to remove any remaining residue, and pat your skin dry with a clean towel.",
+
+  Tone:
+    "Sweep toner across your face and neck with clean hands or a cotton pad and allow it to fully absorb.",
+
+  Essence:
+    "Press a few drops of essence evenly into your face until completely absorbed.",
+
+  Serum:
+    "Apply two to three drops of serum to you face and neck, spreading evenly until absorbed.",
+
+  "Eye Care":
+    "Tap a small amount of eye product around the orbital bone with the ring finger until it absorbs.",
+
+  Moisturize:
+    "Smooth a nickel-sized amount of moisturizer over you face and neck to seal in hydration.",
+
+  Protect:
+    "As the final morning step, apply two finger lengths of sunscreen to you face and neck and reapply every two hours during sun exposure.",
+
+  // extras
+  Exfoliate:
+    "After cleansing, massage your exfoliant onto damp skin for 30–60 seconds, then rinse; limit use to two or three times per week.",
+
+  Mask:
+    "Spread a thin, even layer of mask onto clean skin, leave it on for the recommended time, and then rinse or remove according to the product directions.",
+};
+
+
+
 const build = (steps) =>
   steps.map((s) => {
     const prod = pickBestFor(s.category, allSortedProducts);
@@ -2579,13 +2619,14 @@ const build = (steps) =>
                      : null,
 
       // instructions fall-back chain
-      instructions:
-        s.instructions
-          || (prod?.notes
-              ? prod.notes
-              : prod
-                ? `Use ${prod.name} as directed.`
-                : fallback),
+instructions:                                     // ★ CHANGED
+  s.instructions                                  // provided explicitly?
+  || stepHowTo[s.step]                            // ← use our new templates
+  || (prod?.notes
+        ? prod.notes
+        : prod
+          ? `Use ${prod.name} as directed.`
+          : fallback),
     };
   });
 // ---------- end build() ----------
@@ -2754,6 +2795,8 @@ const build = (steps) =>
       <p class="routine-intro">
         Based on your answers, we&apos;ve crafted a routine suitable for your skin type, concerns, climate, and the time you have to dedicate.
       </p>
+      <button class="start-over-btn" id="startOverBtn">Restart Quiz</button>
+
 
       <!-- Morning Routine -->
       <div class="routine-time-block">
@@ -2893,9 +2936,6 @@ ${(step.notes || step.pros.length || step.cons.length) ? `
           <li>Don’t forget neck and décolletage!</li>
         </ul>
       </div>
-
-      <button class="start-over-btn" id="startOverBtn">Start Over</button>
-
     </section>
   `;
 
