@@ -1,14 +1,16 @@
 // /js/quiz.js
 
-const weights = {
-  skinType: 2,
-  perConcern: 3,
-  budget: 1,
-  ageGroup: 1,
-  climate: 1,
-  sensitivityPenalty: 5,
-  sensitivityReward: 1,
-};
+ const weights = {
+   skinType: 2,
+   perConcern: 3,
+   budget: 1,
+   ageGroup: 1,
+   climate: 1,
+   sensitivityPenalty: 5,
+   sensitivityReward: 1,
+   sensitiveHitPerIrritant: 2,
+ };
+
 
 const questions = [
   {
@@ -1983,11 +1985,22 @@ function budgetsOverlap(a, b) {
 
 // Define the getRecommendedProducts function OUTSIDE the event listener
 function getRecommendedProducts(userAnswers) {
+  /* Highest-frequency triggers for people who call their skin “Sensitive”.   */
+  const commonIrritants = [
+    "Fragrance",
+    "Essential Oils",
+    "Alcohol",
+    "Sulfates",
+    "Parabens",
+  ];
+
   const scoredProducts = products.map((product) => {
     let score = 0;
-    const breakdown = {};
+    const breakdown = {};           // handy for debugging
 
-    // skin type
+    /** ─────────  BASIC MATCHES  ───────── **/
+
+    // Skin-type
     const skinMatch =
       product.suitableFor.includes(userAnswers.skinType) ||
       product.suitableFor.includes("All") ||
@@ -1995,50 +2008,68 @@ function getRecommendedProducts(userAnswers) {
     breakdown.skinType = skinMatch ? weights.skinType : 0;
     score += breakdown.skinType;
 
-    // concerns
-    const concernMatches = product.concerns.filter((concern) =>
-      userAnswers.concerns?.includes(concern)
+    // Concerns
+    const concernMatches = product.concerns.filter((c) =>
+      userAnswers.concerns?.includes(c)
     ).length;
     breakdown.concerns = concernMatches * weights.perConcern;
     score += breakdown.concerns;
 
-    // budget
+    // Budget
     const budgetMatch = budgetsOverlap(product.budgetRange, userAnswers.budget);
     breakdown.budget = budgetMatch ? weights.budget : 0;
     score += breakdown.budget;
 
-    // age group
+    // Age-group
     const ageMatch =
       product.ageGroup.includes(userAnswers.ageGroup) ||
       product.ageGroup.includes("All");
     breakdown.ageGroup = ageMatch ? weights.ageGroup : 0;
     score += breakdown.ageGroup;
 
-    // climate
+    // Climate
     const climateMatch =
       product.climate.includes(userAnswers.climate) ||
       product.climate.includes("All");
     breakdown.climate = climateMatch ? weights.climate : 0;
     score += breakdown.climate;
 
-    // sensitivities
-    const sensitivityMatches = product.sensitivities.filter((s) =>
+    /** ── EXPLICIT SENSITIVITIES FROM Q13 ── **/
+
+    const sensitivityMatches = (product.sensitivities || []).filter((s) =>
       userAnswers.sensitivities?.includes(s)
     ).length;
+
     if (sensitivityMatches > 0) {
-      breakdown.sensitivity = -sensitivityMatches * weights.sensitivityPenalty;
-      score += breakdown.sensitivity;
+      breakdown.explicitSensitivity =
+        -sensitivityMatches * weights.sensitivityPenalty;
+      score += breakdown.explicitSensitivity;
     } else {
-      breakdown.sensitivity = weights.sensitivityReward;
-      score += breakdown.sensitivity;
+      breakdown.explicitSensitivity = weights.sensitivityReward;
+      score += breakdown.explicitSensitivity;
+    }
+
+    /** ── EXTRA HEURISTIC WHEN USER SELECTS “Sensitive” SKIN-TYPE ── **/
+
+    if (userAnswers.skinType === "Sensitive") {
+      const extraHits = (product.sensitivities || []).filter((s) =>
+        commonIrritants.includes(s)
+      ).length;
+
+      breakdown.sensitivePenalty =
+        -extraHits * weights.sensitiveHitPerIrritant;
+      score += breakdown.sensitivePenalty;
+    } else {
+      breakdown.sensitivePenalty = 0;
     }
 
     return { ...product, score, breakdown };
   });
 
-  // sort descending
+  // Highest score first
   return scoredProducts.sort((a, b) => b.score - a.score);
 }
+
 
 function pickBestFor(category, allSortedProducts) {
   return allSortedProducts.find(

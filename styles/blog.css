@@ -23,8 +23,8 @@
 }
 
 .blog-featured-image {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 400px;
+    max-width: 400px;
     margin: 0 auto;
     border-radius: 16px;
     overflow: hidden;
