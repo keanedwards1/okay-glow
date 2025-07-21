@@ -1,4 +1,6 @@
 /* Blog Layout and Components */
+body {
+}
 .blog-header {
     padding: 60px 20px 20px 20px;
     text-align: center;
@@ -7,14 +9,14 @@
 .blog-title {
     font-family: 'Playfair Display', serif;
     font-size: 2.8rem;
-    color: #403d3b;
+    color: #222;
     margin-bottom: 20px;
     font-weight: 300;
 }
 
 .blog-meta {
     font-family: 'Quicksand', sans-serif;
-    color: #6b6462;
+    color: #777;
     font-size: 1rem;
     display: flex;
     justify-content: center;
@@ -25,7 +27,7 @@
 .blog-featured-image {
     max-height: 400px;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 0 auto 40px auto;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -37,23 +39,24 @@
 }
 
 .blog-content-wrapper {
-    background-color: #f6f0ea;
-    max-width: 800px;
-    margin: 20px auto 60px auto;
-    padding: 20px 40px;
-    border-radius: 16px;
+    background-color: transparent;
+    margin: 40px auto;
+    padding: 0 5vw;
+    max-width: 120ch; /* use characters for readable line length */
 }
 
 .blog-content {
     font-family: 'Quicksand', sans-serif;
-    line-height: 1.8;
-    color: #403d3b;
+    line-height: 1.75;
+    color: #333;
+    font-size: 1.1rem;
+    word-break: break-word;
 }
 
 .blog-content h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
-    color: #403d3b;
+    color: #222;
     margin: 40px 0 20px;
     font-weight: 400;
 }
@@ -79,20 +82,20 @@
 }
 
 .blog-tag {
-    background-color: #f5e5d4;
+    background-color: #f5f5f5;
     padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: #403d3b;
+    color: #333;
     transition: background-color 0.3s ease;
 }
 
 .blog-tag:hover {
-    background-color: #edd3b9;
+    background-color: #ffffff;
 }
 
 .blog-navigation {
-    border-top: 1px solid #ecd8c5;
+    border-top: 1px solid #eee;
     margin-top: 60px;
     padding-top: 40px;
     display: grid;
@@ -102,26 +105,26 @@
 
 .blog-nav-item {
     padding: 20px;
-    background-color: #f4e7d8;
+    background-color: #fafafa;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .blog-nav-item:hover {
-    background-color: #f0ddca;
+    background-color: #ffffff;
     transform: translateY(-2px);
 }
 
 .blog-nav-label {
     font-size: 0.9rem;
-    color: #6b6462;
+    color: #777;
     margin-bottom: 8px;
 }
 
 .blog-nav-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.2rem;
-    color: #403d3b;
+    color: #333;
 }
 
 /* Blog Listing Page Styles */
@@ -253,7 +256,7 @@
 
 /* Newsletter Section */
 .blog-newsletter {
-    background-color: #f1e2d2;
+    background-color: #fafafa;
     padding: 60px 20px;
     text-align: center;
     margin-top: 60px;
@@ -292,7 +295,8 @@
 }
 
 .newsletter-button {
-    background-color: #edd3b9;
+    background-color: #9f714f;
+    color: white;
     padding: 12px 24px;
     border: none;
     border-radius: 24px;
@@ -303,7 +307,7 @@
 }
 
 .newsletter-button:hover {
-    background-color: #e5c4a3;
+    background-color: #875d42;
 }
 
 /* Double Cleanse Steps */
@@ -344,7 +348,7 @@
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    background: #f8f4ef;
+    background: #fafafa;
     border-radius: 8px;
     padding: 15px 20px;
     margin-bottom: 15px;
@@ -353,7 +357,7 @@
 }
 
 .checkbox-wrapper li:hover {
-    background-color: #f2ebe3;
+    background-color: #f3f3f3;
 }
 
 .step-checkbox {
@@ -386,7 +390,6 @@
     transform: translate(-50%, -60%) rotate(45deg);
 }
 
-/* Step text styling */
 .checkbox-wrapper li strong {
     display: block;
     font-weight: 600;
@@ -395,21 +398,20 @@
     font-family: 'Playfair Display', serif;
 }
 
-
 .back-button-container {
-    max-width: 800px;
-    margin: 20px auto 40px auto; /* Space from other elements */
-    text-align: left; /* Align the button to the left */
-    padding: 0 40px;
+    max-width: 1050px;
+    margin: 20px auto 40px auto;
+    text-align: left;
+    padding: 0 20px;
 }
 
 .back-button-container.bottom {
-    margin-top: 40px; /* More space at the bottom section */
+    margin-top: 40px;
 }
 
 .back-button {
     display: inline-block;
-    background-color: #f5e5d4;
+    background-color: #f5f5f5;
     color: #403d3b;
     font-family: 'Quicksand', sans-serif;
     font-size: 0.95rem;
@@ -421,7 +423,7 @@
 }
 
 .back-button:hover {
-    background-color: #edd3b9;
+    background-color: #fafafa;
     text-decoration: none;
 }
 
@@ -432,19 +434,22 @@
     margin-right: 4px;
 }
 
-/* Customized Unordered Lists */
-.blog-content ul {
+/* Customized Lists */
+.blog-content ul,
+.blog-content ol {
     list-style: none;
     padding-left: 0;
     margin-bottom: 20px;
 }
 
-.blog-content ul li {
+.blog-content ul li,
+.blog-content ol li {
     position: relative;
     padding-left: 30px;
     margin-bottom: 10px;
     font-size: 1.1rem;
     line-height: 1.6;
+    transition: background-color 0.3s ease;
 }
 
 .blog-content ul li::before {
@@ -457,49 +462,12 @@
     line-height: 1;
 }
 
-/* Customized Ordered Lists */
-.blog-content ol {
-    counter-reset: custom-counter;
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-.blog-content ol li {
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-.blog-content ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background-image: url('/path-to-your-bullet-image.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-
-/* General List Item Enhancements */
-.blog-content ul li,
-.blog-content ol li {
-    transition: background-color 0.3s ease;
-}
-
 .blog-content ul li:hover,
 .blog-content ol li:hover {
-    background-color: #f2ebe3;
+    background-color: #fffaf1;
     border-radius: 6px;
 }
 
-/* Responsive List Adjustments */
 @media (max-width: 768px) {
     .blog-content ul li,
     .blog-content ol li {
@@ -521,16 +489,16 @@
     text-decoration: underline;
 }
 
-
 @media (max-width: 500px) {
     .newsletter-form {
         flex-direction: column;
     }
-    
-    .newsletter-input{
+
+    .newsletter-input {
         width: 90%;
     }
-    newsletter-button {
+
+    .newsletter-button {
         width: 100%;
     }
 }
