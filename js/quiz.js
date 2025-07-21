@@ -850,7 +850,30 @@ Only really available internationally, but is a cult classic, going to just use 
     climate: ["All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["Fragrance"],
-    ingredients: [], // if you want the actual list added, let me know
+    ingredients: ["Water",
+  "Cocamidopropyl Betaine",
+  "Sodium Lauroyl Methyl Isethionate",
+  "Polysorbate 20",
+  "Styrax Japonicus Branch/Fruit/Leaf Extract",
+  "Butylene Glycol",
+  "Saccharomyces Ferment",
+  "Cryptomeria Japonica Leaf Extract",
+  "Nelumbo Nucifera Leaf Extract",
+  "Pinus Palustris Leaf Extract",
+  "Ulmus Davidiana Root Extract",
+  "Oenothera Biennis (Evening Primrose) Flower Extract",
+  "Pueraria Lobata Root Extract",
+  "Melaleuca Alternifolia (Tea Tree) Leaf Oil",
+  "Allantoin",
+  "Caprylyl Glycol",
+  "Ethylhexylglycerin",
+  "Betaine Salicylate",
+  "Citric Acid",
+  "Ethyl Hexanediol",
+  "1,2‑Hexanediol",
+  "Trisodium Ethylenediamine Disuccinate",
+  "Sodium Benzoate",
+  "Disodium EDTA"],
     ecoFriendly: false,
     notes:
       "Gentle, low‑pH gel cleanser that's a favorite for morning use. Helps maintain skin's natural pH while providing light hydration. Contains minimal fragrance.",
@@ -910,7 +933,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
-    sensitivities: ["Fragrance", "Essential Oils"],
+    sensitivities: ["Essential Oils"],
     url: "https://amzn.to/4lfrmiH" /* https://www.amazon.com/dp/B092Q3YB34", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1004,7 +1027,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
-    sensitivities: ["Fragrance", "Essential Oils"],
+    sensitivities: ["None"],
     url: "https://amzn.to/40e4rfv" /* https://www.yesstyle.com/en/pyunkang-yul-essence-toner-200ml-200ml/info.html/pid.1060395495", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1158,7 +1181,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$100-$200",
     climate: ["All"],
     ageGroup: ["35-44", "45-54", "55+"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/44cw0XI" /* https://skinlovecream.com/products/sulwhasoo-first-care-activating-serum-mini", */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1191,7 +1214,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$50-$100",
     climate: ["All"],
     ageGroup: ["35‑44", "45‑54", "55+"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/44qlGN4" /* https://www.amazon.com/MISSHA-Revolution-Night-Repair-Ampoule/dp/B09648RPKJ */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1224,7 +1247,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["All"],
     ageGroup: ["25‑34", "35‑44", "45‑54", "55+"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/3G0UETk" /* https://holiholic.com/products/innisfree-new-jeju-orchid-eye-cream-30ml */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1285,7 +1308,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$50-$100",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/3HQdqxe" /* https://www.avon.com/product/belif-the-true-cream-moisturizing-bomb-71506 */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1345,7 +1368,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/3ZJu0F8" /* https://www.stylevana.com/en_US/innisfree-green-tea-seed-hyaluronic-cream-50ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1444,7 +1467,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$50-$100",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/43Y6Q0o" /* https://www.stylevana.com/en_US/deal-laneige-water-sleeping-mask-ex-70ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1476,7 +1499,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/44rDWps" /* https://www.amazon.com/COSRX-Ultimate-Nourishing-Rice-Overnight/dp/B01N13W31F */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1504,7 +1527,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $50",
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/3ZK5UtP" /* https://www.stylevana.com/en_US/deal-innisfree-jeju-volcanic-pore-clay-mask-original-100ml.html */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1568,7 +1591,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$10-$20",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/44sJFex" /* https://haruharu-wonder.com/products/black-rice-toner */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1681,7 +1704,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "Under $30",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/4eglmUB", /* https://us.laneige.com/products/lip-sleeping-mask" */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1714,7 +1737,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$40-$60",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["Essential Oils"],
+    sensitivities: ["Essential Oils", "Fragrance"],
     url: "https://amzn.to/4kT0DIO", /*https://www.drjart.com/products/cicapair-tiger-grass-color-correcting-treatment-spf-30", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -1933,7 +1956,7 @@ Only really available internationally, but is a cult classic, going to just use 
     budgetRange: "$15-$25",
     climate: ["All"],
     ageGroup: ["All"],
-    sensitivities: ["None"],
+    sensitivities: ["Fragrance"],
     url: "https://amzn.to/44jeUrj", /*https://www.amazon.com/Petitfee-Gold-Snail-Hydrogel-Patch/dp/B00XQ86NX6", */
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
@@ -2109,6 +2132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let nextBtn = document.getElementById("nextBtn");
 
     // Load saved data from localStorage with proper error handling
+
     function loadSavedState() {
       try {
         // Set default state first
@@ -2127,9 +2151,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
           if (storedProducts.length && Object.keys(storedRoutine).length) {
             // skip intro, show saved results
+            answers = JSON.parse(localStorage.getItem("answers") || "{}");
+            currentQuestionIndex = questions.length - 1;
             document.body.classList.remove("intro-active");
             introContainer.style.display = "none";
             quizContainer.style.display = "flex";
+            quizContainer.dataset.mode = "results";
             displayResults(storedProducts, storedRoutine);
             return; // ⬅️ avoid the normal “resume-quiz” code path
           }
@@ -2162,6 +2189,26 @@ document.addEventListener("DOMContentLoaded", function () {
         showIntroView();
       }
     }
+
+    // Unified Prev handler: works for both quiz + results screens.
+    prevBtn.addEventListener("click", () => {
+      if (quizContainer.dataset.mode === "results") {
+        // Leaving results → go to the LAST question (index = length - 1)
+        quizContainer.dataset.mode = ""; // clear mode
+        currentQuestionIndex = questions.length - 1;
+
+        // restore buttons
+        nextBtn.style.display = "inline-block";
+        prevBtn.style.display = "inline-block";
+
+        renderQuestion();
+        return;
+      }
+
+      // Normal backward nav
+      moveToPreviousQuestion();
+    });
+
 
     function resetQuizState() {
       currentQuestionIndex = 0;
@@ -2796,16 +2843,10 @@ instructions:                                     // ★ CHANGED
         localStorage.setItem('recommendedProducts', JSON.stringify(recommended));
         localStorage.setItem('routine',             JSON.stringify(formattedRoutine));
     
-        // 6) hide nav buttons
-        nextBtn.style.display = "none";
-        prevBtn.style.display = "none";
-    
-        // 7) ★ CHANGED  ───────── clear ONLY in-progress data ─────────
-        currentQuestionIndex = 0;                 // ★ CHANGED
-        answers = {};                             // ★ CHANGED
-        localStorage.removeItem('currentQuestionIndex'); // ★ CHANGED
-        localStorage.removeItem('answers');              // ★ CHANGED
-        // (we no longer call resetQuizState() here)       // ★ CHANGED
+        nextBtn.style.display = "none";            // Hide the “Next” button
+        prevBtn.style.display = "inline-block";    // Show the “Prev” button
+        quizContainer.dataset.mode = "results";    // Mark that we're on the results screen
+
     
       } catch (error) {
         console.error("Error submitting quiz:", error);
@@ -2817,6 +2858,7 @@ instructions:                                     // ★ CHANGED
 
     /* ── UPDATED: displayResults() – routine first, products below ── */
     function displayResults(recommendedProducts, routine) {
+      quizContainer.dataset.mode = "results";
       let resultHtml = '<div class="results-container">';
 
       /* ───────────────  ⬆️  ROUTINE SECTION NOW FIRST  ⬆️  ─────────────── */
@@ -3108,8 +3150,6 @@ ${(step.notes || step.pros.length || step.cons.length) ? `
       document.body.classList.remove("intro-active");
       renderQuestion();
     }); */
-
-    prevBtn.addEventListener("click", moveToPreviousQuestion);
 
     // Initialize
     loadSavedState();
