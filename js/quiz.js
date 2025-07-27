@@ -587,6 +587,7 @@ const products = [
     suitableFor: ["Sensitive", "Dry"],
     concerns: ["Dullness", "Uneven Skin Tone"],
     budgetRange: "$50-$100",
+    price: "13.00",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -617,6 +618,7 @@ const products = [
     suitableFor: ["Oily", "Combination", "Normal", "Dry"],
     concerns: ["Excess Oil", "Pores"],
     budgetRange: "Under $50",
+    price: "24.00",
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Alcohol"], // ← updated
@@ -671,6 +673,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Sensitive", "Combination", "Acne‑Prone"],
     concerns: ["Dullness", "Uneven Skin Tone", "Redness"],
     budgetRange: "$50-$100",
+    price: "30.00",
     climate: ["All"],
     ageGroup: ["18-24", "25-34", "35-44", "45-54"],
     sensitivities: [], // ← updated
@@ -708,6 +711,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Sensitive", "All Skin Types"],
     concerns: ["Dullness", "Uneven Skin Tone"],
     budgetRange: "Under $50",
+    price: "15.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -736,6 +740,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Normal"],
     concerns: ["Excess Oil", "Acne", "Pores"],
     budgetRange: "Under $50",
+    price: "19.96",
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -764,6 +769,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Makeup Removal"],
     budgetRange: "Under $50",
+    price: "20.99",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -793,6 +799,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Makeup Removal", "Sensitive Skin"],
     budgetRange: "Under $50",
+    price: "16.99",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Essential Oils"],
@@ -820,6 +827,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dullness", "Uneven Skin Tone"],
     budgetRange: "Under $50",
+    price: "19.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -847,6 +855,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Sensitive Skin", "Acne"],
     budgetRange: "Under $50",
+    price: "29.00",
     climate: ["All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["Fragrance"],
@@ -897,6 +906,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Sensitive", "Combination"],
     concerns: ["Dryness", "Redness"],
     budgetRange: "Under $50",
+    price: "14.00",
     climate: ["Dry", "Temperate"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -931,6 +941,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Sensitive"],
     concerns: ["Irritation", "Dryness"],
     budgetRange: "Under $50",
+    price: "17.00",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Essential Oils"],
@@ -964,6 +975,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dullness", "Uneven Texture"],
     budgetRange: "Under $50",
+    price: "14.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Sulfates", "Parabens"],
@@ -992,10 +1004,11 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Acne-Prone"],
     concerns: ["Acne", "Pores", "Uneven Skin Tone"],
     budgetRange: "Under $50",
+    price: "15.12",
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["Alcohol"],
-    url: "https://www.amazon.com/Cosrx-Clarifying-Treatment-3-38oz-100ml/dp/B014SAAW3W" /* page link not found */,
+    url: "https://amzn.to/4mhTP81",
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1025,6 +1038,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Sensitive", "Oily"],
     concerns: ["Dryness", "Irritation"],
     budgetRange: "Under $50",
+    price: "19.99",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1053,10 +1067,11 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dryness", "Uneven Texture"],
     budgetRange: "Under $50",
+    price: "16.98",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
-    url: "https://www.stylevana.com/en_US/deal-cosrx-advanced-snail-96-mucin-power-essence-100ml.html" /* not currently on amazon */,
+    url: "https://amzn.to/471dlRK" /* not currently on amazon */,
     image: "/public/images/product.jpg",
     hoverImage: "/public/images/bottle.webp",
     ingredients: [
@@ -1086,6 +1101,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dullness", "Uneven Skin Tone"],
     budgetRange: "$50-$100",
+    price: "38.00",
     climate: ["All"],
     ageGroup: ["25-34", "35-44"],
     sensitivities: ["None"],
@@ -1119,6 +1135,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dullness", "Uneven Skin Tone"],
     budgetRange: "$50-$100",
+    price: "38.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1147,6 +1164,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Acne-Prone"],
     concerns: ["Acne", "Pores", "Excess Oil"],
     budgetRange: "Under $50",
+    price: "22.40",
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18-24"],
     sensitivities: ["None"],
@@ -1179,6 +1197,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Reduce signs of aging", "Uneven Texture"],
     budgetRange: "$100-$200",
+    price: "44.06",
     climate: ["All"],
     ageGroup: ["35-44", "45-54", "55+"],
     sensitivities: ["Fragrance"],
@@ -1212,6 +1231,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Fine Lines", "Reduce signs of aging"],
     budgetRange: "$50-$100",
+    price: "24.00",
     climate: ["All"],
     ageGroup: ["35‑44", "45‑54", "55+"],
     sensitivities: ["Fragrance"],
@@ -1245,6 +1265,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Fine Lines", "Dark Circles"],
     budgetRange: "Under $50",
+    price: "35.00",
     climate: ["All"],
     ageGroup: ["25‑34", "35‑44", "45‑54", "55+"],
     sensitivities: ["Fragrance"],
@@ -1273,6 +1294,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dark Circles", "Puffiness"],
     budgetRange: "Under $50",
+    price: "17.02",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1306,6 +1328,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Normal"],
     concerns: ["Dryness"],
     budgetRange: "$50-$100",
+    price: "65.00",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1338,6 +1361,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Acne-Prone"],
     concerns: ["Acne", "Excess Oil"],
     budgetRange: "Under $50",
+    price: "18.99",
     climate: ["Humid", "Tropical"],
     ageGroup: ["Under 18", "18‑24"],
     sensitivities: ["Fragrance"],
@@ -1366,6 +1390,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Combination", "Normal"],
     concerns: ["Hydration", "Antioxidants"],
     budgetRange: "Under $50",
+    price: "30.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1399,6 +1424,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Sun Protection"],
     budgetRange: "Under $50",
+    price: "17.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1432,6 +1458,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Sensitive"],
     concerns: ["Sun Protection", "Sensitive Skin"],
     budgetRange: "Under $50",
+    price: "16.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1465,6 +1492,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Normal"],
     concerns: ["Dryness", "Dullness"],
     budgetRange: "$50-$100",
+    price: "32.00",
     climate: ["Dry", "Cold"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1497,6 +1525,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dullness", "Dryness"],
     budgetRange: "Under $50",
+    price: "16.99",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1525,6 +1554,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination"],
     concerns: ["Pores", "Excess Oil"],
     budgetRange: "Under $50",
+    price: "18.00",
     climate: ["Humid", "Tropical"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1562,6 +1592,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Oily", "Combination", "Acne-Prone"],
     concerns: ["Acne", "Oil Control", "Gentle Cleanse"],
     budgetRange: "Under $30",
+    price: "15.00",
     climate: ["Humid", "All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
@@ -1589,6 +1620,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Hydration", "Brightening"],
     budgetRange: "$10-$20",
+    price: "15.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1620,6 +1652,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Dry", "Sensitive", "All Skin Types"],
     concerns: ["Dehydration", "Hydration Planning"],
     budgetRange: "$25-$35",
+    price: "23.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1702,6 +1735,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Dryness", "Chapped Lips"],
     budgetRange: "Under $30",
+    price: "24.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1735,6 +1769,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Sensitive", "Redness-Prone", "All Skin Types"],
     concerns: ["Redness", "Barrier Support", "Sun Protection"],
     budgetRange: "$40-$60",
+    price: "54.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Essential Oils", "Fragrance"],
@@ -1768,6 +1803,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Normal", "Dry", "Combination", "Oily"],
     concerns: ["Dullness", "Hyperpigmentation", "Antioxidant Care"],
     budgetRange: "$25-$35",
+    price: "76.00",
     climate: ["All"],
     ageGroup: ["18-24", "25-34", "35-44", "45-54"],
     sensitivities: ["Essential Oils"],
@@ -1799,6 +1835,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Acne", "Blemish Recovery"],
     budgetRange: "Under $15",
+    price: "14.50",
     climate: ["All"],
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
@@ -1826,6 +1863,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["Normal", "Combination", "Oily"],
     concerns: ["Dullness", "Uneven Texture", "Pores"],
     budgetRange: "$20-$30",
+    price: "27.00",
     climate: ["All"],
     ageGroup: ["18-24", "25-34", "35-44"],
     sensitivities: ["Fragrance", "Alcohol"],
@@ -1859,6 +1897,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Fine Lines", "Uneven Texture", "Acne"],
     budgetRange: "$20-$35",
+    price: "30.30",
     climate: ["All"],
     ageGroup: ["25-34", "35-44", "45-54"],
     sensitivities: ["None"],
@@ -1892,7 +1931,8 @@ Only really available internationally, but is a cult classic, going to just use 
     category: "Sheet Mask",
     suitableFor: ["Dry", "Dehydrated", "All Skin Types"],
     concerns: ["Hydration", "Dullness"],
-    budgetRange: "Under $20 (box of 10)",
+    budgetRange: "Under $50",
+    price: "29.00",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1921,6 +1961,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Sun Protection", "Easy Reapplication"],
     budgetRange: "$20-$30",
+    price: "17.45",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["None"],
@@ -1954,6 +1995,7 @@ Only really available internationally, but is a cult classic, going to just use 
     suitableFor: ["All Skin Types"],
     concerns: ["Puffiness", "Dark Circles"],
     budgetRange: "$15-$25",
+    price: "9.99",
     climate: ["All"],
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
@@ -1983,27 +2025,20 @@ Only really available internationally, but is a cult classic, going to just use 
 ];
 
 function parseRange(str) {
-  str = str.replace(/\s+/g, '');          // remove spaces
-  if (/^Under\$(\d+)/i.test(str)) {
-    const max = +RegExp.$1;
-    return { min: 0, max };
-  }
-  if (/^\$(\d+)\+/.test(str)) {
-    const min = +RegExp.$1;
-    return { min, max: Infinity };
-  }
-  if (/^\$(\d+)-\$(\d+)/.test(str)) {
-    const min = +RegExp.$1;
-    const max = +RegExp.$2;
-    return { min, max };
-  }
-  return { min: 0, max: Infinity };       // fallback
+  const s = str.replace(/\s+/g, "");
+  let m;
+
+  if ((m = s.match(/^Under\$(\d+)/i)))        return { min: 0,          max: +m[1] };
+  if ((m = s.match(/^\$(\d+)\+/)))            return { min: +m[1],     max: Infinity };
+  if ((m = s.match(/^\$(\d+)-\$(\d+)/)))      return { min: +m[1],     max: +m[2] };
+
+  return { min: 0, max: Infinity };
 }
 
-function budgetsOverlap(a, b) {
-  const r1 = parseRange(a);
-  const r2 = parseRange(b);
-  return r1.min <= r2.max && r2.min <= r1.max; // ranges intersect?
+
+function priceMatchesBudget(price, budgetStr) {
+  const { min, max } = parseRange(budgetStr);
+  return price >= min && price <= max;
 }
 
 // Define the getRecommendedProducts function OUTSIDE the event listener
@@ -2039,7 +2074,7 @@ function getRecommendedProducts(userAnswers) {
     score += breakdown.concerns;
 
     // Budget
-    const budgetMatch = budgetsOverlap(product.budgetRange, userAnswers.budget);
+    const budgetMatch = priceMatchesBudget(product.price, userAnswers.budget);
     breakdown.budget = budgetMatch ? weights.budget : 0;
     score += breakdown.budget;
 
@@ -2859,6 +2894,7 @@ instructions:                                     // ★ CHANGED
     /* ── UPDATED: displayResults() – routine first, products below ── */
     function displayResults(recommendedProducts, routine) {
       quizContainer.dataset.mode = "results";
+      quizContent.classList.add("results-mode");
       let resultHtml = '<div class="results-container">';
 
       /* ───────────────  ⬆️  ROUTINE SECTION NOW FIRST  ⬆️  ─────────────── */
@@ -3036,7 +3072,7 @@ ${(step.notes || step.pros.length || step.cons.length) ? `
                   <p><strong>Concerns:</strong> ${product.concerns.join(
                     ", "
                   )}</p>
-                  <p><strong>Price Range:</strong> ${product.budgetRange}</p>
+                  <p><strong>Price:</strong> $${parseFloat(product.price).toFixed(2)}</p>
                   <a href="${
                     product.url
                   }" target="_blank" class="product-link">View Product</a>

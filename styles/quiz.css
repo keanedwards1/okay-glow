@@ -1104,6 +1104,14 @@ label {
   gap: 1rem;
 }
 
+@media screen and (max-width: 600px) {
+  .routine-product {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+
 .routine-product-image {
   width: 60px;
   height: 60px;
