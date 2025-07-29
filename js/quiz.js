@@ -592,8 +592,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance"],
     url: "https://amzn.to/445YjHw" /* associate link: https://amzn.to/445YjHw */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
     ingredients: ["Isopropyl Palmitate", "Fragrance", "Herbal Oil Complex"], // ← new
     ecoFriendly: false, // ← new
     notes:
@@ -623,8 +623,8 @@ const products = [
     ageGroup: ["All"],
     sensitivities: ["Fragrance", "Alcohol"], // ← updated
     url: "https://amzn.to/4jXqAWG" /* associate link:https://us.innisfree.com/products/apple-seed-cleansing-oil" /* associate link: */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
     ingredients: [
       "Green Tea Extract",
       "Amino Acids",
@@ -730,8 +730,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Pump sometimes prone to clogging or leaking",
     ],
     url: "https://amzn.to/3HI2mlT" /* https://www.amazon.com/Face-Shop-Cleansing-Brightening-K-Beauty/dp/B00809ERAM",  */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
   {
     id: 5,
@@ -759,8 +759,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "May feel too heavy for oily or acne-prone skin",
     ],
     url: "https://amzn.to/4ejLspJ" /* https://www.amazon.com/Etude-House-Cleansing-Moisture-milliliters/dp/B00965M61G", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
   {
     id: 6,
@@ -788,8 +788,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Can leave light residue if not emulsified thoroughly",
     ],
     url: "https://amzn.to/3ZEMDdk" /* https://www.amazon.com/BANILA-CO-Clean-Original-Cleansing/dp/B0CW7LGBB6", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
 
   {
@@ -817,8 +817,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Jar packaging might be less hygienic",
     ],
     url: "https://amzn.to/3G20nIq" /* https://www.amazon.com/heimish-Clean-4-0fl-oz-120ml-Balm/dp/B01CJ639SM", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
   {
     id: 8,
@@ -845,8 +845,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Jar packaging may require fingertip use",
     ],
     url: "https://amzn.to/4kMRul1" /* https://www.amazon.com/Beauty-Joseon-Radiance-Cleansing-Balm/dp/B07ZDQG9FJ", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
   {
     id: 9,
@@ -896,8 +896,8 @@ Only really available internationally, but is a cult classic, going to just use 
       "Not intended for heavy makeup removal—use as second cleanse",
     ],
     url: "https://amzn.to/4edgSOl" /* 10% https://www.amazon.com/dp/B08Y4N16PC", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
   },
   {
     id: 10,
@@ -911,8 +911,8 @@ Only really available internationally, but is a cult classic, going to just use 
     ageGroup: ["All"],
     sensitivities: ["None"],
     url: "https://amzn.to/43TLnWn" /* 10% https://www.amazon.com/dp/B08N335GXN", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
     ingredients: [
       "Matcha",
       "Hemp Seed Oil",
@@ -946,8 +946,8 @@ Only really available internationally, but is a cult classic, going to just use 
     ageGroup: ["All"],
     sensitivities: ["Essential Oils"],
     url: "https://amzn.to/4lfrmiH" /* https://www.amazon.com/dp/B092Q3YB34", */,
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
     ingredients: [
       "Panthenol",
       "Madecassoside",
@@ -1597,8 +1597,8 @@ Only really available internationally, but is a cult classic, going to just use 
     ageGroup: ["Under 18", "18-24", "25-34"],
     sensitivities: ["None"],
     url: "https://amzn.to/4emYDX8", /* https://purito.com/product/from-green-deep-foaming-cleanser/", */
-    image: "/public/images/product.jpg",
-    hoverImage: "/public/images/bottle.webp",
+    image: "/public/images/cleanser1.jpg",
+    hoverImage: "/public/images/foam-cleanser.jpg",
     ingredients: ["Centella Asiatica Extract", "Green Tea", "Panthenol"],
     ecoFriendly: true, // recycled paper packaging, earth‑conscious labeling :contentReference[oaicite:1]{index=1}
     notes:
