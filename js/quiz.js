@@ -1992,8 +1992,8 @@ Only really available internationally, but is a cult classic, going to just use 
     ageGroup: ['All'],
     sensitivities: ['Fragrance'],
     url: 'https://amzn.to/44jeUrj' /*https://www.amazon.com/Petitfee-Gold-Snail-Hydrogel-Patch/dp/B00XQ86NX6", */,
-    image: '/public/images/eye-patch.jpg',
-    hoverImage: '/public/images/eye-patch-hover.jpg',
+    image: '/public/images/patch.jpg',
+    hoverImage: '/public/images/patch-hover.jpg',
     ingredients: [
       'Snail Secretion Filtrate',
       'Colloidal Gold',
