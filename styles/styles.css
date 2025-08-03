@@ -1045,6 +1045,12 @@ body {
   gap: 15px;
 }
 
+.facebook-icon,
+.instagram-icon,
+.twitter-icon {
+  display: none;
+}
+
 .footer-social a img {
   width: 24px;
   height: 24px;
