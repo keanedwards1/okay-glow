@@ -260,6 +260,7 @@ body {
     padding: 60px 20px;
     text-align: center;
     margin-top: 60px;
+    display: none;
 }
 
 .blog-newsletter h3 {
